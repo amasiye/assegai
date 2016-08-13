@@ -1,0 +1,603 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+/* ===================
+    ALL: Orange Theme
+   =================== */
+
+.header-container {
+    /* border-bottom: 20px solid #e44d26; */
+    border-bottom: 20px solid #2c3e50;
+}
+
+.footer-container,
+.main aside {
+    /* border-top: 20px solid #e44d26; */
+    border-top: 20px solid #2c3e50;
+}
+
+.header-container,
+.footer-container,
+.main aside {
+    background: #34495e;
+}
+
+.title {
+    color: white;
+}
+
+/* ==============
+    MOBILE: Menu
+   ============== */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px 0;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    background: #2c3e50;
+    color: white;
+}
+
+nav a:active,
+nav a:visited {
+    color: white;;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+/* ==============
+    MOBILE: Main
+   ============== */
+
+.main {
+    padding: 30px 0;
+}
+
+.main article h1 {
+    font-size: 2em;
+}
+
+.main aside {
+    color: white;
+    /* padding: 0px 5% 10px; */
+    padding: 0px 2% 10px;
+}
+
+.footer-container footer {
+    color: white;
+    padding: 20px 0;
+}
+
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.logo-wrapper {
+  width: 468px;
+  height: 60px;
+  display: inline-block;
+}
+
+.logo {
+  width: 468px;
+  height: 60px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.logo:hover {
+  color: inherit;
+}
+
+.as-logo {
+  text-indent: -9000px;
+  background-repeat-y: no-repeat;
+  background-repeat-x: no-repeat;
+  background-size: 468px 60px;
+  background-image: url("http://atatusoft.ml/img/logo/atatusoft-logo-mid.png");
+}
+
+.landing-header-logo {
+}
+
+.sublist-wrapper {
+  display: none;
+  clear: both;
+  color: #fff;
+}
+
+ul.sublist {
+  margin-left: 0px;
+  padding: 2% 0px;
+}
+
+ul.sublist li {
+  margin-left: 0px;
+  padding-left: 0px;
+  display: inline;
+  /* background-color: #e44d26; */
+}
+
+ul.sublist li a {
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+ul.sublist li a:hover {
+  color: #1abc9c;
+  text-decoration: none;
+}
+
+#dropdown-01-products {
+  
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.panel-subscribe {
+  width: 100%;
+}
+
+.panel-title a {
+  display: inline-block;
+  width: 90%;
+  text-decoration: none;
+}
+
+.column-article {
+  width: 100%;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.display-inline {
+  display: inline;
+}
+.display-inline-block {
+  display: inline-block;
+}
+
+.floated-left {
+  float: left;
+}
+
+.floated-right {
+  float: right;
+}
+
+.clr {
+  clear: both;
+}
+
+.clr-left {
+  clear: left;
+}
+
+.clr-right {
+  clear: right;
+}
+
+.block28 {
+  width: 28%;
+}
+
+.block30 {
+  width: 30%;
+}
+
+.block45 {
+  width: 45%;
+}
+
+.block50 {
+  width: 50%;
+}
+
+.block60 {
+  width: 60%;
+}
+
+.block70 {
+  width: 70%;
+}
+
+.block80 {
+  width: 79%;
+}
+
+.block90 {
+  width: 90%;
+}
+
+.two-columns {
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+     -moz-column-count: 2; /* Firefox */
+          column-count: 2;
+}
+
+.three-columns {
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+     -moz-column-count: 3; /* Firefox */
+          column-count: 3;
+}
+
+.a {
+  color: white;
+}
+
+.a:hover {
+  color: #1abc9c;
+}
+
+.pane-tile a {
+  display: block;
+  width: 90%;
+}
+
+.pane-title a i {
+  width: 10%;
+  float: right;
+}
+
+.form-control {
+  display: inline-block;
+  width: 69%;
+}
+
+.btn {
+/*   color: white;
+  display: inline-block;
+  background-color: #16a085; */
+}
+
+.btn:hover {
+  /* background-color: #1abc9c; */
+}
+
+.btn:active,
+.btn:visited, {
+  
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-normal {
+  
+}
+
+
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+/* ====================
+    INTERMEDIATE: Menu
+   ==================== */
+
+    nav a {
+/*         float: left;
+        width: 27%;
+        margin: 0 1.7%;
+        padding: 25px 2%;
+        margin-bottom: 0;
+        cursor: pointer; */
+        float: left;
+        width: 22.4%;
+        margin: 0 1.7%;
+        padding: 26px 2%;
+        margin-bottom: 0;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    nav li:first-child a {
+        margin-left: 0;
+    }
+
+    nav li:last-child a {
+        margin-right: 0;
+    }
+
+/* ========================
+    INTERMEDIATE: IE Fixes
+   ======================== */
+
+    nav ul li {
+        display: inline;
+    }
+
+    .oldie nav a {
+        margin: 0 0.7%;
+    }
+    
+/* ========================
+    OTHER
+   ======================== */
+    .panel-subscribe {
+      width: 50%;
+    }
+    
+    .form-control {
+      width: 79%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+/* ====================
+    WIDE: CSS3 Effects
+   ==================== */
+
+    .header-container,
+    .main aside {
+/*         -webkit-box-shadow: 0 5px 10px #aaa;
+           -moz-box-shadow: 0 5px 10px #aaa;
+                box-shadow: 0 5px 10px #aaa; */
+    }
+
+/* ============
+    WIDE: Menu
+   ============ */
+
+    .title {
+        float: left;
+    }
+
+    nav {
+        float: right;
+        width: 50.6%;
+    }
+    
+    nav a {
+      background: transparent;
+    }
+
+/* ============
+    WIDE: Main
+   ============ */
+
+    .main article {
+        float: left;
+        width: 57%;
+    }
+
+    .main aside {
+        float: right;
+        width: 28%;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+
+    .wrapper {
+        width: 1026px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+}
+
+/* ===============
+    Maximal Menu
+   =============== */
+   
+    nav a {
+      /* background: transparent; */
+    }
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

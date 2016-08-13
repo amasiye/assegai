@@ -1,0 +1,10 @@
+Options -MultiViews
+ErrorDocument 404 /404.html
+RewriteEngine On
+
+RewriteBase /atatusoft/assegai/en-US/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
