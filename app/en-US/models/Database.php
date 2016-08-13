@@ -42,7 +42,15 @@ class Database
    */
   public function select($table, $columns, $options=array())
   {
+    $sql = "SELECT";
 
+    # Check for distinct option
+    if(array_key_exists("-d", $options) || array_key_exists("DISTINCT", $options))
+      $sql .= " DISTINCT";
+
+
+
+    echo $sql;
   } // end select(string, string, string)
 
   /**
@@ -64,7 +72,8 @@ class Database
   public function delete()
   {
 
-  }
+  } // end delete()
+
 } // end Database
 
 ?>
