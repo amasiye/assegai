@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  %HEAD_CONTENT%
 </head>
 <body>
-<h1>Login</h1>
+  %BODY_CONTENT%
 </body>
 </html>

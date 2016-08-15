@@ -29,11 +29,11 @@ class Database
 
     $this->mysqli =
       new mysqli($this->host, $this->user, $this->password, $this->name);
-    //
-    // $this->conn = $this->mysqli;
-    //
-    // # Create singleton
-    // $instance = $this;
+
+    $this->conn = $this->mysqli;
+
+    # Create singleton
+    $instance = $this;
   } // end __construct()
 
   /**

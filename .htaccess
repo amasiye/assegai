@@ -2,7 +2,7 @@ Options -MultiViews
 ErrorDocument 404 /404.html
 RewriteEngine On
 
-RewriteBase /atatusoft/assegai/
+RewriteBase /atatusoft/Assegai/assegai/
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
