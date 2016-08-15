@@ -7,7 +7,7 @@ class App
 
   protected $params = array();
 
-  protected $db;
+  public $db;
   // protected $conn;
 
   public function __construct()
@@ -45,7 +45,8 @@ class App
     $this->params = $url ? array_values($url) : array();
 
     call_user_func_array(array($this->controller, $this->method), $this->params);
-  }
+    
+  } // end __construct()
 
   /**
    * Breaks up url into an array of tokens

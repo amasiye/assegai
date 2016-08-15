@@ -60,7 +60,12 @@ class Database
    */
   public function insert($table, $columns, $values, $filter)
   {
-
+    $col = implode(", ", $columns);
+    echo $col;
+    // $sql = "INSERT INTO {$table} ()";
+    //
+    // # Prepare and bind statement
+    // $stmt = $this->conn->prepare($sql);
   } // end insert()
 
   /**
