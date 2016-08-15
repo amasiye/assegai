@@ -1,10 +1,15 @@
 <?php
-
+/**
+ * @version 1.0.0
+ * @since 1.0.0
+ *
+ * @package Assegai
+ */
 class User
 {
-  public $id;
+  public $id = -1;
   public $login;
-  public $username;
+  public $username = 'User';
   public $password;
   public $salt;
   public $joined;
@@ -14,22 +19,22 @@ class User
   public $address;
   public $phones;         // An associative array of phone numbers
   public $preferences;
+  public $display_name = 'Default User.';
 
   private $db;
 
   function __counstruct()
   {
-
   } // end __construct()
 
   /**
    * Logs a user into the system given login, password and an optional salt.
-   * @param $login String The login/username.
-   * @param $password String The user password.
-   * @param $salt String [Optional] Salt key.
-   * @return int
+   * @param {String} $login The login/username.
+   * @param {String} $password The user password.
+   * @param {String} $salt [Optional] Salt key.
+   * @return {int} Loging status or error code.
    */
-  public static function login($login, $password, $salt=)
+  public static function login($login, $password)
   {
 
   } // end static function login()
@@ -40,7 +45,7 @@ class User
   public static function logout()
   {
     return true;
-  } // end static function  logout()
+  } // end logout()
 
   /**
    * Creates a new user given detailed information.
@@ -51,6 +56,18 @@ class User
   {
     return 0;
   } // end static function register($details)
+
+  public static function is_logged_in()
+  {
+      if
+      (
+        isset($_SESSION[SITE_PREFIX . 'username']) &&
+        !empty($_SESSION[SITE_PREFIX . 'username'])
+      )
+      return true;
+
+    return false;
+  } // end is_logged_in()
 }
 
 ?>

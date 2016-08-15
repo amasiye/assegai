@@ -7,7 +7,13 @@
 session_start();
 
 # Core classes
+require_once "core/Config.php";
 require_once "core/App.php";
 require_once "core/Controller.php";
+
+// Auto load models
+spl_autoload_register(function($class) {
+  require_once 'models/' . $class . '.php';
+});
 
 ?>

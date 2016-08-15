@@ -10,20 +10,20 @@
 class Admin extends Controller
 {
   /**
-   * The default controller, i.e the dashboard
+   * The default endpoint, i.e the dashboard
    * @param {string} $name The user name to assign for this session
    */
   public function index($name = '')
   {
 
-    if(user_is_logged_in())
+    if(User::is_logged_in())
     {
       $user = $this->model('User');
-      $this->view('home/index', array('user' => $user));
-      // App::redirect(BASEPATH . 'browse/');
+      $this->view('dashboard/index', array('user' => $user));
     }
     else
     {
+      $user = $this->model('User');
       $this->view('login/index');
     }
   }

@@ -14,13 +14,13 @@
 $db_host = '127.0.0.1';
 
 /** MySQL database Username */
-$db_user = 'assegai';
+$db_user = 'root';
 
 /** MySQL database password */
-$db_pass = 'jesus323';
+$db_pass = '';
 
 /** MySQL database name */
-$db_name = 'bayersro_nbh';
+$db_name = 'assegai';
 
 /** MySQL database charset */
 $db_charset = 'utf8';

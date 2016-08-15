@@ -25,13 +25,15 @@ class Database
     $this->password = $db_pass;
     $this->name = $db_name;
 
+    // echo $db_host . " " . $db_user . " " . $db_pass . " " . $db_name;
+
     $this->mysqli =
       new mysqli($this->host, $this->user, $this->password, $this->name);
-
-    $this->conn = $this->mysqli;
-
-    # Create singleton
-    $instance = $this;
+    //
+    // $this->conn = $this->mysqli;
+    //
+    // # Create singleton
+    // $instance = $this;
   } // end __construct()
 
   /**

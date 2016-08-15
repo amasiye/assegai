@@ -8,15 +8,16 @@ class App
   protected $params = array();
 
   protected $db;
-  protected $conn;
+  // protected $conn;
 
   public function __construct()
   {
-    global $locale;
+    global $db_host, $db_user, $db_pass, $db_name, $locale;
 
-    // Make a new connection to the database
-    $this->db = new DbContext;
-    $this->conn = $this->db->conn;
+    # Make a new connection to the database
+    $this->db = new Database($db_host, $db_user, $db_pass, $db_name);
+    // $this->db = new DbContext;
+    // $this->conn = $this->db->conn;
 
     $url = $this->parse_url();
 
@@ -63,6 +64,10 @@ class App
     }
   }
 
+  /**
+   * Handles redirection
+   * [Deprecated] - Use Controller::redirect($url) instead.
+   */
   public static function redirect($path)
   {
     header("Location: {$path}");

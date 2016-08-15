@@ -9,14 +9,14 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <base href="http://atatusoft.ml/">
-    
+
+    <base href="<?= BASEPATH; ?>">
+
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    
+
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
@@ -27,7 +27,7 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    
+
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
   </head>
   <body>
@@ -38,7 +38,7 @@
             <h4>Salutations</h4>
           </div>
           <div class="panel-content">
-            <h3>Hello <?=$data['name'] ?></h3>
+            <h3>Hello <?= $data['user']->display_name; ?></h3>
             <p>This is one awesome app isn't it?</p>
           </div>
         </div>

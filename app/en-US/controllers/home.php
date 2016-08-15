@@ -10,12 +10,12 @@
 class Home extends Controller
 {
   /**
-   * @param {string} $name The user name to assign for this session
+   * @param {string} $option Options for the home controller.
    */
   public function index($option = '')
   {
 
-    if(user_is_logged_in())
+    if(User::is_logged_in())
     {
       $user = $this->model('User');
       $this->view('home/index', array('user' => $user));
@@ -23,7 +23,7 @@ class Home extends Controller
     }
     else
     {
-      if($option == 'assegai-login')
+      if($option == 'assegai-login' || $option == 'admin')
       {
         // $this->redirect('admin/');
         $this->model('User');
@@ -31,12 +31,13 @@ class Home extends Controller
       }
       else
       {
-        $this->view('home/index');
+        $user = $this->model('User');
+        $this->view('home/index', array('user' => $user));
       }
     }
 
-  } // end Home
+  } // end index(string)
 
-}
+} // end class Home
 
 ?>
