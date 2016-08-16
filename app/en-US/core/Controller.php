@@ -11,6 +11,21 @@
 class Controller
 {
 
+  # Each controller establishes one database conection.
+  # This is more ideal than making the connection in each
+  # model class since each http request consumes only one controller
+  # but may utilise more than one model.
+  protected $db;
+
+  /**
+   * Constructs a new controller
+   */
+  function __construct()
+  {
+      global $db_host, $db_user, $db_pass, $db_name;
+      $this->db = new Database($db_host, $db_user, $db_pass, $db_name);
+  } // end __construct()
+
   /**
    * Creates a new model object.
    * @param {string} The name of the model to load.

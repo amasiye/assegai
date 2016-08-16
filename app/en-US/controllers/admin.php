@@ -23,9 +23,9 @@ class Admin extends Controller
     else
     {
       global $app;
-
+      // $db = new Database('127.0.0.1', 'root', '', 'assegai');
       $user = $this->model('User');
-      $this->view('login/index', array('app' => $app, 'user' => $user));
+      $this->view('login/index', array('app' => $app, 'user' => $user, 'db' => $this->db));
     }
   }
 

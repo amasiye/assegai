@@ -6,5 +6,5 @@ global $db_host, $db_user, $db_pass, $db_name;
 
 # Make a new connection to the database
 $db = new Database($db_host, $db_user, $db_pass, $db_name);
-
+// var_dump($GLOBALS['db']);
 ?>
