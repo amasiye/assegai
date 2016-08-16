@@ -6,9 +6,10 @@
 <h1>Login</h1>
 <div>
 <?php
-global $app;
+global $db;
 
-$app->db->insert('$table', '$columns', '$values', '$filter');
+// $db->insert('$table', '$columns', '$values', '$filter');
+// echo $data['user']->display_name;
 ?>
 </div>
 </body>

@@ -15,7 +15,6 @@ class Admin extends Controller
    */
   public function index($name = '')
   {
-
     if(User::is_logged_in())
     {
       $user = $this->model('User');
@@ -23,8 +22,10 @@ class Admin extends Controller
     }
     else
     {
+      global $app;
+
       $user = $this->model('User');
-      $this->view('login/index');
+      $this->view('login/index', array('app' => $app, 'user' => $user));
     }
   }
 

@@ -58,10 +58,10 @@ class Database
   /**
    * Inserts data into the database.
    */
-  public function insert($table, $columns, $values, $filter)
+  public function insert($table, $columns = array(), $values, $filter)
   {
-    $col = implode(", ", $columns);
-    echo $col;
+    $cols = implode(", ", $columns);
+    echo $cols;
     // $sql = "INSERT INTO {$table} ()";
     //
     // # Prepare and bind statement
