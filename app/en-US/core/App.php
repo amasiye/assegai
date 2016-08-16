@@ -7,18 +7,10 @@ class App
 
   protected $params = array();
 
-  public $db;
-  // protected $conn;
-
   public function __construct()
   {
-    global $db_host, $db_user, $db_pass, $db_name, $locale;
-
-    # Make a new connection to the database
-    $this->db = new Database($db_host, $db_user, $db_pass, $db_name);
-    // $this->db = new DbContext;
-    // $this->conn = $this->db->conn;
-
+    global $locale;
+    
     $url = $this->parse_url();
 
     if(file_exists('app/' . $locale . '/controllers/' . $url[0] . '.php'))

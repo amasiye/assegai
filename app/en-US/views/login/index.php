@@ -8,7 +8,7 @@
 <?php
 global $db;
 
-// $db->insert('$table', '$columns', '$values', '$filter');
+$db->insert('$table', '$columns', '$values', '$filter');
 // echo $data['user']->display_name;
 ?>
 </div>
