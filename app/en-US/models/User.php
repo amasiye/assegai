@@ -13,7 +13,7 @@ class User
   public $password;
   public $salt;
   public $joined;
-  public $group;
+  public $group = -1;
   public $primary_email;
   public $emails;         // An associative array of email addresses
   public $address;
@@ -23,9 +23,61 @@ class User
 
   private $db;
 
-  function __counstruct()
+  /**
+   * Constructs a user object.
+   * @param {array} $params The list of parameters.
+   */
+  function __counstruct($params = array())
   {
+    if(!empty($params))
+    {
+      if(array_key_exists('login') && array_key_exists('db'))
+      {
+        #Bind parameters to corresponding properties
+        $this->login = $params['login'];
+        $this->db = $params['db'];
+
+        # Cache user data
+        $user_data = $db->select("assg_users", array(), array('-w'=>"user_login='{$login}'"))[0];
+
+        $id = $user_data['user_id'];
+        $login = $user_data['user_login'];
+        $username = $user_data['user_name'];
+        $password = $user_data['user_password'];
+        $salt = $user_data['user_salt'];
+        $joined = $user_data['user_joined'];
+        $group = $user_data['user_group'];
+
+        # Decode meta data JSON string
+        $meta = json_decode($user_data['user_meta']);
+
+        # Bind meta data to remaining properties
+        $primary_email = $meta['primary_email'];
+        $emails = $meta['emails'];         // An associative array of email addresses
+        $address = $meta['address'];
+        $phones = $meta['phones'];         // An associative array of phone numbers
+        $preferences = $meta['preferences'];
+        $display_name = $meta['display_name'];
+      }
+
+    }
   } // end __construct()
+
+  public function change_password()
+  {
+
+  } // end change_password()
+
+  /**
+   * Determines whether the user has the rights to perform
+   * $action on the $target given it's user_group.
+   * @param {string} $action The action in question e.g register.
+   * @param {string} $target The target
+   */
+  public function has_permission($action, $target)
+  {
+    return false;
+  } // end has_permission($permission)
 
   /**
    * Logs a user into the system given login, password and an optional salt.
@@ -59,7 +111,11 @@ class User
 
   /**
    * Creates a new user given detailed information.
-   * @param $details Array An associative array of user information.
+   * @param {string} $user_login  User login name (a.k.a Username)
+   * @param {string} $user_password The user password.
+   * @param {string} $user_name The user's proper name.
+   * @param {int} $user_group The
+   * @param {string} $user_meta
    * @return int True upon successful user registration, false otherwise.
    */
   public static function register
@@ -91,6 +147,15 @@ class User
     // return 0;
   } // end static function register($details)
 
+  public static function deregister($user_login, User $user)
+  {
+    # Check user credentials
+    return false;
+  } // end deregister(string, User)
+
+  /**
+   *
+   */
   public static function is_logged_in()
   {
       if

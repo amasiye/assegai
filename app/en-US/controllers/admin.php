@@ -17,7 +17,7 @@ class Admin extends Controller
   {
     if(User::is_logged_in())
     {
-      $user = $this->model('User');
+      $user = $this->model('User', 'login' => $_SESSION['u_login']);
       $this->view('dashboard/index', array('user' => $user));
     }
     else

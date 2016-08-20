@@ -9,3 +9,8 @@ Finish the User model:
     - register method
     - delete method
     - update method
+
+User Access Control model
+- permission
+  - action
+  - actor

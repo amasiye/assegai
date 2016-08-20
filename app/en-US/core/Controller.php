@@ -31,12 +31,15 @@ class Controller
    * @param {string} The name of the model to load.
    * @return {Object} The newly created model.
    */
-  public function model($model)
+  public function model($model, $args = array())
   {
     global $locale;
 
     if(file_exists('app/' . $locale . '/models/' . $model . '.php'))
       require_once 'app/' . $locale . '/models/' . $model . '.php';
+
+    if(!empty($args))
+      return new $model($args);
 
     return new $model();
   }
