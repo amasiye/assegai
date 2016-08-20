@@ -32,8 +32,9 @@ $db_collate = '';
 $locale = 'en-US';
 
 /** The base path (or absolute path) to the site's root directory. */
-define('BASEPATH', "http://localhost/atatusoft/assegai/");
+define('BASEPATH', "http://localhost/atatusoft/Assegai/assegai/");
 define('CDNPATH', BASEPATH . "app/{$locale }/content/");
+define('LOGPATH', BASEPATH . "app/{$locale}/content/logs/");
 
 /**#@+
  * Authentication Unique Keys and Salts information.
@@ -56,7 +57,6 @@ define('APP_VER', '0.0.5');
 define('SITE_NAME', '%SITE NAME%');
 define('SITE_TAGLINE', 'His Word Is A Light Unto Our Feet.');
 define('SITE_PREFIX', 'assegai_');
-
 # Load status codes
 require_once "StatusCodes.php";
 

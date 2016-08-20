@@ -1,0 +1,11 @@
+Finish the Database model:
+  To implement:
+    - Update method
+    - Delete method
+
+
+Finish the User model:
+  To implement:
+    - register method
+    - delete method
+    - update method

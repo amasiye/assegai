@@ -1,4 +1,4 @@
-<<?php
+<?php
 
 /**
  * This controller handles all web service requests and provides an extensive
@@ -15,6 +15,18 @@ class Api extends Controller
   {
 
   }
+
+  public function user($endpoint = '')
+  {
+
+    switch($endpoint)
+    {
+        case 'login':
+          $this->view('user/login', array('db'=> $this->db));
+          break;
+    }
+
+  } // end
 
   public function auth($login, $password)
   {
