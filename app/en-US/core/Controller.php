@@ -38,10 +38,10 @@ class Controller
     if(file_exists('app/' . $locale . '/models/' . $model . '.php'))
       require_once 'app/' . $locale . '/models/' . $model . '.php';
 
-    if(!empty($args))
-      return new $model($args);
+    // if(!empty($args))
+    //   return new $model($args);
 
-    return new $model();
+    return new $model($args);
   }
 
   /**

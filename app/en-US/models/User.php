@@ -27,56 +27,91 @@ class User
    * Constructs a user object.
    * @param {array} $params The list of parameters.
    */
-  function __counstruct($params = array())
+  function __construct($params = array())
   {
     if(!empty($params))
     {
-      if(array_key_exists('login') && array_key_exists('db'))
+      if(array_key_exists('login', $params) && array_key_exists('db', $params))
       {
         #Bind parameters to corresponding properties
         $this->login = $params['login'];
         $this->db = $params['db'];
 
         # Cache user data
-        $user_data = $db->select("assg_users", array(), array('-w'=>"user_login='{$login}'"))[0];
+        $user_data = $this->db->select("assg_users", array(), array('-w'=>"user_login='{$this->login}'"))[0];
 
-        $id = $user_data['user_id'];
-        $login = $user_data['user_login'];
-        $username = $user_data['user_name'];
-        $password = $user_data['user_password'];
-        $salt = $user_data['user_salt'];
-        $joined = $user_data['user_joined'];
-        $group = $user_data['user_group'];
+        $this->id = $user_data['user_id'];
+        $this->login = $user_data['user_login'];
+        $this->username = $user_data['user_name'];
+        $this->password = $user_data['user_password'];
+        $this->salt = $user_data['user_salt'];
+        $this->joined = $user_data['user_joined'];
+        $this->group = $user_data['user_group'];
 
         # Decode meta data JSON string
-        $meta = json_decode($user_data['user_meta']);
+        $meta = json_decode($user_data['user_meta'], true);
 
         # Bind meta data to remaining properties
-        $primary_email = $meta['primary_email'];
-        $emails = $meta['emails'];         // An associative array of email addresses
-        $address = $meta['address'];
-        $phones = $meta['phones'];         // An associative array of phone numbers
-        $preferences = $meta['preferences'];
-        $display_name = $meta['display_name'];
+        $this->primary_email = $meta['primary_email'];
+        $this->emails = $meta['emails'];         // An associative array of email addresses
+        $this->address = $meta['address'];
+        $this->phones = $meta['phones'];         // An associative array of phone numbers
+        $this->preferences = $meta['preferences'];
+        $this->display_name = $meta['display_name'];
       }
 
     }
   } // end __construct()
 
-  public function change_password()
+  public function change_password($old_password, $new_password)
   {
+    $db = $this->db;
+    $db->update('assg_users', array('user_password'), array($new_password));
 
+    return false;
   } // end change_password()
 
   /**
    * Determines whether the user has the rights to perform
-   * $action on the $target given it's user_group.
+   * $action on the specific $resource given it's user_group.
    * @param {string} $action The action in question e.g register.
-   * @param {string} $target The target
+   * @param {string} $resource The resource
    */
-  public function has_permission($action, $target)
+  public function has_permission($permission, $resource)
   {
-    return false;
+    $id = $this->group;
+    $db = $this->db;
+    $has_permission = false;
+
+    # Get user group permissions
+    $user_data = $db->select("assg_groups", array("group_permissions"), array("-w"=>"group_id='{$id}'"))[0];
+
+    if(!empty($user_data))
+    {
+      $permissions = json_decode($user_data['group_permissions'], true);
+      $permissions[$resource];
+
+
+      # Check if the permission is allowed
+      switch($permission)
+      {
+        case 'read':
+          if(strpbrk($permissions[$resource], 'r') !== FALSE)
+            $has_permission = true;
+          break;
+        case 'edit':
+          if(strpbrk($permissions[$resource], 'e') !== FALSE)
+          $has_permission = true;
+          break;
+        case 'delete':
+          if(strpbrk($permissions[$resource], 'd') !== FALSE)
+          $has_permission = true;
+          break;
+      }
+    }
+
+    # Report whether the permission is set.
+    return $has_permission;
   } // end has_permission($permission)
 
   /**

@@ -6,3 +6,20 @@
   "preferences":"",
   "display_name":"Administrator"
 }
+
+{
+  "users":{
+            "register":1,
+            "update"
+          }
+}
+
+
+{
+  "admin":{
+            "pages":"red","sermons":"red","layouts":"red","newsletters":"red"
+          },
+  "editor":{
+            "pages":"re","sermons":"re","layouts":"e","newsletters":"re"
+          }
+}

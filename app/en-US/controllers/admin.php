@@ -17,14 +17,14 @@ class Admin extends Controller
   {
     if(User::is_logged_in())
     {
-      $user = $this->model('User', 'login' => $_SESSION['u_login']);
+      $user = $this->model('User', array('login' => $_SESSION['u_login']));
       $this->view('dashboard/index', array('user' => $user));
     }
     else
     {
       global $app;
-      // $db = new Database('127.0.0.1', 'root', '', 'assegai');
-      $user = $this->model('User');
+
+      $user = $this->model('User', array('login' => 'Admin', 'db' => $this->db));
       $this->view('login/index', array('app' => $app, 'user' => $user, 'db' => $this->db));
     }
   }

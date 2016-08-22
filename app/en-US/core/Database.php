@@ -20,12 +20,11 @@ class Database
    */
   function __construct($db_host, $db_user, $db_pass, $db_name)
   {
+    # Bind parameters to properties
     $this->host = $db_host;
     $this->user = $db_user;
     $this->password = $db_pass;
     $this->name = $db_name;
-
-    // echo $db_host . " " . $db_user . " " . $db_pass . " " . $db_name;
 
     $this->mysqli =
       new mysqli($this->host, $this->user, $this->password, $this->name);
@@ -182,8 +181,9 @@ class Database
   /**
    * Updates a table in the database.
    */
-  public function update()
+  public function update($table, $column = array(), $values = array(), $options = array())
   {
+
     echo 'Update method called but not yet implemented.';
   } // end update()
 
@@ -196,6 +196,24 @@ class Database
   {
     echo 'Delete method called but not yet implemented.';
   } // end delete()
+
+  /**
+   * Sanitizes the given text for safe database storage.
+   * @param {string} $txt The text to be sanitized.
+   */
+  private function sanitize($txt)
+  {
+    return htmlspecialchars(htmlentities($txt));
+  } // end sanitize($txt)
+
+  /**
+   * Reverse string sanitization for given text.
+   * @param {string} $txt The text to be unsanitized.
+   */
+  private function unsanitize($txt)
+  {
+    return html_entity_decode(htmlspecialchars_decode($txt));
+  } // end unsanitize($txt)
 
 } // end Database
 
