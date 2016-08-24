@@ -86,6 +86,8 @@ class Database
       array_push($rows, $row);
     }
 
+    # If nothing was found insert a null character so that
+    # an empty array is never returned.
     if(empty($rows))
       array_push($rows, null);
 
@@ -151,9 +153,9 @@ class Database
     {
       # Enclose strings in single quotes
       if(gettype($values[$x]) == 'string')
-        $sql .= "'" . $values[$x] . "'";
+        $sql .= "'" . sanitize($values[$x]) . "'";
       else
-        $sql .= $values[$x];
+        $sql .= sanitize($values[$x]);
 
       # Add comma after each value except for last
       if($x < (count($values) - 1)) $sql .= ", ";
@@ -203,7 +205,7 @@ class Database
    */
   private function sanitize($txt)
   {
-    return htmlspecialchars(htmlentities($txt));
+    return htmlentities(htmlspecialchars($txt), ENT_QUOTES);
   } // end sanitize($txt)
 
   /**
@@ -212,7 +214,7 @@ class Database
    */
   private function unsanitize($txt)
   {
-    return html_entity_decode(htmlspecialchars_decode($txt));
+    return htmlspecialchars_decode(html_entity_decode($txt));
   } // end unsanitize($txt)
 
 } // end Database

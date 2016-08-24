@@ -1,5 +1,5 @@
-<footer class="clearfix">
-  <div class="footer-column">
+<footer class="clearfix col-sm-12">
+  <div class="footer-column col-sm-12 col-md-3">
     <h4>Help</h4>
     <ul>
       <li><a href="#">FAQs/Tutorials</a></li>
@@ -7,7 +7,7 @@
       <li><a href="#">Support Us</a></li>
     </ul>
   </div>
-  <div class="footer-column">
+  <div class="footer-column col-sm-12 col-md-3">
     <h4>About</h4>
     <ul>
       <li><a href="#">Our Blog</a></li>
@@ -18,7 +18,7 @@
       <li><a href="#">Terms of Use</a></li>
     </ul>
   </div>
-  <div class="footer-column">
+  <div class="footer-column col-sm-12 col-md-3">
     <h4>Links</h4>
     <ul>
       <li><a href="http://bayersroadbaptist.ca/">Bayers Road Baptist</a></li>
@@ -26,7 +26,7 @@
       <li><a href="#">Support Us</a></li>
     </ul>
   </div>
-  <div class="footer-column">
+  <div class="footer-column col-sm-12 col-md-3">
     <h4>Social</h4>
     <ul>
       <li><a href="#"><i class="fa fa-facebook"></i></a></li>

@@ -128,12 +128,14 @@ input[type='reset'].btn {
 footer {
   background-color: #111;
   min-height: 320px;
-  padding: 24px 112px;
+  /*padding: 24px 112px;*/
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .footer-column {
-  float: left;
-  width: 24.5%;
+  /*float: left;
+  width: 24.5%;*/
 }
 
 .footer-column:first-child {

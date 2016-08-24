@@ -16,6 +16,7 @@ class Controller
   # model class since each http request consumes only one controller
   # but may utilise more than one model.
   protected $db;
+  protected $session;
 
   /**
    * Constructs a new controller
@@ -24,6 +25,7 @@ class Controller
   {
       global $db_host, $db_user, $db_pass, $db_name;
       $this->db = new Database($db_host, $db_user, $db_pass, $db_name);
+      $this->session = new Session;
   } // end __construct()
 
   /**

@@ -23,8 +23,7 @@ require_once "includes/header.php";
       <div class="panel-body">
 
         <form role="form" class="clearfix">
-          <div id="alert-feedback" class="alert">
-          </div>
+          <div id="alert-feedback" class="alert" style="display:none;"></div>
           <div class="form-group">
             <label for="username">Username:&nbsp;</label>
             <input type="text" id="username" name="username" class="form-control" placeholder="Username"
@@ -50,6 +49,8 @@ require_once "includes/header.php";
                   password: $('#password').val()
                 },
                 function(result) {
+                  $('#alert-feedback').css("display":"block");
+                  $('#alert-feedback').addClass("alert-success");
                   $('#alert-feedback').html(result);
                 }
               );

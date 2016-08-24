@@ -129,7 +129,7 @@ class User
     # Verify the password
     if(password_verify($password, $user_data['user_password']))
     {
-      echo "Password passsed";
+      Session::login($login, $user_data['user_id']);
       return json_encode(array('success'=> true, 'status' => LOGIN_OK));
     }
 
@@ -141,17 +141,23 @@ class User
    */
   public static function logout()
   {
-    return true;
+    if(User::is_logged_in())
+    {
+      Session::logout();
+      return true;
+    }
+
+    return false;
   } // end logout()
 
   /**
    * Creates a new user given detailed information.
-   * @param {string} $user_login  User login name (a.k.a Username)
-   * @param {string} $user_password The user password.
+   * @param {string} $user_login The username for loggin in to the system.
+   * @param {string} $user_password The user password for loggin in to the system.
    * @param {string} $user_name The user's proper name.
-   * @param {int} $user_group The
-   * @param {string} $user_meta
-   * @return int True upon successful user registration, false otherwise.
+   * @param {int} $user_group The user access control group.
+   * @param {string} $user_meta Further user details e.g email, phone, address etc.
+   * @return {int} True upon successful user registration, false otherwise.
    */
   public static function register
   (
@@ -172,8 +178,6 @@ class User
     $user_password_hashed =
         password_hash($user_password, PASSWORD_BCRYPT, $hash_options);
 
-    // var_dump(array("login" => $user_login, "password" => $user_password, "password_hashed" => $user_password_hashed,
-    // "salt" => $user_salt, "name" => $user_name, "joined" => $user_joined, "group" => $user_group, "meta" => $user_meta));
     return $db->insert(
                         'assg_users',
                         array('user_login', 'user_password', 'user_salt', 'user_name', 'user_joined', 'user_group', 'user_meta'),
@@ -196,7 +200,8 @@ class User
       if
       (
         isset($_SESSION[SITE_PREFIX . 'username']) &&
-        !empty($_SESSION[SITE_PREFIX . 'username'])
+        !empty($_SESSION[SITE_PREFIX . 'username']) &&
+        session_status() == PHP_SESSION_ACTIVE
       )
       return true;
 

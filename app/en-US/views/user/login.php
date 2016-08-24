@@ -1,4 +1,5 @@
 <?php
+$db = $data['db'];
 $user_login = $_POST['username'];
 $user_password = $_POST['password'];
 
@@ -9,11 +10,10 @@ if(
   !empty($user_password)
 )
 {
-  $db = $data['db'];
   echo User::login($db, $user_login, $user_password);
 }
 else
 {
-  return json_encode(array('succes' => false, 'status' => API_REQUEST_ERR));
+  return json_encode(array('success' => false, 'status' => API_REQUEST_ERR));
 }
 ?>
