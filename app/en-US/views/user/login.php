@@ -14,6 +14,6 @@ if(
 }
 else
 {
-  return json_encode(array('success' => false, 'status' => API_REQUEST_ERR));
+  echo json_encode(array('success' => false, 'status' => API_REQUEST_ERR, 'msg' => '<b>Error:</b>&nbsp;Both a username and password must be provided.'));
 }
 ?>

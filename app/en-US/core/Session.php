@@ -18,20 +18,20 @@ class Session
     $this->id = session_id();
 
     if(isset($_SESSION[SESSION_USER]))
-      $this->$user_id = $_SESSION[SESSION_USER];
+      $this->user_id = $_SESSION[SESSION_USER];
   }
 
   /**
-   * @param {string} $login The username for logging in to the system.
    * @param {string} $id The corresponding user id.
-   * in to the system.
+   * @param {string} $login The username for logging in to the system.
    *
    * @return {boolean} True if successful, false otherwise.
    */
-  public function login($login, $id)
+  public static function login($id, $login)
   {
+    $_SESSION[SESSION_USER_ID] = $id;
     $_SESSION[SESSION_USER] = $login;
-    $this->$user_id = $_SESSION[SESSION_USER];
+    // $this->$user_id = $_SESSION[SESSION_ID];
 
     return true;
   } // end login(string, string)

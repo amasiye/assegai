@@ -41,17 +41,36 @@ require_once "includes/header.php";
             document.querySelector("button").onclick = function() { login($('#username').val(), $('#password').val()); };
             function login(username, password)
             {
-
+              var url = $('base').attr('href') + 'api/user/login/';
               $.post(
                 "http://localhost/atatusoft/Assegai/assegai/api/user/login/",
                 {
                   username: $('#username').val(),
                   password: $('#password').val()
                 },
-                function(result) {
-                  $('#alert-feedback').css("display":"block");
-                  $('#alert-feedback').addClass("alert-success");
-                  $('#alert-feedback').html(result);
+                function(res) {
+                  var result = JSON.parse(res);
+
+                  if(result.success == true)
+                  {
+                    // alert(result.msg);
+                    $('#alert-feedback').css('display','block');
+
+                    if($('#alert-feedback').hasClass('alert-danger'))
+                      $('#alert-feedback').removeClass('alert-danger');
+
+                    $('#alert-feedback').addClass("alert-success");
+                    $('#alert-feedback').html(result.msg);
+
+                    window.location.href = result.href;
+                    // window.location.href = $('base').attr('href') + 'dashboard/';
+                  }
+                  else
+                  {
+                    $('#alert-feedback').css("display","block");
+                    $('#alert-feedback').addClass("alert-danger");
+                    $('#alert-feedback').html(result.msg);
+                  }
                 }
               );
 

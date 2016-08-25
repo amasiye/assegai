@@ -31,13 +31,13 @@ function search(term)
 }
 
 
-usernameIsValid(username)
+function usernameIsValid(username)
 {
   var patt = /e/;
   return patt.test(username);
 }
 
-passwordIsValid(password)
+function passwordIsValid(password)
 {
   var patt = /\W\w/;
   return patt.test(password);

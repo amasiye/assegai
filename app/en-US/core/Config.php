@@ -60,7 +60,7 @@ define('SITE_TAGLINE', 'His Word Is A Light Unto Our Feet.');
 define('SITE_PREFIX', 'assegai_');
 
 # Session information
-define('SESSION_ID', 'uid');
+define('SESSION_USER_ID', 'uid');
 define('SESSION_USER', 'ulog');
 
 # Load status codes

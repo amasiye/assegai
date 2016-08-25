@@ -17,7 +17,7 @@
     else
     {
     ?>
-    <title><?= SITE_NAME; ?>| <?= SITE_TAGLINE; ?>  - Alpha [Build 0.0.1]</title>
+    <title><?= SITE_NAME; ?> | <?= SITE_TAGLINE; ?> - Alpha [Build 0.0.1]</title>
     <?php
     }
     ?>

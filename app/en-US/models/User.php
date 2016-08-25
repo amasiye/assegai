@@ -129,11 +129,21 @@ class User
     # Verify the password
     if(password_verify($password, $user_data['user_password']))
     {
-      Session::login($login, $user_data['user_id']);
-      return json_encode(array('success'=> true, 'status' => LOGIN_OK));
+      # Cache user data in Session storage
+      if(Session::login($user_data['user_id'], $user_data['user_login']))
+        return json_encode(array('success' => true, 'status' => LOGIN_OK,
+              'msg' => 'Login Successful.', 'href' => BASEPATH . 'dashboard/'));
+
+      # Report error
+      return json_encode(array('success' => false, 'status' => LOGIN_SESSION_ERR,
+      'msg' => '<strong>Error:</strong>&nbsp;Invalid username or password.&nbsp;<u>Please try again</u>.',
+      'href' => BASEPATH . 'admin/'));
     }
 
-    return json_encode(array('success' => false, 'status' => LOGIN_ERR));
+    # Report error
+    return json_encode(array('success' => false, 'status' => LOGIN_ERR,
+              'msg' => '<strong>Error:</strong>&nbsp;Invalid username or password.&nbsp;<u>Please try again</u>.',
+              'href' => BASEPATH . 'admin/'));
   } // end static function login()
 
   /*
@@ -143,11 +153,19 @@ class User
   {
     if(User::is_logged_in())
     {
-      Session::logout();
-      return true;
+      if(Session::logout())
+        return json_encode(array('success' => true, 'status' => LOGOUT_OK,
+                  'msg' => 'Logout successful.',
+                  'href' => BASEPATH . 'admin/'));
+
+      return json_encode(array('success' => false, 'status' => LOGOUT_SESSION_ERR,
+                'msg' => '<strong>Error:</strong>&nbsp;Logout attempt failed.',
+                'href' => BASEPATH . 'dashboard/'));
     }
 
-    return false;
+    return json_encode(array('success' => false, 'status' => LOGOUT_ERR,
+              'msg' => '<strong>Error:</strong>&nbsp;Logout attempt failed.',
+              'href' => BASEPATH . 'dashboard/'));
   } // end logout()
 
   /**
@@ -199,11 +217,16 @@ class User
   {
       if
       (
-        isset($_SESSION[SITE_PREFIX . 'username']) &&
-        !empty($_SESSION[SITE_PREFIX . 'username']) &&
+        isset($_SESSION[SESSION_USER_ID]) &&
+        isset($_SESSION[SESSION_USER]) &&
+        !empty($_SESSION[SESSION_USER_ID]) &&
+        !empty($_SESSION[SESSION_USER]) &&
         session_status() == PHP_SESSION_ACTIVE
       )
-      return true;
+      {
+        echo "Logged in.";
+        return true;
+      }
 
     return false;
   } // end is_logged_in()
