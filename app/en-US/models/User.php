@@ -19,7 +19,7 @@ class User
   public $address;
   public $phones;         // An associative array of phone numbers
   public $preferences;
-  public $display_name = 'Default User.';
+  public $display_name = 'Default User';
 
   private $db;
 
@@ -132,12 +132,12 @@ class User
       # Cache user data in Session storage
       if(Session::login($user_data['user_id'], $user_data['user_login']))
         return json_encode(array('success' => true, 'status' => LOGIN_OK,
-              'msg' => 'Login Successful.', 'href' => BASEPATH . 'dashboard/'));
+              'msg' => 'Login Successful.', 'href' => BASEPATH . 'admin/dashboard/'));
 
       # Report error
       return json_encode(array('success' => false, 'status' => LOGIN_SESSION_ERR,
-      'msg' => '<strong>Error:</strong>&nbsp;Invalid username or password.&nbsp;<u>Please try again</u>.',
-      'href' => BASEPATH . 'admin/'));
+              'msg' => '<strong>Error:</strong>&nbsp;Invalid username or password.&nbsp;<u>Please try again</u>.',
+              'href' => BASEPATH . 'admin/'));
     }
 
     # Report error
@@ -153,18 +153,19 @@ class User
   {
     if(User::is_logged_in())
     {
+      // if(false)
       if(Session::logout())
         return json_encode(array('success' => true, 'status' => LOGOUT_OK,
                   'msg' => 'Logout successful.',
-                  'href' => BASEPATH . 'admin/'));
+                  'href' => BASEPATH . 'admin/?loggedout=1'));
 
       return json_encode(array('success' => false, 'status' => LOGOUT_SESSION_ERR,
-                'msg' => '<strong>Error:</strong>&nbsp;Logout attempt failed.',
+                'msg' => '<strong>Error ' . LOGOUT_SESSION_ERR . ': </strong>&nbsp;Logout session reset failed.',
                 'href' => BASEPATH . 'dashboard/'));
     }
 
     return json_encode(array('success' => false, 'status' => LOGOUT_ERR,
-              'msg' => '<strong>Error:</strong>&nbsp;Logout attempt failed.',
+              'msg' => '<strong>Error ' . LOGOUT_ERR . ': </strong>&nbsp;Logout attempt failed.',
               'href' => BASEPATH . 'dashboard/'));
   } // end logout()
 
@@ -224,7 +225,7 @@ class User
         session_status() == PHP_SESSION_ACTIVE
       )
       {
-        echo "Logged in.";
+        // echo "Logged in.";
         return true;
       }
 

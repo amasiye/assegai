@@ -54,6 +54,8 @@ class Controller
   public function view($view, $data = array())
   {
     global $locale;
+    $db = $this->db;
+    $session = $this->session;
 
     if(file_exists('app/' . $locale . '/views/' . $view . '.php'))
       require_once 'app/' . $locale . '/views/' . $view . '.php';

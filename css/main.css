@@ -216,7 +216,7 @@ ul.sublist li a:hover {
 }
 
 #dropdown-01-products {
-  
+
 }
 
 .center {
@@ -352,7 +352,7 @@ ul.sublist li a:hover {
 
 .btn:active,
 .btn:visited, {
-  
+
 }
 
 .btn-full {
@@ -360,7 +360,7 @@ ul.sublist li a:hover {
 }
 
 .btn-normal {
-  
+
 }
 
 
@@ -412,14 +412,14 @@ ul.sublist li a:hover {
     .oldie nav a {
         margin: 0 0.7%;
     }
-    
+
 /* ========================
     OTHER
    ======================== */
     .panel-subscribe {
       width: 50%;
     }
-    
+
     .form-control {
       width: 79%;
     }
@@ -450,7 +450,7 @@ ul.sublist li a:hover {
         float: right;
         width: 50.6%;
     }
-    
+
     nav a {
       background: transparent;
     }
@@ -467,6 +467,16 @@ ul.sublist li a:hover {
     .main aside {
         float: right;
         width: 28%;
+    }
+
+    /* ============
+        WIDE: Form
+       ============ */
+
+    .form-inline .radio input[type="radio"],
+    .form-inline .checkbox input[type="checkbox"] {
+        float: left;
+        margin-right: 5px;
     }
 }
 
@@ -485,7 +495,7 @@ ul.sublist li a:hover {
 /* ===============
     Maximal Menu
    =============== */
-   
+
     nav a {
       /* background: transparent; */
     }

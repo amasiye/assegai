@@ -15,19 +15,17 @@ class Admin extends Controller
    */
   public function index($name = '')
   {
+    global $app;
+
     if(User::is_logged_in())
     {
-      global $app;
-
       $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db));
-      $this->view('dashboard/index', array('app' => $app, 'user' => $user, 'db' => $this->db));
+      $this->view('dashboard/index', array('app' => $app, 'user' => $user));
     }
     else
     {
-      global $app;
-
       $user = $this->model('User', array('login' => 'Admin', 'db' => $this->db));
-      $this->view('login/index', array('app' => $app, 'user' => $user, 'db' => $this->db));
+      $this->view('login/index', array('app' => $app, 'user' => $user));
     }
   } // end index()
 

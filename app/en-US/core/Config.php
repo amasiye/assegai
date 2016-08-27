@@ -55,7 +55,7 @@ define('TOKEN_NAME',       'tok');
 define('APP_VER', '0.1.0');
 
 # Site information
-define('SITE_NAME', '%SITE NAME%');
+define('SITE_NAME', 'Assegai Test');
 define('SITE_TAGLINE', 'His Word Is A Light Unto Our Feet.');
 define('SITE_PREFIX', 'assegai_');
 

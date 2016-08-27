@@ -1,9 +1,5 @@
-<?php
-$db = $data['db'];
-$user = $data['user'];
+<?php require_once "includes/admin-header.php"; ?>
 
-require_once "includes/header.php";
-?>
 <div class="container">
   <div class="col-md-offset-4 col-md-4">
     <div class="panel panel-default">
@@ -20,23 +16,45 @@ require_once "includes/header.php";
         ?>
         <h2>Login</h2>
       </div>
+
+      <?php if (!isset($_GET['register'])): ?>
       <div class="panel-body">
 
-        <form role="form" class="clearfix">
-          <div id="alert-feedback" class="alert" style="display:none;"></div>
-          <div class="form-group">
-            <label for="username">Username:&nbsp;</label>
-            <input type="text" id="username" name="username" class="form-control" placeholder="Username"
+          <form role="form" class="clearfix">
+            <?php if (isset($_GET['loggedout']) && !empty($_GET['loggedout']) && $_GET['loggedout'] == 1): ?>
+              <div id="alert-feedback" class="alert alert-warning">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                You have been logged-out.
+              </div>
+            <?php else: ?>
+              <div id="alert-feedback" class="alert" style="display:none;"></div>
+            <?php endif; ?>
+
+            <!-- Username -->
+            <div class="form-group">
+              <label for="username">Username:&nbsp;</label>
+              <input type="text" id="username" name="username" class="form-control" placeholder="Username"
               title="" pattern="[\w\W]+" maxlength="20" required>
-          </div>
-          <div class="form-group">
-            <label for="password">Password:&nbsp;</label>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Password" maxlength="64" required>
-          </div>
-          <div class="form-group">
-            <button type="button" class="btn btn-primary btn-block" id="btn-submit" name="btn-submit">Login</button>
-          </div>
-          <script>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <label for="password">Password:&nbsp;</label>
+              <input type="password" id="password" name="password" class="form-control" placeholder="Password" maxlength="64" required>
+            </div>
+
+            <!-- Remember Me -->
+            <!-- <div class="form-group">
+              <div class="checkbox">
+                <label><input type="checkbox"> Remember me</label>
+              </div>
+            </div> -->
+
+            <!-- Submit -->
+            <div class="form-group">
+              <button type="button" class="btn btn-primary btn-block" id="btn-submit" name="btn-submit">Login</button>
+            </div>
+            <script>
 
             document.querySelector("button").onclick = function() { login($('#username').val(), $('#password').val()); };
             function login(username, password)
@@ -53,14 +71,15 @@ require_once "includes/header.php";
 
                   if(result.success == true)
                   {
-                    // alert(result.msg);
-                    $('#alert-feedback').css('display','block');
 
                     if($('#alert-feedback').hasClass('alert-danger'))
-                      $('#alert-feedback').removeClass('alert-danger');
+                    $('#alert-feedback').removeClass('alert-danger');
 
                     $('#alert-feedback').addClass("alert-success");
                     $('#alert-feedback').html(result.msg);
+
+                    // Show the alert
+                    $('#alert-feedback').css('display','block');
 
                     window.location.href = result.href;
                     // window.location.href = $('base').attr('href') + 'dashboard/';
@@ -72,16 +91,57 @@ require_once "includes/header.php";
                     $('#alert-feedback').html(result.msg);
                   }
                 }
-              );
+                );
 
-            } // end login(string, string)
+              } // end login(string, string)
 
-          </script>
+            </script>
+          </form>
+
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item"><a href="<?= BASEPATH . 'admin/?register=1'; ?>">Register</a></li>
+        <li class="list-group-item"><a href="<?= BASEPATH . 'admin/?recover=1'; ?>">Lost your password?</a></li>
+      </ul>
+
+      <?php else: ?>
+      <div class="panel-body">
+
+        <form role="form" class="clearfix">
+
+          <!-- Login -->
+
+          <!-- Password -->
+
+          <!-- Repeat Password -->
+
+          <!-- Name -->
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" class="form-control" placeholder="Enter your full name">
+          </div>
+
         </form>
 
       </div>
-    </div>
-  </div>
+
+      <ul class="list-group">
+        <li class="list-group-item"><a href="<?= BASEPATH . 'admin/'?>">Login</a></li>
+      </ul>
+      <script>
+      alert("Hello");
+      document.querySelector('link-register').onclick = register();
+
+      function register()
+      {
+
+      } // end register()
+      </script>
+      <?php endif; ?>
+
+    </div> <!-- end panel-default -->
+  </div><!-- end  -->
 </div>
 
-<?php require_once "includes/footer.php"; ?>
+<?php require_once "includes/admin-footer.php"; ?>

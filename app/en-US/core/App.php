@@ -7,10 +7,12 @@ class App
 
   protected $params = array();
 
+  public $version = APP_VER;
+
   public function __construct()
   {
     global $locale;
-    
+
     $url = $this->parse_url();
 
     if(file_exists('app/' . $locale . '/controllers/' . $url[0] . '.php'))
@@ -64,7 +66,18 @@ class App
   public static function redirect($path)
   {
     header("Location: {$path}");
-  }
+  } // end redirect($path)
+
+  /**
+   * Returns the site description.
+   * @return {string} The site description.
+   */
+  public static function get_site_description()
+  {
+    $description = "The site's description goes here.";
+
+    return $description;
+  } // end get_site_description()
 }
 
 ?>

@@ -23,17 +23,8 @@ class Home extends Controller
     }
     else
     {
-      if($option == 'assegai-login' || $option == 'admin')
-      {
-        // $this->redirect('admin/');
-        $this->model('User');
-
-      }
-      else
-      {
         $user = $this->model('User');
         $this->view('home/index', array('user' => $user));
-      }
     }
 
   } // end index(string)

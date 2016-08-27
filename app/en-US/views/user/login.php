@@ -1,5 +1,5 @@
 <?php
-$db = $data['db'];
+// $db = $data['db'];
 $user_login = $_POST['username'];
 $user_password = $_POST['password'];
 

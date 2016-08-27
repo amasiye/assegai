@@ -22,7 +22,11 @@ class Api extends Controller
     switch($endpoint)
     {
         case 'login':
-          $this->view('user/login', array('db'=> $this->db));
+          $this->view('user/login');
+          break;
+
+        case 'logout':
+          $this->view('user/logout');
           break;
 
         case 'register':
