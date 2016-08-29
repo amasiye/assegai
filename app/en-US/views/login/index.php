@@ -22,7 +22,7 @@
 
           <form role="form" class="clearfix">
             <?php if (isset($_GET['loggedout']) && !empty($_GET['loggedout']) && $_GET['loggedout'] == 1): ?>
-              <div id="alert-feedback" class="alert alert-warning">
+              <div id="alert-feedback" class="alert alert-info">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 You have been logged-out.
               </div>
@@ -103,6 +103,7 @@
       <ul class="list-group">
         <li class="list-group-item"><a href="<?= BASEPATH . 'admin/?register=1'; ?>">Register</a></li>
         <li class="list-group-item"><a href="<?= BASEPATH . 'admin/?recover=1'; ?>">Lost your password?</a></li>
+        <li class="list-group-item"><a href="<?= BASEPATH; ?>">&#8592;&nbsp;Back to <?= SITE_NAME; ?></a></li>
       </ul>
 
       <?php else: ?>
@@ -118,8 +119,37 @@
 
           <!-- Name -->
           <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" name="name" class="form-control" placeholder="Enter your full name">
+            <label for="username">Username:</label>
+            <input type="text" name="username" class="form-control" placeholder="Username" required>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" class="form-control" placeholder="Password" required>
+          </div>
+
+          <!-- Repeat Password -->
+          <div class="form-group">
+            <label for="password-repeat">Repeat Password:</label>
+            <input type="password" name="password-repeat" class="form-control" placeholder="Repeat password" required>
+          </div>
+
+          <!-- Password Strength Indicator -->
+          <div class="form-group">
+            <div class="">
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" class="form-control" placeholder="Email">
+          </div>
+
+          <!-- Registration button -->
+          <div class="form-group">
+            <button type="button" class="btn btn-primary btn-block" id="btn-register" name="btn-register">Register</button>
           </div>
 
         </form>
@@ -128,9 +158,10 @@
 
       <ul class="list-group">
         <li class="list-group-item"><a href="<?= BASEPATH . 'admin/'?>">Login</a></li>
+        <li class="list-group-item"><a href="<?= BASEPATH . 'admin/?recover=1'; ?>">Lost your password?</a></li>
+        <li class="list-group-item"><a href="<?= BASEPATH; ?>">&#8592;&nbsp;Back to <?= SITE_NAME; ?></a></li>
       </ul>
       <script>
-      alert("Hello");
       document.querySelector('link-register').onclick = register();
 
       function register()

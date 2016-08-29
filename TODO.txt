@@ -14,3 +14,13 @@ User Access Control model
 - permission
   - action
   - actor
+
+Password policy rules
+(Merits)
+-Not blank                              + 20
+-Length: > 6                            + 20
+-At least 1 Capital                     + 20
+-At least 1 Number                      + 20
+-At least 1 Special character           + 20
+
+(Demerits)

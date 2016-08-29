@@ -2,7 +2,10 @@
 
 /**
  * The database wrapper class. It contains methods to
- * quickly perform database operations.
+ * quickly perform database operations. It also acts as
+ * a layer of security using its sanitization methods to
+ * ensure that data is properly escaped before storage
+ * and data being extracted is appropriately unescaped.
  */
 class Database
 {
@@ -147,6 +150,7 @@ class Database
     $stmt->bind()
     */
 
+    # Sanitize and append values to SQL query string
     // $sql .= " VALUES (" . implode(", ", $values) . ")";
     $sql .= " VALUES (";
     for ($x = 0; $x < count($values); $x++)
@@ -210,12 +214,12 @@ class Database
 
   /**
    * Reverse string sanitization for given text.
-   * @param {string} $txt The text to be unsanitized.
+   * @param {string} $txt The text to be desanitized.
    */
-  private function unsanitize($txt)
+  private function desanitize($txt)
   {
     return htmlspecialchars_decode(html_entity_decode($txt));
-  } // end unsanitize($txt)
+  } // end desanitize($txt)
 
 } // end Database
 

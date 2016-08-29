@@ -13,6 +13,8 @@ require_once "core/Controller.php";
 require_once "core/Database.php";
 require_once "core/Session.php";
 require_once "core/Token.php";
+require_once "core/Utilities.php";
+require_once "core/Validation.php";
 
 // Auto load models
 spl_autoload_register(function($class) {
