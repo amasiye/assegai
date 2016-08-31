@@ -49,11 +49,11 @@ class Validation
     {
 
       case REGEX_WORD:
-        $result = $pattern = /^[\w]$/;
+        $result = $pattern = '/^[\w]$/';
         break;
 
       case REGEX_DIGIT:
-        $result = $pattern = /^[\d]$/;
+        $result = $pattern = '/^[\d]$/';
         break;
 
       default:

@@ -63,10 +63,35 @@ class User
     }
   } // end __construct()
 
+  /**
+   * Changes the user's password.
+   * @param {string} $old_password The old user password.
+   * @param {string} $new_password The new user password.
+   * @return {boolean} True if password change is successful, false otherwise.
+   */
   public function change_password($old_password, $new_password)
   {
     $db = $this->db;
-    $db->update('assg_users', array('user_password'), array($new_password));
+
+    # Cache user data
+    $user_data = $db->select("assg_users", array(), array('-w'=>"user_login='{$this->login}'"))[0];
+
+    # Verify the password
+    if(password_verify($old_password, $user_data['user_password']))
+    {
+      # No salt in current implementation
+      $hash_options = array();
+      $user_password_hashed =
+          password_hash($new_password, PASSWORD_BCRYPT, $hash_options);
+
+      if($db->update("assg_users", array('user_password'), array($user_password_hashed),
+                      array('-w'=>"user_id='{$this->id}'")) == QUERY_EXEC_OK)
+      {
+        return true;
+      }
+
+      return false;
+    }
 
     return false;
   } // end change_password()
@@ -75,7 +100,8 @@ class User
    * Determines whether the user has the rights to perform
    * $action on the specific $resource given it's user_group.
    * @param {string} $action The action in question e.g register.
-   * @param {string} $resource The resource
+   * @param {string} $resource The resource.
+   * @return {boolean} True if persmission exists, false otherwies.
    */
   public function has_permission($permission, $resource)
   {
@@ -119,7 +145,8 @@ class User
    * @param {Database} $db The Database object containing the login data.
    * @param {String} $login The login/username.
    * @param {String} $password The user password.
-   * @return {int} Loging status or error code.
+   * @return {string} JSON string - success (boolean), status (int),
+   * msg (string), href (string)
    */
   public static function login($db, $login, $password)
   {
@@ -146,8 +173,10 @@ class User
               'href' => BASEPATH . 'admin/'));
   } // end static function login()
 
-  /*
+  /**
    * Logs the user out of the system.
+   * @return {string} JSON string - success (boolean), status (int),
+   * msg (string), href (string)
    */
   public static function logout()
   {
@@ -205,14 +234,22 @@ class User
     // return 0;
   } // end static function register($details)
 
-  public static function deregister($user_login, User $user)
+  /**
+   * Deregisters a user from the system given a user_login name.
+   * @param {string} $user_login The login name of the user to be deregistered.
+   * @param {string} $auth_login The authorising username.
+   * @param {string} $auth_password The authorising password.
+   * @return {boolean} True if deregistration was successful, otherwise false.
+   */
+  public static function deregister($user_login, $auth_login, $auth_password)
   {
     # Check user credentials
     return false;
   } // end deregister(string, User)
 
   /**
-   *
+   * Determines whether any user is logged in.
+   * @return {boolean} True if a user session exists, otherwise false.
    */
   public static function is_logged_in()
   {

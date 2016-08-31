@@ -14,10 +14,11 @@
           // User::register($user_login, $user_password, $user_name, $user_group, $user_meta);
           // echo "<h2>Hello World</h2>";
         ?>
+
+        <?php if (!isset($_GET['register'])): ?>
         <h2>Login</h2>
       </div>
 
-      <?php if (!isset($_GET['register'])): ?>
       <div class="panel-body">
 
           <form role="form" class="clearfix">
@@ -57,6 +58,8 @@
             <script>
 
             document.querySelector("button").onclick = function() { login($('#username').val(), $('#password').val()); };
+            // document.querySelector("input").onkeyup = function(event) { alert("You pressed a key"); };
+
             function login(username, password)
             {
               var url = $('base').attr('href') + 'api/user/login/';
@@ -107,6 +110,8 @@
       </ul>
 
       <?php else: ?>
+      <h2>Register</h2>
+    </div>
       <div class="panel-body">
 
         <form role="form" class="clearfix">
@@ -120,19 +125,20 @@
           <!-- Name -->
           <div class="form-group">
             <label for="username">Username:</label>
-            <input type="text" name="username" class="form-control" placeholder="Username" required>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
           </div>
 
           <!-- Password -->
           <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" name="password" class="form-control" placeholder="Password" required>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
           </div>
 
           <!-- Repeat Password -->
-          <div class="form-group">
+          <div class="form-group has-success has-feedback">
             <label for="password-repeat">Repeat Password:</label>
-            <input type="password" name="password-repeat" class="form-control" placeholder="Repeat password" required>
+            <input type="password" id="password-repeat" name="password-repeat" class="form-control" placeholder="Repeat password" required>
+            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
           </div>
 
           <!-- Password Strength Indicator -->

@@ -1,6 +1,6 @@
 <?php
 /**
- * The default site controller. All requests will
+ * The main controller for site administration and management requests.
  *
  * @since 0.0.1
  * @version 0.0.1

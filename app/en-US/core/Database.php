@@ -42,11 +42,11 @@ class Database
    * Selects data from the database.
    * @param $table String name of the table to make the selection from.
    * @param $columns String A comma seperated list of column names to select.
-   * @param $options array An array of options for the selection.
+   * @param $filters array An array of filters for the selection.
    * @return {array} An associative array of the selected data or an int
    * representing a status error.
    */
-  public function select($table, $columns, $options=array())
+  public function select($table, $columns, $filters=array())
   {
     # Cache connection
     $conn = $this->conn;
@@ -55,7 +55,7 @@ class Database
     $sql = "SELECT";
 
     # Check for distinct option
-    if(array_key_exists("-d", $options))
+    if(array_key_exists("-d", $filters))
       $sql .= " DISTINCT";
 
     # Append column names to $sql if any at all are found.
@@ -72,8 +72,8 @@ class Database
     $sql .= " FROM {$table}";
 
     # Append any filters e.g LIMIT
-    if(array_key_exists("-w", $options))
-      $sql .= " WHERE " . $options['-w'];
+    if(array_key_exists("-w", $filters))
+      $sql .= " WHERE " . $filters['-w'];
 
     // echo $sql;
     # Run the query and report if something goes wrong
@@ -99,6 +99,9 @@ class Database
 
   /**
    * Inserts data into the database.
+   * @param {string} $table The name of the table to be inserted.
+   * @param {array} $column The list of columns to be inserted.
+   * @param {array} $values The list of new values to update the corresponding columns with.
    * @return {int} An integer corresponding to the status code.
    */
   public function insert($table, $columns = array(), $values = array())
@@ -186,26 +189,100 @@ class Database
 
   /**
    * Updates a table in the database.
+   * @param {string} $table The name of the table to be updated.
+   * @param {array} $column The list of columns to be updated.
+   * @param {array} $values The list of new values to update the corresponding columns with.
+   * @param $filters array An array of filters for the update.
+   * @return {array} An associative array of the selected data or an int
+   * representing a status error.
    */
-  public function update($table, $column = array(), $values = array(), $options = array())
+  public function update($table, $columns = array(), $values = array(), $filters = array())
   {
+    $conn = $this->conn;
 
-    echo 'Update method called but not yet implemented.';
+    # Prepare SQL string
+    $sql = "UPDATE {$table}";
+
+    # Check for columns otherwise return error
+    if(!isset($columns) || is_null($columns))
+      return QUERY_STMT_PARAM_ERR;
+
+    # Check for values othewise return error
+    if(!isset($values) || is_null($values))
+    return QUERY_STMT_PARAM_ERR;
+
+    $sql .= " SET";
+
+    # Append columns and value to SQL string
+    for($x = 0; $x < count($columns); $x++)
+      $sql .= " $columns[$x]='$values[$x]'";
+
+    if(isset($filters) && !is_null($filters))
+    {
+      # Check if WHERE clause exists
+      if(array_key_exists("-w", $filters))
+      $sql .= " WHERE " . $filters['-w'];
+    }
+
+    # Run the query and report if something goes wrong
+    if(!$result = $conn->query($sql))
+    {
+      return QUERY_EXEC_ERR;
+    }
+
+    return QUERY_EXEC_OK;
   } // end update()
 
   /**
    * Deletes a record from given table.
    * @param {string} $table The name of the table.
-   * @param {string} $fileter The filter data i.e options.
+   * @param $filters array An array of filters for the deletion.
+   * @return {array} An associative array of the selected data or an int
+   * representing a status error.
    */
   public function delete($table, $filter)
   {
+    $conn = $this->conn;
+
+    # Check user credentials
     echo 'Delete method called but not yet implemented.';
+/*
+    if(!result = $conn->query($sql))
+    {
+      return QUERY_EXEC_ERR;
+    }
+*/
+    return QUERY_EXEC_OK;
   } // end delete()
+
+  /**
+   * Deletes a table from the database.
+   * @param {string} $table The name of the table to destroy.
+   * @return {int} An integer representing the status after the operation.
+   */
+  public function drop($table)
+  {
+    $sql = "DROP TABLE {$table}";
+
+    return QUERY_EXEC_OK;
+  } // end destroy_table
+
+  /**
+   * Deletes the data in a table and leaves the table itself.
+   * @param {string} $table The name of the table to be truncated.
+   * @return {int} An integer representing the status after the operation.
+   */
+  public function truncate($table)
+  {
+    $sql = "TRUNCATE TABLE {$table}";
+
+    return QUERY_EXEC_OK;
+  } // end truncate($table)
 
   /**
    * Sanitizes the given text for safe database storage.
    * @param {string} $txt The text to be sanitized.
+   * @return {string} The sanitized string.
    */
   private function sanitize($txt)
   {
@@ -215,6 +292,7 @@ class Database
   /**
    * Reverse string sanitization for given text.
    * @param {string} $txt The text to be desanitized.
+   * @return {string} The desanitized string.
    */
   private function desanitize($txt)
   {

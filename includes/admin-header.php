@@ -10,14 +10,13 @@ require_once "includes/head-shared.php";
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="<?= BASEPATH; ?>"><?= SITE_NAME; ?></a>
+        <a href="<?= BASEPATH; ?>" class="navbar-brand"><?= SITE_NAME; ?></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Page 1</a></li>
-          <li><a href="#">Page 2</a></li>
-          <li><a href="#">Page 3</a></li>
+          <li class="active"><a href="admin/">Dashboard</a></li>
+          <li><a href="add/"><span></span></a></li>
+          <li><a href="design/">Design</a></li>
         </ul>
 
         <!-- Modal - Logout Dialog -->
@@ -46,13 +45,41 @@ require_once "includes/head-shared.php";
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <?php else: ?>
+
+          <!--#ViewMode -->
+          <li class="active"><a href="#" onlclick="switchViewingMode(event, 'desktop')" title="Desktop view"><i class="fa fa-desktop"></i></a></li>
+          <li><a href="#" onlclick="switchViewingMode(event, 'tablet')" title="Tablet view"><i class="fa fa-tablet"></i></a></li>
+          <li><a href="#" onlclick="switchViewingMode(event, 'mobile')" title="Mobile view"><i class="fa fa-mobile"></i></a></li>
+          <!--#ViewModeEnd -->
+
+          <li><a href="#" onclick="publish(event)"><span class="glyphicon glyphicon-publish"></span> Publish</a></li>
+          <!-- Publish Operation -->
+          <script>
+            function switchViewingMode(event, mode)
+            {
+              event.preventDefault();
+
+              alert("New mode: " + mode + "\n\nSwitch View Mode operation not yet implemented.");
+
+              return false;
+            }
+
+            function publish(event)
+            {
+              event.preventDefault();
+
+              alert("Publish operation has not been implemented yet.");
+
+              return false;
+            } // end publish
+          </script>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?= $user->display_name; ?> <span class="glyphicon glyphicon-menu-hamburger"></span></a>
             <ul class="dropdown-menu">
               <li class="dropdown-header">Welcome <?= $user->display_name; ?></li>
-              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-              <li><a href="#"><span class="glyphicon glyphicon-bell"></span> Notifications <span class="badge">0</span></a></li>
-              <li><a href="#"><span class="glyphicon glyphicon-wrench"></span> Settings</a></li>
+              <li><a href="user/profile/<?= $user->login; ?>"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+              <li><a href="user/notifications/"><span class="glyphicon glyphicon-bell"></span> Notifications <span class="badge">0</span></a></li>
+              <li><a href="user/settings/"><span class="glyphicon glyphicon-wrench"></span> Settings</a></li>
               <li class="divider"></li>
               <li><a id="btn-logout" href="#" onclick="return logout(event)"><span class="glyphicon glyphicon-log-out" ></span> Logout</a></li>
               <script type="text/javascript">

@@ -52,11 +52,11 @@ define('NONCE_SALT',       'Gc-RFFMg+PBBr2l@z+wC_sc-WxN|Qjnki0B7N>%0xCd1.T.AR%F~
 define('TOKEN_NAME',       'tok');
 
 # App information
-define('APP_VER', '0.1.0');
+define('APP_VER', '0.5.4');
 
 # Site information
 define('SITE_NAME', 'Assegai Test');
-define('SITE_TAGLINE', 'His Word Is A Light Unto Our Feet.');
+define('SITE_TAGLINE', 'This is the site tag line.');
 define('SITE_PREFIX', 'assegai_');
 
 # Session information
