@@ -14,9 +14,17 @@ require_once "includes/head-shared.php";
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="admin/">Dashboard</a></li>
-          <li><a href="add/"><span></span></a></li>
-          <li><a href="design/">Design</a></li>
+          <?php if (User::is_logged_in()): ?>
+            <li class="active"><a href="admin/">Dashboard</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Add">
+                <span class="glyphicon glyphicon-plus-sign"></span> Add<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="design/"><span class="glyphicon glyphicon-pencil"></span> Design</a></li>
+              </ul>
+            </li>
+          <?php endif; ?>
         </ul>
 
         <!-- Modal - Logout Dialog -->
@@ -52,7 +60,7 @@ require_once "includes/head-shared.php";
           <li><a href="#" onlclick="switchViewingMode(event, 'mobile')" title="Mobile view"><i class="fa fa-mobile"></i></a></li>
           <!--#ViewModeEnd -->
 
-          <li><a href="#" onclick="publish(event)"><span class="glyphicon glyphicon-publish"></span> Publish</a></li>
+          <li><a href="#" onclick="publish(event)" title="Publish"><span class="glyphicon glyphicon-globe"></span></a></li>
           <!-- Publish Operation -->
           <script>
             function switchViewingMode(event, mode)
@@ -74,12 +82,12 @@ require_once "includes/head-shared.php";
             } // end publish
           </script>
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?= $user->display_name; ?> <span class="glyphicon glyphicon-menu-hamburger"></span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?= $_SESSION[SESSION_USER_DISPLAY]; ?> <span class="glyphicon glyphicon-menu-hamburger"></span></a>
             <ul class="dropdown-menu">
               <li class="dropdown-header">Welcome <?= $user->display_name; ?></li>
-              <li><a href="user/profile/<?= $user->login; ?>"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-              <li><a href="user/notifications/"><span class="glyphicon glyphicon-bell"></span> Notifications <span class="badge">0</span></a></li>
-              <li><a href="user/settings/"><span class="glyphicon glyphicon-wrench"></span> Settings</a></li>
+              <li><a href="admin/profile/"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+              <li><a href="admin/notifications/"><span class="glyphicon glyphicon-bell"></span> Notifications <span class="badge"><?= count(Notification::pull_unread());?></span></a></li>
+              <li><a href="admin/settings/"><span class="glyphicon glyphicon-wrench"></span> Settings</a></li>
               <li class="divider"></li>
               <li><a id="btn-logout" href="#" onclick="return logout(event)"><span class="glyphicon glyphicon-log-out" ></span> Logout</a></li>
               <script type="text/javascript">
@@ -109,10 +117,6 @@ require_once "includes/head-shared.php";
                     $('#dialog-logout .modal-body').html(response.msg);
                     $('#dialog-logout').modal("show");
                   }
-                  // alert("\nSuccess: " + response.success +
-                  //       "\nStatus: " + response.status +
-                  //       "\nMessage: " + response.msg +
-                  //       "\nHref: " + response.href);
                 } // end callback
               </script>
             </ul>
@@ -124,3 +128,16 @@ require_once "includes/head-shared.php";
   </nav>
 
 <?php endif; ?>
+
+<?php
+$index = 2;
+$note = new Notification($index);
+echo strlen(App::generate_key(64));
+// echo 'Name: ' . $note->name . '<br>';
+// print_r(Notification::get($index));
+
+// $note->mark_as_read();
+
+// if($note->mark_as_read())
+  // print_r(Notification::get($index));
+?>

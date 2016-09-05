@@ -141,6 +141,15 @@ class User
   } // end has_permission($permission)
 
   /**
+   * Returns an array of all user records in the database.
+   * @return {array} An associative array containing all user records.
+   */
+  public static function get_users($db, $filters = array())
+  {
+    return $db->select('assg_users', null, $filters);
+  } // end get_users()
+
+  /**
    * Logs a user into the system given login, password and an optional salt.
    * @param {Database} $db The Database object containing the login data.
    * @param {String} $login The login/username.
@@ -157,7 +166,7 @@ class User
     if(password_verify($password, $user_data['user_password']))
     {
       # Cache user data in Session storage
-      if(Session::login($user_data['user_id'], $user_data['user_login']))
+      if(Session::login($user_data))
         return json_encode(array('success' => true, 'status' => LOGIN_OK,
               'msg' => 'Login Successful.', 'href' => BASEPATH . 'admin/dashboard/'));
 
@@ -236,14 +245,26 @@ class User
 
   /**
    * Deregisters a user from the system given a user_login name.
+   * @param {Database} $db The database object for connection purposes.
    * @param {string} $user_login The login name of the user to be deregistered.
    * @param {string} $auth_login The authorising username.
    * @param {string} $auth_password The authorising password.
    * @return {boolean} True if deregistration was successful, otherwise false.
    */
-  public static function deregister($user_login, $auth_login, $auth_password)
+  public static function deregister($db, $user_login, $auth_login, $auth_password)
   {
     # Check user credentials
+    $user_data = User::get_users($db, array('-w'=>"user_login='{$auth_login}'"))[0];
+
+    if(password_verify($auth_password, $user_data['user_password']))
+    {
+      # Perform deletion
+      if($db->delete('assg_users', array('-w'=>"user_login='User'")) === QUERY_EXEC_OK)
+      {
+        return true;
+      }
+    }
+
     return false;
   } // end deregister(string, User)
 

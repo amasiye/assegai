@@ -1,7 +1,7 @@
-<?php require_once "includes/admin-header.php"; ?>
+<?php require_once "includes/header.php"; ?>
 
 <div class="container">
-  <div class="col-md-offset-4 col-md-4">
+  <div class="col-lg-offset-4 col-lg-4">
     <div class="panel panel-default">
       <div class="panel-heading">
         <?php
@@ -55,10 +55,21 @@
             <div class="form-group">
               <button type="button" class="btn btn-primary btn-block" id="btn-submit" name="btn-submit">Login</button>
             </div>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script>
 
             document.querySelector("button").onclick = function() { login($('#username').val(), $('#password').val()); };
             // document.querySelector("input").onkeyup = function(event) { alert("You pressed a key"); };
+
+            $("body").ready(function() {
+
+              $("input").keydown(function(event) {
+                if(event.which === 13)
+                  login($('#username').val(), $('#password').val());
+              });
+
+            });
 
             function login(username, password)
             {

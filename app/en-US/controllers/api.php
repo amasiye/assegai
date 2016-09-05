@@ -16,6 +16,33 @@ class Api extends Controller
 
   }
 
+  public function notification($endpoint = '', $data = array())
+  {
+    switch ($endpoint)
+    {
+      case 'push':
+        if(array_key_exists('name', $data) && array_key_exists('content', $data))
+        {
+          Notification::push($data['name'], $data['content']);
+        }
+        break;
+
+      case 'pull':
+        if(array_key_exists('name', $data))
+        {
+          Notification::pull($data['name']);
+        }
+        break;
+
+      default:
+        break;
+    }
+  } // end notification
+
+  /**
+   * User controller
+   * @param {string} $endpoint
+   */
   public function user($endpoint = '')
   {
 

@@ -12,11 +12,16 @@ class Debug
    */
   public static function log_to_file($txt)
   {
-    $handle = fopen(LOGPATH, "a");
+    $filename = LOGPATH . 'log.txt';
+
+    if(file_exists($filename))
+      $handle = fopen($filename, "a");
+    else
+      $handle = fopen($filename, "w");
 
     $log_txt = date("Y-m-d H:i:s") . " " . txt
               . "----------------------------------" . PHP_EOL;
-              
+
     if(fwrite($handle, $log_txt) === TRUE)
     {
       fclose($handle);

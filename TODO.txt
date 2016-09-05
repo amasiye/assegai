@@ -15,6 +15,17 @@ User Access Control model
   - action
   - actor
 
+Notification model
+-id
+-date
+-name
+-content
+  -type (event, alert, )
+  -href
+  -text
+  -icon
+-status
+
 Password policy rules
 (Merits)
 -Not blank                              + 20

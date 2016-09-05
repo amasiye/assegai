@@ -27,11 +27,13 @@ class Session
    *
    * @return {boolean} True if successful, false otherwise.
    */
-  public static function login($id, $login)
+  public static function login($user_data)
   {
-    $_SESSION[SESSION_USER_ID] = $id;
-    $_SESSION[SESSION_USER] = $login;
-    // $this->$user_id = $_SESSION[SESSION_ID];
+    $meta = json_decode($user_data['user_meta'], true);
+
+    $_SESSION[SESSION_USER_ID] = $user_data['user_id'];
+    $_SESSION[SESSION_USER] = $user_data['user_login'];
+    $_SESSION[SESSION_USER_DISPLAY] = $meta['display_name'];
 
     return true;
   } // end login(string, string)

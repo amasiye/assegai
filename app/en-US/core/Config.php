@@ -36,6 +36,8 @@ $locale = 'en-US';
 define('BASEPATH', "http://localhost/atatusoft/Assegai/assegai/");
 define('CDNPATH', BASEPATH . "app/{$locale }/content/");
 define('LOGPATH', BASEPATH . "app/{$locale}/content/logs/");
+define('NOTICEPATH', BASEPATH . "app/{$locale}/content/logs/");
+define('NOTICEPATH_REL', "app/{$locale}/content/logs/");
 
 /**#@+
  * Authentication Unique Keys and Salts information.
@@ -49,6 +51,7 @@ define('AUTH_SALT',        'i3]t bWM>s{Y^/<_Cc,g_g$I+M` G|{9^T-CgZAu|ymI$[1wAJ M
 define('SECURE_AUTH_SALT', ')B$ >5|+}dXo.jRrp&muJ;`k(/-E|_F}&w}(@]DUp 6icpmO:MME184Y?E<f 4ne');
 define('LOGGED_IN_SALT',   '#x@qqx7]^uhG}1= 6ZJHA]}rLyB_i22M- wsat-N<!2?06>k9,`F/7t1QsV*<t^p');
 define('NONCE_SALT',       'Gc-RFFMg+PBBr2l@z+wC_sc-WxN|Qjnki0B7N>%0xCd1.T.AR%F~zgRCAmJgE?T.');
+define('API_KEY',          'e3760bc1b657baa8fd3dd855205e14ca863cc99f1df8675787006a3ec7d4f7d8');
 define('TOKEN_NAME',       'tok');
 
 # App information
@@ -62,6 +65,7 @@ define('SITE_PREFIX', 'assegai_');
 # Session information
 define('SESSION_USER_ID', 'uid');
 define('SESSION_USER', 'ulog');
+define('SESSION_USER_DISPLAY', 'udisp');
 
 # Load status codes
 require_once 'StatusCodes.php';
