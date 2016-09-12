@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="User" namespace="" name="User" abstract="false" final="false" start="12" end="352">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="User.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/User.php" size="12326" time="2016-09-12T08:11:15+02:00" unixtime="1473660675" sha1="7dd966773e4432759d8ecc8dbe85c047f209baad" relative="app/en-US/models/User.php"/>
+  <docblock>
+    <description compact="The user model class. Handles the business logic of all user related requests and operations and provides an interface to the user table of the database."/>
+    <version value="1.0.0"/>
+    <since value="1.0.0"/>
+    <package value="Assegai"/>
+  </docblock>
+  <member name="id" type="integer" default="1" visibility="public" line="14"/>
+  <member name="login" visibility="public" line="15"/>
+  <member name="username" type="string" default="'User'" visibility="public" line="16"/>
+  <member name="password" visibility="public" line="17"/>
+  <member name="salt" visibility="public" line="18"/>
+  <member name="joined" visibility="public" line="19"/>
+  <member name="group" type="integer" default="1" visibility="public" line="20"/>
+  <member name="group_name" type="string" default="''" visibility="public" line="21"/>
+  <member name="meta" visibility="public" line="22"/>
+  <member name="primary_email" visibility="public" line="23"/>
+  <member name="emails" visibility="public" line="24"/>
+  <member name="address" visibility="public" line="25"/>
+  <member name="phones" visibility="public" line="26"/>
+  <member name="preferences" visibility="public" line="27"/>
+  <member name="display_name" type="string" default="'Default User'" visibility="public" line="28"/>
+  <member name="error" visibility="public" line="29"/>
+  <member name="db" visibility="private" line="31"/>
+  <constructor name="__construct" start="37" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a user object."/>
+      <param description="The list of parameters." type="object" variable="$params">
+        <type full="{array}" namespace="" name="{array}"/>
+      </param>
+    </docblock>
+    <parameter name="params" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="update" start="80" end="109" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Updates the specified user details."/>
+      <param description="The user columns to update." type="object" variable="$columns">
+        <type full="{array}" namespace="" name="{array}"/>
+      </param>
+      <param description="The new values." type="object" variable="$values">
+        <type full="{array}" namespace="" name="{array}"/>
+      </param>
+      <return description="True if successful, false otherwise." type="object">
+        <type full="{boolean}" namespace="" name="{boolean}"/>
+      </return>
+    </docblock>
+    <parameter name="columns" byreference="false" type="array" default=""/>
+    <parameter name="values" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="This array is the one supplied to the Database-&gt;update() method" line="83"/>
+      <comment value="Check for keys and convert to appropriate database column/field name" line="86"/>
+      <comment value="Login" line="87"/>
+      <comment value="Username" line="91"/>
+      <comment value="Group" line="95"/>
+      <comment value="Call update" line="99"/>
+      <comment value="Report if any errors" line="105"/>
+    </inline>
+  </method>
+  <method name="change_password" start="117" end="142" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Changes the user's password."/>
+      <param description="The old user password." type="object" variable="$old_password">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The new user password." type="object" variable="$new_password">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="True if password change is successful, false otherwise." type="object">
+        <type full="{boolean}" namespace="" name="{boolean}"/>
+      </return>
+    </docblock>
+    <parameter name="old_password" byreference="false" type="{unknown}"/>
+    <parameter name="new_password" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Cache user data" line="121"/>
+      <comment value="Verify the password" line="124"/>
+    </inline>
+  </method>
+  <method name="has_permission" start="151" end="185" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determines whether the user has the rights to perform $action on the specific $resource given their user_group."/>
+      <param description="The action in question e.g register." type="object" variable="$action">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The resource." type="object" variable="$resource">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="True if persmission exists, false otherwies." type="object">
+        <type full="{boolean}" namespace="" name="{boolean}"/>
+      </return>
+    </docblock>
+    <parameter name="action" byreference="false" type="{unknown}"/>
+    <parameter name="resource" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Get user group permissions" line="157"/>
+      <comment value="Report whether the permission is set." line="183"/>
+    </inline>
+  </method>
+  <method name="get_users" start="191" end="194" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns an array of all user records in the database."/>
+      <return description="An associative array containing all user records." type="object">
+        <type full="{array}" namespace="" name="{array}"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="filters" byreference="false" type="array" default=""/>
+  </method>
+  <method name="login" start="204" end="227" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Logs a user into the system given login, password and an optional salt."/>
+      <param description="The Database object containing the login data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The login/username." type="object" variable="$login">
+        <type full="{String}" namespace="" name="{String}"/>
+      </param>
+      <param description="The user password." type="object" variable="$password">
+        <type full="{String}" namespace="" name="{String}"/>
+      </param>
+      <return description="JSON string - success (boolean), status (int)," type="object">msg (string), href (string)<type full="{string}" namespace="" name="{string}"/></return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="login" byreference="false" type="{unknown}"/>
+    <parameter name="password" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Cache user data" line="206"/>
+      <comment value="Verify the password" line="209"/>
+      <comment value="Report error" line="223"/>
+    </inline>
+  </method>
+  <method name="logout" start="234" end="252" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Logs the user out of the system."/>
+      <return description="JSON string - success (boolean), status (int)," type="object">msg (string), href (string)<type full="{string}" namespace="" name="{string}"/></return>
+    </docblock>
+  </method>
+  <method name="register" start="263" end="288" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Creates a new user given detailed information."/>
+      <param description="The username for loggin in to the system." type="object" variable="$user_login">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The user password for loggin in to the system." type="object" variable="$user_password">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The user's proper name." type="object" variable="$user_name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The user access control group." type="object" variable="$user_group">
+        <type full="{int}" namespace="" name="{int}"/>
+      </param>
+      <param description="Further user details e.g email, phone, address etc." type="object" variable="$user_meta">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="An integer corresponding to a status code." type="object">
+        <type full="{int}" namespace="" name="{int}"/>
+      </return>
+    </docblock>
+    <parameter name="user_login" byreference="false" type="{unknown}"/>
+    <parameter name="user_password" byreference="false" type="{unknown}"/>
+    <parameter name="user_name" byreference="false" type="{unknown}"/>
+    <parameter name="user_group" byreference="false" type="{unknown}"/>
+    <parameter name="user_meta" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="$user_salt = crypt(AUTH_KEY, AUTH_SALT);" line="273"/>
+      <comment value="Salt not used in current implementation." line="276"/>
+      <comment value="$hash_options = array('salt' =&gt; $user_salt);" line="277"/>
+    </inline>
+  </method>
+  <method name="deregister" start="298" end="313" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Deregisters a user from the system given a user_login name."/>
+      <param description="The database object for connection purposes." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The login name of the user to be deregistered." type="object" variable="$user_login">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The authorising username." type="object" variable="$auth_login">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The authorising password." type="object" variable="$auth_password">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="Returns true if deregistration was successful or false if unsuccessful." type="object">
+        <type full="{boolean}" namespace="" name="{boolean}"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="user_login" byreference="false" type="{unknown}"/>
+    <parameter name="auth_login" byreference="false" type="{unknown}"/>
+    <parameter name="auth_password" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Check user credentials" line="300"/>
+    </inline>
+  </method>
+  <method name="is_logged_in" start="319" end="335" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Determines whether any user is logged in."/>
+      <return description="True if a user session exists, otherwise false." type="object">
+        <type full="{boolean}" namespace="" name="{boolean}"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="login_name_exists" start="343" end="351" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Checks the database for a given login name."/>
+      <param description="The database containing the user login information." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The login name." type="object" variable="$login">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="Returns true if the name exists or false if it doesn't." type="object">
+        <type full="{boolean}" namespace="" name="{boolean}"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="login" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Group" namespace="" name="Group" abstract="false" final="false" start="6" end="67">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="Group.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/Group.php" size="1917" time="2016-09-10T18:28:51+02:00" unixtime="1473524931" sha1="f9bc7f3b9dd68cffac569b1f425ea81b58ea879f" relative="app/en-US/models/Group.php"/>
+  <docblock>
+    <description compact="Model class for user Groups."/>
+  </docblock>
+  <method name="get_group_id" start="14" end="29" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param description="The database connection object." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The name of the group." type="object" variable="$group_name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="The group id or QUERY_EXEC_ERR upon failure." type="object">
+        <type full="{int}" namespace="" name="{int}"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="group_name" byreference="false" type="string" default="'User'"/>
+    <inline>
+      <comment value="Check if Admin was passed instead of Administrator" line="16"/>
+      <comment value="Get group details" line="20"/>
+      <comment value="Return group id if one is found" line="23"/>
+      <comment value="Return false upon failure" line="27"/>
+    </inline>
+  </method>
+  <method name="get_group_name" start="37" end="47" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns the name of a group given its group id."/>
+      <param description="The databse containing the group." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The id of the group." type="object" variable="$group_id">
+        <type full="{int}" namespace="" name="{int}"/>
+      </param>
+      <return description="The name of the group or QUERY_EXEC_ERR upon failure." type="object">
+        <type full="{string}" namespace="" name="{string}"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="group_id" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Get group details by group_id" line="39"/>
+      <comment value="Find and return group name" line="42"/>
+    </inline>
+  </method>
+  <method name="get_groups" start="54" end="65" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns an associative array of all group data from the given database."/>
+      <return description="An associative array of all group data of given database or" type="object">QUERY_EXEC_ERR upon failure.<type full="{array}" namespace="" name="{array}"/></return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Get group details" line="56"/>
+    </inline>
+  </method>
+</class>

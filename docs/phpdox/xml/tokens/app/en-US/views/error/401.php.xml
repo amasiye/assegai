@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error" file="401.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error/401.php" size="204" time="2016-08-31T02:04:38+02:00" unixtime="1472601878" sha1="f8569a3683968f9cc00e34baf882767ebb2e8aa8" relative="app/en-US/views/error/401.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_REQUIRE_ONCE">require_once</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"includes/header.php"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">&lt;div class="container"&gt;</token>
+  </line>
+  <line no="3">
+    <token name="T_INLINE_HTML">  &lt;h2&gt;Error 401: Unauthorised&lt;/h2&gt;</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">  &lt;p&gt;User authentication is required.&lt;/p&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_REQUIRE_ONCE">require_once</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"includes/footer.php"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="7"/>
+</source>

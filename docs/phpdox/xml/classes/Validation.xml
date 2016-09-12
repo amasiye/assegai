@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Validation" namespace="" name="Validation" abstract="false" final="false" start="12" end="67">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Validation.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Validation.php" size="1755" time="2016-09-11T19:32:34+02:00" unixtime="1473615154" sha1="1b41abe19de5b2060149fc9ee713529ae83664e9" relative="app/en-US/core/Validation.php"/>
+  <docblock>
+    <description compact="The validation class contains methods for validating all kinds of data including regex patterns."/>
+  </docblock>
+  <method name="validate" start="19" end="28" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param description="The input string." type="object" variable="$text">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The pattern to search for, as a string." type="object" variable="$pattern">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+    <parameter name="pattern" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Perform regular expression test" line="23"/>
+    </inline>
+  </method>
+  <method name="validate_password" start="35" end="38" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Checks whehter a given password is valid."/>
+      <param description="The input password to be validated." type="object" variable="$password">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <prara value="{string} $pattern [Optional] The pattern to search for, as a string."/>
+    </docblock>
+    <parameter name="password" byreference="false" type="{unknown}"/>
+    <parameter name="pattern" byreference="false" type="{unknown}" default="" constant="INDEX_REGEX_PASSWORD"/>
+  </method>
+  <method name="get_regex_pattern" start="46" end="66" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns a predefined regular expression pattern of given name"/>
+      <param description="The name of the regex pattern to retrieve" type="object" variable="$name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="The requested regex pattern or false if the" type="object">pattern name is undefined.<type full="{string}" namespace="" name="{string}"/></return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Return false if an invalide name is supplied" line="64"/>
+    </inline>
+  </method>
+</class>

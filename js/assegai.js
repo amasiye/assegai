@@ -33,12 +33,20 @@ function search(term)
 
 function usernameIsValid(username)
 {
-  var patt = /e/;
-  return patt.test(username);
+  if(username.length >= 5)
+  {
+    var patt = /^[a-zA-Z0-9]+$/;
+    return patt.test(username);
+  }
+  return false;
 }
 
 function passwordIsValid(password)
 {
-  var patt = /\W\w/;
-  return patt.test(password);
+  if(password.length >= 6)
+  {
+    var patt = /\W\w/;
+    return patt.test(password);
+  }
+  return false;
 }

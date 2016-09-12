@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error" file="403.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error/403.php" size="158" time="2016-08-31T01:59:54+02:00" unixtime="1472601594" sha1="9b336b6a531ae29d07ba56518a592e725c699d56" relative="app/en-US/views/error/403.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_REQUIRE_ONCE">require_once</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"includes/header.php"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">&lt;div class="container"&gt;</token>
+  </line>
+  <line no="3">
+    <token name="T_INLINE_HTML">  &lt;h2&gt;Error 403: Forbidden&lt;/h2&gt;</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_REQUIRE_ONCE">require_once</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"includes/footer.php"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="6"/>
+</source>

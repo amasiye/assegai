@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Token" namespace="" name="Token" abstract="false" final="false" start="6" end="15">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Token.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Token.php" size="298" time="2016-09-05T04:48:55+02:00" unixtime="1473043735" sha1="82265bc09c6fd535241a6a860713c9599ddc00f8" relative="app/en-US/core/Token.php"/>
+  <docblock>
+    <description compact="Token class provides helpful functionality for token generation"/>
+  </docblock>
+  <method name="generate" start="11" end="14" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Generates a hashed string token."/>
+    </docblock>
+  </method>
+</class>

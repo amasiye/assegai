@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Debug" namespace="" name="Debug" abstract="false" final="false" start="6" end="36">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Debug.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Debug.php" size="756" time="2016-09-01T16:13:13+02:00" unixtime="1472739193" sha1="05bba9b132e63fb56453a28ec73cca0cba4a99b4" relative="app/en-US/core/Debug.php"/>
+  <docblock>
+    <description compact="Contains useful methods for debugging, tracing and profiling."/>
+  </docblock>
+  <method name="log_to_file" start="13" end="34" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Writes log data to the log file."/>
+      <param description="The log data or text." type="object" variable="$txt">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+    </docblock>
+    <parameter name="txt" byreference="false" type="{unknown}"/>
+  </method>
+</class>

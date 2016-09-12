@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - User</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">User</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/app/en-US/models/User.php.xhtml#line12">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>User</h1>
+        <h4>The user model class. Handles the business logic of all user related requests and operations and provides an interface to the user table of the database.</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class User
+            {<br/><ul class="none"><li>// members</li><li>public integer <a href="#members">$id</a> =
+                        1;
+                    </li><li>public  <a href="#members">$login</a>;
+                    </li><li>public string <a href="#members">$username</a> =
+                        'User';
+                    </li><li>public  <a href="#members">$password</a>;
+                    </li><li>public  <a href="#members">$salt</a>;
+                    </li><li>public  <a href="#members">$joined</a>;
+                    </li><li>public integer <a href="#members">$group</a> =
+                        1;
+                    </li><li>public string <a href="#members">$group_name</a> =
+                        '';
+                    </li><li>public  <a href="#members">$meta</a>;
+                    </li><li>public  <a href="#members">$primary_email</a>;
+                    </li><li>public  <a href="#members">$emails</a>;
+                    </li><li>public  <a href="#members">$address</a>;
+                    </li><li>public  <a href="#members">$phones</a>;
+                    </li><li>public  <a href="#members">$preferences</a>;
+                    </li><li>public string <a href="#members">$display_name</a> =
+                        'Default User';
+                    </li><li>public  <a href="#members">$error</a>;
+                    </li><li>private  <a href="#members">$db</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="User" href="../classes/User/__construct.xhtml">__construct</a>()
+                    </li><li>public {boolean} <a title="User" href="../classes/User/update.xhtml">update</a>()
+                    </li><li>public {boolean} <a title="User" href="../classes/User/change_password.xhtml">change_password</a>()
+                    </li><li>public {boolean} <a title="User" href="../classes/User/has_permission.xhtml">has_permission</a>()
+                    </li><li>public static {array} <a title="User" href="../classes/User/get_users.xhtml">get_users</a>()
+                    </li><li>public static {string} <a title="User" href="../classes/User/login.xhtml">login</a>()
+                    </li><li>public static {string} <a title="User" href="../classes/User/logout.xhtml">logout</a>()
+                    </li><li>public static {int} <a title="User" href="../classes/User/register.xhtml">register</a>()
+                    </li><li>public static {boolean} <a title="User" href="../classes/User/deregister.xhtml">deregister</a>()
+                    </li><li>public static {boolean} <a title="User" href="../classes/User/is_logged_in.xhtml">is_logged_in</a>()
+                    </li><li>public static {boolean} <a title="User" href="../classes/User/login_name_exists.xhtml">login_name_exists</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="db">
+              <strong>$db</strong>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="address">
+              <strong>$address</strong>
+            </li>
+            <li id="display_name">
+              <strong>$display_name</strong>
+            </li>
+            <li id="emails">
+              <strong>$emails</strong>
+            </li>
+            <li id="error">
+              <strong>$error</strong>
+            </li>
+            <li id="group">
+              <strong>$group</strong>
+            </li>
+            <li id="group_name">
+              <strong>$group_name</strong>
+            </li>
+            <li id="id">
+              <strong>$id</strong>
+            </li>
+            <li id="joined">
+              <strong>$joined</strong>
+            </li>
+            <li id="login">
+              <strong>$login</strong>
+            </li>
+            <li id="meta">
+              <strong>$meta</strong>
+            </li>
+            <li id="password">
+              <strong>$password</strong>
+            </li>
+            <li id="phones">
+              <strong>$phones</strong>
+            </li>
+            <li id="preferences">
+              <strong>$preferences</strong>
+            </li>
+            <li id="primary_email">
+              <strong>$primary_email</strong>
+            </li>
+            <li id="salt">
+              <strong>$salt</strong>
+            </li>
+            <li id="username">
+              <strong>$username</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="User" href="../classes/User/__construct.xhtml">__construct()</a>
+                — Constructs a user object.</li>
+            <li id="change_password"><a title="User" href="../classes/User/change_password.xhtml">change_password()</a>
+                — Changes the user's password.</li>
+            <li id="deregister"><a title="User" href="../classes/User/deregister.xhtml">deregister()</a>
+                — Deregisters a user from the system given a user_login name.</li>
+            <li id="get_users"><a title="User" href="../classes/User/get_users.xhtml">get_users()</a>
+                — Returns an array of all user records in the database.</li>
+            <li id="has_permission"><a title="User" href="../classes/User/has_permission.xhtml">has_permission()</a>
+                — Determines whether the user has the rights to perform $action on the specific $resource given their user_group.</li>
+            <li id="is_logged_in"><a title="User" href="../classes/User/is_logged_in.xhtml">is_logged_in()</a>
+                — Determines whether any user is logged in.</li>
+            <li id="login"><a title="User" href="../classes/User/login.xhtml">login()</a>
+                — Logs a user into the system given login, password and an optional salt.</li>
+            <li id="login_name_exists"><a title="User" href="../classes/User/login_name_exists.xhtml">login_name_exists()</a>
+                — Checks the database for a given login name.</li>
+            <li id="logout"><a title="User" href="../classes/User/logout.xhtml">logout()</a>
+                — Logs the user out of the system.</li>
+            <li id="register"><a title="User" href="../classes/User/register.xhtml">register()</a>
+                — Creates a new user given detailed information.</li>
+            <li id="update"><a title="User" href="../classes/User/update.xhtml">update()</a>
+                — Updates the specified user details.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.8.0 - Copyright (C) 2010 - 2016 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

@@ -6,6 +6,11 @@
  * a layer of security using its sanitization methods to
  * ensure that data is properly escaped before storage
  * and data being extracted is appropriately unescaped.
+ *
+ * @version 1.0.0
+ * @since 1.0.0
+ *
+ * @package Assegai
  */
 class Database
 {
@@ -15,6 +20,8 @@ class Database
   private $user;
   private $password;
   private $name;
+
+  public $execution_errors = array();
 
   public $instance;
 
@@ -39,6 +46,19 @@ class Database
   } // end __construct()
 
   /**
+   * Performs a query on the database.
+   * @param {string} $query The query string. Data inside the query should be properly escaped.
+   * @param {int} $result_mode Either the constant MYSQLI_USE_RESULT or
+   * MYSQLI_STORE_RESULT depending on the desired behavior. By default,
+   * MYSQLI_STORE_RESULT is used.
+   */
+  public function query($query, $result_mode = MYSQLI_STORE_RESULT)
+  {
+    $conn = $this->conn;
+    return $conn->query($query, $result_mode);
+  } // end query()
+
+  /**
    * Selects data from the database.
    * @param $table String name of the table to make the selection from.
    * @param $columns String A comma seperated list of column names to select.
@@ -46,7 +66,7 @@ class Database
    * @return {array} An associative array of the selected data or an int
    * representing a status error.
    */
-  public function select($table, $columns, $filters=array())
+  public function select($table, $columns = null, $filters=array())
   {
     # Cache connection
     $conn = $this->conn;
@@ -55,7 +75,15 @@ class Database
     $sql = "SELECT";
 
     # Check for distinct option
-    if(array_key_exists("-d", $filters))
+    $distinct_is_set = false;
+    if(array_key_exists("distinct", $filters))
+    {
+      $sql .= " DISTINCT";
+      $distinct_is_set = true;
+    }
+
+    # Check for distinct option
+    if(array_key_exists("-d", $filters) && $distinct_is_set == true)
       $sql .= " DISTINCT";
 
     # Append column names to $sql if any at all are found.
@@ -72,8 +100,28 @@ class Database
     $sql .= " FROM {$table}";
 
     # Append any filters e.g LIMIT
-    if(array_key_exists("-w", $filters))
+    $where_is_set = false;
+    if(array_key_exists("where", $filters))
+    {
+      $sql .= " WHERE " . $filters['where'];
+      $where_is_set = true;
+    }
+
+    # Handle where filter
+    if(array_key_exists("-w", $filters) && $where_is_set == false)
       $sql .= " WHERE " . $filters['-w'];
+
+    # Handle order filter
+    if(array_key_exists("order", $filters))
+      $sql .= " ORDER BY " . $filters['order'];
+
+    # Handle limit filter
+    if(array_key_exists("limit", $filters))
+      $sql .= " LIMIT " . $filters['limit'];
+
+    # Handle offset filter
+    if(array_key_exists("offset", $filters))
+      $sql .= " OFFSET " . $filters['offset'];
 
     // echo $sql;
     # Run the query and report if something goes wrong
@@ -98,11 +146,11 @@ class Database
   } // end select(string, string, string)
 
   /**
-   * Inserts data into the database.
-   * @param {string} $table The name of the table to be inserted.
-   * @param {array} $column The list of columns to be inserted.
-   * @param {array} $values The list of new values to update the corresponding columns with.
-   * @return {int} An integer corresponding to the status code.
+   * Inserts new records in a table..
+   * @param {string} $table The name of the table.
+   * @param {array} $columns The list of column names to be inserted.
+   * @param {array} $values The list of values to be inserted into the corresponding values.
+   * @return {int} An integer corresponding to a status code.
    */
   public function insert($table, $columns = array(), $values = array())
   {
@@ -131,9 +179,9 @@ class Database
     {
       # Enclose strings in single quotes
       if(gettype($values[$x]) == 'string')
-        $sql .= "'" . sanitize($values[$x]) . "'";
+        $sql .= "'" . $this->sanitize($values[$x]) . "'";
       else
-        $sql .= sanitize($values[$x]);
+        $sql .= $this->sanitize($values[$x]);
 
       # Add comma after each value except for last
       if($x < (count($values) - 1)) $sql .= ", ";
@@ -145,7 +193,6 @@ class Database
     # Execute SQL query and report any errors.
     if($conn->query($sql) === TRUE)
     {
-      // echo "Successfully inserted new data into {$table}.";
       $insertion_result = QUERY_STMT_OK;
     }
     else
@@ -173,28 +220,33 @@ class Database
     $sql = "UPDATE {$table}";
 
     # Check for columns otherwise return error
-    if(!isset($columns) || is_null($columns))
+    if(empty($columns) || is_null($columns))
       return QUERY_STMT_PARAM_ERR;
 
     # Check for values othewise return error
-    if(!isset($values) || is_null($values))
-    return QUERY_STMT_PARAM_ERR;
+    if(empty($values) || is_null($values))
+      return QUERY_STMT_PARAM_ERR;
 
     $sql .= " SET";
 
     # Append columns and value to SQL string
     for($x = 0; $x < count($columns); $x++)
-      $sql .= " $columns[$x]='$values[$x]'";
+    {
+      if($x == 0)
+        $sql .= " $columns[$x]='" . $this->sanitize($values[$x]) . "'";
+      else
+        $sql .= ",$columns[$x]='" . $this->sanitize($values[$x]) . "'";
+    }
 
     if(isset($filters) && !is_null($filters))
     {
       # Check if WHERE clause exists
       if(array_key_exists("-w", $filters))
-      $sql .= " WHERE " . $filters['-w'];
+        $sql .= " WHERE " . $filters['-w'];
     }
 
     # Run the query and report if something goes wrong
-    if(!$result = $conn->query($sql))
+    if(!$conn->query($sql))
     {
       return QUERY_EXEC_ERR;
     }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Session" namespace="" name="Session" abstract="false" final="false" start="10" end="67">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Session.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Session.php" size="1638" time="2016-08-31T04:17:08+02:00" unixtime="1472609828" sha1="0f0e097a3ebc13adce91d31bf6f534d31d053410" relative="app/en-US/core/Session.php"/>
+  <docblock>
+    <description compact="This is a wrapper class for all Session activity."/>
+    <author value="A. Masiye"/>
+    <version value="1.0.0"/>
+    <since value="1.0.0"/>
+  </docblock>
+  <member name="id" visibility="public" line="13"/>
+  <member name="user_id" visibility="public" line="14"/>
+  <constructor name="__construct" start="16" end="22" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="login" start="30" end="39" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param description="The corresponding user id." type="object" variable="$id">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The username for logging in to the system." type="object" variable="$login">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="True if successful, false otherwise." type="object">
+        <type full="{boolean}" namespace="" name="{boolean}"/>
+      </return>
+    </docblock>
+    <parameter name="user_data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="logout" start="47" end="55" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param description="Indicates whether all session variables should" type="object" variable="$unset_all">be unset before logging the user out.<type full="{boolan}" namespace="" name="{boolan}"/></param>
+      <return description="True if successful, false otherwise." type="object">
+        <type full="{boolean}" namespace="" name="{boolean}"/>
+      </return>
+    </docblock>
+    <parameter name="unset_all" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="Remove all session variables" line="49"/>
+      <comment value="Destroy the session" line="53"/>
+    </inline>
+  </method>
+  <method name="put" start="62" end="65" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Sets the session variable of the given name to the given value."/>
+      <param description="The name of the Session variable." type="object" variable="$name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The value of the Session variable." type="object" variable="$value">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+</class>

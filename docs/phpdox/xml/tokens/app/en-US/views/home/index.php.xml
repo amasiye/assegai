@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/home" file="index.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/home/index.php" size="493" time="2016-08-27T09:14:51+02:00" unixtime="1472282091" sha1="46ee5f1e398df698d7326dc2415acc0003ea6e91" relative="app/en-US/views/home/index.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_REQUIRE_ONCE">require_once</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"includes/admin-header.php"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">    &lt;article&gt;</token>
+  </line>
+  <line no="3">
+    <token name="T_INLINE_HTML">      &lt;header&gt;</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">        &lt;div class="panel panel-default"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">          &lt;div class="panel-heading"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">            &lt;h4&gt;Salutations&lt;/h4&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">          &lt;div class="panel-content"&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">            &lt;h3&gt;Hello </token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$data</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'user'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">display_name</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/h3&gt;</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">            &lt;p&gt;This is one awesome app isn't it?&lt;/p&gt;</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">      &lt;/header&gt;</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">    &lt;/article&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_REQUIRE_ONCE">require_once</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"includes/admin-footer.php"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="16"/>
+</source>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/css" file="index.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/css/index.php" size="39" time="2015-11-25T19:43:58+01:00" unixtime="1448477038" sha1="8160eb327e91ece131a5326379481f604a79167b" relative="css/index.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_STRING">header</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Location: ../"</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+</source>

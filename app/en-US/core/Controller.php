@@ -61,7 +61,47 @@ class Controller
       require_once 'app/' . $locale . '/views/' . $view . '.php';
 
     // return new $view();
-  }
+  } // end view()
+
+  /**
+   * Validates a given input string of text.
+   * @param {string} $text The string of text.
+   * @param {string} $pattern The validating regex pattern.
+   * @param {int} $min_length The minimum length of the string.
+   * @param {int} $max_length The maximum length of the password.
+   * @return {int} Returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred.
+   */
+  public function validate_text($text, $pattern = '/[\w\d]+/', $min_length = 6, $max_length = -1)
+  {
+    if($max_length < 0)
+      return Form::validate_input('text', $text, $pattern, $min_length);
+
+    return Form::validate_input('text', $text, $pattern, $min_length, $max_length);
+  } // end validate_input_text()
+
+  /**
+   * Validates a given input string of text.
+   * @param {string} $password The input password string.
+   * @param {string} $pattern The validating regex pattern.
+   * @param {int} $min_length The minimum length of the password
+   * @param {int} $max_length The maximum length of the password
+   * @return {int} Returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred.
+   */
+  public function validate_password($password, $pattern = '/[\w\d]+/', $min_length = 6, $max_length = -1)
+  {
+    # Check for at least 1 uppercase alphabetical character
+    if(!preg_match('/[A-Z]/', $password))
+      return false;
+
+    # Check for at least 1 numerical character
+    if(!preg_match('/[0-9]/', $password))
+      return false;
+
+    if($max_length < 0)
+      return Form::validate_input('password', $password, $pattern, $min_length);
+
+    return Form::validate_input('password', $password, $pattern, $min_length, $max_length);
+  } // end validate_input_text()
 
   /**
    * Modifies the header location attribute by setting it to the given URL

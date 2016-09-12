@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index xmlns="http://xml.phpdox.net/src" basedir="C:/xampp/htdocs/atatusoft/Assegai/assegai">
+  <namespace name="">
+    <class name="Admin" src="app/en-US/controllers/admin.php" description="The main controller for site administration and management requests." xml="classes/Admin.xml"/>
+    <class name="Home" src="app/en-US/controllers/home.php" description="The default site controller. All requests will" xml="classes/Home.xml"/>
+    
+    <class name="Controller" src="app/en-US/core/Controller.php" description="The base Controller class. It processes and responds to events such as user actions and it invokes changes to the model and the view based on those events." xml="classes/Controller.xml"/>
+    
+    <class name="Debug" src="app/en-US/core/Debug.php" description="Contains useful methods for debugging, tracing and profiling." xml="classes/Debug.xml"/>
+    <class name="HTML" src="app/en-US/core/HTML.php" xml="classes/HTML.xml"/>
+    <class name="Session" src="app/en-US/core/Session.php" description="This is a wrapper class for all Session activity." xml="classes/Session.xml"/>
+    <class name="Token" src="app/en-US/core/Token.php" description="Token class provides helpful functionality for token generation" xml="classes/Token.xml"/>
+    
+    <class name="Form" src="app/en-US/models/Form.php" xml="classes/Form.xml"/>
+    <class name="Group" src="app/en-US/models/Group.php" description="Model class for user Groups." xml="classes/Group.xml"/>
+    <class name="Notification" src="app/en-US/models/Notification.php" xml="classes/Notification.xml"/>
+    
+  <class name="App" src="app/en-US/core/App.php" xml="classes/App.xml"/><class name="Validation" src="app/en-US/core/Validation.php" description="The validation class contains methods for validating all kinds of data including regex patterns." xml="classes/Validation.xml"/><class name="User" src="app/en-US/models/User.php" description="The user model class. Handles the business logic of all user related requests and operations and provides an interface to the user table of the database." xml="classes/User.xml"/><class name="Database" src="app/en-US/core/Database.php" description="The database wrapper class. It contains methods to quickly perform database operations. It also acts as a layer of security using its sanitization methods to ensure that data is properly escaped before storage and data being extracted is appropriately unescaped." xml="classes/Database.xml"/></namespace>
+</index>

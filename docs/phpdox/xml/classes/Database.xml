@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Database" namespace="" name="Database" abstract="false" final="false" start="15" end="333">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Database.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Database.php" size="9388" time="2016-09-12T08:15:52+02:00" unixtime="1473660952" sha1="4f0df252b2584552da172c1acb84b602f5ff2a13" relative="app/en-US/core/Database.php"/>
+  <docblock>
+    <description compact="The database wrapper class. It contains methods to quickly perform database operations. It also acts as a layer of security using its sanitization methods to ensure that data is properly escaped before storage and data being extracted is appropriately unescaped."/>
+    <version value="1.0.0"/>
+    <since value="1.0.0"/>
+    <package value="Assegai"/>
+  </docblock>
+  <member name="conn" visibility="private" line="17"/>
+  <member name="mysqli" visibility="private" line="18"/>
+  <member name="host" visibility="private" line="19"/>
+  <member name="user" visibility="private" line="20"/>
+  <member name="password" visibility="private" line="21"/>
+  <member name="name" visibility="private" line="22"/>
+  <member name="execution_errors" type="array" default="" visibility="public" line="24"/>
+  <member name="instance" visibility="public" line="26"/>
+  <constructor name="__construct" start="31" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a Database object."/>
+    </docblock>
+    <parameter name="db_host" byreference="false" type="{unknown}"/>
+    <parameter name="db_user" byreference="false" type="{unknown}"/>
+    <parameter name="db_pass" byreference="false" type="{unknown}"/>
+    <parameter name="db_name" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Bind parameters to properties" line="33"/>
+      <comment value="Create singleton" line="44"/>
+    </inline>
+  </constructor>
+  <method name="query" start="55" end="59" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs a query on the database."/>
+      <param description="The query string. Data inside the query should be properly escaped." type="object" variable="$query">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="Either the constant MYSQLI_USE_RESULT or" type="object" variable="$result_mode">MYSQLI_STORE_RESULT depending on the desired behavior. By default,
+MYSQLI_STORE_RESULT is used.<type full="{int}" namespace="" name="{int}"/></param>
+    </docblock>
+    <parameter name="query" byreference="false" type="{unknown}"/>
+    <parameter name="result_mode" byreference="false" type="{unknown}" default="" constant="MYSQLI_STORE_RESULT"/>
+  </method>
+  <method name="select" start="69" end="146" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Selects data from the database."/>
+      <param description="name of the table to make the selection from." variable="$table" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="A comma seperated list of column names to select." variable="$columns" type="object">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="An array of filters for the selection." variable="$filters" type="array"/>
+      <return description="An associative array of the selected data or an int" type="object">representing a status error.<type full="{array}" namespace="" name="{array}"/></return>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+    <parameter name="columns" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="filters" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="Cache connection" line="71"/>
+      <comment value="Prepare SQL Query statement" line="74"/>
+      <comment value="Check for distinct option" line="77"/>
+      <comment value="Check for distinct option" line="85"/>
+      <comment value="Append column names to $sql if any at all are found." line="89"/>
+      <comment value="Append table name" line="99"/>
+      <comment value="Append any filters e.g LIMIT" line="102"/>
+      <comment value="Handle where filter" line="110"/>
+      <comment value="Handle order filter" line="114"/>
+      <comment value="Handle limit filter" line="118"/>
+      <comment value="Handle offset filter" line="122"/>
+      <comment value="echo $sql;" line="126"/>
+      <comment value="Run the query and report if something goes wrong" line="127"/>
+      <comment value="Fetch the selected rows and return them in an array" line="133"/>
+      <comment value="If nothing was found insert a null character so that" line="140"/>
+      <comment value="an empty array is never returned." line="141"/>
+    </inline>
+  </method>
+  <method name="insert" start="155" end="205" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Inserts new records in a table.."/>
+      <param description="The name of the table." type="object" variable="$table">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The list of column names to be inserted." type="object" variable="$columns">
+        <type full="{array}" namespace="" name="{array}"/>
+      </param>
+      <param description="The list of values to be inserted into the corresponding values." type="object" variable="$values">
+        <type full="{array}" namespace="" name="{array}"/>
+      </param>
+      <return description="An integer corresponding to a status code." type="object">
+        <type full="{int}" namespace="" name="{int}"/>
+      </return>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+    <parameter name="columns" byreference="false" type="array" default=""/>
+    <parameter name="values" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="Cache connection" line="157"/>
+      <comment value="Prepare SQL query statement" line="160"/>
+      <comment value="If columns are specified add them to sql query string" line="164"/>
+      <comment value="Sanitize and append values to SQL query string" line="176"/>
+      <comment value="Execute SQL query and report any errors." line="193"/>
+    </inline>
+  </method>
+  <method name="update" start="215" end="255" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Updates a table in the database."/>
+      <param description="The name of the table to be updated." type="object" variable="$table">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The list of columns to be updated." type="object" variable="$column">
+        <type full="{array}" namespace="" name="{array}"/>
+      </param>
+      <param description="The list of new values to update the corresponding columns with." type="object" variable="$values">
+        <type full="{array}" namespace="" name="{array}"/>
+      </param>
+      <param description="An array of filters for the update." variable="$filters" type="array"/>
+      <return description="An int representing the operation status." type="object">
+        <type full="{int}" namespace="" name="{int}"/>
+      </return>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+    <parameter name="columns" byreference="false" type="array" default=""/>
+    <parameter name="values" byreference="false" type="array" default=""/>
+    <parameter name="filters" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="Prepare SQL string" line="219"/>
+      <comment value="Check for columns otherwise return error" line="222"/>
+      <comment value="Check for values othewise return error" line="226"/>
+      <comment value="Append columns and value to SQL string" line="232"/>
+      <comment value="Run the query and report if something goes wrong" line="248"/>
+    </inline>
+  </method>
+  <method name="delete" start="264" end="287" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Deletes a record from given table."/>
+      <param description="The name of the table." type="object" variable="$table">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="An array of filters for the deletion." variable="$filters" type="array"/>
+      <return description="An associative array of the selected data or an int" type="object">representing a status error.<type full="{array}" namespace="" name="{array}"/></return>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+    <parameter name="filters" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Check user credentials" line="268"/>
+      <comment value="Prepare SQL statement" line="270"/>
+      <comment value="Check for WHERE clause" line="273"/>
+      <comment value="Execute SQL query" line="280"/>
+    </inline>
+  </method>
+  <method name="drop" start="294" end="299" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Deletes a table from the database."/>
+      <param description="The name of the table to destroy." type="object" variable="$table">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="An integer representing the status after the operation." type="object">
+        <type full="{int}" namespace="" name="{int}"/>
+      </return>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="truncate" start="306" end="311" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Deletes the data in a table and leaves the table itself."/>
+      <param description="The name of the table to be truncated." type="object" variable="$table">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="An integer representing the status after the operation." type="object">
+        <type full="{int}" namespace="" name="{int}"/>
+      </return>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="sanitize" start="318" end="321" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Sanitizes the given text for safe database storage."/>
+      <param description="The text to be sanitized." type="object" variable="$txt">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="The sanitized string." type="object">
+        <type full="{string}" namespace="" name="{string}"/>
+      </return>
+    </docblock>
+    <parameter name="txt" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="desanitize" start="328" end="331" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Reverse string sanitization for given text."/>
+      <param description="The text to be desanitized." type="object" variable="$txt">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="The desanitized string." type="object">
+        <type full="{string}" namespace="" name="{string}"/>
+      </return>
+    </docblock>
+    <parameter name="txt" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -17,7 +17,7 @@ $db_host = '127.0.0.1';
 $db_user = 'root';
 
 /** MySQL database password */
-$db_pass = '';
+$db_pass = 'mtFE2MVsM8yFRaBN';
 
 /** MySQL database name */
 $db_name = 'assegai';
@@ -52,7 +52,6 @@ define('SECURE_AUTH_SALT', ')B$ >5|+}dXo.jRrp&muJ;`k(/-E|_F}&w}(@]DUp 6icpmO:MME
 define('LOGGED_IN_SALT',   '#x@qqx7]^uhG}1= 6ZJHA]}rLyB_i22M- wsat-N<!2?06>k9,`F/7t1QsV*<t^p');
 define('NONCE_SALT',       'Gc-RFFMg+PBBr2l@z+wC_sc-WxN|Qjnki0B7N>%0xCd1.T.AR%F~zgRCAmJgE?T.');
 define('API_KEY',          'e3760bc1b657baa8fd3dd855205e14ca863cc99f1df8675787006a3ec7d4f7d8');
-define('TOKEN_NAME',       'tok');
 
 # App information
 define('APP_VER', '0.5.4');
@@ -66,6 +65,16 @@ define('SITE_PREFIX', 'assegai_');
 define('SESSION_USER_ID', 'uid');
 define('SESSION_USER', 'ulog');
 define('SESSION_USER_DISPLAY', 'udisp');
+define('SESSION_HASH', 'sessh');
+
+# Useful ids
+define('ID_API_KEY',       'apik');
+define('ID_TOKEN_NAME',    'tok');
+define('TOKEN_NAME',       'tok');    // Deprecated - should use ID_TOKEN_NAME
+
+# Regex patterns
+define('REGEX_USERNAME', '/^[\w\d.-]+$/');
+define('REGEX_PASSWORD', '/^[\w\d.-]+$/');
 
 # Load status codes
 require_once 'StatusCodes.php';

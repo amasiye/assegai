@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - App</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">App</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/app/en-US/core/App.php.xhtml#line3">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>App</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class App
+            {<br/><ul class="none"><li>// members</li><li>protected  <a href="#members">$instance</a>;
+                    </li><li>protected string <a href="#members">$controller</a> =
+                        'home';
+                    </li><li>protected string <a href="#members">$method</a> =
+                        'index';
+                    </li><li>protected array <a href="#members">$params</a> =
+                        ;
+                    </li><li>private <a href="#members">$api_key</a> =
+                        API_KEY;
+                    </li><li>private <a href="#members">$api_key_id</a> =
+                        ID_API_KEY;
+                    </li><li>public <a href="#members">$version</a> =
+                        APP_VER;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="App" href="../classes/App/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="App" href="../classes/App/parse_url.xhtml">parse_url</a>()
+                    </li><li>public {string} <a title="App" href="../classes/App/get_api_key.xhtml">get_api_key</a>()
+                    </li><li>public {string} <a title="App" href="../classes/App/get_api_key_id.xhtml">get_api_key_id</a>()
+                    </li><li>public {boolean} <a title="App" href="../classes/App/set_api_key.xhtml">set_api_key</a>()
+                    </li><li>public static {string} <a title="App" href="../classes/App/generate_key.xhtml">generate_key</a>()
+                    </li><li>public static {boolean} <a title="App" href="../classes/App/is_valid_api_key.xhtml">is_valid_api_key</a>()
+                    </li><li>public static void <a title="App" href="../classes/App/redirect.xhtml">redirect</a>()
+                    </li><li>public static {string} <a title="App" href="../classes/App/get_site_description.xhtml">get_site_description</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="api_key">
+              <strong>$api_key</strong>
+            </li>
+            <li id="api_key_id">
+              <strong>$api_key_id</strong>
+            </li>
+          </ul>
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="controller">
+              <strong>$controller</strong>
+            </li>
+            <li id="instance">
+              <strong>$instance</strong>
+            </li>
+            <li id="method">
+              <strong>$method</strong>
+            </li>
+            <li id="params">
+              <strong>$params</strong>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="version">
+              <strong>$version</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="App" href="../classes/App/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="generate_key"><a title="App" href="../classes/App/generate_key.xhtml">generate_key()</a>
+                — Generates a hash key of given length.</li>
+            <li id="get_api_key"><a title="App" href="../classes/App/get_api_key.xhtml">get_api_key()</a>
+                — Return the website app's api_key</li>
+            <li id="get_api_key_id"><a title="App" href="../classes/App/get_api_key_id.xhtml">get_api_key_id()</a>
+                — Return the website app's api_key</li>
+            <li id="get_site_description"><a title="App" href="../classes/App/get_site_description.xhtml">get_site_description()</a>
+                — Returns the site description.</li>
+            <li id="is_valid_api_key"><a title="App" href="../classes/App/is_valid_api_key.xhtml">is_valid_api_key()</a>
+                — Verifies whether a given key is acceptable..</li>
+            <li id="parse_url"><a title="App" href="../classes/App/parse_url.xhtml">parse_url()</a>
+                — Breaks up url into an array of tokens</li>
+            <li id="redirect"><a title="App" href="../classes/App/redirect.xhtml">redirect()</a>
+                — Handles redirection [Deprecated] - Use Controller::redirect($url) instead.</li>
+            <li id="set_api_key"><a title="App" href="../classes/App/set_api_key.xhtml">set_api_key()</a>
+                — Sets the api_key of the website to the given hashed string.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.8.0 - Copyright (C) 2010 - 2016 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

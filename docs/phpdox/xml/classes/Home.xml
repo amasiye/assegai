@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Home" namespace="" name="Home" abstract="false" final="false" start="10" end="32">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers" file="home.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers/home.php" size="622" time="2016-08-27T09:29:41+02:00" unixtime="1472282981" sha1="c6d334da7ef147691fe47522e7fb6ec1e19bedfd" relative="app/en-US/controllers/home.php"/>
+  <docblock>
+    <description compact="The default site controller. All requests will"/>
+    <since value="0.0.1"/>
+    <version value="0.0.1"/>
+    <package value="Assegai"/>
+  </docblock>
+  <extends full="Controller" namespace="" name="Controller"/>
+  <method name="index" start="15" end="30" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="Options for the home controller." type="object" variable="$option">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+    </docblock>
+    <parameter name="option" byreference="false" type="string" default="''"/>
+  </method>
+  <parent full="Controller" namespace="" name="Controller">
+    <member name="db" visibility="protected" line="18"/>
+    <member name="session" visibility="protected" line="19"/>
+    <constructor name="__construct" start="24" end="29" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Constructs a new controller"/>
+      </docblock>
+    </constructor>
+    <method name="model" start="36" end="47" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Creates a new model object."/>
+        <param description="The name of the model to load." type="object">
+          <type full="{string}" namespace="" name="{string}"/>
+        </param>
+        <return description="The newly created model." type="object">
+          <type full="{Object}" namespace="" name="{Object}"/>
+        </return>
+      </docblock>
+      <parameter name="model" byreference="false" type="{unknown}"/>
+      <parameter name="args" byreference="false" type="array" default=""/>
+      <inline>
+        <comment value="if(!empty($args))" line="43"/>
+        <comment value="return new $model($args);" line="44"/>
+      </inline>
+    </method>
+    <method name="view" start="54" end="64" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Loads a view with it's corresponding data."/>
+        <param description="The name of the view." type="object" variable="$view">
+          <type full="{string}" namespace="" name="{string}"/>
+        </param>
+        <param description="The corresponding data for the view." type="object" variable="$data">
+          <type full="{array}" namespace="" name="{array}"/>
+        </param>
+      </docblock>
+      <parameter name="view" byreference="false" type="{unknown}"/>
+      <parameter name="data" byreference="false" type="array" default=""/>
+    </method>
+    <method name="validate_text" start="74" end="80" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Validates a given input string of text."/>
+        <param description="The string of text." type="object" variable="$text">
+          <type full="{string}" namespace="" name="{string}"/>
+        </param>
+        <param description="The validating regex pattern." type="object" variable="$pattern">
+          <type full="{string}" namespace="" name="{string}"/>
+        </param>
+        <param description="The minimum length of the string." type="object" variable="$min_length">
+          <type full="{int}" namespace="" name="{int}"/>
+        </param>
+        <param description="The maximum length of the password." type="object" variable="$max_length">
+          <type full="{int}" namespace="" name="{int}"/>
+        </param>
+        <return description="Returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred." type="object">
+          <type full="{int}" namespace="" name="{int}"/>
+        </return>
+      </docblock>
+      <parameter name="text" byreference="false" type="{unknown}"/>
+      <parameter name="pattern" byreference="false" type="string" default="'/[\w\d]+/'"/>
+      <parameter name="min_length" byreference="false" type="integer" default="6"/>
+      <parameter name="max_length" byreference="false" type="integer" default="1"/>
+    </method>
+    <method name="validate_password" start="90" end="104" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Validates a given input string of text."/>
+        <param description="The input password string." type="object" variable="$password">
+          <type full="{string}" namespace="" name="{string}"/>
+        </param>
+        <param description="The validating regex pattern." type="object" variable="$pattern">
+          <type full="{string}" namespace="" name="{string}"/>
+        </param>
+        <param description="The minimum length of the password" type="object" variable="$min_length">
+          <type full="{int}" namespace="" name="{int}"/>
+        </param>
+        <param description="The maximum length of the password" type="object" variable="$max_length">
+          <type full="{int}" namespace="" name="{int}"/>
+        </param>
+        <return description="Returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred." type="object">
+          <type full="{int}" namespace="" name="{int}"/>
+        </return>
+      </docblock>
+      <parameter name="password" byreference="false" type="{unknown}"/>
+      <parameter name="pattern" byreference="false" type="string" default="'/[\w\d]+/'"/>
+      <parameter name="min_length" byreference="false" type="integer" default="6"/>
+      <parameter name="max_length" byreference="false" type="integer" default="1"/>
+      <inline>
+        <comment value="Check for at least 1 uppercase alphabetical character" line="92"/>
+        <comment value="Check for at least 1 numerical character" line="96"/>
+      </inline>
+    </method>
+    <method name="redirect" start="111" end="114" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Modifies the header location attribute by setting it to the given URL string."/>
+        <param description="The URL string." type="object" variable="$url">
+          <type full="{string}" namespace="" name="{string}"/>
+        </param>
+      </docblock>
+      <parameter name="url" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

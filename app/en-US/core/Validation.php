@@ -1,9 +1,9 @@
 <?php
-define('REGEX_WORD', 0);
-define('REGEX_DIGIT', 1);
-define('REGEX_NON_WORD', 2);
-define('REGEX_NON_DIGIT', 3);
-define('REGEX_PASSWORD', 4);
+define('INDEX_REGEX_WORD', 0);
+define('INDEX_REGEX_DIGIT', 1);
+define('INDEX_REGEX_NON_WORD', 2);
+define('INDEX_REGEX_NON_DIGIT', 3);
+define('INDEX_REGEX_PASSWORD', 4);
 
 /**
  * The validation class contains methods for
@@ -21,7 +21,7 @@ class Validation
     $is_valid = false;
 
     # Perform regular expression test
-    if(preg_match($pattern, $text))
+    if(preg_match(get_regex_pattern($pattern), $text))
       $is_valid = true;
 
     return $is_valid;
@@ -32,7 +32,7 @@ class Validation
    * @param {string} $password The input password to be validated.
    * @prara {string} $pattern [Optional] The pattern to search for, as a string.
    */
-  public static function validate_password($password, $pattern = REGEX_PASSWORD)
+  public static function validate_password($password, $pattern = INDEX_REGEX_PASSWORD)
   {
     return validate($password, $pattern);
   } // end validate_password()
@@ -48,11 +48,11 @@ class Validation
     switch($name)
     {
 
-      case REGEX_WORD:
+      case INDEX_REGEX_WORD:
         $result = $pattern = '/^[\w]$/';
         break;
 
-      case REGEX_DIGIT:
+      case INDEX_REGEX_DIGIT:
         $result = $pattern = '/^[\d]$/';
         break;
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="HTML" namespace="" name="HTML" abstract="false" final="false" start="5" end="19">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="HTML.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/HTML.php" size="245" time="2016-04-06T16:49:07+02:00" unixtime="1459954147" sha1="0d6274cd3c3a1c45ccb27a0a4ab56fd51aa27fa1" relative="app/en-US/core/HTML.php"/>
+  <docblock>
+    <description/>
+  </docblock>
+  <constructor name="__construct" start="8" end="11" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="print_page_header" start="13" end="18" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="txt" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/content/templates" file="temp-index.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/content/templates/temp-index.php" size="104" time="2016-08-15T18:13:15+02:00" unixtime="1471277595" sha1="eed0db2090e132969a55837b84617e4897f7aed3" relative="app/en-US/content/templates/temp-index.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">&lt;!DOCTYPE html&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">&lt;html&gt;</token>
+  </line>
+  <line no="3">
+    <token name="T_INLINE_HTML">&lt;head&gt;</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">  %HEAD_CONTENT%</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">&lt;/head&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">&lt;body&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">  %BODY_CONTENT%</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">&lt;/body&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">&lt;/html&gt;</token>
+  </line>
+  <line no="10"/>
+</source>

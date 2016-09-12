@@ -8,6 +8,7 @@ class App
   protected $params = array();
 
   private $api_key = API_KEY;
+  private $api_key_id = ID_API_KEY;
 
   public $version = APP_VER;
 
@@ -70,7 +71,16 @@ class App
   public function get_api_key()
   {
     return $this->api_key;
-  } // end get_api_key
+  } // end get_api_key()
+
+  /**
+   * Return the website app's api_key
+   * @return {string} The hashed string representing the web app's api_key.
+   */
+  public function get_api_key_id()
+  {
+    return $this->api_key_id;
+  } // end get_api_key_id()
 
   /**
    * Sets the api_key of the website to the given hashed string.
@@ -92,6 +102,7 @@ class App
   } // end set_api_key()
 
   /**
+   * Generates a hash key of given length.
    * @param {string} $length The length of the random string that should be returned in bytes.
    * @return {string} Returns a randomnly generated key.
    */
@@ -100,8 +111,6 @@ class App
 
     $key = md5(uniqid());
     $key_length = strlen($key);
-
-    echo "Key: {$key}";
 
     # Pad key if it is shorter than required length
     if($key_length < $length)
@@ -124,19 +133,41 @@ class App
       }
 
       $key = str_pad($key, $length, $pad_str);
-
-      echo "<br>Padded key: {$key}<br>";
     }
 
     # Truncate key if it's longer than required length
     if($key_length > $length)
     {
       $key = substr($key, 0, $length);
-      echo "<br>Truncated key: {$key}<br>";
     }
 
     return $key;
   } // end generate_key()
+
+  /**
+   * Verifies whether a given key is acceptable..
+   * @param {Database} $db The database containing the list of acceptable api keys.
+   * @param {string} $key The key to be checked for validity.
+   * @return {boolean} True if the given is valid/acceptable, false otherwise.
+   */
+  public static function is_valid_api_key($db = null, $key = '')
+  {
+    $result = false;
+
+    if(!is_null($db) && strcmp(get_class($db), 'Database') == 0)
+    {
+      # Grab all the accceptable keys
+      $acceptable = $db->select('assg_api_keys', array('key_hash'));
+
+      foreach($acceptable as $row)
+      {
+        if(strcmp($row['key_hash'], $key) == 0)
+          $result = true;
+      }
+    }
+
+    return $result;
+  } // end is_valid_key()
 
   /**
    * Handles redirection

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Form" namespace="" name="Form" abstract="false" final="false" start="6" end="43">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="Form.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/Form.php" size="749" time="2016-09-11T02:23:51+02:00" unixtime="1473553431" sha1="9dfb1fa9256ed209a89fcebf533e5b6c04c0c1d6" relative="app/en-US/models/Form.php"/>
+  <docblock>
+    <description/>
+  </docblock>
+  <member name="id" visibility="public" line="8"/>
+  <member name="name" visibility="public" line="9"/>
+  <member name="action" visibility="public" line="10"/>
+  <member name="method" visibility="public" line="11"/>
+  <constructor name="__construct" start="13" end="16" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="validate_input" start="21" end="42" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validates the value of input control given type, length, and regex pattern."/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="pattern" byreference="false" type="{unknown}"/>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+    <parameter name="filter" byreference="false" type="array" default=""/>
+  </method>
+</class>

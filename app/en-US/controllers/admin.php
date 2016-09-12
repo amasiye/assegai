@@ -11,9 +11,9 @@ class Admin extends Controller
 {
   /**
    * The default endpoint, i.e the dashboard
-   * @param {string} $name The user name to assign for this session
+   * @param {string} $params The user name to assign for this session
    */
-  public function index($name = '')
+  public function index($params = '')
   {
     global $app;
 
@@ -31,19 +31,20 @@ class Admin extends Controller
 
   /**
    * Displays user profile information.
+   * @param {array} $params The parameter list.
    */
-  public function profile($name = '')
+  public function profile($params = '')
   {
     if(User::is_logged_in())
     {
-      // if(isset($name) && !empty($name))
-      //   $login = $name;
+      // if(isset($params) && !empty($params))
+      //   $login = $params;
       // else
       //   $login = $_SESSION[SESSION_USER];
 
       // $user = $this->model('User', array('login' => $login, 'db' => $this->db));
       $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db));
-      $this->view('user/profile', array('app' => $name['app'], 'user' => $user));
+      $this->view('user/profile', array('app' => $params['app'], 'user' => $user));
     }
     else
     {

@@ -86,7 +86,7 @@ require_once "includes/head-shared.php";
             <ul class="dropdown-menu">
               <li class="dropdown-header">Welcome <?= $user->display_name; ?></li>
               <li><a href="admin/profile/"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-              <li><a href="admin/notifications/"><span class="glyphicon glyphicon-bell"></span> Notifications <span class="badge"><?= count(Notification::pull_unread());?></span></a></li>
+              <li><a href="admin/notifications/"><span class="glyphicon glyphicon-bell"></span> Notifications <span class="badge"><?php $n = count(Notification::pull_unread()); echo ($n < 100)? $n : "99+"; ?></span></a></li>
               <li><a href="admin/settings/"><span class="glyphicon glyphicon-wrench"></span> Settings</a></li>
               <li class="divider"></li>
               <li><a id="btn-logout" href="#" onclick="return logout(event)"><span class="glyphicon glyphicon-log-out" ></span> Logout</a></li>
@@ -128,16 +128,3 @@ require_once "includes/head-shared.php";
   </nav>
 
 <?php endif; ?>
-
-<?php
-$index = 2;
-$note = new Notification($index);
-echo strlen(App::generate_key(64));
-// echo 'Name: ' . $note->name . '<br>';
-// print_r(Notification::get($index));
-
-// $note->mark_as_read();
-
-// if($note->mark_as_read())
-  // print_r(Notification::get($index));
-?>

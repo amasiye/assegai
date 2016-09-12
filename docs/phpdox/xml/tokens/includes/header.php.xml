@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="header.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/header.php" size="82" time="2016-08-17T15:19:24+02:00" unixtime="1471439964" sha1="09967cb3a8d801973f15d250712a467222deb90c" relative="includes/header.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_REQUIRE_ONCE">require_once</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"includes/head-shared.php"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">&lt;body&gt;</token>
+  </line>
+  <line no="3">
+    <token name="T_INLINE_HTML">&lt;header&gt;</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_INLINE_HTML">&lt;/header&gt;</token>
+  </line>
+  <line no="6"/>
+</source>

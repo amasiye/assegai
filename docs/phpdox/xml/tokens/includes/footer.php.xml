@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="footer.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/footer.php" size="1354" time="2016-08-22T21:11:40+02:00" unixtime="1471893100" sha1="3262f852e1caa946cd7bf0eff0aa2a3c52b927b5" relative="includes/footer.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">&lt;footer class="clearfix col-sm-12"&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">  &lt;div class="footer-column col-sm-12 col-md-3"&gt;</token>
+  </line>
+  <line no="3">
+    <token name="T_INLINE_HTML">    &lt;h4&gt;Help&lt;/h4&gt;</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">    &lt;ul&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="#"&gt;FAQs/Tutorials&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="#"&gt;Advertise With Us&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="#"&gt;Support Us&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">    &lt;/ul&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">  &lt;/div&gt;</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">  &lt;div class="footer-column col-sm-12 col-md-3"&gt;</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">    &lt;h4&gt;About&lt;/h4&gt;</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">    &lt;ul&gt;</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="#"&gt;Our Blog&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="about/faith/"&gt;Statement of Faith&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="about/"&gt;About </token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">SITE_NAME</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="sitemap/"&gt;Sitemap&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="#"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="18">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="#"&gt;Terms of Use&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">    &lt;/ul&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">  &lt;/div&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">  &lt;div class="footer-column col-sm-12 col-md-3"&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">    &lt;h4&gt;Links&lt;/h4&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">    &lt;ul&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="http://bayersroadbaptist.ca/"&gt;Bayers Road Baptist&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="http://baptist-atlantic.ca/"&gt;Convention of Atlantic Baptist Churches&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="#"&gt;Support Us&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">    &lt;/ul&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">  &lt;/div&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">  &lt;div class="footer-column col-sm-12 col-md-3"&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">    &lt;h4&gt;Social&lt;/h4&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">    &lt;ul&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-facebook"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-google"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-twitter"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">    &lt;/ul&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">  &lt;/div&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">&lt;/footer&gt;</token>
+  </line>
+  <line no="38"/>
+  <line no="39">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_REQUIRE_ONCE">require_once</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"includes/foot-shared.php"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="40"/>
+</source>

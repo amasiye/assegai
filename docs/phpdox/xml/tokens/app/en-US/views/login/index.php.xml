@@ -1,0 +1,716 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/login" file="index.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/login/index.php" size="7294" time="2016-09-01T09:23:44+02:00" unixtime="1472714624" sha1="66a67c59ef88561a93f9d30a76776059c10924ba" relative="app/en-US/views/login/index.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_REQUIRE_ONCE">require_once</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"includes/header.php"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">&lt;div class="container"&gt;</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">  &lt;div class="col-lg-offset-4 col-lg-4"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">    &lt;div class="panel panel-default"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">      &lt;div class="panel-heading"&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">        </token>
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="8">
+    <token name="T_WHITESPACE">          </token>
+    <token name="T_VARIABLE">$user_login</token>
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Admin"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="9">
+    <token name="T_WHITESPACE">          </token>
+    <token name="T_VARIABLE">$user_password</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"admin1234"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="10">
+    <token name="T_WHITESPACE">          </token>
+    <token name="T_VARIABLE">$user_name</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Administrator"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="11">
+    <token name="T_WHITESPACE">          </token>
+    <token name="T_VARIABLE">$user_group</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">1</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="12">
+    <token name="T_WHITESPACE">          </token>
+    <token name="T_VARIABLE">$user_meta</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">json_encode</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'email'</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'admin@host.domain'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'address'</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">''</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'phone'</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_DNUMBER">9027006887</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="13">
+    <token name="T_WHITESPACE">          </token>
+    <token name="T_COMMENT">// $user-&gt;login($db, $user_login, $user_password);</token>
+  </line>
+  <line no="14">
+    <token name="T_WHITESPACE">          </token>
+    <token name="T_COMMENT">// User::register($user_login, $user_password, $user_name, $user_group, $user_meta);</token>
+  </line>
+  <line no="15">
+    <token name="T_WHITESPACE">          </token>
+    <token name="T_COMMENT">// echo "&lt;h2&gt;Hello World&lt;/h2&gt;";</token>
+  </line>
+  <line no="16">
+    <token name="T_WHITESPACE">        </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="17"/>
+  <line no="18">
+    <token name="T_INLINE_HTML">        </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_IF">if</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_EXCLAMATION_MARK">!</token>
+    <token name="T_ISSET">isset</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_GET</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'register'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">        &lt;h2&gt;Login&lt;/h2&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
+  </line>
+  <line no="21"/>
+  <line no="22">
+    <token name="T_INLINE_HTML">      &lt;div class="panel-body"&gt;</token>
+  </line>
+  <line no="23"/>
+  <line no="24">
+    <token name="T_INLINE_HTML">          &lt;form role="form" class="clearfix"&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">            </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_IF">if</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_ISSET">isset</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_GET</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'loggedout'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_BOOLEAN_AND">&amp;&amp;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EXCLAMATION_MARK">!</token>
+    <token name="T_EMPTY">empty</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_GET</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'loggedout'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_BOOLEAN_AND">&amp;&amp;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_GET</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'loggedout'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">1</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">              &lt;div id="alert-feedback" class="alert alert-info"&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">                &lt;a href="#" class="close" data-dismiss="alert" aria-label="close"&gt;&amp;times;&lt;/a&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">                You have been logged-out.</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">            </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ELSE">else</token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">              &lt;div id="alert-feedback" class="alert" style="display:none;"&gt;&lt;/div&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">            </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ENDIF">endif</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="33"/>
+  <line no="34">
+    <token name="T_INLINE_HTML">            &lt;!-- Username --&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">              &lt;label for="username"&gt;Username:&amp;nbsp;&lt;/label&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">              &lt;input type="text" id="username" name="username" class="form-control" placeholder="Username"</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">              title="" pattern="[\w\W]+" maxlength="20" required&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="40"/>
+  <line no="41">
+    <token name="T_INLINE_HTML">            &lt;!-- Password --&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">              &lt;label for="password"&gt;Password:&amp;nbsp;&lt;/label&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">              &lt;input type="password" id="password" name="password" class="form-control" placeholder="Password" maxlength="64" required&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="46"/>
+  <line no="47">
+    <token name="T_INLINE_HTML">            &lt;!-- Remember Me --&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">            &lt;!-- &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">              &lt;div class="checkbox"&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">                &lt;label&gt;&lt;input type="checkbox"&gt; Remember me&lt;/label&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">            &lt;/div&gt; --&gt;</token>
+  </line>
+  <line no="53"/>
+  <line no="54">
+    <token name="T_INLINE_HTML">            &lt;!-- Submit --&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">              &lt;button type="button" class="btn btn-primary btn-block" id="btn-submit" name="btn-submit"&gt;Login&lt;/button&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="58"/>
+  <line no="59">
+    <token name="T_INLINE_HTML">            &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">            &lt;script&gt;</token>
+  </line>
+  <line no="61"/>
+  <line no="62">
+    <token name="T_INLINE_HTML">            document.querySelector("button").onclick = function() { login($('#username').val(), $('#password').val()); };</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">            // document.querySelector("input").onkeyup = function(event) { alert("You pressed a key"); };</token>
+  </line>
+  <line no="64"/>
+  <line no="65">
+    <token name="T_INLINE_HTML">            $("body").ready(function() {</token>
+  </line>
+  <line no="66"/>
+  <line no="67">
+    <token name="T_INLINE_HTML">              $("input").keydown(function(event) {</token>
+  </line>
+  <line no="68">
+    <token name="T_INLINE_HTML">                if(event.which === 13)</token>
+  </line>
+  <line no="69">
+    <token name="T_INLINE_HTML">                  login($('#username').val(), $('#password').val());</token>
+  </line>
+  <line no="70">
+    <token name="T_INLINE_HTML">              });</token>
+  </line>
+  <line no="71"/>
+  <line no="72">
+    <token name="T_INLINE_HTML">            });</token>
+  </line>
+  <line no="73"/>
+  <line no="74">
+    <token name="T_INLINE_HTML">            function login(username, password)</token>
+  </line>
+  <line no="75">
+    <token name="T_INLINE_HTML">            {</token>
+  </line>
+  <line no="76">
+    <token name="T_INLINE_HTML">              var url = $('base').attr('href') + 'api/user/login/';</token>
+  </line>
+  <line no="77">
+    <token name="T_INLINE_HTML">              $.post(</token>
+  </line>
+  <line no="78">
+    <token name="T_INLINE_HTML">                "http://localhost/atatusoft/Assegai/assegai/api/user/login/",</token>
+  </line>
+  <line no="79">
+    <token name="T_INLINE_HTML">                {</token>
+  </line>
+  <line no="80">
+    <token name="T_INLINE_HTML">                  username: $('#username').val(),</token>
+  </line>
+  <line no="81">
+    <token name="T_INLINE_HTML">                  password: $('#password').val()</token>
+  </line>
+  <line no="82">
+    <token name="T_INLINE_HTML">                },</token>
+  </line>
+  <line no="83">
+    <token name="T_INLINE_HTML">                function(res) {</token>
+  </line>
+  <line no="84">
+    <token name="T_INLINE_HTML">                  var result = JSON.parse(res);</token>
+  </line>
+  <line no="85"/>
+  <line no="86">
+    <token name="T_INLINE_HTML">                  if(result.success == true)</token>
+  </line>
+  <line no="87">
+    <token name="T_INLINE_HTML">                  {</token>
+  </line>
+  <line no="88"/>
+  <line no="89">
+    <token name="T_INLINE_HTML">                    if($('#alert-feedback').hasClass('alert-danger'))</token>
+  </line>
+  <line no="90">
+    <token name="T_INLINE_HTML">                    $('#alert-feedback').removeClass('alert-danger');</token>
+  </line>
+  <line no="91"/>
+  <line no="92">
+    <token name="T_INLINE_HTML">                    $('#alert-feedback').addClass("alert-success");</token>
+  </line>
+  <line no="93">
+    <token name="T_INLINE_HTML">                    $('#alert-feedback').html(result.msg);</token>
+  </line>
+  <line no="94"/>
+  <line no="95">
+    <token name="T_INLINE_HTML">                    // Show the alert</token>
+  </line>
+  <line no="96">
+    <token name="T_INLINE_HTML">                    $('#alert-feedback').css('display','block');</token>
+  </line>
+  <line no="97"/>
+  <line no="98">
+    <token name="T_INLINE_HTML">                    window.location.href = result.href;</token>
+  </line>
+  <line no="99">
+    <token name="T_INLINE_HTML">                    // window.location.href = $('base').attr('href') + 'dashboard/';</token>
+  </line>
+  <line no="100">
+    <token name="T_INLINE_HTML">                  }</token>
+  </line>
+  <line no="101">
+    <token name="T_INLINE_HTML">                  else</token>
+  </line>
+  <line no="102">
+    <token name="T_INLINE_HTML">                  {</token>
+  </line>
+  <line no="103">
+    <token name="T_INLINE_HTML">                    $('#alert-feedback').css("display","block");</token>
+  </line>
+  <line no="104">
+    <token name="T_INLINE_HTML">                    $('#alert-feedback').addClass("alert-danger");</token>
+  </line>
+  <line no="105">
+    <token name="T_INLINE_HTML">                    $('#alert-feedback').html(result.msg);</token>
+  </line>
+  <line no="106">
+    <token name="T_INLINE_HTML">                  }</token>
+  </line>
+  <line no="107">
+    <token name="T_INLINE_HTML">                }</token>
+  </line>
+  <line no="108">
+    <token name="T_INLINE_HTML">                );</token>
+  </line>
+  <line no="109"/>
+  <line no="110">
+    <token name="T_INLINE_HTML">              } // end login(string, string)</token>
+  </line>
+  <line no="111"/>
+  <line no="112">
+    <token name="T_INLINE_HTML">            &lt;/script&gt;</token>
+  </line>
+  <line no="113">
+    <token name="T_INLINE_HTML">          &lt;/form&gt;</token>
+  </line>
+  <line no="114"/>
+  <line no="115">
+    <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
+  </line>
+  <line no="116"/>
+  <line no="117">
+    <token name="T_INLINE_HTML">      &lt;ul class="list-group"&gt;</token>
+  </line>
+  <line no="118">
+    <token name="T_INLINE_HTML">        &lt;li class="list-group-item"&gt;&lt;a href="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">BASEPATH</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'admin/?register=1'</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">"&gt;Register&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="119">
+    <token name="T_INLINE_HTML">        &lt;li class="list-group-item"&gt;&lt;a href="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">BASEPATH</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'admin/?recover=1'</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">"&gt;Lost your password?&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="120">
+    <token name="T_INLINE_HTML">        &lt;li class="list-group-item"&gt;&lt;a href="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">BASEPATH</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">"&gt;&amp;#8592;&amp;nbsp;Back to </token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">SITE_NAME</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="121">
+    <token name="T_INLINE_HTML">      &lt;/ul&gt;</token>
+  </line>
+  <line no="122"/>
+  <line no="123">
+    <token name="T_INLINE_HTML">      </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ELSE">else</token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="124">
+    <token name="T_INLINE_HTML">      &lt;h2&gt;Register&lt;/h2&gt;</token>
+  </line>
+  <line no="125">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="126">
+    <token name="T_INLINE_HTML">      &lt;div class="panel-body"&gt;</token>
+  </line>
+  <line no="127"/>
+  <line no="128">
+    <token name="T_INLINE_HTML">        &lt;form role="form" class="clearfix"&gt;</token>
+  </line>
+  <line no="129"/>
+  <line no="130">
+    <token name="T_INLINE_HTML">          &lt;!-- Login --&gt;</token>
+  </line>
+  <line no="131"/>
+  <line no="132">
+    <token name="T_INLINE_HTML">          &lt;!-- Password --&gt;</token>
+  </line>
+  <line no="133"/>
+  <line no="134">
+    <token name="T_INLINE_HTML">          &lt;!-- Repeat Password --&gt;</token>
+  </line>
+  <line no="135"/>
+  <line no="136">
+    <token name="T_INLINE_HTML">          &lt;!-- Name --&gt;</token>
+  </line>
+  <line no="137">
+    <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="138">
+    <token name="T_INLINE_HTML">            &lt;label for="username"&gt;Username:&lt;/label&gt;</token>
+  </line>
+  <line no="139">
+    <token name="T_INLINE_HTML">            &lt;input type="text" id="username" name="username" class="form-control" placeholder="Username" required&gt;</token>
+  </line>
+  <line no="140">
+    <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
+  </line>
+  <line no="141"/>
+  <line no="142">
+    <token name="T_INLINE_HTML">          &lt;!-- Password --&gt;</token>
+  </line>
+  <line no="143">
+    <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="144">
+    <token name="T_INLINE_HTML">            &lt;label for="password"&gt;Password:&lt;/label&gt;</token>
+  </line>
+  <line no="145">
+    <token name="T_INLINE_HTML">            &lt;input type="password" id="password" name="password" class="form-control" placeholder="Password" required&gt;</token>
+  </line>
+  <line no="146">
+    <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
+  </line>
+  <line no="147"/>
+  <line no="148">
+    <token name="T_INLINE_HTML">          &lt;!-- Repeat Password --&gt;</token>
+  </line>
+  <line no="149">
+    <token name="T_INLINE_HTML">          &lt;div class="form-group has-success has-feedback"&gt;</token>
+  </line>
+  <line no="150">
+    <token name="T_INLINE_HTML">            &lt;label for="password-repeat"&gt;Repeat Password:&lt;/label&gt;</token>
+  </line>
+  <line no="151">
+    <token name="T_INLINE_HTML">            &lt;input type="password" id="password-repeat" name="password-repeat" class="form-control" placeholder="Repeat password" required&gt;</token>
+  </line>
+  <line no="152">
+    <token name="T_INLINE_HTML">            &lt;span class="glyphicon glyphicon-ok form-control-feedback"&gt;&lt;/span&gt;</token>
+  </line>
+  <line no="153">
+    <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
+  </line>
+  <line no="154"/>
+  <line no="155">
+    <token name="T_INLINE_HTML">          &lt;!-- Password Strength Indicator --&gt;</token>
+  </line>
+  <line no="156">
+    <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="157">
+    <token name="T_INLINE_HTML">            &lt;div class=""&gt;</token>
+  </line>
+  <line no="158">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="159">
+    <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
+  </line>
+  <line no="160"/>
+  <line no="161">
+    <token name="T_INLINE_HTML">          &lt;!-- Email --&gt;</token>
+  </line>
+  <line no="162">
+    <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="163">
+    <token name="T_INLINE_HTML">            &lt;label for="email"&gt;Email:&lt;/label&gt;</token>
+  </line>
+  <line no="164">
+    <token name="T_INLINE_HTML">            &lt;input type="email" name="email" class="form-control" placeholder="Email"&gt;</token>
+  </line>
+  <line no="165">
+    <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
+  </line>
+  <line no="166"/>
+  <line no="167">
+    <token name="T_INLINE_HTML">          &lt;!-- Registration button --&gt;</token>
+  </line>
+  <line no="168">
+    <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="169">
+    <token name="T_INLINE_HTML">            &lt;button type="button" class="btn btn-primary btn-block" id="btn-register" name="btn-register"&gt;Register&lt;/button&gt;</token>
+  </line>
+  <line no="170">
+    <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
+  </line>
+  <line no="171"/>
+  <line no="172">
+    <token name="T_INLINE_HTML">        &lt;/form&gt;</token>
+  </line>
+  <line no="173"/>
+  <line no="174">
+    <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
+  </line>
+  <line no="175"/>
+  <line no="176">
+    <token name="T_INLINE_HTML">      &lt;ul class="list-group"&gt;</token>
+  </line>
+  <line no="177">
+    <token name="T_INLINE_HTML">        &lt;li class="list-group-item"&gt;&lt;a href="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">BASEPATH</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'admin/'</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">"&gt;Login&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="178">
+    <token name="T_INLINE_HTML">        &lt;li class="list-group-item"&gt;&lt;a href="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">BASEPATH</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'admin/?recover=1'</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">"&gt;Lost your password?&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="179">
+    <token name="T_INLINE_HTML">        &lt;li class="list-group-item"&gt;&lt;a href="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">BASEPATH</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">"&gt;&amp;#8592;&amp;nbsp;Back to </token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">SITE_NAME</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="180">
+    <token name="T_INLINE_HTML">      &lt;/ul&gt;</token>
+  </line>
+  <line no="181">
+    <token name="T_INLINE_HTML">      &lt;script&gt;</token>
+  </line>
+  <line no="182">
+    <token name="T_INLINE_HTML">      document.querySelector('link-register').onclick = register();</token>
+  </line>
+  <line no="183"/>
+  <line no="184">
+    <token name="T_INLINE_HTML">      function register()</token>
+  </line>
+  <line no="185">
+    <token name="T_INLINE_HTML">      {</token>
+  </line>
+  <line no="186"/>
+  <line no="187">
+    <token name="T_INLINE_HTML">      } // end register()</token>
+  </line>
+  <line no="188">
+    <token name="T_INLINE_HTML">      &lt;/script&gt;</token>
+  </line>
+  <line no="189">
+    <token name="T_INLINE_HTML">      </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ENDIF">endif</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="190"/>
+  <line no="191">
+    <token name="T_INLINE_HTML">    &lt;/div&gt; &lt;!-- end panel-default --&gt;</token>
+  </line>
+  <line no="192">
+    <token name="T_INLINE_HTML">  &lt;/div&gt;&lt;!-- end  --&gt;</token>
+  </line>
+  <line no="193">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="194"/>
+  <line no="195">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_REQUIRE_ONCE">require_once</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"includes/admin-footer.php"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="196"/>
+</source>

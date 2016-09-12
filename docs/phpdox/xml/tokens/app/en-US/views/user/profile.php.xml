@@ -1,0 +1,985 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/user" file="profile.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/user/profile.php" size="11400" time="2016-09-12T02:44:59+02:00" unixtime="1473641099" sha1="ba13eb63d4fb7cd9537c36c5dc8f3a6507bb0922" relative="app/en-US/views/user/profile.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2">
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$data</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'user'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="3">
+    <token name="T_VARIABLE">$display_name_last_letter</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">substr</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">display_name</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">strlen</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">display_name</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_MINUS">-</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">1</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">1</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="4">
+    <token name="T_REQUIRE_ONCE">require_once</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"includes/admin-header.php"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="5">
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">  &lt;div class="container"&gt;</token>
+  </line>
+  <line no="7"/>
+  <line no="8">
+    <token name="T_INLINE_HTML">    &lt;div class="col-md-offset-3 col-md-6"&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">      &lt;div class="panel panel-default"&gt;</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">        &lt;div class="panel-heading"&gt;</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">          &lt;h2&gt;</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group clearfix"&gt;</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">              </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_IF">if</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_STRING">strcmp</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$display_name_last_letter</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"s"</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_NOT_EQUAL">!=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">                </token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">ucwords</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">display_name</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">'s Profile</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">              </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ELSE">else</token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">                </token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">ucwords</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">display_name</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">' Profile</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">              </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ENDIF">endif</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="18"/>
+  <line no="19">
+    <token name="T_INLINE_HTML">              </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_IF">if</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">has_permission</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'edit'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'profiles'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">                &lt;button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#edit-profile-modal"&gt;Edit&lt;/button&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">              </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ENDIF">endif</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">          &lt;/h2&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="25"/>
+  <line no="26">
+    <token name="T_INLINE_HTML">        &lt;div class="panel-body"&gt;</token>
+  </line>
+  <line no="27"/>
+  <line no="28">
+    <token name="T_INLINE_HTML">          &lt;!-- #Feedback --&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">          &lt;div id="feedback" class="alert hidden"&gt;&lt;/div&gt;</token>
+  </line>
+  <line no="30"/>
+  <line no="31">
+    <token name="T_INLINE_HTML">          &lt;form id="profile-details" class="form-horizontal"&gt;</token>
+  </line>
+  <line no="32"/>
+  <line no="33">
+    <token name="T_INLINE_HTML">            &lt;!-- User Login --&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-3"&gt;User Login:&lt;/label&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                &lt;p id="preview-login" class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">login</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="40"/>
+  <line no="41">
+    <token name="T_INLINE_HTML">            &lt;!-- Username --&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-3"&gt;Username:&lt;/label&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">                &lt;p id="preview-username" class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">username</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="48"/>
+  <line no="49">
+    <token name="T_INLINE_HTML">            &lt;!-- Display Name --&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-3"&gt;Display Name:&lt;/label&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">                &lt;p id="preview-display-name" class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">display_name</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">                &lt;/p&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="57"/>
+  <line no="58">
+    <token name="T_INLINE_HTML">            &lt;!-- Primary Email --&gt;</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-3"&gt;Primary Email:&lt;/label&gt;</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">                &lt;p id="preview-email-primary" class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">primary_email</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="65"/>
+  <line no="66">
+    <token name="T_INLINE_HTML">            &lt;!-- Other Email --&gt;</token>
+  </line>
+  <line no="67">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="68">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-3"&gt;Other Email:&lt;/label&gt;</token>
+  </line>
+  <line no="69">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="70">
+    <token name="T_INLINE_HTML">                &lt;p id="preview-email-other" class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">emails</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="71">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="72">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="73"/>
+  <line no="74">
+    <token name="T_INLINE_HTML">            &lt;!-- Address --&gt;</token>
+  </line>
+  <line no="75">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="76">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-3"&gt;Address:&lt;/label&gt;</token>
+  </line>
+  <line no="77">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="78">
+    <token name="T_INLINE_HTML">                &lt;p id="preview-address" class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">address</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="79">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="80">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="81"/>
+  <line no="82">
+    <token name="T_INLINE_HTML">            &lt;!-- Group --&gt;</token>
+  </line>
+  <line no="83">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="84">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-3"&gt;User Group:&lt;/label&gt;</token>
+  </line>
+  <line no="85">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="86">
+    <token name="T_INLINE_HTML">                &lt;p id="preview-group" class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">group_name</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="87">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="88">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="89"/>
+  <line no="90">
+    <token name="T_INLINE_HTML">            &lt;!-- Joined --&gt;</token>
+  </line>
+  <line no="91">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="92">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-3"&gt;Joined:&lt;/label&gt;</token>
+  </line>
+  <line no="93">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="94">
+    <token name="T_INLINE_HTML">                &lt;p id="preview-joined" class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">joined</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="95">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="96">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="97"/>
+  <line no="98">
+    <token name="T_INLINE_HTML">            &lt;!-- Preferences --&gt;</token>
+  </line>
+  <line no="99">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="100">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-3"&gt;Preferences:&lt;/label&gt;</token>
+  </line>
+  <line no="101">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="102">
+    <token name="T_INLINE_HTML">                &lt;p id="preview-preferences" class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">preferences</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="103">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="104">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="105"/>
+  <line no="106">
+    <token name="T_INLINE_HTML">            &lt;!-- Edit Profile Modal --&gt;</token>
+  </line>
+  <line no="107">
+    <token name="T_INLINE_HTML">            &lt;div id="edit-profile-modal" class="modal fade" role="dialog"&gt;</token>
+  </line>
+  <line no="108">
+    <token name="T_INLINE_HTML">              &lt;div class="modal-dialog"&gt;</token>
+  </line>
+  <line no="109"/>
+  <line no="110">
+    <token name="T_INLINE_HTML">                &lt;!-- Modal content--&gt;</token>
+  </line>
+  <line no="111">
+    <token name="T_INLINE_HTML">                &lt;div class="modal-content"&gt;</token>
+  </line>
+  <line no="112">
+    <token name="T_INLINE_HTML">                  &lt;div class="modal-header"&gt;</token>
+  </line>
+  <line no="113">
+    <token name="T_INLINE_HTML">                    &lt;button type="button" class="close" data-dismiss="modal"&gt;&amp;times;&lt;/button&gt;</token>
+  </line>
+  <line no="114">
+    <token name="T_INLINE_HTML">                    &lt;h4 class="modal-title"&gt;Edit Profile&lt;/h4&gt;</token>
+  </line>
+  <line no="115">
+    <token name="T_INLINE_HTML">                  &lt;/div&gt;</token>
+  </line>
+  <line no="116">
+    <token name="T_INLINE_HTML">                  &lt;div class="modal-body"&gt;</token>
+  </line>
+  <line no="117">
+    <token name="T_INLINE_HTML">                    &lt;div id="profile-details-input"&gt;</token>
+  </line>
+  <line no="118"/>
+  <line no="119">
+    <token name="T_INLINE_HTML">                      &lt;!-- #Feedback Modal --&gt;</token>
+  </line>
+  <line no="120">
+    <token name="T_INLINE_HTML">                      &lt;div id="feedback-modal" class="alert hidden"&gt;&lt;/div&gt;</token>
+  </line>
+  <line no="121"/>
+  <line no="122">
+    <token name="T_INLINE_HTML">                      &lt;!-- User Login --&gt;</token>
+  </line>
+  <line no="123">
+    <token name="T_INLINE_HTML">                      &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="124">
+    <token name="T_INLINE_HTML">                        &lt;label class="control-label col-sm-3"&gt;User Login:&lt;/label&gt;</token>
+  </line>
+  <line no="125">
+    <token name="T_INLINE_HTML">                        &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="126">
+    <token name="T_INLINE_HTML">                          &lt;input type='text' name='login' id='login' class="form-control" value='</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">login</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">' /&gt;</token>
+  </line>
+  <line no="127">
+    <token name="T_INLINE_HTML">                        &lt;/div&gt;</token>
+  </line>
+  <line no="128">
+    <token name="T_INLINE_HTML">                      &lt;/div&gt;</token>
+  </line>
+  <line no="129"/>
+  <line no="130">
+    <token name="T_INLINE_HTML">                      &lt;!-- Username --&gt;</token>
+  </line>
+  <line no="131">
+    <token name="T_INLINE_HTML">                      &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="132">
+    <token name="T_INLINE_HTML">                        &lt;label class="control-label col-sm-3"&gt;Username:&lt;/label&gt;</token>
+  </line>
+  <line no="133">
+    <token name="T_INLINE_HTML">                        &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="134">
+    <token name="T_INLINE_HTML">                          &lt;input type='text' name='login' id='username' class="form-control" value='</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">username</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">' /&gt;</token>
+  </line>
+  <line no="135">
+    <token name="T_INLINE_HTML">                        &lt;/div&gt;</token>
+  </line>
+  <line no="136">
+    <token name="T_INLINE_HTML">                      &lt;/div&gt;</token>
+  </line>
+  <line no="137"/>
+  <line no="138">
+    <token name="T_INLINE_HTML">                      &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="139">
+    <token name="T_INLINE_HTML">                      &lt;/div&gt;</token>
+  </line>
+  <line no="140">
+    <token name="T_INLINE_HTML">                    &lt;/div&gt;</token>
+  </line>
+  <line no="141">
+    <token name="T_INLINE_HTML">                  &lt;/div&gt;&lt;!-- #end modal-body --&gt;</token>
+  </line>
+  <line no="142"/>
+  <line no="143">
+    <token name="T_INLINE_HTML">                  &lt;div class="modal-footer"&gt;</token>
+  </line>
+  <line no="144">
+    <token name="T_INLINE_HTML">                    &lt;input type="hidden" name="api-key" id="api-key" class="form-control" value="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$data</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'app'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">get_api_key</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">"&gt;</token>
+  </line>
+  <line no="145">
+    <token name="T_INLINE_HTML">                    &lt;button type="button" class="btn btn-info" name="btn-profile-save"&gt;Save&lt;/button&gt;</token>
+  </line>
+  <line no="146">
+    <token name="T_INLINE_HTML">                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Cancel&lt;/button&gt;</token>
+  </line>
+  <line no="147">
+    <token name="T_INLINE_HTML">                  &lt;/div&gt;&lt;!-- #end modal-footer --&gt;</token>
+  </line>
+  <line no="148"/>
+  <line no="149">
+    <token name="T_INLINE_HTML">                  &lt;!-- Delete the follwoing line when scripts are migrated to single js file  --&gt;</token>
+  </line>
+  <line no="150">
+    <token name="T_INLINE_HTML">                  &lt;script src="js/jquery/jquery.min.js"&gt;&lt;/script&gt;</token>
+  </line>
+  <line no="151">
+    <token name="T_INLINE_HTML">                  &lt;script&gt;</token>
+  </line>
+  <line no="152">
+    <token name="T_INLINE_HTML">                  function init()</token>
+  </line>
+  <line no="153">
+    <token name="T_INLINE_HTML">                  {</token>
+  </line>
+  <line no="154">
+    <token name="T_INLINE_HTML">                    // Add event listener for save button</token>
+  </line>
+  <line no="155">
+    <token name="T_INLINE_HTML">                    $('[name=btn-profile-save]').click(function() { updateProfile(); });</token>
+  </line>
+  <line no="156"/>
+  <line no="157">
+    <token name="T_INLINE_HTML">                  } // end init()</token>
+  </line>
+  <line no="158"/>
+  <line no="159">
+    <token name="T_INLINE_HTML">                  function updateProfile()</token>
+  </line>
+  <line no="160">
+    <token name="T_INLINE_HTML">                  {</token>
+  </line>
+  <line no="161">
+    <token name="T_INLINE_HTML">                    var fieldsAreValid = true;</token>
+  </line>
+  <line no="162"/>
+  <line no="163">
+    <token name="T_INLINE_HTML">                    // Validate and bind fields</token>
+  </line>
+  <line no="164">
+    <token name="T_INLINE_HTML">                    if(!usernameIsValid($('#login').val()))</token>
+  </line>
+  <line no="165">
+    <token name="T_INLINE_HTML">                    {</token>
+  </line>
+  <line no="166">
+    <token name="T_INLINE_HTML">                      $('#feedback-modal').addClass('alert-danger');</token>
+  </line>
+  <line no="167">
+    <token name="T_INLINE_HTML">                      $('#feedback-modal').html("Error: Please check to make sure that all fields are filled out and valid.");</token>
+  </line>
+  <line no="168">
+    <token name="T_INLINE_HTML">                      $('#feedback-modal').removeClass('hidden');</token>
+  </line>
+  <line no="169">
+    <token name="T_INLINE_HTML">                      fieldsAreValid = false;</token>
+  </line>
+  <line no="170">
+    <token name="T_INLINE_HTML">                    }</token>
+  </line>
+  <line no="171"/>
+  <line no="172"/>
+  <line no="173">
+    <token name="T_INLINE_HTML">                    // Post ajax call</token>
+  </line>
+  <line no="174">
+    <token name="T_INLINE_HTML">                    if(fieldsAreValid)</token>
+  </line>
+  <line no="175">
+    <token name="T_INLINE_HTML">                    {</token>
+  </line>
+  <line no="176">
+    <token name="T_INLINE_HTML">                      var url = 'api/user/update/'</token>
+  </line>
+  <line no="177">
+    <token name="T_INLINE_HTML">                      var data = {</token>
+  </line>
+  <line no="178">
+    <token name="T_INLINE_HTML">                        login: $('#login').val(),</token>
+  </line>
+  <line no="179">
+    <token name="T_INLINE_HTML">                        username: $('#username').val()</token>
+  </line>
+  <line no="180">
+    <token name="T_INLINE_HTML">                      };</token>
+  </line>
+  <line no="181">
+    <token name="T_INLINE_HTML">                      data['</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$data</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'app'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">get_api_key_id</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">'] = '</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$data</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'app'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">get_api_key</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">';</token>
+  </line>
+  <line no="182"/>
+  <line no="183">
+    <token name="T_INLINE_HTML">                      $.post(url, data, function(data, status) { saveRequestCallback(data, status);  });</token>
+  </line>
+  <line no="184">
+    <token name="T_INLINE_HTML">                    }</token>
+  </line>
+  <line no="185"/>
+  <line no="186">
+    <token name="T_INLINE_HTML">                  } // end updateProfile()</token>
+  </line>
+  <line no="187"/>
+  <line no="188">
+    <token name="T_INLINE_HTML">                  function saveRequestCallback(data, status)</token>
+  </line>
+  <line no="189">
+    <token name="T_INLINE_HTML">                  {</token>
+  </line>
+  <line no="190">
+    <token name="T_INLINE_HTML">                    alert(data);</token>
+  </line>
+  <line no="191">
+    <token name="T_INLINE_HTML">                    var results = JSON.parse(data);</token>
+  </line>
+  <line no="192"/>
+  <line no="193">
+    <token name="T_INLINE_HTML">                    // Clear modal feedback</token>
+  </line>
+  <line no="194">
+    <token name="T_INLINE_HTML">                    $('#feedback-modal').removeClass('alert-danger').addClass('hidden');</token>
+  </line>
+  <line no="195"/>
+  <line no="196">
+    <token name="T_INLINE_HTML">                    if(results.success == true)</token>
+  </line>
+  <line no="197">
+    <token name="T_INLINE_HTML">                    {</token>
+  </line>
+  <line no="198">
+    <token name="T_INLINE_HTML">                      // Update login</token>
+  </line>
+  <line no="199">
+    <token name="T_INLINE_HTML">                      if(results.login.success == true)</token>
+  </line>
+  <line no="200">
+    <token name="T_INLINE_HTML">                        $('#preview-login').html(results.login.value);</token>
+  </line>
+  <line no="201"/>
+  <line no="202">
+    <token name="T_INLINE_HTML">                      // Update username</token>
+  </line>
+  <line no="203">
+    <token name="T_INLINE_HTML">                      if(results.username.success == true &amp;&amp; results.username.value != null)</token>
+  </line>
+  <line no="204">
+    <token name="T_INLINE_HTML">                        $('#preview-username').html(results.username.value);</token>
+  </line>
+  <line no="205"/>
+  <line no="206">
+    <token name="T_INLINE_HTML">                      // // Update display name</token>
+  </line>
+  <line no="207">
+    <token name="T_INLINE_HTML">                      if(results.displayName.success == true &amp;&amp; results.displayName.value != null)</token>
+  </line>
+  <line no="208">
+    <token name="T_INLINE_HTML">                        $('#preview-display-name').html(results.displayName.value);</token>
+  </line>
+  <line no="209">
+    <token name="T_INLINE_HTML">                      //</token>
+  </line>
+  <line no="210">
+    <token name="T_INLINE_HTML">                      // // Update primary email</token>
+  </line>
+  <line no="211">
+    <token name="T_INLINE_HTML">                      // if(results.username.success == true &amp;&amp; results.username.value != null)</token>
+  </line>
+  <line no="212">
+    <token name="T_INLINE_HTML">                      //   $('#preview-username').html(results.username.value);</token>
+  </line>
+  <line no="213">
+    <token name="T_INLINE_HTML">                      //</token>
+  </line>
+  <line no="214">
+    <token name="T_INLINE_HTML">                      // // Update other email</token>
+  </line>
+  <line no="215">
+    <token name="T_INLINE_HTML">                      // if(results.username.success == true &amp;&amp; results.username.value != null)</token>
+  </line>
+  <line no="216">
+    <token name="T_INLINE_HTML">                      //   $('#preview-username').html(results.username.value);</token>
+  </line>
+  <line no="217">
+    <token name="T_INLINE_HTML">                      //</token>
+  </line>
+  <line no="218">
+    <token name="T_INLINE_HTML">                      // // Update address</token>
+  </line>
+  <line no="219">
+    <token name="T_INLINE_HTML">                      // if(results.username.success == true &amp;&amp; results.username.value != null)</token>
+  </line>
+  <line no="220">
+    <token name="T_INLINE_HTML">                      //   $('#preview-username').html(results.username.value);</token>
+  </line>
+  <line no="221">
+    <token name="T_INLINE_HTML">                      //</token>
+  </line>
+  <line no="222">
+    <token name="T_INLINE_HTML">                      // // Update user group</token>
+  </line>
+  <line no="223">
+    <token name="T_INLINE_HTML">                      // if(results.username.success == true &amp;&amp; results.username.value != null)</token>
+  </line>
+  <line no="224">
+    <token name="T_INLINE_HTML">                      //   $('#preview-username').html(results.username.value);</token>
+  </line>
+  <line no="225"/>
+  <line no="226">
+    <token name="T_INLINE_HTML">                      clearModalAlert('#feedback-modal');</token>
+  </line>
+  <line no="227"/>
+  <line no="228">
+    <token name="T_INLINE_HTML">                      showSuccesAlert('#feedback', "&lt;strong&gt;Success:&lt;/strong&gt; Profile changes saved.");</token>
+  </line>
+  <line no="229"/>
+  <line no="230">
+    <token name="T_INLINE_HTML">                      $('#edit-profile-modal').modal('hide');</token>
+  </line>
+  <line no="231"/>
+  <line no="232">
+    <token name="T_INLINE_HTML">                    }</token>
+  </line>
+  <line no="233">
+    <token name="T_INLINE_HTML">                    else</token>
+  </line>
+  <line no="234">
+    <token name="T_INLINE_HTML">                    {</token>
+  </line>
+  <line no="235">
+    <token name="T_INLINE_HTML">                      // Show modal alert</token>
+  </line>
+  <line no="236">
+    <token name="T_INLINE_HTML">                      showModalAlert('#feedback-modal', results.errorMessage);</token>
+  </line>
+  <line no="237">
+    <token name="T_INLINE_HTML">                    }</token>
+  </line>
+  <line no="238">
+    <token name="T_INLINE_HTML">                  } // end saveRequestCallback()</token>
+  </line>
+  <line no="239"/>
+  <line no="240">
+    <token name="T_INLINE_HTML">                  function clearModalAlert(selector)</token>
+  </line>
+  <line no="241">
+    <token name="T_INLINE_HTML">                  {</token>
+  </line>
+  <line no="242">
+    <token name="T_INLINE_HTML">                    $(selector).html("");</token>
+  </line>
+  <line no="243">
+    <token name="T_INLINE_HTML">                    $(selector).removeClass('alert-danger').addClass('hidden');</token>
+  </line>
+  <line no="244">
+    <token name="T_INLINE_HTML">                  } // end clearModalAlert</token>
+  </line>
+  <line no="245"/>
+  <line no="246">
+    <token name="T_INLINE_HTML">                  function showModalAlert(selector, txt)</token>
+  </line>
+  <line no="247">
+    <token name="T_INLINE_HTML">                  {</token>
+  </line>
+  <line no="248">
+    <token name="T_INLINE_HTML">                    $(selector).html(txt);</token>
+  </line>
+  <line no="249">
+    <token name="T_INLINE_HTML">                    $(selector).addClass('alert-danger').removeClass('hidden');</token>
+  </line>
+  <line no="250">
+    <token name="T_INLINE_HTML">                  } // end showModalAlert()</token>
+  </line>
+  <line no="251"/>
+  <line no="252">
+    <token name="T_INLINE_HTML">                  function showSuccesAlert(selector, txt)</token>
+  </line>
+  <line no="253">
+    <token name="T_INLINE_HTML">                  {</token>
+  </line>
+  <line no="254">
+    <token name="T_INLINE_HTML">                    $(selector).html(txt);</token>
+  </line>
+  <line no="255">
+    <token name="T_INLINE_HTML">                    $(selector).addClass('alert-success').removeClass('hidden');</token>
+  </line>
+  <line no="256">
+    <token name="T_INLINE_HTML">                  } // end showSuccesAlert()</token>
+  </line>
+  <line no="257"/>
+  <line no="258">
+    <token name="T_INLINE_HTML">                  document.addEventListener("DOMContentLoaded", init, false);</token>
+  </line>
+  <line no="259">
+    <token name="T_INLINE_HTML">                  &lt;/script&gt;</token>
+  </line>
+  <line no="260"/>
+  <line no="261">
+    <token name="T_INLINE_HTML">                &lt;/div&gt;</token>
+  </line>
+  <line no="262"/>
+  <line no="263">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="264">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="265"/>
+  <line no="266">
+    <token name="T_INLINE_HTML">          &lt;/form&gt;</token>
+  </line>
+  <line no="267">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="268"/>
+  <line no="269">
+    <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
+  </line>
+  <line no="270">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="271"/>
+  <line no="272">
+    <token name="T_INLINE_HTML">  &lt;/div&gt;</token>
+  </line>
+  <line no="273">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_REQUIRE_ONCE">require_once</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"includes/admin-footer.php"</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="274"/>
+</source>

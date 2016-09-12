@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App" namespace="" name="App" abstract="false" final="false" start="3" end="191">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="App.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/App.php" size="4868" time="2016-09-11T04:54:11+02:00" unixtime="1473562451" sha1="38caa11f357426ed704a0e6d9d835a029c5688c5" relative="app/en-US/core/App.php"/>
+  <member name="instance" visibility="protected" line="5"/>
+  <member name="controller" type="string" default="'home'" visibility="protected" line="6"/>
+  <member name="method" type="string" default="'index'" visibility="protected" line="7"/>
+  <member name="params" type="array" default="" visibility="protected" line="8"/>
+  <member name="api_key" type="{unknown}" default="" constant="API_KEY" visibility="private" line="10"/>
+  <member name="api_key_id" type="{unknown}" default="" constant="ID_API_KEY" visibility="private" line="11"/>
+  <member name="version" type="{unknown}" default="" constant="APP_VER" visibility="public" line="13"/>
+  <constructor name="__construct" start="15" end="48" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Instantiate our controller object and reassign controller var accordingly" line="30"/>
+      <comment value="If the url isn't empty assign values else assign empty array" line="42"/>
+    </inline>
+  </constructor>
+  <method name="parse_url" start="53" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Breaks up url into an array of tokens"/>
+    </docblock>
+  </method>
+  <method name="get_api_key" start="71" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the website app's api_key"/>
+      <return description="The hashed string representing the web app's api_key." type="object">
+        <type full="{string}" namespace="" name="{string}"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="get_api_key_id" start="80" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the website app's api_key"/>
+      <return description="The hashed string representing the web app's api_key." type="object">
+        <type full="{string}" namespace="" name="{string}"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="set_api_key" start="91" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the api_key of the website to the given hashed string."/>
+      <param description="The Database where the key will be registered." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The new api key string." type="object" variable="$key">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="True if successful, false otherwise." type="object">
+        <type full="{boolean}" namespace="" name="{boolean}"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Update the api key in the database" line="93"/>
+    </inline>
+  </method>
+  <method name="generate_key" start="109" end="145" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Generates a hash key of given length."/>
+      <param description="The length of the random string that should be returned in bytes." type="object" variable="$length">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="Returns a randomnly generated key." type="object">
+        <type full="{string}" namespace="" name="{string}"/>
+      </return>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Pad key if it is shorter than required length" line="115"/>
+      <comment value="Truncate key if it's longer than required length" line="138"/>
+    </inline>
+  </method>
+  <method name="is_valid_api_key" start="153" end="170" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Verifies whether a given key is acceptable.."/>
+      <param description="The database containing the list of acceptable api keys." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The key to be checked for validity." type="object" variable="$key">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="True if the given is valid/acceptable, false otherwise." type="object">
+        <type full="{boolean}" namespace="" name="{boolean}"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="key" byreference="false" type="string" default="''"/>
+  </method>
+  <method name="redirect" start="176" end="179" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Handles redirection [Deprecated] - Use Controller::redirect($url) instead."/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="get_site_description" start="185" end="190" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns the site description."/>
+      <return description="The site description." type="object">
+        <type full="{string}" namespace="" name="{string}"/>
+      </return>
+    </docblock>
+  </method>
+</class>
