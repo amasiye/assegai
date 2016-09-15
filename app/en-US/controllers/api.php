@@ -128,7 +128,7 @@ class Api extends Controller
                   isset($_POST['login']) &&
                   !empty($_POST['login']) &&
                   !is_null($_POST['login']) &&
-                  User::login_name_exists($_POST['login'])
+                  User::login_name_exists($this->db, $_POST['login'])
               )
               {
                 if($this->validate_text($_POST['login'], REGEX_USERNAME, 4))
@@ -169,9 +169,16 @@ class Api extends Controller
                       $this->validate_text($_POST['groupName'])
                     )
                   {
-                    $results['groupName'] = array('success' => true, 'value' => $_POST['groupName']);
-                    array_push($columns, 'group');
-                    array_push($values, Group::get_group_id($this->db, $_POST['groupName']));
+                    if($this->db-select()[0]['group'] > 1)
+                    {
+                      $results['groupName'] = array('success' => true, 'value' => $_POST['groupName']);
+                      array_push($columns, 'group');
+                      array_push($values, Group::get_group_id($this->db, $_POST['groupName']));
+                    }
+                    else
+                    {
+                      $results['groupName'] = array('success' => false, 'value' => null, 'error' => 1, );
+                    }
                   }
 
                   # Primary Email
@@ -182,7 +189,7 @@ class Api extends Controller
                     )
                   {
                     $results['primaryEmail'] = array('success' => true, 'value' => $_POST['primaryEmail']);
-                    $meta['primaryEmail'] = $_POST['primaryEmail']);
+                    $meta['primary_email'] = $_POST['primaryEmail'];
                   }
 
                   # Emails
@@ -193,7 +200,7 @@ class Api extends Controller
                     )
                   {
                     $results['emails'] = array('success' => true, 'value' => $_POST['emails']);
-                    $meta['emails'] = $_POST['emails']);
+                    $meta['emails'] = $_POST['emails'];
                   }
 
                   # Address
@@ -204,7 +211,7 @@ class Api extends Controller
                     )
                   {
                     $results['address'] = array('success' => true, 'value' => $_POST['address']);
-                    $meta['address'] = $_POST['address']);
+                    $meta['address'] = $_POST['address'];
                   }
 
                   # Phones
@@ -215,7 +222,7 @@ class Api extends Controller
                     )
                   {
                     $results['phones'] = array('success' => true, 'value' => $_POST['phones']);
-                    $meta['phones'] = $_POST['phones']);
+                    $meta['phones'] = $_POST['phones'];
                   }
 
                   # Preferences
@@ -226,7 +233,7 @@ class Api extends Controller
                     )
                   {
                     $results['preferences'] = array('success' => true, 'value' => $_POST['preferences']);
-                    $meta['preferences'] = $_POST['preferences']);
+                    $meta['preferences'] = $_POST['preferences'];
                   }
 
                   # Display Name
@@ -237,7 +244,7 @@ class Api extends Controller
                     )
                   {
                     $results['displayName'] = array('success' => true, 'value' => $_POST['displayName']);
-                    $meta['displayName'] = $_POST['displayName']);
+                    $meta['display_name'] = $_POST['displayName'];
                   }
 
                   if(!empty($meta) && !is_null($meta))

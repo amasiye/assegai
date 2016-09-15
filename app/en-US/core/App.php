@@ -101,6 +101,13 @@ class App
     return false;
   } // end set_api_key()
 
+  public static function get_api_key_author($db, $key)
+  {
+    $row = $db->select('assg_api_keys', array('key_author'), array('where' => "key_hash='{$key}'"))[0];
+
+    return $row['key_author'];
+  } // end get_api_key_author()
+
   /**
    * Generates a hash key of given length.
    * @param {string} $length The length of the random string that should be returned in bytes.
@@ -182,11 +189,9 @@ class App
    * Returns the site description.
    * @return {string} The site description.
    */
-  public static function get_site_description()
+  public static function get_site_description($db)
   {
-    $description = "The site's description goes here.";
-
-    return $description;
+    return $db->select('assg_options', array('option_value'), array('where' => "option_name='site_description'"))[0]['option_value'];
   } // end get_site_description()
 }
 

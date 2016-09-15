@@ -62,7 +62,44 @@ class Group
     }
 
     return QUERY_EXEC_ERR;
-  } // end static function get_groups()
+  } // end static get_groups()
+
+  /**
+   * Returns an array of all the group names in the given database.
+   * @param {Database} $db The database containing the group names.
+   * @return {array} Returns an array of all groups names given database or an empty array.
+   */
+  public static function get_group_names($db)
+  {
+    $groups = Group::get_groups($db);
+    $group_names = array();
+
+    foreach ($groups as $group)
+    {
+      array_push($group_names, $group['group_name']);
+    }
+    return $group_names;
+  } // end static get_group_names()
+
+  /**
+   * Returns the number of users that belong to a given group.
+   * @param {Database} $db The database containing the data.
+   * @param {int} $group The group id or name. If an integer is passed, group id
+   * is assumed whereas if a string is passed group name is assumed.
+   * @return {int} The number of users beloning to the given group.
+   */
+  public static function get_num_members($db, $group)
+  {
+    $id = 1;
+
+    if(is_integer($group))
+      $id = $group;
+
+    if(is_string($group))
+      $id = Group::get_group_id($db, $group);
+
+    return $db->select('assg_users', null, array("where" => "user_group='{$id}'", "count"));
+  } // end get_num_members()
 
 } // end  Group
 

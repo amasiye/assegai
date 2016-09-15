@@ -37,13 +37,7 @@ class Admin extends Controller
   {
     if(User::is_logged_in())
     {
-      // if(isset($params) && !empty($params))
-      //   $login = $params;
-      // else
-      //   $login = $_SESSION[SESSION_USER];
-
-      // $user = $this->model('User', array('login' => $login, 'db' => $this->db));
-      $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db));
+      $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $params['app']));
       $this->view('user/profile', array('app' => $params['app'], 'user' => $user));
     }
     else

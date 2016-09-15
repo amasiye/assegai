@@ -80,8 +80,9 @@
                   username: $('#username').val(),
                   password: $('#password').val()
                 },
-                function(res) {
-                  var result = JSON.parse(res);
+                function(data, status) {
+                  // alert(data);
+                  var result = JSON.parse(data);
 
                   if(result.success == true)
                   {

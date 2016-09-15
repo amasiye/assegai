@@ -29,6 +29,7 @@ class User
   public $error;
 
   private $db;
+  private $app;
 
   /**
    * Constructs a user object.
@@ -43,6 +44,8 @@ class User
         #Bind parameters to corresponding properties
         $this->login = $params['login'];
         $this->db = $params['db'];
+        if(array_key_exists('app', $params))
+          $this->app = $params['app'];
 
         # Cache user data
         $user_data = $this->db->select("assg_users", array(), array('-w'=>"user_login='{$this->login}'"))[0];
@@ -66,6 +69,7 @@ class User
         $this->phones = $this->meta['phones'];         // An associative array of phone numbers
         $this->preferences = $this->meta['preferences'];
         $this->display_name = $this->meta['display_name'];
+
       }
 
     }
@@ -82,25 +86,37 @@ class User
     $db = $this->db;
     /* This array is the one supplied to the Database->update() method */
     $stmt_columns = array();
+    $update_session_login = false;
 
     # Check for keys and convert to appropriate database column/field name
     # Login
     if(in_array('login', $columns))
-      $stmt_columns[array_keys($columns, 'login')[0]] = 'user_login';
+    {
+      $stmt_columns[array_search('login', $columns)] = 'user_login'; // Match the $column keys with the $stmt_columns
+      $update_session_login = true;
+    }
 
     # Username
     if(in_array('username', $columns))
-      $stmt_columns[array_keys($columns, 'username')[0]] = 'user_name';
+      $stmt_columns[array_search('username', $columns)] = 'user_name';
+
+    # Group
+    if(in_array('group', $columns))
+      $stmt_columns[array_search('group', $columns)] = 'user_group';
 
     # Group
     if(in_array('meta', $columns))
-      $stmt_columns[array_keys($columns, 'meta')[0]] = 'user_meta';
+      $stmt_columns[array_search('meta', $columns)] = 'user_meta';
 
     # Call update
     $result = $db->update('assg_users', $stmt_columns, $values, array("-w" => "user_id='{$this->id}'"));
 
     if($result == QUERY_EXEC_OK)
+    {
+      // if($update_session_login && App::get_api_key_author($db, ))
+      //   $_SESSION[SESSION_USER] =
       return true;
+    }
 
     # Report if any errors
     $this->error = $result;
@@ -285,7 +301,7 @@ class User
                         array($user_login, $user_password_hashed, $user_salt, $user_name, $user_joined, $user_group, $user_meta)
                       );
     // return 0;
-  } // end static function register($details)
+  } // end static register()
 
   /**
    * Deregisters a user from the system given a user_login name.
@@ -349,6 +365,21 @@ class User
 
     return false;
   } // end login_name_exists()
+
+  /**
+   * Determines whether the user is an Administrator.
+   * @return {boolean} Returns true if the user is an Administrator or false if they are not.
+   */
+  public static function is_admin($db, $login)
+  {
+    $group_id = $db->select('assg_users', array('user_group'), array("where" => "user_login='{$login}'"))[0]['user_group'];
+    $group_name = Group::get_group_name($db, $group_id);
+    if(strcmp($group_name, "Administrator") == 0)
+      return true;
+
+    return false;
+  } // end is_admin()
+  
 }
 
 ?>

@@ -21,4 +21,6 @@ define('API_REQUEST_ERR', 501);
 define('API_REQUEST_ERR_MISSING_KEY', 502);
 define('API_REQUEST_ERR_INVALID_KEY', 503);
 define('UPDATE_ERR_LOGIN', 601);
+define('UPDATE_ERR_GROUP', 602);  // At least 1 admin must exist.
+define('DELETE_ERR', 611);  // At least 1 admin must exist.
 ?>

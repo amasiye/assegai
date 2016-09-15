@@ -21,7 +21,7 @@
     <?php
     }
     ?>
-    <meta name="description" content="<?= App::get_site_description(); ?>">
+    <meta name="description" content="<?= App::get_site_description($db); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <base href=<?= BASEPATH; ?>>

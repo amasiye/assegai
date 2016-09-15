@@ -89,7 +89,7 @@ class Database
     # Append column names to $sql if any at all are found.
     if(empty($columns) || is_null($columns))
     {
-      $sql .= ' *';
+      $sql .= " *";
     }
     else
     {
@@ -134,16 +134,27 @@ class Database
     $rows = array();
     while($row = $result->fetch_assoc())
     {
+      foreach ($row as $key => $value)
+      {
+        $row[$key] = $this->desanitize($value);
+      }
       array_push($rows, $row);
     }
 
     # If nothing was found insert a null character so that
     # an empty array is never returned.
     if(empty($rows))
+    {
       array_push($rows, null);
+      if(array_key_exists("count", $filters) || in_array("count", $filters))
+        return -1;
+    }
+
+    if(array_key_exists("count", $filters) || in_array("count", $filters))
+      return count($rows);
 
     return $rows;
-  } // end select(string, string, string)
+  } // end select()
 
   /**
    * Inserts new records in a table..
@@ -177,11 +188,22 @@ class Database
     $sql .= " VALUES (";
     for ($x = 0; $x < count($values); $x++)
     {
-      # Enclose strings in single quotes
-      if(gettype($values[$x]) == 'string')
-        $sql .= "'" . $this->sanitize($values[$x]) . "'";
+      if((array_key_exists('sanitize', $filters) && $filters['sanitization'] == false))
+      {
+        # Enclose strings in single quotes
+        if(gettype($values[$x]) == 'string')
+          $sql .= "'" . $values[$x] . "'";
+        else
+          $sql .= $values[$x];
+      }
       else
-        $sql .= $this->sanitize($values[$x]);
+      {
+        # Enclose strings in single quotes
+        if(gettype($values[$x]) == 'string')
+          $sql .= "'" . $this->sanitize($values[$x]) . "'";
+        else
+          $sql .= $this->sanitize($values[$x]);
+      }
 
       # Add comma after each value except for last
       if($x < (count($values) - 1)) $sql .= ", ";
@@ -232,10 +254,20 @@ class Database
     # Append columns and value to SQL string
     for($x = 0; $x < count($columns); $x++)
     {
-      if($x == 0)
-        $sql .= " $columns[$x]='" . $this->sanitize($values[$x]) . "'";
+      if(array_key_exists("santize", $filters) && $filters['sanitize'] == false)
+      {
+        if($x == 0)
+          $sql .= " {$columns[$x]}='{$values[$x]}'";
+        else
+          $sql .= ",{$columns[$x]}='{$values[$x]}'";
+      }
       else
-        $sql .= ",$columns[$x]='" . $this->sanitize($values[$x]) . "'";
+      {
+        if($x == 0)
+          $sql .= " $columns[$x]='" . $this->sanitize($values[$x]) . "'";
+        else
+          $sql .= ",$columns[$x]='" . $this->sanitize($values[$x]) . "'";
+      }
     }
 
     if(isset($filters) && !is_null($filters))
@@ -264,6 +296,7 @@ class Database
   public function delete($table, $filters)
   {
     $conn = $this->conn;
+    $where_flag = false;
 
     # Check user credentials
 
@@ -271,10 +304,20 @@ class Database
     $sql = "DELETE FROM {$table}";
 
     # Check for WHERE clause
-    if(!is_null($filters) && isset($filters))
+    if(is_null($filters) && !isset($filters))
     {
-      if(array_key_exists('-w', $filters))
-        $sql .= " WHERE {$filters['-w']}";
+      return DELETE_ERR;
+    }
+
+    if(array_key_exists('where', $filters))
+    {
+      $where_flag = true;
+      $sql .= " WHERE {$filters['where']}";
+    }
+
+    if(array_key_exists('-w', $filters) && !$where_flag)
+    {
+      $sql .= " WHERE {$filters['-w']}";
     }
 
     # Execute SQL query

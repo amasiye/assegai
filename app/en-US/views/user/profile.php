@@ -11,9 +11,9 @@ require_once "includes/admin-header.php";
           <h2>
             <div class="form-group clearfix">
               <?php if (strcmp($display_name_last_letter, "s") != 0): ?>
-                <?= ucwords($user->display_name); ?>'s Profile
+                <span id="profile-title"><?= ucwords($user->display_name); ?></span>'s Profile
               <?php else: ?>
-                <?= ucwords($user->display_name); ?>' Profile
+                <span id="profile-title"><?= ucwords($user->display_name); ?></span>' Profile
               <?php endif; ?>
 
               <?php if ($user->has_permission('edit','profiles')): ?>
@@ -131,12 +131,63 @@ require_once "includes/admin-header.php";
                       <div class="form-group">
                         <label class="control-label col-sm-3">Username:</label>
                         <div class="col-sm-9">
-                          <input type='text' name='login' id='username' class="form-control" value='<?= $user->username; ?>' />
+                          <input type='text' name='username' id='username' class="form-control" value='<?= $user->username; ?>' />
                         </div>
                       </div>
 
+                      <!-- Display Name -->
                       <div class="form-group">
+                        <label class="control-label col-sm-3">Display Name:</label>
+                        <div class="col-sm-9">
+                          <input type='text' name='display-name' id='display-name' class="form-control" value='<?= $user->display_name; ?>' />
+                        </div>
                       </div>
+
+                      <!-- Primary Email -->
+                      <div class="form-group">
+                        <label class="control-label col-sm-3">Primary Email:</label>
+                        <div class="col-sm-9">
+                          <input type='text' name='email-primary' id='email-primary' class="form-control" value='<?= $user->primary_email; ?>' />
+                        </div>
+                      </div>
+
+                      <!-- Other Email -->
+                      <div class="form-group">
+                        <label class="control-label col-sm-3">Other Email:</label>
+                        <div class="col-sm-9">
+                          <input type='text' name='email-other' id='email-other' class="form-control" value='<?= $user->emails; ?>' />
+                        </div>
+                      </div>
+
+                      <!-- Address -->
+                      <div class="form-group">
+                        <label class="control-label col-sm-3">Address:</label>
+                        <div class="col-sm-9">
+                          <input type='text' name='address' id='address' class="form-control" value='<?= $user->address; ?>' />
+                        </div>
+                      </div>
+                      
+                      <?php if (User::is_admin($db, $user->login)): ?>
+                      <!-- Group -->
+                      <div class="form-group">
+                        <label class="control-label col-sm-3">User Group:</label>
+                        <div class="col-sm-9">
+                          <select name='group-name' id='group-name' class="form-control">
+                            <?php
+                            $arr = Group::get_group_names($this->db);
+                            foreach($arr as $group)
+                            {
+                              if(strcmp($user->group_name, $group) == 0)
+                              echo "<option value='{$group}' selected>{$group}</option>";
+                              else
+                              echo "<option value='{$group}'>{$group}</option>";
+                            }
+                            ?>
+                          </select>
+                        </div>
+                      </div>
+                      <?php endif; ?>
+
                     </div>
                   </div><!-- #end modal-body -->
 
@@ -175,10 +226,21 @@ require_once "includes/admin-header.php";
                       var url = 'api/user/update/'
                       var data = {
                         login: $('#login').val(),
-                        username: $('#username').val()
+                        username: $('#username').val(),
+                        displayName: $('#display-name').val(),
+                        <?php if (User::is_admin($db, $user->login)): ?>
+                        groupName: $('#group-name').val(),
+                        <?php endif; ?>
+                        primaryEmail: $('#email-primary').val(),
+                        emails: $('#email-other').val(),
+                        address: $('#address').val(),
+                        phones: $('#phones').val(),
+                        preferences: $('#preferences').val()
                       };
-                      data['<?= $data['app']->get_api_key_id(); ?>'] = '<?= $data['app']->get_api_key(); ?>';
 
+                      // Append api key to data
+                      data['<?= $data['app']->get_api_key_id(); ?>'] = '<?= $data['app']->get_api_key(); ?>';
+                      // alert(JSON.stringify(data));
                       $.post(url, data, function(data, status) { saveRequestCallback(data, status);  });
                     }
 
@@ -186,7 +248,7 @@ require_once "includes/admin-header.php";
 
                   function saveRequestCallback(data, status)
                   {
-                    alert(data);
+                    // alert(data);
                     var results = JSON.parse(data);
 
                     // Clear modal feedback
@@ -204,26 +266,30 @@ require_once "includes/admin-header.php";
 
                       // // Update display name
                       if(results.displayName.success == true && results.displayName.value != null)
+                      {
                         $('#preview-display-name').html(results.displayName.value);
-                      //
-                      // // Update primary email
-                      // if(results.username.success == true && results.username.value != null)
-                      //   $('#preview-username').html(results.username.value);
-                      //
-                      // // Update other email
-                      // if(results.username.success == true && results.username.value != null)
-                      //   $('#preview-username').html(results.username.value);
-                      //
-                      // // Update address
-                      // if(results.username.success == true && results.username.value != null)
-                      //   $('#preview-username').html(results.username.value);
-                      //
-                      // // Update user group
-                      // if(results.username.success == true && results.username.value != null)
-                      //   $('#preview-username').html(results.username.value);
+                        $('#profile-title').html(results.displayName.value);
+                      }
+
+                      // Update primary email
+                      if(results.primaryEmail.success == true && results.primaryEmail.value != null)
+                        $('#preview-email-primary').html(results.primaryEmail.value);
+
+                      // Update other email
+                      if(results.emails.success == true && results.emails.value != null)
+                        $('#preview-email-other').html(results.emails.value);
+
+                      // Update address
+                      if(results.address.success == true && results.address.value != null)
+                        $('#preview-address').html(results.address.value);
+
+                      <?php if (User::is_admin($db, $user->login)): ?>
+                      // Update user group
+                      if(results.groupName.success == true && results.groupName.value != null)
+                        $('#preview-username').html(results.username.value);
+                      <?php endif; ?>
 
                       clearModalAlert('#feedback-modal');
-
                       showSuccesAlert('#feedback', "<strong>Success:</strong> Profile changes saved.");
 
                       $('#edit-profile-modal').modal('hide');
