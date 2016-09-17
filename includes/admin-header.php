@@ -12,18 +12,14 @@ require_once "includes/head-shared.php";
       <div class="navbar-header">
         <a href="<?= BASEPATH; ?>" class="navbar-brand"><?= SITE_NAME; ?></a>
       </div>
+
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <?php if (User::is_logged_in()): ?>
             <li class="active"><a href="admin/">Dashboard</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Add">
-                <span class="glyphicon glyphicon-plus-sign"></span> Add<span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="design/"><span class="glyphicon glyphicon-pencil"></span> Design</a></li>
-              </ul>
-            </li>
+            <li class="active"><a href="admin/edit/pages">Pages</a></li>
+            <li class="active"><a href="admin/edit/layouts/">Layouts</a></li>
+            <li class="active"><a href="admin/settings/">Settings</a></li>
           <?php endif; ?>
         </ul>
 
@@ -55,12 +51,41 @@ require_once "includes/head-shared.php";
         <?php else: ?>
 
           <!--#ViewMode -->
-          <li class="active"><a href="#" onlclick="switchViewingMode(event, 'desktop')" title="Desktop view"><i class="fa fa-desktop"></i></a></li>
-          <li><a href="#" onlclick="switchViewingMode(event, 'tablet')" title="Tablet view"><i class="fa fa-tablet"></i></a></li>
-          <li><a href="#" onlclick="switchViewingMode(event, 'mobile')" title="Mobile view"><i class="fa fa-mobile"></i></a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Switch Editor Views "><i class="fa fa-desktop"></i> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">Editor Views</li>
+              <li>
+                <a href="#" onlclick="switchViewingMode(event, 'desktop')" title="Desktop view">
+                  <div class="row">
+                    <div class="col-sm-2 text-right"><i class="fa fa-desktop"></i></div>
+                    <div class="col-sm-8 text-left">Desktop View</div>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" onlclick="switchViewingMode(event, 'tablet')" title="Tablet view">
+                  <div class="row">
+                    <div class="col-sm-2 text-right"><i class="fa fa-tablet"></i></div>
+                    <div class="col-sm-8 text-left">Tablet View</div>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" onlclick="switchViewingMode(event, 'mobile')" title="Mobile view">
+                  <div class="row">
+                    <div class="col-sm-2 text-right"><i class="fa fa-mobile"></i></div>
+                    <div class="col-sm-8 text-left">Mobile View</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
           <!--#ViewModeEnd -->
 
-          <li><a href="#" onclick="publish(event)" title="Publish"><span class="glyphicon glyphicon-globe"></span></a></li>
+          <li><a href="#" onclick="publish(event)" title="Publish">Publish <span class="glyphicon glyphicon-globe"></span></a></li>
           <!-- Publish Operation -->
           <script>
             function switchViewingMode(event, mode)
@@ -124,7 +149,10 @@ require_once "includes/head-shared.php";
         <?php endif; ?>
         </ul>
       </div>
+
     </div>
   </nav>
 
 <?php endif; ?>
+
+<!-- <?php $elem = new HTMLElement($db, 1); ?> -->

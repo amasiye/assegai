@@ -14,17 +14,25 @@ class Home extends Controller
    */
   public function index($option = '')
   {
+    switch ($option)
+    {
+      case 'login':
+        App::redirect(BASEPATH . 'admin/');
+        break;
 
-    if(User::is_logged_in())
-    {
-      $user = $this->model('User');
-      $this->view('home/index', array('user' => $user));
-      // App::redirect(BASEPATH . 'browse/');
-    }
-    else
-    {
-        $user = $this->model('User');
-        $this->view('home/index', array('user' => $user));
+      default:
+        if(User::is_logged_in())
+        {
+          $user = $this->model('User');
+          $this->view('home/index', array('user' => $user));
+          // App::redirect(BASEPATH . 'browse/');
+        }
+        else
+        {
+          $user = $this->model('User');
+          $this->view('home/index', array('user' => $user));
+        }
+        break;
     }
 
   } // end index(string)

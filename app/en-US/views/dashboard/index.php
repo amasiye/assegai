@@ -2,29 +2,57 @@
 $user = $data['user'];
 require_once "includes/admin-header.php";
 ?>
-  <div class="container">
-    <h2>Admin Dashboard: <?= ucwords($user->display_name); ?></h2>
+  <div class="container-fluid min-height-576">
+    <div class="row content">
 
-    <!-- Row 1 -->
-    <div class="row">
-      <div class="well well-lg col-md-3">a</div>
-      <div class="well well-lg col-md-offset-1 col-md-3">b</div>
-      <div class="well well-lg col-md-offset-1 col-md-3">c</div>
-    </div>
+      <!-- Left Panel -->
+      <div class="col-sm-2 sidenav">
+        <?= App::get_ui_component($user, 'dashboard'); ?>
+      </div>
 
-    <!-- Row 2 -->
-    <div class="row">
-      <div class="well well-lg col-md-3">d</div>
-      <div class="well well-lg col-md-offset-1 col-md-3">e</div>
-      <div class="well well-lg col-md-offset-1 col-md-3">f</div>
-    </div>
+      <!-- Right Panel -->
+      <div class="col-sm-10">
 
-    <!-- Row 3 -->
-    <div class="row">
-      <div class="well well-lg col-md-3">f</div>
-      <div class="well well-lg col-md-offset-1 col-md-3">g</div>
-      <div class="well well-lg col-md-offset-1 col-md-3">h</div>
+        <h2>Admin Dashboard: <?= ucwords($user->display_name); ?></h2>
+        <div class="col-md-4">
+          <div class="well well-lg">
+            <a href="admin/edit/">
+              <div class="jumbotron"></div>
+              <h4>Edit Site</h4>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="well well-lg">
+            <a href="admin/stats/">
+              <div class="page-header"></div>
+              <h4>Stats and Analytics</h4>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="well well-lg">
+            <a href="admin/settings/">
+              <h4>Settings</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </div>
+  <script>
+    var container = document.querySelector('.container');
+    var minHeight = 576;
+    // var newHeight
+
+    // if(container.offsetHeight < minHeight)
+    //   container.style.height = "576px";
+
+    // alert(window.innerHeight);
+    // function adjust
+  </script>
 <?php require_once "includes/admin-footer.php"; ?>

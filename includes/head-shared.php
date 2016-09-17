@@ -46,12 +46,6 @@
     <!-- Main css -->
     <link rel="stylesheet" href="css/assegai-main.css">
 
-    <style>
-      .navbar {
-        border-radius: 0px;
-      }
-    </style>
-
   </head>
   <body>
       <!--[if lt IE 8]>

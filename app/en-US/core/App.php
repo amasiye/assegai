@@ -193,6 +193,28 @@ class App
   {
     return $db->select('assg_options', array('option_value'), array('where' => "option_name='site_description'"))[0]['option_value'];
   } // end get_site_description()
+
+  public static function get_ui_component($user, $component)
+  {
+    $html = "";
+
+    switch ($component)
+    {
+      case 'dashboard':
+        $html = "<div class='page-header'><h3>Dashbord</h3></div>";
+        break;
+
+      case 'pages':
+        if($user->has_permission('read', 'pages'))
+          $html = "";
+        break;
+
+      default:
+        break;
+    }
+    return $html;
+  } // end get_ui_component()
+
 }
 
 ?>
