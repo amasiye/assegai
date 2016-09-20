@@ -26,7 +26,7 @@ require_once "includes/admin-header.php";
         <div class="col-md-4">
           <div class="well well-lg">
             <a href="admin/stats/">
-              <div class="page-header"></div>
+              <div class="jumbotron"></div>
               <h4>Stats and Analytics</h4>
             </a>
           </div>
@@ -35,6 +35,7 @@ require_once "includes/admin-header.php";
         <div class="col-md-4">
           <div class="well well-lg">
             <a href="admin/settings/">
+              <div class="jumbotron"></div>
               <h4>Settings</h4>
             </a>
           </div>

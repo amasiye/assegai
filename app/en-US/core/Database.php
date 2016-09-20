@@ -111,6 +111,10 @@ class Database
     if(array_key_exists("-w", $filters) && $where_is_set == false)
       $sql .= " WHERE " . $filters['-w'];
 
+    # Handle like filter
+    if(array_key_exists("like", $filters))
+      $sql .= " LIKE '" . $filters['like'] . "'";
+
     # Handle order filter
     if(array_key_exists("order", $filters))
       $sql .= " ORDER BY " . $filters['order'];

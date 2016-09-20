@@ -47,6 +47,21 @@ class Admin extends Controller
     }
   } // end profile()
 
+  public function pages($params = '')
+  {
+    if(User::is_logged_in())
+    {
+      // var_dump($params);
+      // print_r($params['app']);
+      $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $params['app']));
+      $this->view('pages/index', array('app' => $params['app'], 'user' => $user));
+    }
+    else
+    {
+        $this->view('error/403');
+    }
+  } // end edit()
+
 }
 
 ?>

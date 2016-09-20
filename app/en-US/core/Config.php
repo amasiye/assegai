@@ -38,6 +38,7 @@ define('CDNPATH', BASEPATH . "app/{$locale }/content/");
 define('LOGPATH', BASEPATH . "app/{$locale}/content/logs/");
 define('NOTICEPATH', BASEPATH . "app/{$locale}/content/logs/");
 define('NOTICEPATH_REL', "app/{$locale}/content/logs/");
+define('RESPATH', "app/{$locale}/content/resources/");
 
 /**#@+
  * Authentication Unique Keys and Salts information.

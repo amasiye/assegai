@@ -17,8 +17,8 @@ require_once "includes/head-shared.php";
         <ul class="nav navbar-nav">
           <?php if (User::is_logged_in()): ?>
             <li class="active"><a href="admin/">Dashboard</a></li>
-            <li class="active"><a href="admin/edit/pages">Pages</a></li>
-            <li class="active"><a href="admin/edit/layouts/">Layouts</a></li>
+            <li class="active"><a href="admin/pages/edit">Pages</a></li>
+            <li class="active"><a href="admin/layouts/edit/">Layouts</a></li>
             <li class="active"><a href="admin/settings/">Settings</a></li>
           <?php endif; ?>
         </ul>

@@ -15,7 +15,6 @@ class App
   public function __construct()
   {
     global $locale;
-    $instance = $this;
 
     $url = $this->parse_url();
 
@@ -41,8 +40,7 @@ class App
 
     # If the url isn't empty assign values else assign empty array
     $this->params = $url ? array_values($url) : array();
-    array_push($this->params, array('app' => $instance));
-
+    array_unshift($this->params, array('app' => $this));
     call_user_func_array(array($this->controller, $this->method), $this->params);
 
   } // end __construct()
@@ -201,12 +199,22 @@ class App
     switch ($component)
     {
       case 'dashboard':
-        $html = "<div class='page-header'><h3>Dashbord</h3></div>";
+        $html = "<div class='page-header'><h3>Dashboard</h3>
+        <ul class='list-group'>
+          <li class='list-group-item'>Site Analytics</li>
+          <li class='list-group-item'>Media Library</li>
+          <li class='list-group-item'>Contacts</li>
+          <li class='list-group-item'>Mail</li>
+          <li class='list-group-item'>Users</li>
+          <li class='list-group-item'>Profile</li>
+          <li class='list-group-item'>Settings</li>
+        </ul>
+        </div>";
         break;
 
       case 'pages':
         if($user->has_permission('read', 'pages'))
-          $html = "";
+          $html = "<div class='page-header'><h3>Pages</h3></div>";
         break;
 
       default:
