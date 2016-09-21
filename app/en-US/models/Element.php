@@ -3,7 +3,7 @@
 /**
  *
  */
-class HTMLElement extends Post implements iNode
+class Element extends Post implements iNode
 {
 
   private $parent = null;

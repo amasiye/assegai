@@ -10,16 +10,33 @@ require_once "includes/head-shared.php";
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a href="<?= BASEPATH; ?>" class="navbar-brand"><?= SITE_NAME; ?></a>
+        <a href="<?= BASEPATH; ?>admin/" class="navbar-brand"><?= SITE_NAME; ?></a>
       </div>
 
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <?php if (User::is_logged_in()): ?>
-            <li class="active"><a href="admin/">Dashboard</a></li>
-            <li class="active"><a href="admin/pages/edit">Pages</a></li>
-            <li class="active"><a href="admin/layouts/edit/">Layouts</a></li>
-            <li class="active"><a href="admin/settings/">Settings</a></li>
+            <li><a href="admin/">Dashboard</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pages: Home <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Pages</li>
+                <li><a href="admin/pages/edit/1">Home</a></li>
+                <li><a href="admin/pages/edit/2">About</a></li>
+                <li><a href="admin/pages/edit/3">Contact</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Layouts <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Layouts</li>
+                <li><a href="admin/layouts/edit/1">Blog</a></li>
+                <li><a href="admin/layouts/edit/2">Marketing 1</a></li>
+                <li><a href="admin/layouts/edit/3">Marketing 2</a></li>
+                <li><a href="admin/layouts/edit/4">Portfolio</a></li>
+              </ul>
+            </li>
+            <li><a href="admin/settings/">Settings</a></li>
           <?php endif; ?>
         </ul>
 
@@ -154,5 +171,3 @@ require_once "includes/head-shared.php";
   </nav>
 
 <?php endif; ?>
-
-<!-- <?php $elem = new HTMLElement($db, 1); ?> -->

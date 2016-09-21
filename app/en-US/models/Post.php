@@ -12,7 +12,10 @@ class Post
   public $editors;
   public $created;
   public $modified;
+  public $title;
+  public $excerpt;
   public $content;
+  public $status;
   public $type;
   public $tags;
   public $meta;
@@ -26,27 +29,33 @@ class Post
     $result = $db->select('assg_posts', null, array("where" => "post_id='$id'"))[0];
 
     $this->id = $result['post_id'];
-    $name = $result['post_name'];
-    $author = $result['post_author'];
-    $editors = $result['post_editors'];
-    $created = $result['post_created'];
-    $modified = $result['post_modified'];
-    $content = $result['post_content'];
-    $type = $result['post_type'];
-    $tags = $result['post_tags'];
-    $meta = $result['post_meta'];
+    $this->name = $result['post_name'];
+    $this->author = $result['post_author'];
+    $this->editors = $result['post_editors'];
+    $this->created = $result['post_created'];
+    $this->modified = $result['post_modified'];
+    $this->title = $result['post_title'];
+    $this->excerpt = $result['post_excerpt'];
+    $this->content = $result['post_content'];
+    $this->status = $result['post_status'];
+    $this->type = $result['post_type'];
+    $this->tags = $result['post_tags'];
+    $this->meta = $result['post_meta'];
   } // __construct()
 
   /**
    * Updates the post without publishing.
+   * @return {boolean} Returns true if save was successful, false otherwise.
    */
   public function save_draft($data = array())
   {
+    # Code
     return false;
   } // end save_draft()
 
   /**
    * Saves the draft and writes the changes to file.
+   * @return {boolean} Returns true if publish was successful, false otherwise.
    */
   public function publish()
   {
@@ -55,6 +64,7 @@ class Post
 
     # Do publishing
 
+    return false;
   } // end publish()
 
   /**
@@ -71,11 +81,11 @@ class Post
 
   /**
    * Returns an array of video posts given the specified filters.
-   * @param {Database} $db The database to make the pull from.
+   * @param {Database} $db The database to get the post from.
    * @param {array} $filters [Optional] The filters to apply to the pulled data.
    * @return {array} Returns an array of posts.
    */
-  public static function pull($db, $filters = null)
+  public static function get($db, $filters = null)
   {
     $columns = null;
     $where = "";
@@ -89,15 +99,15 @@ class Post
       $columns = $filters['columns'];
 
     return $db->select('assg_posts', $columns, $filters);
-  } // end pull()
+  } // end get()
 
   /**
    * Inserts a new post into the Database.
-   * @param {Dataabse} $db The databases to make the push to.
+   * @param {Dataabse} $db The databases where the new post will be created.
    * @param {array} $data The new post's data as an associative array.
-   * @return {boolean} Returns true if push was successful, otherwise returns false.
+   * @return {boolean} Returns true if creation succeeded, otherwise returns false.
    */
-  public static function push($db, $data = array())
+  public static function create($db, $data = array())
   {
     $columns = array();
     $values = array();
@@ -114,7 +124,37 @@ class Post
         return true;
     }
     return false;
-  } // end pull()
+  } // end create()
+
+  /**
+   * Returns an array containing a breakdown of the total number of posts by type.
+   * @param {Database} $db The datase holding the posts.
+   * @return {array} Returns an array containing post totals information or false if an error occured.
+   */
+  public static function get_totals($db)
+  {
+    $totals = true;
+
+    $total_pages = $db->select('assg_posts', null, array('where' => "post_type='page'", 'count'));
+    $total_articles = $db->select('assg_posts', null, array('where' => "post_type='article'", 'count'));
+    $total_sermons = $db->select('assg_posts', null, array('where' => "post_type='sermon'", 'count'));
+    $total_events = $db->select('assg_posts', null, array('where' => "post_type='event'", 'count'));
+    $total_newsletters = $db->select('assg_posts', null, array('where' => "post_type='newsletter'", 'count'));
+    $total_media = $db->select('assg_posts', null, array('where' => "post_type='media'", 'count'));
+    $total_other = $db->select('assg_posts', null, array('where' => "post_type='other'", 'count'));
+
+    $totals = array(
+      'pages' => $total_pages,
+      'articles' => $total_articles,
+      'sermons' => $total_sermons,
+      'events' => $total_events,
+      'newsletters' => $total_newsletters,
+      'media' => $total_media,
+      'other' => $total_other
+    );
+
+    return $totals;
+  } // end get_totals()
 }
 
 

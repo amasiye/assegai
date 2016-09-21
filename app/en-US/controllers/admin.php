@@ -20,7 +20,25 @@ class Admin extends Controller
     if(User::is_logged_in())
     {
       $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db));
-      $this->view('dashboard/index', array('app' => $app, 'user' => $user));
+      $recent_posts = $this->db->select(
+                                        'assg_posts',
+                                        null,
+                                        array(
+                                                'order' => 'post_modified DESC',
+                                                'limit' => 5
+                                              )
+                                        );
+
+
+      $this->view(
+                    'dashboard/index',
+                    array(
+                            'app' => $app,
+                            'user' => $user,
+                            'recent_posts' => $recent_posts,
+                            'totals' => Post::get_totals($this->db)
+                          )
+                  );
     }
     else
     {
@@ -33,12 +51,12 @@ class Admin extends Controller
    * Displays user profile information.
    * @param {array} $params The parameter list.
    */
-  public function profile($params = '')
+  public function profile($app = '')
   {
     if(User::is_logged_in())
     {
-      $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $params['app']));
-      $this->view('user/profile', array('app' => $params['app'], 'user' => $user));
+      $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $app));
+      $this->view('user/profile', array('app' => $app, 'user' => $user));
     }
     else
     {
@@ -47,20 +65,61 @@ class Admin extends Controller
     }
   } // end profile()
 
-  public function pages($params = '')
+  public function pages($action = '', $id = -1, $app = null)
   {
     if(User::is_logged_in())
     {
-      // var_dump($params);
-      // print_r($params['app']);
-      $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $params['app']));
-      $this->view('pages/index', array('app' => $params['app'], 'user' => $user));
+      $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $app));
+      switch ($action)
+      {
+        case 'edit':
+          $page = new Post($this->db, $id);
+          $this->view('pages/edit', array('app' => $app, 'user' => $user, 'page' => $page));
+          break;
+
+        default:
+          $this->view('pages/index', array('app' => $app, 'user' => $user));
+          break;
+      }
     }
     else
     {
         $this->view('error/403');
     }
-  } // end edit()
+  } // end pages()
+
+  /**
+   * Site analytics endpoint.
+   */
+  public function analytics($app = null)
+  {
+    if(User::is_logged_in())
+    {
+      $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $app));
+      $this->view('dashboard/analytics', array('app' => $app, 'user' => $user));
+    }
+    else
+    {
+      $this->view('error/403');
+    }
+  } // end analytics()
+
+  /**
+   * Media endpoint
+   */
+  public function media($app = null)
+  {
+    if(User::is_logged_in())
+    {
+      $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $app));
+      $media = $this->db->select('assg_posts', null, array('where' => "post_type='media'"));
+      $this->view('media/index', array('app' => $app, 'user' => $user, 'media' => $media));
+    }
+    else
+    {
+      $this->view('error/403');
+    }
+  }
 
 }
 

@@ -40,7 +40,10 @@ class App
 
     # If the url isn't empty assign values else assign empty array
     $this->params = $url ? array_values($url) : array();
-    array_unshift($this->params, array('app' => $this));
+
+    # Cache instance of app for easier use within controller functions
+    $this->params['app'] = $this;
+
     call_user_func_array(array($this->controller, $this->method), $this->params);
 
   } // end __construct()
@@ -199,16 +202,16 @@ class App
     switch ($component)
     {
       case 'dashboard':
-        $html = "<div class='page-header'><h3>Dashboard</h3>
-        <ul class='list-group'>
-          <li class='list-group-item'>Site Analytics</li>
-          <li class='list-group-item'>Media Library</li>
-          <li class='list-group-item'>Contacts</li>
-          <li class='list-group-item'>Mail</li>
-          <li class='list-group-item'>Users</li>
-          <li class='list-group-item'>Profile</li>
-          <li class='list-group-item'>Settings</li>
-        </ul>
+        $html = "<div class='page-header'><h3><span class='glyphicon glyphicon-dashboard'></span> Dashboard</h3>
+        <div class='list-group'>
+          <a href='admin/analytics/' class='list-group-item'>Site Analytics</a>
+          <a href='admin/media/' class='list-group-item'>Media Library</a>
+          <a href='admin/contacts/' class='list-group-item'>Contacts</a>
+          <a href='admin/mail/' class='list-group-item'>Mail</a>
+          <a href='admin/users/' class='list-group-item'>Users</a>
+          <a href='admin/profile/' class='list-group-item'>Profile</a>
+          <a href='admin/settings/' class='list-group-item'>Settings</a>
+        </div>
         </div>";
         break;
 

@@ -33,12 +33,15 @@ $locale = 'en-US';
 
 /** The base path (or absolute path) to the site's root directory. */
 # Path information
-define('BASEPATH', "http://localhost/atatusoft/Assegai/assegai/");
-define('CDNPATH', BASEPATH . "app/{$locale }/content/");
-define('LOGPATH', BASEPATH . "app/{$locale}/content/logs/");
-define('NOTICEPATH', BASEPATH . "app/{$locale}/content/logs/");
-define('NOTICEPATH_REL', "app/{$locale}/content/logs/");
-define('RESPATH', "app/{$locale}/content/resources/");
+define('BASEPATH',        "http://localhost/atatusoft/Assegai/assegai/");
+define('CDNPATH',         BASEPATH . "app/{$locale }/content/");
+define('LOGPATH',         BASEPATH . "app/{$locale}/content/logs/");
+define('NOTICEPATH',      BASEPATH . "app/{$locale}/content/logs/");
+define('NOTICEPATH_REL',  "app/{$locale}/content/logs/");
+define('RESPATH',         "app/{$locale}/content/resources/");
+define('BLOGPATH',        "http://assegai.ml/");
+define('ABOUTPATH',       "http://assegai.ml/about/");
+define('SOFPATH',         "http://assegai.ml/about/statement-of-faith/");
 
 /**#@+
  * Authentication Unique Keys and Salts information.

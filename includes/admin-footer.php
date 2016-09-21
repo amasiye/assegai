@@ -10,9 +10,9 @@
   <div class="footer-column col-sm-12 col-md-3">
     <h4>About</h4>
     <ul>
-      <li><a href="#">Our Blog</a></li>
-      <li><a href="about/faith/">Statement of Faith</a></li>
-      <li><a href="about/">About <?= SITE_NAME; ?></a></li>
+      <li><a href="<?= BLOGPATH; ?>">Our Blog</a></li>
+      <li><a href="<?= SOFPATH;?>">Statement of Faith</a></li>
+      <li><a href="<?= ABOUTPATH; ?>">About <?= SITE_NAME; ?></a></li>
       <li><a href="sitemap/">Sitemap</a></li>
       <li><a href="#">Privacy Policy</a></li>
       <li><a href="#">Terms of Use</a></li>

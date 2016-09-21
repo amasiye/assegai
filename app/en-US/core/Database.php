@@ -151,7 +151,7 @@ class Database
     {
       array_push($rows, null);
       if(array_key_exists("count", $filters) || in_array("count", $filters))
-        return -1;
+        return 0;
     }
 
     if(array_key_exists("count", $filters) || in_array("count", $filters))
