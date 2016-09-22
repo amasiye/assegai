@@ -379,7 +379,42 @@ class User
 
     return false;
   } // end is_admin()
-  
+
+  /**
+   * Returns an array of users. If the $filters paramater is ommited, returns
+   * all the users in the database.
+   * @param {Database} $db The database containing the users.
+   * @param {array} $filters The filters to apply to the database query.
+   * @return {array} Returns an array of users given $filters or QUERY_EXEC_ERR
+   */
+  public static function get($db, $filters = array())
+  {
+    $result = array();
+
+    if(($rows = $db->select('assg_users', null, $filters)) == QUERY_EXEC_ERR)
+      return QUERY_EXEC_ERR;
+
+    foreach($rows as $column)
+    {
+      array_push($result, $column);
+    }
+
+    return $result;
+  } // end get()
+
+  /**
+   * Returns the dispaly name of a user given their user id.
+   * @param {Database} $db The database containing the user.
+   * @param {int} $id The user id.
+   * @return {string} Returns the display name given user or QUERY_EXEC_ERR
+   */
+  public static function get_display_name($db, $id)
+  {
+    if(($row = User::get($db, array('where' => "user_id='{$id}'"))) == QUERY_EXEC_ERR)
+      return QUERY_EXEC_ERR;
+    return json_decode($row[0]['user_meta'], true)['display_name'];
+  } // end get_display_name()
+
 }
 
 ?>

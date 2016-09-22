@@ -11,47 +11,57 @@ class TimeManager
    * @return {string} Returns a string stating in seconds, minutes, days,
    * months, or years that have elapsed since the start date.
    */
-  public static function get_time_since(DateTime $then)
+  public static function get_time_since(DateTime $then, $timezone = null)
   {
+    if(!is_null($timezone))
+      date_default_timezone_set($timezone);
+
     $now = new DateTime();
     $interval = $now->diff($then);
     $date_val = $then->format('D d m, Y');
+    $year = intVal($interval->format('%y'));
+    $month = intVal($interval->format('%m'));
+    $day = intVal($interval->format('%d'));
+    $hour = intVal($interval->format('%h'));
+    $minute = intVal($interval->format('%i'));
+    $second = intVal($interval->format('%s'));
 
-    if(intVal($interval->format('%y')) == 0)  # aka same year
+    /* Fix units e.g 1 second ago vs 2 seconds ago */
+    if($year == 0)  # aka same year
     {
-      if(intVal($interval->format('%m')) == 0) # aka same month
+      if($month == 0) # aka same month
       {
-        if(intVal($interval->format('%d')) == 0) # aka same day
+        if($day == 0) # aka same day
         {
-          if(intVal($interval->format('%h')) == 0) # aka same hour
+          if($hour == 0) # aka same hour
           {
-            if(intVal($interval->format('%i')) == 0) # aka same minute
+            if($minute == 0) # aka same minute
             {
-              $date_val = $interval->format('%s seconds ago');
+              $date_val = ($second > 1)? $interval->format('%s seconds ago') : $data_val = $interval->format('%s second ago');
             }
             else
             {
-              $date_val = $interval->format('%i minutes ago');
+              $date_val = ($minute > 1)? $interval->format('%i minutes ago') : $data_val = $interval->format('%i minute ago');
             }
           }
           else
           {
-            $date_val = $interval->format('%h hours ago');
+            $date_val = ($hour > 1)? $interval->format('%h hours ago') : $data_val = $interval->format('%h hour ago');
           }
         }
         else
         {
-          $date_val = $interval->format('%d days ago');
+          $date_val = ($day > 1)? $interval->format('%d days ago') : $data_val = $interval->format('%d day ago');
         }
       }
       else
       {
-        $date_val = $interval->format('%m months ago');
+        $date_val = ($month > 1)? $interval->format('%m months ago') : $data_val = $interval->format('%m month ago');
       }
     }
     else
     {
-      $date_val = $interval->format('%y years ago');
+      $date_val = ($year > 1)? $interval->format('%y years ago') : $data_val = $interval->format('%y year ago');
     }
 
 

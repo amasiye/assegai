@@ -9,6 +9,7 @@ class Post
   public $id;
   public $name;
   public $author;
+  public $author_name;
   public $editors;
   public $created;
   public $modified;
@@ -31,6 +32,7 @@ class Post
     $this->id = $result['post_id'];
     $this->name = $result['post_name'];
     $this->author = $result['post_author'];
+    $this->author_name = User::get_display_name($db, $result['post_author']);
     $this->editors = $result['post_editors'];
     $this->created = $result['post_created'];
     $this->modified = $result['post_modified'];
@@ -40,7 +42,7 @@ class Post
     $this->status = $result['post_status'];
     $this->type = $result['post_type'];
     $this->tags = $result['post_tags'];
-    $this->meta = $result['post_meta'];
+    $this->meta = json_decode($result['post_meta'], true);
   } // __construct()
 
   /**

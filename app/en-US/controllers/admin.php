@@ -112,7 +112,8 @@ class Admin extends Controller
     if(User::is_logged_in())
     {
       $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $app));
-      $media = $this->db->select('assg_posts', null, array('where' => "post_type='media'"));
+      // $media = $this->db->select('assg_posts', null, array('where' => "post_type='media'"));
+      $media = Media::get($this->db);
       $this->view('media/index', array('app' => $app, 'user' => $user, 'media' => $media));
     }
     else

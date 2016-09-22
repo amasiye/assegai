@@ -43,12 +43,11 @@ require_once "includes/admin-header.php";
             <h4>Activity</h4>
             <table class="table">
               <tr>
-                <th>Published</th>
+                <th>Modified</th>
                 <th>Title</th>
                 <th>Type</th>
               </tr>
               <?php
-              date_default_timezone_set('America/Halifax');
               for($x = 0; $x < count($recent_posts); $x++) {
                 $then = new DateTime($recent_posts[$x]['post_modified']);
                 $date_val = TimeManager::get_time_since($then);

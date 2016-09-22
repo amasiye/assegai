@@ -57,6 +57,9 @@ class Controller
     $db = $this->db;
     $session = $this->session;
 
+    # Set the site timezone 
+    date_default_timezone_set(SITE_TIMEZONE);
+
     if(file_exists('app/' . $locale . '/views/' . $view . '.php'))
       require_once 'app/' . $locale . '/views/' . $view . '.php';
 

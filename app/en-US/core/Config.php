@@ -64,6 +64,8 @@ define('APP_VER', '0.6.4');
 define('SITE_NAME', 'Assegai Test');
 define('SITE_TAGLINE', 'This is the site tag line.');
 define('SITE_PREFIX', 'assegai_');
+define('SITE_TIMEZONE', 'America/Halifax');
+
 
 # Session information
 define('SESSION_USER_ID', 'uid');
