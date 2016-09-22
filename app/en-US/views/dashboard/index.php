@@ -51,42 +51,7 @@ require_once "includes/admin-header.php";
               date_default_timezone_set('America/Halifax');
               for($x = 0; $x < count($recent_posts); $x++) {
                 $then = new DateTime($recent_posts[$x]['post_modified']);
-                $now = new DateTime();
-                $interval = $now->diff($then);
-                $date_val = $then->format('D d m, Y');
-
-                if(intVal($interval->format('%y')) == 0)  # aka same year
-                {
-                  if(intVal($interval->format('%m')) == 0) # aka same month
-                  {
-                    if(intVal($interval->format('%d')) == 0) # aka same day
-                    {
-                      if(intVal($interval->format('%h')) == 0) # aka same hour
-                      {
-                        if(intVal($interval->format('%i')) == 0) # aka same minute
-                        {
-                          $date_val = $interval->format('%s seconds ago');
-                        }
-                        else
-                        {
-                          $date_val = $interval->format('%i minutes ago');
-                        }
-                      }
-                      else
-                      {
-                        $date_val = $interval->format('%h hours ago');
-                      }
-                    }
-                    else
-                    {
-                      $date_val = $interval->format('%d days ago');
-                    }
-                  }
-                  else
-                  {
-                    $date_val = $interval->format('%m months ago');
-                  }
-                }
+                $date_val = TimeManager::get_time_since($then);
               ?>
               <tr>
                 <td><?= $date_val; ?></td>
