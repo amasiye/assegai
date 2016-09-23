@@ -24,10 +24,12 @@ class Post
   protected $db;
   protected $fetched_data;
 
-  function __construct($db, $id)
+  function __construct($db, $id, $type = '')
   {
     $this->db = $db;
-    $result = $db->select('assg_posts', null, array("where" => "post_id='$id'"))[0];
+    $filters = (!empty($type))?
+      array("where" => "post_id='{$id}' AND post_type='{$type}'") : array("where" => "post_id='{$id}'");
+    $result = $db->select('assg_posts', null, $filters)[0];
 
     $this->id = $result['post_id'];
     $this->name = $result['post_name'];

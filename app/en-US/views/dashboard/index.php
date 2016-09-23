@@ -21,44 +21,63 @@ require_once "includes/admin-header.php";
         </div>
 
         <div class="col-md-6">
-          <div class="well well-lg">
-            <h4>Overview</h4>
-            <table class="table">
-              <tr>
-                <th></th>
-                <th>#</th>
-              </tr>
-              <?php foreach ($totals as $key => $value): ?>
-                <tr>
-                  <td><?= ucwords($key); ?></td>
-                  <td><?= $value ?></td>
-                </tr>
-              <?php endforeach; ?>
-            </table>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>Overview</h4>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>#</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach ($totals as $key => $value): ?>
+                    <tr>
+                      <td><?= ucwords($key); ?></td>
+                      <td><?= $value ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </div>
 
         <div class="col-md-6">
-          <div class="well well-lg">
-            <h4>Activity</h4>
-            <table class="table">
-              <tr>
-                <th>Modified</th>
-                <th>Title</th>
-                <th>Type</th>
-              </tr>
-              <?php
-              for($x = 0; $x < count($recent_posts); $x++) {
-                $then = new DateTime($recent_posts[$x]['post_modified']);
-                $date_val = TimeManager::get_time_since($then);
-              ?>
-              <tr>
-                <td><?= $date_val; ?></td>
-                <td><?= $recent_posts[$x]['post_title']; ?></td>
-                <td><?= ucwords($recent_posts[$x]['post_type']); ?></td>
-              </tr>
-              <?php } ?>
-            </table>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>Recent Activity</h4>
+            </div>
+
+            <div class="panel-body">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Modified</th>
+                    <th>Title</th>
+                    <th>Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                  for($x = 0; $x < count($recent_posts); $x++) {
+                    $then = new DateTime($recent_posts[$x]['post_modified']);
+                    $date_val = TimeManager::get_time_since($then);
+                  ?>
+                  <tr>
+                    <td><?= $date_val; ?></td>
+                    <td><?= $recent_posts[$x]['post_title']; ?></td>
+                    <td><?= ucwords($recent_posts[$x]['post_type']); ?></td>
+                  </tr>
+                  <?php } ?>
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </div>
 

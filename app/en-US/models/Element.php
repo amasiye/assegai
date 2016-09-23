@@ -7,13 +7,13 @@ class Element extends Post implements iNode
 {
 
   private $parent = null;
-  private $children = array('Ima childe');
+  private $children = array();
   private $contents = "";
 
   function __construct($db, $id)
   {
-    echo $id;
-  }
+    parent::__construct($db, $id);
+  } // end __construct
 
   /**
    * Adds the specified childNode argument as the last child to the current node.

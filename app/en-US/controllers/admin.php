@@ -107,14 +107,40 @@ class Admin extends Controller
   /**
    * Media endpoint
    */
-  public function media($app = null)
+  public function media($action = '', $id = -1, $app = null)
   {
+    # Validate parameters
+    if(is_null($app))
+      $app = $id;
+    else
+      $id = (int)$id;
+
+
     if(User::is_logged_in())
     {
       $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $app));
-      // $media = $this->db->select('assg_posts', null, array('where' => "post_type='media'"));
-      $media = Media::get($this->db);
-      $this->view('media/index', array('app' => $app, 'user' => $user, 'media' => $media));
+
+      switch ($action)
+      {
+        case 'edit':
+          # Note the [0] at end: we only want the first returned row.
+          $media = Media::get($this->db, array('where' => "post_id={$id}"))[0];
+
+          if(!is_null($media->filename))
+            $this->view('media/edit', array('app' => $app, 'user' => $user, 'media' => $media));
+          else
+            $this->view('error/404', array('app' => $app, 'user' => $user, 'media' => $media));
+          break;
+
+        case 'new':
+            $this->view('media/new', array('app' => $app, 'user' => $user));
+          break;
+
+        default:
+          $media = Media::get($this->db);
+          $this->view('media/index', array('app' => $app, 'user' => $user, 'media' => $media));
+          break;
+      }
     }
     else
     {

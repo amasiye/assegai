@@ -1,6 +1,6 @@
 <?php
 $user = $data['user'];
-$page = $data['page'];
+$media = $data['media'];
 
 require_once "includes/admin-header.php";
 ?>
@@ -14,13 +14,26 @@ require_once "includes/admin-header.php";
 
       <!-- Right Panel -->
       <div class="col-sm-10">
-
         <!-- Page Header -->
         <div class="page-header">
-          <h2>Page Edit: <small><?= $page->title; ?></small></h2>
+          <h2>Page Edit: <small><?= $media->title; ?></small></h2>
         </div>
 
-        <div><?= $page->content; ?></div>
+        <?php if ((strcmp($media->media_type, 'image')) == 0): ?>
+          <div class="col-sm-4">
+            <img src="<?= $media->href; ?>" alt="<?= $media->title; ?>" />
+          </div>
+          
+          <div class="col-sm-8">
+            <form class="form" role="form">
+              <div class="form-group">
+                <label for="filename">Filename:</label>
+              </div>
+            </form>
+          </div>
+        <?php else: ?>
+
+        <?php endif; ?>
 
       </div><!--#end col-sm-10 (right panel) -->
 
@@ -30,7 +43,7 @@ require_once "includes/admin-header.php";
   <script>
     var container = document.querySelector('.container');
     var minHeight = 576;
-    var newTitle = '<?= $page->title; ?>';
+    var newTitle = '<?= $media->title; ?>';
     document.title = "Page Edit: " + newTitle;
   </script>
 <?php require_once "includes/admin-footer.php"; ?>

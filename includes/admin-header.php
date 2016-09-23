@@ -126,7 +126,7 @@ require_once "includes/head-shared.php";
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?= $_SESSION[SESSION_USER_DISPLAY]; ?> <span class="glyphicon glyphicon-menu-hamburger"></span></a>
             <ul class="dropdown-menu">
-              <li class="dropdown-header">Welcome <?= $user->display_name; ?></li>
+              <li class="dropdown-header">Welcome <?= $_SESSION[SESSION_USER_DISPLAY]; ?></li>
               <li><a href="admin/profile/"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
               <li><a href="admin/notifications/"><span class="glyphicon glyphicon-bell"></span> Notifications <span class="badge"><?php $n = count(Notification::pull_unread()); echo ($n < 100)? $n : "99+"; ?></span></a></li>
               <li><a href="admin/settings/"><span class="glyphicon glyphicon-wrench"></span> Settings</a></li>

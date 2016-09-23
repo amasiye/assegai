@@ -26,6 +26,7 @@ class User
   public $phones;         // An associative array of phone numbers
   public $preferences;
   public $display_name = 'Default User';
+  public $profile_image = BASEPATH . RESPATH . 'images/default-profile.jpg';
   public $error;
 
   private $db;

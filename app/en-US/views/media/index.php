@@ -18,7 +18,7 @@ require_once "includes/admin-header.php";
         <!-- Page Header -->
         <div class="page-header">
           <h2>Media: <small><?= ucwords(SITE_NAME); ?></small>
-            <a href="#" class="pull-right"><span class="glyphicon glyphicon-plus-sign"></span></a>
+            <a href="admin/media/new/" class="btn btn-info pull-right">New</a>
           </h2>
         </div>
 
@@ -43,7 +43,7 @@ require_once "includes/admin-header.php";
             <td>
               <div class="media">
                 <div class="media-left">
-                  <a href="#">
+                  <a href="admin/media/edit/<?= $media[$x]->id; ?>">
                     <img src="<?= $media[$x]->thumb; ?>" class="media-object" alt="<?= $media[$x]->title; ?>" width="64">
                   </a>
                 </div>

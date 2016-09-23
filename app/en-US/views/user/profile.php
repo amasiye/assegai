@@ -91,7 +91,7 @@ require_once "includes/admin-header.php";
             <div class="form-group">
               <label class="control-label col-sm-3">Joined:</label>
               <div class="col-sm-9">
-                <p id="preview-joined" class="form-control-static"><?= $user->joined; ?></p>
+                <p id="preview-joined" class="form-control-static"><?= TimeManager::get_time_since(new DateTime($user->joined)); ?></p>
               </div>
             </div>
 
@@ -166,7 +166,7 @@ require_once "includes/admin-header.php";
                           <input type='text' name='address' id='address' class="form-control" value='<?= $user->address; ?>' />
                         </div>
                       </div>
-                      
+
                       <?php if (User::is_admin($db, $user->login)): ?>
                       <!-- Group -->
                       <div class="form-group">

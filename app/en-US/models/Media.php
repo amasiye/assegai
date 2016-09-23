@@ -8,6 +8,7 @@ class Media extends Post
   public $source;
   public $href;
   public $thumb;
+  public $media_type;
 
   function __construct($db, $id)
   {
@@ -16,6 +17,7 @@ class Media extends Post
     $this->source = $this->meta['source'];
     $this->href = $this->meta['href'];
     $this->thumb = $this->meta['thumb'];
+    $this->media_type = $this->meta['media_type'];
   } // end __construct()
 
   /**
@@ -29,9 +31,17 @@ class Media extends Post
     $result = array();
     $where = array('where' => "post_type='media'");
     if(!is_null($filters) && !empty($filters))
-      $where = array_merge($where, $filters);
+    {
+      if(array_key_exists('where', $filters))
+      {
+        $where['where'] .= " AND " . $filters['where'];
+        unset($filters['where']);
+      }
 
-    if(($rows = $db->select('assg_posts', null, array('where' => "post_type='media'"))) == QUERY_EXEC_ERR)
+      $where = array_merge($where, $filters);
+    }
+
+    if(($rows = $db->select('assg_posts', null, $where)) == QUERY_EXEC_ERR)
       return QUERY_EXEC_ERR;
 
     foreach($rows as $row)

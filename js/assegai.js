@@ -50,3 +50,8 @@ function passwordIsValid(password)
   }
   return false;
 }
+
+function setDocumentTitle(newTitle)
+{
+  document.title = newTitle;
+}
