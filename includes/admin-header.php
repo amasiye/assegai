@@ -179,9 +179,3 @@ require_once "includes/head-shared.php";
   </nav>
 
 <?php endif; ?>
-<?php
-$cat_name = 'breadcrumb';
-$cat = new Category($db, $cat_name);
-$cat->set_info("Tag for all {$cat_name} element types.");
-echo Category::id($db, $cat_name); exit;
- ?>
