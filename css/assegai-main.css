@@ -137,6 +137,18 @@ article>header h6 {
   padding: 0px 0px 15px;
 }
 
+.ui-upload-area {
+  clear: both;
+  border: 10px dashed #f1f1f1;
+  border-radius: 5px;
+  min-height: 100px;
+  box-sizing: border-box;
+}
+
+.ui-upload-area[class=ui-upload-area-resposive] {
+  width: 100%;
+}
+
 a.btn,
 button,
 input[type='button'].btn,

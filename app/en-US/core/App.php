@@ -195,29 +195,43 @@ class App
     return $db->select('assg_options', array('option_value'), array('where' => "option_name='site_description'"))[0]['option_value'];
   } // end get_site_description()
 
-  public static function get_ui_component($user, $component)
+  public static function get_ui_component($db, $user, $component)
   {
-    $html = "";
+    $html = "<div class='page-header'><h3><span class='glyphicon glyphicon-dashboard'></span> Dashboard</h3>
+      <div class='list-group'>
+      <a href='admin/analytics/' class='list-group-item'>Site Analytics</a>
+      <a href='admin/media/' class='list-group-item'>Media Library</a>
+      <a href='admin/contacts/' class='list-group-item'>Contacts</a>
+      <a href='admin/mail/' class='list-group-item'>Mail</a>
+      <a href='admin/users/' class='list-group-item'>Users</a>
+      <a href='admin/profile/' class='list-group-item'>Profile</a>
+      <a href='admin/settings/' class='list-group-item'>Settings</a>
+      </div>
+      </div>";
 
     switch ($component)
     {
       case 'dashboard':
-        $html = "<div class='page-header'><h3><span class='glyphicon glyphicon-dashboard'></span> Dashboard</h3>
-        <div class='list-group'>
-          <a href='admin/analytics/' class='list-group-item'>Site Analytics</a>
-          <a href='admin/media/' class='list-group-item'>Media Library</a>
-          <a href='admin/contacts/' class='list-group-item'>Contacts</a>
-          <a href='admin/mail/' class='list-group-item'>Mail</a>
-          <a href='admin/users/' class='list-group-item'>Users</a>
-          <a href='admin/profile/' class='list-group-item'>Profile</a>
-          <a href='admin/settings/' class='list-group-item'>Settings</a>
-        </div>
-        </div>";
         break;
 
       case 'pages':
         if($user->has_permission('read', 'pages'))
+        {
           $html = "<div class='page-header'><h3>Pages</h3></div>";
+        }
+        break;
+
+      case 'pages/edit':
+        if($user->has_permission('edit', 'pages'))
+        {
+          $html = "<div class='page-header'>
+                    <ul class='nav nav-tabs'>
+                      <li class='active'><a href='#'>Elements</a></li>
+                      <li><a href='#'>Widgets</a></li>
+                    </ul>
+                  </div>";
+          $elements = Element::get($db);
+        }
         break;
 
       default:

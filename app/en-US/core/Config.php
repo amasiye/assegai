@@ -58,7 +58,13 @@ define('NONCE_SALT',       'Gc-RFFMg+PBBr2l@z+wC_sc-WxN|Qjnki0B7N>%0xCd1.T.AR%F~
 define('API_KEY',          'e3760bc1b657baa8fd3dd855205e14ca863cc99f1df8675787006a3ec7d4f7d8');
 
 # App information
-define('APP_VER', '0.6.4');
+/*
+ Versioning key: a.b.c
+ a: Monumental landmark - change to architecture or overall functionality.
+ b: Feature additions and implementations
+ c: Bug fixes and minor revisions.
+ */
+define('APP_VER', '0.15.4');
 
 # Site information
 define('SITE_NAME', 'Assegai Test');

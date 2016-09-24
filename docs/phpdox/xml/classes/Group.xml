@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Group" namespace="" name="Group" abstract="false" final="false" start="6" end="67">
-  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="Group.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/Group.php" size="1917" time="2016-09-10T18:28:51+02:00" unixtime="1473524931" sha1="f9bc7f3b9dd68cffac569b1f425ea81b58ea879f" relative="app/en-US/models/Group.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Group" namespace="" name="Group" abstract="false" final="false" start="6" end="104">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="Group.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/Group.php" size="3132" time="2016-09-15T00:49:11+02:00" unixtime="1473893351" sha1="c90be29a575e4fe6c07b2e268e3ee9a4ea4571f8" relative="app/en-US/models/Group.php"/>
   <docblock>
     <description compact="Model class for user Groups."/>
   </docblock>
@@ -55,5 +55,31 @@
     <inline>
       <comment value="Get group details" line="56"/>
     </inline>
+  </method>
+  <method name="get_group_names" start="72" end="82" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns an array of all the group names in the given database."/>
+      <param description="The database containing the group names." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <return description="Returns an array of all groups names given database or an empty array." type="object">
+        <type full="{array}" namespace="" name="{array}"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="get_num_members" start="91" end="102" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns the number of users that belong to a given group."/>
+      <param description="The database containing the data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The group id or name. If an integer is passed, group id" type="object" variable="$group">is assumed whereas if a string is passed group name is assumed.<type full="{int}" namespace="" name="{int}"/></param>
+      <return description="The number of users beloning to the given group." type="object">
+        <type full="{int}" namespace="" name="{int}"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="group" byreference="false" type="{unknown}"/>
   </method>
 </class>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Admin" namespace="" name="Admin" abstract="false" final="false" start="10" end="56">
-  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers" file="admin.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers/admin.php" size="1475" time="2016-09-10T23:53:01+02:00" unixtime="1473544381" sha1="48f1f1df912222beafb692c36199da046b63f484" relative="app/en-US/controllers/admin.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Admin" namespace="" name="Admin" abstract="false" final="false" start="10" end="159">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers" file="admin.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers/admin.php" size="4600" time="2016-09-23T08:57:55+02:00" unixtime="1474613875" sha1="85d5469c98c579fb5d52c7c82e07120839e289c2" relative="app/en-US/controllers/admin.php"/>
   <docblock>
     <description compact="The main controller for site administration and management requests."/>
     <since value="0.0.1"/>
@@ -8,7 +8,7 @@
     <package value="Assegai"/>
   </docblock>
   <extends full="Controller" namespace="" name="Controller"/>
-  <method name="index" start="16" end="30" abstract="false" final="false" static="false" visibility="public">
+  <method name="index" start="16" end="56" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="The default endpoint, i.e the dashboard"/>
       <param description="The user name to assign for this session" type="object" variable="$params">
@@ -17,14 +17,36 @@
     </docblock>
     <parameter name="params" byreference="false" type="string" default="''"/>
   </method>
-  <method name="profile" start="36" end="54" abstract="false" final="false" static="false" visibility="public">
+  <method name="profile" start="62" end="74" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Displays user profile information."/>
       <param description="The parameter list." type="object" variable="$params">
         <type full="{array}" namespace="" name="{array}"/>
       </param>
     </docblock>
-    <parameter name="params" byreference="false" type="string" default="''"/>
+    <parameter name="app" byreference="false" type="string" default="''"/>
+  </method>
+  <method name="pages" start="76" end="97" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="action" byreference="false" type="string" default="''"/>
+    <parameter name="id" byreference="false" type="integer" default="1"/>
+    <parameter name="app" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="analytics" start="102" end="113" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Site analytics endpoint."/>
+    </docblock>
+    <parameter name="app" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="media" start="118" end="157" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Media endpoint"/>
+    </docblock>
+    <parameter name="action" byreference="false" type="string" default="''"/>
+    <parameter name="id" byreference="false" type="integer" default="1"/>
+    <parameter name="app" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Validate parameters" line="120"/>
+    </inline>
   </method>
   <parent full="Controller" namespace="" name="Controller">
     <member name="db" visibility="protected" line="18"/>
@@ -51,7 +73,7 @@
         <comment value="return new $model($args);" line="44"/>
       </inline>
     </method>
-    <method name="view" start="54" end="64" abstract="false" final="false" static="false" visibility="public">
+    <method name="view" start="54" end="69" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="Loads a view with it's corresponding data."/>
         <param description="The name of the view." type="object" variable="$view">
@@ -63,8 +85,11 @@
       </docblock>
       <parameter name="view" byreference="false" type="{unknown}"/>
       <parameter name="data" byreference="false" type="array" default=""/>
+      <inline>
+        <comment value="Set the site timezone" line="62"/>
+      </inline>
     </method>
-    <method name="validate_text" start="74" end="80" abstract="false" final="false" static="false" visibility="public">
+    <method name="validate_text" start="79" end="85" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="Validates a given input string of text."/>
         <param description="The string of text." type="object" variable="$text">
@@ -88,7 +113,7 @@
       <parameter name="min_length" byreference="false" type="integer" default="6"/>
       <parameter name="max_length" byreference="false" type="integer" default="1"/>
     </method>
-    <method name="validate_password" start="90" end="104" abstract="false" final="false" static="false" visibility="public">
+    <method name="validate_password" start="95" end="109" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="Validates a given input string of text."/>
         <param description="The input password string." type="object" variable="$password">
@@ -112,11 +137,11 @@
       <parameter name="min_length" byreference="false" type="integer" default="6"/>
       <parameter name="max_length" byreference="false" type="integer" default="1"/>
       <inline>
-        <comment value="Check for at least 1 uppercase alphabetical character" line="92"/>
-        <comment value="Check for at least 1 numerical character" line="96"/>
+        <comment value="Check for at least 1 uppercase alphabetical character" line="97"/>
+        <comment value="Check for at least 1 numerical character" line="101"/>
       </inline>
     </method>
-    <method name="redirect" start="111" end="114" abstract="false" final="false" static="true" visibility="public">
+    <method name="redirect" start="116" end="119" abstract="false" final="false" static="true" visibility="public">
       <docblock>
         <description compact="Modifies the header location attribute by setting it to the given URL string."/>
         <param description="The URL string." type="object" variable="$url">

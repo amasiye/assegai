@@ -35,7 +35,12 @@ class Home extends Controller
         break;
     }
 
-  } // end index(string)
+  } // end index()
+
+  public function uploads()
+  {
+    $this->view('error/403');
+  } // end uploads
 
 } // end class Home
 

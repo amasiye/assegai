@@ -1,7 +1,13 @@
 <?php
 
 /**
- *
+ * The Element class represents an object of a Page. This class
+ * describes methods and properties common to all kinds of elements. Specific
+ * behaviors are described in classes which inherit from Element but add
+ * additional functionality.
+ * @author Andrew Masiye
+ * @version 1.0.0
+ * @since 1.0.0
  */
 class Element extends Post implements iNode
 {
@@ -9,6 +15,10 @@ class Element extends Post implements iNode
   private $parent = null;
   private $children = array();
   private $contents = "";
+
+  public $classes = '';
+  public $width;
+  public $height;
 
   function __construct($db, $id)
   {

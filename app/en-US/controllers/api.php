@@ -43,9 +43,9 @@ class Api extends Controller
    * User controller
    * @param {string} $endpoint
    */
-  public function user($endpoint = '')
+  public function user($verb = '')
   {
-    switch($endpoint)
+    switch($verb)
     {
         case 'login':
           $this->view('user/login');
@@ -288,7 +288,10 @@ class Api extends Controller
           {
             echo json_encode(array('success' => false, 'errorMessage' => "<strong>Error " . API_REQUEST_ERR_MISSING_KEY . ":</strong> Missing api key."));
           }
+          break;
 
+        case 'upload':
+          $this->view('user/upload');
           break;
     }
 

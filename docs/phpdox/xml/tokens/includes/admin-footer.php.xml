@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="admin-footer.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/admin-footer.php" size="1354" time="2016-08-25T02:33:36+02:00" unixtime="1472085216" sha1="3262f852e1caa946cd7bf0eff0aa2a3c52b927b5" relative="includes/admin-footer.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="admin-footer.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/admin-footer.php" size="1382" time="2016-09-21T20:13:05+02:00" unixtime="1474481585" sha1="1aedf9e044094ba252cf2b5d1b50d8c8b15a1708" relative="includes/admin-footer.php"/>
   <line no="1">
     <token name="T_INLINE_HTML">&lt;footer class="clearfix col-sm-12"&gt;</token>
   </line>
@@ -38,13 +38,33 @@
     <token name="T_INLINE_HTML">    &lt;ul&gt;</token>
   </line>
   <line no="13">
-    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="#"&gt;Our Blog&lt;/a&gt;&lt;/li&gt;</token>
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">BLOGPATH</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">"&gt;Our Blog&lt;/a&gt;&lt;/li&gt;</token>
   </line>
   <line no="14">
-    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="about/faith/"&gt;Statement of Faith&lt;/a&gt;&lt;/li&gt;</token>
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">SOFPATH</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">"&gt;Statement of Faith&lt;/a&gt;&lt;/li&gt;</token>
   </line>
   <line no="15">
-    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="about/"&gt;About </token>
+    <token name="T_INLINE_HTML">      &lt;li&gt;&lt;a href="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">ABOUTPATH</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">"&gt;About </token>
     <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">SITE_NAME</token>

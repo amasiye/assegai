@@ -9,6 +9,7 @@ class Media extends Post
   public $href;
   public $thumb;
   public $media_type;
+  public $mime_type;
 
   function __construct($db, $id)
   {
@@ -18,6 +19,46 @@ class Media extends Post
     $this->href = $this->meta['href'];
     $this->thumb = $this->meta['thumb'];
     $this->media_type = $this->meta['media_type'];
+    $this->mime_type = array_pop(explode('.', $this->filename));
+
+    # Resole mime_type to correct web format.
+    switch(strtolower($this->mime_type))
+    {
+      # Image
+      case 'jpg':
+      case 'jpeg':
+        $this->mime_type = 'image/jpeg';
+        break;
+      case 'png':
+        $this->mime_type = 'image/png';
+        break;
+      case 'bm':
+      case 'bmp':
+        $this->mime_type = 'image/bmp';
+        break;
+
+      # Audio
+      case 'mp3':
+        $this->mime_type = 'audio/mpeg3';
+        break;
+      case 'wav':
+        $this->mime_type = 'audio/wav';
+        break;
+      case 'ogg':
+        $this->mime_type = (strcmp($this->media_type, 'audio') == 0)? 'audio/ogg' : 'video/ogg';
+        break;
+
+      # Video
+      case 'mp4':
+        $this->mime_type = 'video/mp4';
+        break;
+      case 'webm':
+        $this->mime_type = 'video/webm';
+        break;
+      case 'ogv':
+        $this->mime_type = 'video/ogg';
+        break;
+    }
   } // end __construct()
 
   /**

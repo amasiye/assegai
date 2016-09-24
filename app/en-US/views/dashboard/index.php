@@ -10,14 +10,16 @@ require_once "includes/admin-header.php";
 
       <!-- Left Panel -->
       <div class="col-sm-2 sidenav">
-        <?= App::get_ui_component($user, 'dashboard'); ?>
+        <?= App::get_ui_component($db, $user, 'dashboard'); ?>
       </div>
 
       <!-- Right Panel -->
       <div class="col-sm-10">
 
         <div class="page-header">
-          <h2>Welcome: <small><?= ucwords($user->display_name); ?></small></h2>
+          <h2>Welcome: <small><?= ucwords($user->display_name); ?></small>
+            <span class="pull-right"><img class="img-circle" src="<?= $user->profile_image; ?>" alt="<?= $user->display_name; ?>" width="48"></span>
+          </h2>
         </div>
 
         <div class="col-md-6">
@@ -64,14 +66,19 @@ require_once "includes/admin-header.php";
                 </thead>
                 <tbody>
                   <?php
-                  for($x = 0; $x < count($recent_posts); $x++) {
+                  // for($x = 0; $x < count($recent_posts); $x++) {
+                  for($x = 0; $x < 5; $x++) {
                     $then = new DateTime($recent_posts[$x]['post_modified']);
                     $date_val = TimeManager::get_time_since($then);
                   ?>
                   <tr>
                     <td><?= $date_val; ?></td>
                     <td><?= $recent_posts[$x]['post_title']; ?></td>
-                    <td><?= ucwords($recent_posts[$x]['post_type']); ?></td>
+                    <?php if (strcmp($recent_posts[$x]['post_type'], 'media') == 0): ?>
+                      <td><?= ucwords(json_decode($recent_posts[$x]['post_meta'], true)['media_type']); ?></td>
+                    <?php else: ?>
+                      <td><?= ucwords($recent_posts[$x]['post_type']); ?></td>
+                    <?php endif; ?>
                   </tr>
                   <?php } ?>
                 </tbody>

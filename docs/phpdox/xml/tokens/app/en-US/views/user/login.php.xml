@@ -1,13 +1,10 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/user" file="login.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/user/login.php" size="450" time="2016-08-26T18:24:31+02:00" unixtime="1472228671" sha1="026c77a760e455d2a05805004505ad236dd6054e" relative="app/en-US/views/user/login.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/user" file="login.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/user/login.php" size="427" time="2016-09-21T09:12:06+02:00" unixtime="1474441926" sha1="c0a1cc5803352504788e1c1b8486ad1f4df9e884" relative="app/en-US/views/user/login.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
   <line no="2">
-    <token name="T_COMMENT">// $db = $data['db'];</token>
-  </line>
-  <line no="3">
     <token name="T_VARIABLE">$user_login</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_EQUAL">=</token>
@@ -18,7 +15,7 @@
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="4">
+  <line no="3">
     <token name="T_VARIABLE">$user_password</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_EQUAL">=</token>
@@ -29,12 +26,12 @@
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="5"/>
-  <line no="6">
+  <line no="4"/>
+  <line no="5">
     <token name="T_IF">if</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
   </line>
-  <line no="7">
+  <line no="6">
     <token name="T_WHITESPACE">  </token>
     <token name="T_ISSET">isset</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -43,11 +40,21 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_BOOLEAN_AND">&amp;&amp;</token>
   </line>
-  <line no="8">
+  <line no="7">
     <token name="T_WHITESPACE">  </token>
     <token name="T_ISSET">isset</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_VARIABLE">$user_password</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_BOOLEAN_AND">&amp;&amp;</token>
+  </line>
+  <line no="8">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_PHPDOX_EXCLAMATION_MARK">!</token>
+    <token name="T_EMPTY">empty</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$user_login</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_BOOLEAN_AND">&amp;&amp;</token>
@@ -57,26 +64,16 @@
     <token name="T_PHPDOX_EXCLAMATION_MARK">!</token>
     <token name="T_EMPTY">empty</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_VARIABLE">$user_login</token>
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_BOOLEAN_AND">&amp;&amp;</token>
-  </line>
-  <line no="10">
-    <token name="T_WHITESPACE">  </token>
-    <token name="T_PHPDOX_EXCLAMATION_MARK">!</token>
-    <token name="T_EMPTY">empty</token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_VARIABLE">$user_password</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
   </line>
-  <line no="11">
+  <line no="10">
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
   </line>
-  <line no="12">
+  <line no="11">
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="13">
+  <line no="12">
     <token name="T_WHITESPACE">  </token>
     <token name="T_ECHO">echo</token>
     <token name="T_WHITESPACE"> </token>
@@ -94,16 +91,16 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="14">
+  <line no="13">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="15">
+  <line no="14">
     <token name="T_ELSE">else</token>
   </line>
-  <line no="16">
+  <line no="15">
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="17">
+  <line no="16">
     <token name="T_WHITESPACE">  </token>
     <token name="T_ECHO">echo</token>
     <token name="T_WHITESPACE"> </token>
@@ -134,11 +131,11 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="18">
+  <line no="17">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="19">
+  <line no="18">
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
-  <line no="20"/>
+  <line no="19"/>
 </source>

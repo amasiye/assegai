@@ -167,7 +167,7 @@ class Database
    * @param {array} $values The list of values to be inserted into the corresponding values.
    * @return {int} An integer corresponding to a status code.
    */
-  public function insert($table, $columns = array(), $values = array())
+  public function insert($table, $columns = array(), $values = array(), $sanitize = true)
   {
     # Cache connection
     $conn = $this->conn;
@@ -192,7 +192,7 @@ class Database
     $sql .= " VALUES (";
     for ($x = 0; $x < count($values); $x++)
     {
-      if((array_key_exists('sanitize', $filters) && $filters['sanitization'] == false))
+      if($sanitize == false)
       {
         # Enclose strings in single quotes
         if(gettype($values[$x]) == 'string')
@@ -234,9 +234,11 @@ class Database
    * Updates a table in the database.
    * @param {string} $table The name of the table to be updated.
    * @param {array} $column The list of columns to be updated.
-   * @param {array} $values The list of new values to update the corresponding columns with.
+   * @param {array} $values The list of new values to update the corresponding
+   * columns with.
    * @param $filters array An array of filters for the update.
-   * @return {int} An int representing the operation status.
+   * @return {int} Returns QUERY_EXEC_OK upon successful update or
+   * QUERY_EXEC_ERR on failure.
    */
   public function update($table, $columns = array(), $values = array(), $filters = array())
   {
@@ -276,9 +278,29 @@ class Database
 
     if(isset($filters) && !is_null($filters))
     {
+      $where_flag = false;
+
       # Check if WHERE clause exists
       if(array_key_exists("-w", $filters))
+      {
         $sql .= " WHERE " . $filters['-w'];
+        $where_flag = true;
+      }
+
+      if(array_key_exists("where", $filters) && $where_flag == false)
+      {
+        $sql .= " WHERE " . $filters['where'];
+        $where_flag = true;
+      }
+
+      # If the where flag is not set check for unlock flag
+      if($where_flag == false && (!array_key_exists('unlock', $filters) && !in_array('unlock', $filters)))
+        /* Return to prevent all specified columns in table from being overwritten */
+        return UPDATE_ERR_ILLEGAL;
+    }
+    else
+    {
+
     }
 
     # Run the query and report if something goes wrong

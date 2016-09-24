@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="head-shared.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/head-shared.php" size="2169" time="2016-09-05T08:39:51+02:00" unixtime="1473057591" sha1="d6903b6baf2f1697b9763a1df362665354ea7536" relative="includes/head-shared.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="head-shared.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/head-shared.php" size="2088" time="2016-09-17T04:48:50+02:00" unixtime="1474080530" sha1="ea86ab6f9d5bcf988eb1349bd03803298d7cc114" relative="includes/head-shared.php"/>
   <line no="1">
     <token name="T_INLINE_HTML">&lt;!DOCTYPE html&gt;</token>
   </line>
@@ -132,6 +132,7 @@
     <token name="T_DOUBLE_COLON">::</token>
     <token name="T_STRING">get_site_description</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
     <token name="T_WHITESPACE"> </token>
@@ -202,35 +203,19 @@
   </line>
   <line no="48"/>
   <line no="49">
-    <token name="T_INLINE_HTML">    &lt;style&gt;</token>
-  </line>
-  <line no="50">
-    <token name="T_INLINE_HTML">      .navbar {</token>
-  </line>
-  <line no="51">
-    <token name="T_INLINE_HTML">        border-radius: 0px;</token>
-  </line>
-  <line no="52">
-    <token name="T_INLINE_HTML">      }</token>
-  </line>
-  <line no="53">
-    <token name="T_INLINE_HTML">    &lt;/style&gt;</token>
-  </line>
-  <line no="54"/>
-  <line no="55">
     <token name="T_INLINE_HTML">  &lt;/head&gt;</token>
   </line>
-  <line no="56">
+  <line no="50">
     <token name="T_INLINE_HTML">  &lt;body&gt;</token>
   </line>
-  <line no="57">
+  <line no="51">
     <token name="T_INLINE_HTML">      &lt;!--[if lt IE 8]&gt;</token>
   </line>
-  <line no="58">
+  <line no="52">
     <token name="T_INLINE_HTML">          &lt;p class="browserupgrade"&gt;You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href="http://browsehappy.com/"&gt;upgrade your browser&lt;/a&gt; to improve your experience.&lt;/p&gt;</token>
   </line>
-  <line no="59">
+  <line no="53">
     <token name="T_INLINE_HTML">      &lt;![endif]--&gt;</token>
   </line>
-  <line no="60"/>
+  <line no="54"/>
 </source>

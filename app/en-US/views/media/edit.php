@@ -9,7 +9,7 @@ require_once "includes/admin-header.php";
 
       <!-- Left Panel -->
       <div class="col-sm-2 sidenav">
-        <?= App::get_ui_component($user, 'dashboard'); ?>
+        <?= App::get_ui_component($db, $user, 'dashboard'); ?>
       </div>
 
       <!-- Right Panel -->
@@ -20,15 +20,34 @@ require_once "includes/admin-header.php";
         </div>
 
         <?php if ((strcmp($media->media_type, 'image')) == 0): ?>
-          <div class="col-sm-4">
-            <img src="<?= $media->href; ?>" alt="<?= $media->title; ?>" />
+          <div class="col-sm-3">
+            <div class="panel">
+              <img class="img-responsive" src="<?= $media->href; ?>" alt="<?= $media->title; ?>">
+            </div>
+            <button class="btn btn-block" type="button" name="image-edit">Upload New</button>
           </div>
-          
-          <div class="col-sm-8">
+
+          <div class="col-sm-9">
             <form class="form" role="form">
+
+              <!-- File Name -->
               <div class="form-group">
                 <label for="filename">Filename:</label>
+                <p><?= $media->filename; ?></p>
               </div>
+
+              <!-- Permalink -->
+              <div class="form-group">
+                <label for="href">Permalink:</label>
+                <p><?= BASEPATH . $media->href; ?></p>
+              </div>
+
+              <!-- MIME Type -->
+              <div class="form-group">
+                <label for="mime-type">MIME Type:</label>
+                <p><?= $media->mime_type; ?></p>
+              </div>
+
             </form>
           </div>
         <?php else: ?>

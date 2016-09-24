@@ -1,4 +1,5 @@
 <?php
+define('POSTS_TABLE', 'assg_posts');
 
 /**
  * The base class of all post model. Handles business logic
@@ -24,14 +25,15 @@ class Post
   protected $db;
   protected $fetched_data;
 
+
   function __construct($db, $id, $type = '')
   {
     $this->db = $db;
     $filters = (!empty($type))?
       array("where" => "post_id='{$id}' AND post_type='{$type}'") : array("where" => "post_id='{$id}'");
-    $result = $db->select('assg_posts', null, $filters)[0];
+    $result = $db->select(POSTS_TABLE, null, $filters)[0];
 
-    $this->id = $result['post_id'];
+    $this->id = (int)$result['post_id'];
     $this->name = $result['post_name'];
     $this->author = $result['post_author'];
     $this->author_name = User::get_display_name($db, $result['post_author']);
@@ -80,7 +82,7 @@ class Post
    */
   public static function delete($db, $id)
   {
-    return $db->delete('assg_posts', array("where" => "post_id='{$id}'"));
+    return $db->delete(POSTS_TABLE, array("where" => "post_id='{$id}'"));
   } // end delete()
 
   /**
@@ -97,12 +99,12 @@ class Post
     $distinct = "";
 
     if(empty($filters) || is_null($filters))
-      return $db->select('assg_posts', null, array('where' => "post_type='{$this->type}'"));
+      return $db->select(POSTS_TABLE, null, array());
 
     if(array_key_exists('columns', $filters))
       $columns = $filters['columns'];
 
-    return $db->select('assg_posts', $columns, $filters);
+    return $db->select(POSTS_TABLE, $columns, $filters);
   } // end get()
 
   /**
@@ -124,7 +126,7 @@ class Post
         array_push($values, $val);
       }
 
-      if($db->insert('assg_posts', $columns, $values) == QUERY_STMT_OK)
+      if($db->insert(POSTS_TABLE, $columns, $values) == QUERY_STMT_OK)
         return true;
     }
     return false;
@@ -139,13 +141,13 @@ class Post
   {
     $totals = true;
 
-    $total_pages = $db->select('assg_posts', null, array('where' => "post_type='page'", 'count'));
-    $total_articles = $db->select('assg_posts', null, array('where' => "post_type='article'", 'count'));
-    $total_sermons = $db->select('assg_posts', null, array('where' => "post_type='sermon'", 'count'));
-    $total_events = $db->select('assg_posts', null, array('where' => "post_type='event'", 'count'));
-    $total_newsletters = $db->select('assg_posts', null, array('where' => "post_type='newsletter'", 'count'));
-    $total_media = $db->select('assg_posts', null, array('where' => "post_type='media'", 'count'));
-    $total_other = $db->select('assg_posts', null, array('where' => "post_type='other'", 'count'));
+    $total_pages = $db->select(POSTS_TABLE, null, array('where' => "post_type='page'", 'count'));
+    $total_articles = $db->select(POSTS_TABLE, null, array('where' => "post_type='article'", 'count'));
+    $total_sermons = $db->select(POSTS_TABLE, null, array('where' => "post_type='sermon'", 'count'));
+    $total_events = $db->select(POSTS_TABLE, null, array('where' => "post_type='event'", 'count'));
+    $total_newsletters = $db->select(POSTS_TABLE, null, array('where' => "post_type='newsletter'", 'count'));
+    $total_media = $db->select(POSTS_TABLE, null, array('where' => "post_type='media'", 'count'));
+    $total_other = $db->select(POSTS_TABLE, null, array('where' => "post_type='other'", 'count'));
 
     $totals = array(
       'pages' => $total_pages,

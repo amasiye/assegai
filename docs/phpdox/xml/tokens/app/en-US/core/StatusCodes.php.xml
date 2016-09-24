@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="StatusCodes.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/StatusCodes.php" size="714" time="2016-09-12T06:52:22+02:00" unixtime="1473655942" sha1="d6d0c6269cf0df83e02586ee33738c9fb907cfed" relative="app/en-US/core/StatusCodes.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="StatusCodes.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/StatusCodes.php" size="967" time="2016-09-23T13:01:42+02:00" unixtime="1474628502" sha1="f42005e0fd0364819a3a8893fe555d562bb48613" relative="app/en-US/core/StatusCodes.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -209,7 +209,55 @@
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="24">
+    <token name="T_STRING">define</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'UPDATE_ERR_GROUP'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">602</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_COMMENT">// At least 1 admin must exist.</token>
+  </line>
+  <line no="25">
+    <token name="T_STRING">define</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'DELETE_ERR'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">611</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_COMMENT">// At least 1 admin must exist.</token>
+  </line>
+  <line no="26">
+    <token name="T_STRING">define</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'PARAM_ERR'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">701</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_COMMENT">// At least 1 admin must exist.</token>
+  </line>
+  <line no="27">
+    <token name="T_STRING">define</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'PARAM_TYPE_ERR'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">702</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_COMMENT">// At least 1 admin must exist.</token>
+  </line>
+  <line no="28">
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
-  <line no="25"/>
+  <line no="29"/>
 </source>

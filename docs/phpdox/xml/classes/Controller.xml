@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Controller" namespace="" name="Controller" abstract="false" final="false" start="11" end="115">
-  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Controller.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Controller.php" size="3668" time="2016-09-11T02:36:31+02:00" unixtime="1473554191" sha1="66354420987943602e6b25b3b2342d1929e891e0" relative="app/en-US/core/Controller.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Controller" namespace="" name="Controller" abstract="false" final="false" start="11" end="120">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Controller.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Controller.php" size="3925" time="2016-09-23T12:48:58+02:00" unixtime="1474627738" sha1="8bf98749ee7088ea1fb0b2fec352b781af3d2344" relative="app/en-US/core/Controller.php"/>
   <docblock>
     <description compact="The base Controller class. It processes and responds to events such as user actions and it invokes changes to the model and the view based on those events."/>
     <author value="A. Masiye"/>
@@ -31,7 +31,7 @@
       <comment value="return new $model($args);" line="44"/>
     </inline>
   </method>
-  <method name="view" start="54" end="64" abstract="false" final="false" static="false" visibility="public">
+  <method name="view" start="54" end="69" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Loads a view with it's corresponding data."/>
       <param description="The name of the view." type="object" variable="$view">
@@ -43,8 +43,11 @@
     </docblock>
     <parameter name="view" byreference="false" type="{unknown}"/>
     <parameter name="data" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="Set the site timezone" line="62"/>
+    </inline>
   </method>
-  <method name="validate_text" start="74" end="80" abstract="false" final="false" static="false" visibility="public">
+  <method name="validate_text" start="79" end="85" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Validates a given input string of text."/>
       <param description="The string of text." type="object" variable="$text">
@@ -68,7 +71,7 @@
     <parameter name="min_length" byreference="false" type="integer" default="6"/>
     <parameter name="max_length" byreference="false" type="integer" default="1"/>
   </method>
-  <method name="validate_password" start="90" end="104" abstract="false" final="false" static="false" visibility="public">
+  <method name="validate_password" start="95" end="109" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Validates a given input string of text."/>
       <param description="The input password string." type="object" variable="$password">
@@ -92,11 +95,11 @@
     <parameter name="min_length" byreference="false" type="integer" default="6"/>
     <parameter name="max_length" byreference="false" type="integer" default="1"/>
     <inline>
-      <comment value="Check for at least 1 uppercase alphabetical character" line="92"/>
-      <comment value="Check for at least 1 numerical character" line="96"/>
+      <comment value="Check for at least 1 uppercase alphabetical character" line="97"/>
+      <comment value="Check for at least 1 numerical character" line="101"/>
     </inline>
   </method>
-  <method name="redirect" start="111" end="114" abstract="false" final="false" static="true" visibility="public">
+  <method name="redirect" start="116" end="119" abstract="false" final="false" static="true" visibility="public">
     <docblock>
       <description compact="Modifies the header location attribute by setting it to the given URL string."/>
       <param description="The URL string." type="object" variable="$url">
@@ -107,6 +110,7 @@
   </method>
   <extenders>
     <extender full="Admin" namespace="" name="Admin"/>
+    <extender full="Api" namespace="" name="Api"/>
     <extender full="Home" namespace="" name="Home"/>
-  <extender full="Api" namespace="" name="Api"/></extenders>
+  </extenders>
 </class>

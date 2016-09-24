@@ -25,11 +25,19 @@ class Admin extends Controller
                                         null,
                                         array(
                                                 'order' => 'post_modified DESC',
-                                                'limit' => 5
+                                                'limit' => 10
                                               )
                                         );
-
-
+      // $ids = array();
+      // $recent_posts_count = count($recent_posts);
+      // for($x = 0; $x < $recent_posts_count; $x)
+      // {
+      //   # Add post to buffer array if its name
+      //
+      //   #
+      //   array_push($ids, $recent_posts[$x]['post_id']);
+      //   if()
+      // }
       $this->view(
                     'dashboard/index',
                     array(
@@ -73,8 +81,12 @@ class Admin extends Controller
       switch ($action)
       {
         case 'edit':
-          $page = new Post($this->db, $id);
-          $this->view('pages/edit', array('app' => $app, 'user' => $user, 'page' => $page));
+          $page = new Post($this->db, $id, 'page');
+
+          if(!is_null($page->name))
+            $this->view('pages/edit', array('app' => $app, 'user' => $user, 'page' => $page));
+          else
+            $this->view('error/404', array('message' => 'Page lookup error possibly due to an invalid page id.'));
           break;
 
         default:

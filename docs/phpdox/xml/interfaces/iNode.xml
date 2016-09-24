@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="iNode" namespace="" name="iNode" abstract="false" final="false" start="6" end="47">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="iNode.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/iNode.php" size="1357" time="2016-09-16T21:32:26+02:00" unixtime="1474054346" sha1="95ed61f9180a721520d29df3aaf7225986fd199d" relative="app/en-US/models/iNode.php"/>
+  <docblock>
+    <description compact="The base class for all web elements."/>
+  </docblock>
+  <method name="append_child" start="13" end="13" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds the specified childNode argument as the last child to the current node.">If the argument referenced an existing node on the DOM gree, the node will
+be detached from its current position and attached at the new position.</description>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="remove_child" start="20" end="20" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Removes a child node from the current element, which must be a child of the current node."/>
+      <param description="The id of the node." type="object" variable="$id">
+        <type full="{int}" namespace="" name="{int}"/>
+      </param>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="get_children" start="27" end="27" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array containing all the child nodes that belong to this node."/>
+      <return description="Returns an array containing all the child nodes that belong" type="object">to this node.<type full="{int}" namespace="" name="{int}"/></return>
+    </docblock>
+  </method>
+  <method name="set_parent" start="33" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the parent node of this node to the given node."/>
+      <param description="The new parent node." type="object" variable="$node">
+        <type full="{Node}" namespace="" name="{Node}"/>
+      </param>
+    </docblock>
+    <parameter name="node" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="get_parent" start="39" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the parent node of this node or null if none exists."/>
+      <return description="Returns the parent node of this node or null if none exists." type="object">
+        <type full="{Node}" namespace="" name="{Node}"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="clone_node" start="45" end="45" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Clone a Node, and optionally, all of its contents. By default, it clones the content of the node."/>
+    </docblock>
+  </method>
+  <implementors>
+    <class full="Element" namespace="" name="Element"/>
+    <class full="Page" namespace="" name="Page"/>
+  </implementors>
+</interface>

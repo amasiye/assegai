@@ -56,8 +56,11 @@ class Controller
     global $locale;
     $db = $this->db;
     $session = $this->session;
+    $layouts = Layout::get($db);
+    $pages = Page::get($db);
+    // var_dump($pages); exit;
 
-    # Set the site timezone 
+    # Set the site timezone
     date_default_timezone_set(SITE_TIMEZONE);
 
     if(file_exists('app/' . $locale . '/views/' . $view . '.php'))

@@ -1,10 +1,10 @@
 <?php
-
+define('PAGE_TABLE', 'assg_posts');
 /**
  * This class provides a structured representation of all Posts that
  * are of the type Page. It defines methods that allow access to these
  * posts, so they can change the Page document structure, style and
- * and content of the resultant coresponding HTML document views.
+ * and content of the resulting coresponding HTML document views.
  */
 class Page extends Post implements iNode
 {
@@ -13,7 +13,8 @@ class Page extends Post implements iNode
 
   public $head;
   public $body;
-  public $template;
+  public $layout;
+  public $styles;
 
   /**
    * Constructs a page from the given database given its id.
@@ -23,7 +24,7 @@ class Page extends Post implements iNode
   function __construct($db, $id)
   {
     parent::__construct($db, $id, 'page');
-    $this->template = $this->meta['template'];
+    $this->layout = $this->meta['layout'];
     $this->parent = $this->meta['parent'];
     $this->children = json_decode($this->meta['children'], true);
   } // end __construct()
@@ -32,9 +33,15 @@ class Page extends Post implements iNode
    * Adds the specified childNode argument as the last child to the current node.
    * If the argument referenced an existing node on the DOM gree, the node will
    * be detached from its current position and attached at the new position.
+   * @param {Post} $child The child node to be appended to the list of children.
+   * @return {int} Returns QUERY_EXEC_OK on success, or either QUERY_EXEC_ERR or
+   * PARAM_TYPE_ERR on failure.
    */
-  public function append_child(Post $child)
+  public function append_child($child)
   {
+    if(strcmp(get_class($child), 'Post') != 0)
+      return PARAM_TYPE_ERR;
+
     # Append child to children array
     array_push($this->children, $child->id);
 
@@ -42,7 +49,7 @@ class Page extends Post implements iNode
     $this->meta['children'] = $this->children;
 
     # Turn meta into json and update this post's meta column to reflect the change
-    return $this->db->update('assg_posts', array('post_meta'), array($this->meta), array('where' => "post_id='{$this->id}'"));
+    return $this->db->update(PAGE_TABLE, array('post_meta'), array($this->meta), array('where' => "post_id='{$this->id}'"));
   } // end append_child()
 
   /**
@@ -112,6 +119,38 @@ class Page extends Post implements iNode
   {
     return HTML::create_html_element();
   } // end  clone_node()
+
+  /**
+   * Returns an array of layouts.
+   * @param {Database} $db The database that holds the layout data.
+   * @param {array} $filters [Optional] The filters to apply to the query.
+   * @return {array} Returns an array of layouts or QUERY_EXEC_ERR on failure.
+   */
+  public static function get($db, $filters = array())
+  {
+    $result = array();
+    $where = array('where' => "post_type='page'");
+    if(!is_null($filters) && !empty($filters))
+    {
+      if(array_key_exists('where', $filters))
+      {
+        $where['where'] .= " AND " . $filters['where'];
+        unset($filters['where']);
+      }
+
+      $where = array_merge($where, $filters);
+    }
+
+    if(($rows = $db->select(PAGE_TABLE, null, $where)) == QUERY_EXEC_ERR)
+      return QUERY_EXEC_ERR;
+
+    foreach($rows as $row)
+    {
+        array_push($result, new Page($db, $row['post_id']));
+    }
+
+    return $result;
+  } // end get()
 }
 
 

@@ -8,7 +8,7 @@ require_once "includes/admin-header.php";
 
     <!-- Left Panel -->
     <div class="col-sm-2 sidenav">
-      <?= App::get_ui_component($user, 'dashboard'); ?>
+      <?= App::get_ui_component($db, $user, 'dashboard'); ?>
     </div>
 
     <!-- Right Panel -->
@@ -16,10 +16,10 @@ require_once "includes/admin-header.php";
 
       <!-- Page Header -->
       <div class="page-header">
-        <h2>New Media:&nbsp;<small id="media-title"></small></h2>
+        <h2>New Media&nbsp;<small id="media-title"></small></h2>
       </div>
 
-      <div>Upload area</div>
+      <div class="ui-upload-area"></div>
 
     </div><!--#end col-sm-10 (right panel) -->
 

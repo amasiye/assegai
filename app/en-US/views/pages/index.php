@@ -7,7 +7,7 @@ require_once "includes/admin-header.php";
 
       <!-- Left Panel -->
       <div class="col-sm-2 sidenav">
-        <?= App::get_ui_component($user, 'pages'); ?>
+        <?= App::get_ui_component($db, $user, 'pages'); ?>
       </div>
 
       <!-- Right Panel -->

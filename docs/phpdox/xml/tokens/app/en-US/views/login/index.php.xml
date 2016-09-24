@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/login" file="index.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/login/index.php" size="7294" time="2016-09-01T09:23:44+02:00" unixtime="1472714624" sha1="66a67c59ef88561a93f9d30a76776059c10924ba" relative="app/en-US/views/login/index.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/login" file="index.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/login/index.php" size="7339" time="2016-09-21T09:15:52+02:00" unixtime="1474442152" sha1="c694226f33cfaaad728bf2ea886d0add2d0a595e" relative="app/en-US/views/login/index.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_REQUIRE_ONCE">require_once</token>
@@ -342,93 +342,96 @@
     <token name="T_INLINE_HTML">                },</token>
   </line>
   <line no="83">
-    <token name="T_INLINE_HTML">                function(res) {</token>
+    <token name="T_INLINE_HTML">                function(data, status) {</token>
   </line>
   <line no="84">
-    <token name="T_INLINE_HTML">                  var result = JSON.parse(res);</token>
+    <token name="T_INLINE_HTML">                  // alert(data);</token>
   </line>
-  <line no="85"/>
-  <line no="86">
+  <line no="85">
+    <token name="T_INLINE_HTML">                  var result = JSON.parse(data);</token>
+  </line>
+  <line no="86"/>
+  <line no="87">
     <token name="T_INLINE_HTML">                  if(result.success == true)</token>
   </line>
-  <line no="87">
+  <line no="88">
     <token name="T_INLINE_HTML">                  {</token>
   </line>
-  <line no="88"/>
-  <line no="89">
+  <line no="89"/>
+  <line no="90">
     <token name="T_INLINE_HTML">                    if($('#alert-feedback').hasClass('alert-danger'))</token>
   </line>
-  <line no="90">
+  <line no="91">
     <token name="T_INLINE_HTML">                    $('#alert-feedback').removeClass('alert-danger');</token>
   </line>
-  <line no="91"/>
-  <line no="92">
+  <line no="92"/>
+  <line no="93">
     <token name="T_INLINE_HTML">                    $('#alert-feedback').addClass("alert-success");</token>
   </line>
-  <line no="93">
+  <line no="94">
     <token name="T_INLINE_HTML">                    $('#alert-feedback').html(result.msg);</token>
   </line>
-  <line no="94"/>
-  <line no="95">
+  <line no="95"/>
+  <line no="96">
     <token name="T_INLINE_HTML">                    // Show the alert</token>
   </line>
-  <line no="96">
+  <line no="97">
     <token name="T_INLINE_HTML">                    $('#alert-feedback').css('display','block');</token>
   </line>
-  <line no="97"/>
-  <line no="98">
+  <line no="98"/>
+  <line no="99">
     <token name="T_INLINE_HTML">                    window.location.href = result.href;</token>
   </line>
-  <line no="99">
+  <line no="100">
     <token name="T_INLINE_HTML">                    // window.location.href = $('base').attr('href') + 'dashboard/';</token>
   </line>
-  <line no="100">
-    <token name="T_INLINE_HTML">                  }</token>
-  </line>
   <line no="101">
-    <token name="T_INLINE_HTML">                  else</token>
+    <token name="T_INLINE_HTML">                  }</token>
   </line>
   <line no="102">
-    <token name="T_INLINE_HTML">                  {</token>
+    <token name="T_INLINE_HTML">                  else</token>
   </line>
   <line no="103">
-    <token name="T_INLINE_HTML">                    $('#alert-feedback').css("display","block");</token>
+    <token name="T_INLINE_HTML">                  {</token>
   </line>
   <line no="104">
-    <token name="T_INLINE_HTML">                    $('#alert-feedback').addClass("alert-danger");</token>
+    <token name="T_INLINE_HTML">                    $('#alert-feedback').css("display","block");</token>
   </line>
   <line no="105">
-    <token name="T_INLINE_HTML">                    $('#alert-feedback').html(result.msg);</token>
+    <token name="T_INLINE_HTML">                    $('#alert-feedback').addClass("alert-danger");</token>
   </line>
   <line no="106">
-    <token name="T_INLINE_HTML">                  }</token>
+    <token name="T_INLINE_HTML">                    $('#alert-feedback').html(result.msg);</token>
   </line>
   <line no="107">
-    <token name="T_INLINE_HTML">                }</token>
+    <token name="T_INLINE_HTML">                  }</token>
   </line>
   <line no="108">
+    <token name="T_INLINE_HTML">                }</token>
+  </line>
+  <line no="109">
     <token name="T_INLINE_HTML">                );</token>
   </line>
-  <line no="109"/>
-  <line no="110">
+  <line no="110"/>
+  <line no="111">
     <token name="T_INLINE_HTML">              } // end login(string, string)</token>
   </line>
-  <line no="111"/>
-  <line no="112">
+  <line no="112"/>
+  <line no="113">
     <token name="T_INLINE_HTML">            &lt;/script&gt;</token>
   </line>
-  <line no="113">
+  <line no="114">
     <token name="T_INLINE_HTML">          &lt;/form&gt;</token>
   </line>
-  <line no="114"/>
-  <line no="115">
+  <line no="115"/>
+  <line no="116">
     <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
   </line>
-  <line no="116"/>
-  <line no="117">
+  <line no="117"/>
+  <line no="118">
     <token name="T_INLINE_HTML">      &lt;ul class="list-group"&gt;</token>
   </line>
-  <line no="118">
+  <line no="119">
     <token name="T_INLINE_HTML">        &lt;li class="list-group-item"&gt;&lt;a href="</token>
     <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
     <token name="T_WHITESPACE"> </token>
@@ -442,7 +445,7 @@
     <token name="T_CLOSE_TAG">?&gt;</token>
     <token name="T_INLINE_HTML">"&gt;Register&lt;/a&gt;&lt;/li&gt;</token>
   </line>
-  <line no="119">
+  <line no="120">
     <token name="T_INLINE_HTML">        &lt;li class="list-group-item"&gt;&lt;a href="</token>
     <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
     <token name="T_WHITESPACE"> </token>
@@ -456,7 +459,7 @@
     <token name="T_CLOSE_TAG">?&gt;</token>
     <token name="T_INLINE_HTML">"&gt;Lost your password?&lt;/a&gt;&lt;/li&gt;</token>
   </line>
-  <line no="120">
+  <line no="121">
     <token name="T_INLINE_HTML">        &lt;li class="list-group-item"&gt;&lt;a href="</token>
     <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
     <token name="T_WHITESPACE"> </token>
@@ -473,11 +476,11 @@
     <token name="T_CLOSE_TAG">?&gt;</token>
     <token name="T_INLINE_HTML">&lt;/a&gt;&lt;/li&gt;</token>
   </line>
-  <line no="121">
+  <line no="122">
     <token name="T_INLINE_HTML">      &lt;/ul&gt;</token>
   </line>
-  <line no="122"/>
-  <line no="123">
+  <line no="123"/>
+  <line no="124">
     <token name="T_INLINE_HTML">      </token>
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_ELSE">else</token>
@@ -485,140 +488,140 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
-  <line no="124">
+  <line no="125">
     <token name="T_INLINE_HTML">      &lt;h2&gt;Register&lt;/h2&gt;</token>
   </line>
-  <line no="125">
+  <line no="126">
     <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
   </line>
-  <line no="126">
+  <line no="127">
     <token name="T_INLINE_HTML">      &lt;div class="panel-body"&gt;</token>
   </line>
-  <line no="127"/>
-  <line no="128">
+  <line no="128"/>
+  <line no="129">
     <token name="T_INLINE_HTML">        &lt;form role="form" class="clearfix"&gt;</token>
   </line>
-  <line no="129"/>
-  <line no="130">
+  <line no="130"/>
+  <line no="131">
     <token name="T_INLINE_HTML">          &lt;!-- Login --&gt;</token>
   </line>
-  <line no="131"/>
-  <line no="132">
+  <line no="132"/>
+  <line no="133">
     <token name="T_INLINE_HTML">          &lt;!-- Password --&gt;</token>
   </line>
-  <line no="133"/>
-  <line no="134">
+  <line no="134"/>
+  <line no="135">
     <token name="T_INLINE_HTML">          &lt;!-- Repeat Password --&gt;</token>
   </line>
-  <line no="135"/>
-  <line no="136">
+  <line no="136"/>
+  <line no="137">
     <token name="T_INLINE_HTML">          &lt;!-- Name --&gt;</token>
   </line>
-  <line no="137">
-    <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
-  </line>
   <line no="138">
-    <token name="T_INLINE_HTML">            &lt;label for="username"&gt;Username:&lt;/label&gt;</token>
+    <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
   </line>
   <line no="139">
-    <token name="T_INLINE_HTML">            &lt;input type="text" id="username" name="username" class="form-control" placeholder="Username" required&gt;</token>
+    <token name="T_INLINE_HTML">            &lt;label for="username"&gt;Username:&lt;/label&gt;</token>
   </line>
   <line no="140">
+    <token name="T_INLINE_HTML">            &lt;input type="text" id="username" name="username" class="form-control" placeholder="Username" required&gt;</token>
+  </line>
+  <line no="141">
     <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
   </line>
-  <line no="141"/>
-  <line no="142">
+  <line no="142"/>
+  <line no="143">
     <token name="T_INLINE_HTML">          &lt;!-- Password --&gt;</token>
   </line>
-  <line no="143">
-    <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
-  </line>
   <line no="144">
-    <token name="T_INLINE_HTML">            &lt;label for="password"&gt;Password:&lt;/label&gt;</token>
+    <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
   </line>
   <line no="145">
-    <token name="T_INLINE_HTML">            &lt;input type="password" id="password" name="password" class="form-control" placeholder="Password" required&gt;</token>
+    <token name="T_INLINE_HTML">            &lt;label for="password"&gt;Password:&lt;/label&gt;</token>
   </line>
   <line no="146">
+    <token name="T_INLINE_HTML">            &lt;input type="password" id="password" name="password" class="form-control" placeholder="Password" required&gt;</token>
+  </line>
+  <line no="147">
     <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
   </line>
-  <line no="147"/>
-  <line no="148">
+  <line no="148"/>
+  <line no="149">
     <token name="T_INLINE_HTML">          &lt;!-- Repeat Password --&gt;</token>
   </line>
-  <line no="149">
+  <line no="150">
     <token name="T_INLINE_HTML">          &lt;div class="form-group has-success has-feedback"&gt;</token>
   </line>
-  <line no="150">
+  <line no="151">
     <token name="T_INLINE_HTML">            &lt;label for="password-repeat"&gt;Repeat Password:&lt;/label&gt;</token>
   </line>
-  <line no="151">
+  <line no="152">
     <token name="T_INLINE_HTML">            &lt;input type="password" id="password-repeat" name="password-repeat" class="form-control" placeholder="Repeat password" required&gt;</token>
   </line>
-  <line no="152">
+  <line no="153">
     <token name="T_INLINE_HTML">            &lt;span class="glyphicon glyphicon-ok form-control-feedback"&gt;&lt;/span&gt;</token>
   </line>
-  <line no="153">
+  <line no="154">
     <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
   </line>
-  <line no="154"/>
-  <line no="155">
+  <line no="155"/>
+  <line no="156">
     <token name="T_INLINE_HTML">          &lt;!-- Password Strength Indicator --&gt;</token>
   </line>
-  <line no="156">
-    <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
-  </line>
   <line no="157">
-    <token name="T_INLINE_HTML">            &lt;div class=""&gt;</token>
+    <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
   </line>
   <line no="158">
-    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+    <token name="T_INLINE_HTML">            &lt;div class=""&gt;</token>
   </line>
   <line no="159">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="160">
     <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
   </line>
-  <line no="160"/>
-  <line no="161">
+  <line no="161"/>
+  <line no="162">
     <token name="T_INLINE_HTML">          &lt;!-- Email --&gt;</token>
   </line>
-  <line no="162">
-    <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
-  </line>
   <line no="163">
-    <token name="T_INLINE_HTML">            &lt;label for="email"&gt;Email:&lt;/label&gt;</token>
+    <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
   </line>
   <line no="164">
-    <token name="T_INLINE_HTML">            &lt;input type="email" name="email" class="form-control" placeholder="Email"&gt;</token>
+    <token name="T_INLINE_HTML">            &lt;label for="email"&gt;Email:&lt;/label&gt;</token>
   </line>
   <line no="165">
+    <token name="T_INLINE_HTML">            &lt;input type="email" name="email" class="form-control" placeholder="Email"&gt;</token>
+  </line>
+  <line no="166">
     <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
   </line>
-  <line no="166"/>
-  <line no="167">
+  <line no="167"/>
+  <line no="168">
     <token name="T_INLINE_HTML">          &lt;!-- Registration button --&gt;</token>
   </line>
-  <line no="168">
+  <line no="169">
     <token name="T_INLINE_HTML">          &lt;div class="form-group"&gt;</token>
   </line>
-  <line no="169">
+  <line no="170">
     <token name="T_INLINE_HTML">            &lt;button type="button" class="btn btn-primary btn-block" id="btn-register" name="btn-register"&gt;Register&lt;/button&gt;</token>
   </line>
-  <line no="170">
+  <line no="171">
     <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
   </line>
-  <line no="171"/>
-  <line no="172">
+  <line no="172"/>
+  <line no="173">
     <token name="T_INLINE_HTML">        &lt;/form&gt;</token>
   </line>
-  <line no="173"/>
-  <line no="174">
+  <line no="174"/>
+  <line no="175">
     <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
   </line>
-  <line no="175"/>
-  <line no="176">
+  <line no="176"/>
+  <line no="177">
     <token name="T_INLINE_HTML">      &lt;ul class="list-group"&gt;</token>
   </line>
-  <line no="177">
+  <line no="178">
     <token name="T_INLINE_HTML">        &lt;li class="list-group-item"&gt;&lt;a href="</token>
     <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
     <token name="T_WHITESPACE"> </token>
@@ -630,7 +633,7 @@
     <token name="T_CLOSE_TAG">?&gt;</token>
     <token name="T_INLINE_HTML">"&gt;Login&lt;/a&gt;&lt;/li&gt;</token>
   </line>
-  <line no="178">
+  <line no="179">
     <token name="T_INLINE_HTML">        &lt;li class="list-group-item"&gt;&lt;a href="</token>
     <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
     <token name="T_WHITESPACE"> </token>
@@ -644,7 +647,7 @@
     <token name="T_CLOSE_TAG">?&gt;</token>
     <token name="T_INLINE_HTML">"&gt;Lost your password?&lt;/a&gt;&lt;/li&gt;</token>
   </line>
-  <line no="179">
+  <line no="180">
     <token name="T_INLINE_HTML">        &lt;li class="list-group-item"&gt;&lt;a href="</token>
     <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
     <token name="T_WHITESPACE"> </token>
@@ -661,30 +664,30 @@
     <token name="T_CLOSE_TAG">?&gt;</token>
     <token name="T_INLINE_HTML">&lt;/a&gt;&lt;/li&gt;</token>
   </line>
-  <line no="180">
+  <line no="181">
     <token name="T_INLINE_HTML">      &lt;/ul&gt;</token>
   </line>
-  <line no="181">
+  <line no="182">
     <token name="T_INLINE_HTML">      &lt;script&gt;</token>
   </line>
-  <line no="182">
+  <line no="183">
     <token name="T_INLINE_HTML">      document.querySelector('link-register').onclick = register();</token>
   </line>
-  <line no="183"/>
-  <line no="184">
+  <line no="184"/>
+  <line no="185">
     <token name="T_INLINE_HTML">      function register()</token>
   </line>
-  <line no="185">
+  <line no="186">
     <token name="T_INLINE_HTML">      {</token>
   </line>
-  <line no="186"/>
-  <line no="187">
+  <line no="187"/>
+  <line no="188">
     <token name="T_INLINE_HTML">      } // end register()</token>
   </line>
-  <line no="188">
+  <line no="189">
     <token name="T_INLINE_HTML">      &lt;/script&gt;</token>
   </line>
-  <line no="189">
+  <line no="190">
     <token name="T_INLINE_HTML">      </token>
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_ENDIF">endif</token>
@@ -692,18 +695,18 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
-  <line no="190"/>
-  <line no="191">
+  <line no="191"/>
+  <line no="192">
     <token name="T_INLINE_HTML">    &lt;/div&gt; &lt;!-- end panel-default --&gt;</token>
   </line>
-  <line no="192">
+  <line no="193">
     <token name="T_INLINE_HTML">  &lt;/div&gt;&lt;!-- end  --&gt;</token>
   </line>
-  <line no="193">
+  <line no="194">
     <token name="T_INLINE_HTML">&lt;/div&gt;</token>
   </line>
-  <line no="194"/>
-  <line no="195">
+  <line no="195"/>
+  <line no="196">
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_REQUIRE_ONCE">require_once</token>
     <token name="T_WHITESPACE"> </token>
@@ -712,5 +715,5 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
-  <line no="196"/>
+  <line no="197"/>
 </source>
