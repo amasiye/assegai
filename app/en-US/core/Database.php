@@ -73,7 +73,6 @@ class Database
 
     # Prepare SQL Query statement
     $sql = "SELECT";
-
     # Check for distinct option
     $distinct_is_set = false;
     if(array_key_exists("distinct", $filters))
@@ -131,6 +130,7 @@ class Database
     # Run the query and report if something goes wrong
     if(!$result = $conn->query($sql))
     {
+      // return array($conn->error_list);
       return QUERY_EXEC_ERR;
     }
 

@@ -307,7 +307,7 @@ require_once "includes/admin-header.php";
 
                       function saveRequestCallback(data, status)
                       {
-                        alert(data);
+                        console.debug(data);
                         var results = JSON.parse(data);
 
                         // Clear modal feedback

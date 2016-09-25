@@ -169,7 +169,7 @@ class Api extends Controller
                       $this->validate_text($_POST['groupName'])
                     )
                   {
-                    if($this->db-select()[0]['group'] > 1)
+                    if($this->db->select('assg_users', null, array('where' => "user_login='{$_POST['login']}'"))[0]['user_group'] > 1)
                     {
                       $results['groupName'] = array('success' => true, 'value' => $_POST['groupName']);
                       array_push($columns, 'group');
