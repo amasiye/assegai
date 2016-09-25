@@ -1,5 +1,5 @@
 <?php
-define('USERS_TABLE', 'assg_posts');
+define('USERS_TABLE', 'assg_users');
 
 /**
  * The user model class. Handles the business logic of all
@@ -51,8 +51,8 @@ class User
           $this->app = $params['app'];
 
         # Cache user data
-        $user_data = $this->db->select(USERS_TABLE, array(), array('-w'=>"user_login='{$this->login}'"))[0];
-
+        $user_data = $this->db->select(USERS_TABLE, array(), array('where'=>"user_login='{$this->login}'"))[0];
+        // var_dump($user_data); exit;
         $this->id = $user_data['user_id'];
         $this->login = $user_data['user_login'];
         $this->username = $user_data['user_name'];
