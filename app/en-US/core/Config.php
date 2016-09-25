@@ -38,10 +38,16 @@ define('CDNPATH',         BASEPATH . "app/{$locale }/content/");
 define('LOGPATH',         BASEPATH . "app/{$locale}/content/logs/");
 define('NOTICEPATH',      BASEPATH . "app/{$locale}/content/logs/");
 define('NOTICEPATH_REL',  "app/{$locale}/content/logs/");
+define('ABSRESPATH',      BASEPATH . "app/{$locale}/content/resources/");
 define('RESPATH',         "app/{$locale}/content/resources/");
 define('BLOGPATH',        "http://assegai.ml/");
 define('ABOUTPATH',       "http://assegai.ml/about/");
 define('SOFPATH',         "http://assegai.ml/about/statement-of-faith/");
+
+/** Other helpful paths */
+define('BOOTSTRAPCSS',    "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+define('BOOTSTRAPJSPATH', "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js");
+define('JQUERYPATH',      "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js");
 
 /**#@+
  * Authentication Unique Keys and Salts information.

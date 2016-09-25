@@ -28,16 +28,6 @@ class Admin extends Controller
                                                 'limit' => 10
                                               )
                                         );
-      // $ids = array();
-      // $recent_posts_count = count($recent_posts);
-      // for($x = 0; $x < $recent_posts_count; $x)
-      // {
-      //   # Add post to buffer array if its name
-      //
-      //   #
-      //   array_push($ids, $recent_posts[$x]['post_id']);
-      //   if()
-      // }
       $this->view(
                     'dashboard/index',
                     array(

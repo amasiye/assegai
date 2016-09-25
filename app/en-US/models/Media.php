@@ -1,6 +1,10 @@
 <?php
+define('MEDIA_TABLE', 'assg_posts');  /* Remember media are posts too! */
+
 /**
- *
+ * This class provides a structured representation of all Posts that
+ * are of the type Media. It defines methods that allow access to these
+ * posts, so they can update the Media data and content.
  */
 class Media extends Post
 {
@@ -82,7 +86,7 @@ class Media extends Post
       $where = array_merge($where, $filters);
     }
 
-    if(($rows = $db->select('assg_posts', null, $where)) == QUERY_EXEC_ERR)
+    if(($rows = $db->select(MEDIA_TABLE, null, $where)) == QUERY_EXEC_ERR)
       return QUERY_EXEC_ERR;
 
     foreach($rows as $row)
@@ -92,5 +96,33 @@ class Media extends Post
 
     return $result;
   } // end get()
+
+  /**
+   * Return the total number of media posts. If a type is specified it returns
+   * the total of that specific media type.
+   * @param {Database} $db The database containing the post data.
+   * @param {string} $type [Optional] The specific media type to count.
+   * @param {int} Returns the total number of media posts or -1 on failure.
+   */
+  public static function total($db, $type = 'all')
+  {
+    $total = 0;
+
+    # If a type is specified
+    if(isset($type) && (strcmp($type, 'all') != 0))
+    {
+      # instantiate media objects
+
+      # count the number of objects created and set total to that value
+    }
+    else
+    {
+      # Get all media and count them
+      $total = $db->select(MEDIA_TABLE, null, array('where' => "post_type='media'", 'count'));
+    }
+
+    # return total
+    return $total;
+  } // end total()
 }
  ?>
