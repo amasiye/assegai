@@ -1,4 +1,6 @@
 <?php
+define('USERS_TABLE', 'assg_posts');
+
 /**
  * The user model class. Handles the business logic of all
  * user related requests and operations and provides an
@@ -49,7 +51,7 @@ class User
           $this->app = $params['app'];
 
         # Cache user data
-        $user_data = $this->db->select("assg_users", array(), array('-w'=>"user_login='{$this->login}'"))[0];
+        $user_data = $this->db->select(USERS_TABLE, array(), array('-w'=>"user_login='{$this->login}'"))[0];
 
         $this->id = $user_data['user_id'];
         $this->login = $user_data['user_login'];
@@ -110,7 +112,7 @@ class User
       $stmt_columns[array_search('meta', $columns)] = 'user_meta';
 
     # Call update
-    $result = $db->update('assg_users', $stmt_columns, $values, array("-w" => "user_id='{$this->id}'"));
+    $result = $db->update(USERS_TABLE, $stmt_columns, $values, array("-w" => "user_id='{$this->id}'"));
 
     if($result == QUERY_EXEC_OK)
     {
@@ -136,7 +138,7 @@ class User
     $db = $this->db;
 
     # Cache user data
-    $user_data = $db->select("assg_users", array(), array('-w'=>"user_login='{$this->login}'"))[0];
+    $user_data = $db->select(USERS_TABLE, array(), array('-w'=>"user_login='{$this->login}'"))[0];
 
     # Verify the password
     if(password_verify($old_password, $user_data['user_password']))
@@ -146,7 +148,7 @@ class User
       $user_password_hashed =
           password_hash($new_password, PASSWORD_BCRYPT, $hash_options);
 
-      if($db->update("assg_users", array('user_password'), array($user_password_hashed),
+      if($db->update(USERS_TABLE, array('user_password'), array($user_password_hashed),
                       array('-w'=>"user_id='{$this->id}'")) == QUERY_EXEC_OK)
       {
         return true;
@@ -202,12 +204,22 @@ class User
   } // end has_permission($permission)
 
   /**
+   * Returns the display name of the site administrator.
+   * @return {string} Return the display name of the site administrator.
+   */
+  public function admin_name()
+  {
+    $db = $this->db;
+    return $db->select(USERS_TABLE, array('display_name'), array('where' => "user_login='Admin'"))[0]['display_name'];
+  } // end admin_name()
+
+  /**
    * Returns an array of all user records in the database.
    * @return {array} An associative array containing all user records.
    */
   public static function get_users($db, $filters = array())
   {
-    return $db->select('assg_users', null, $filters);
+    return $db->select(USERS_TABLE, null, $filters);
   } // end get_users()
 
   /**
@@ -221,7 +233,7 @@ class User
   public static function login($db, $login, $password)
   {
     # Cache user data
-    $user_data = $db->select("assg_users", array(), array('-w'=>"user_login='{$login}'"))[0];
+    $user_data = $db->select(USERS_TABLE, array(), array('-w'=>"user_login='{$login}'"))[0];
 
     # Verify the password
     if(password_verify($password, $user_data['user_password']))
@@ -297,7 +309,7 @@ class User
         password_hash($user_password, PASSWORD_BCRYPT, $hash_options);
 
     return $db->insert(
-                        'assg_users',
+                        USERS_TABLE,
                         array('user_login', 'user_password', 'user_salt', 'user_name', 'user_joined', 'user_group', 'user_meta'),
                         array($user_login, $user_password_hashed, $user_salt, $user_name, $user_joined, $user_group, $user_meta)
                       );
@@ -320,7 +332,7 @@ class User
     if(password_verify($auth_password, $user_data['user_password']))
     {
       # Perform deletion
-      if($db->delete('assg_users', array('-w'=>"user_login='User'")) === QUERY_EXEC_OK)
+      if($db->delete(USERS_TABLE, array('-w'=>"user_login='User'")) === QUERY_EXEC_OK)
       {
         return true;
       }
@@ -359,7 +371,7 @@ class User
    */
   public static function login_name_exists($db, $login)
   {
-    $result = $db->select('assg_users', array('user_login'), array("-w" => "user_login='{$login}'"))[0];
+    $result = $db->select(USERS_TABLE, array('user_login'), array("-w" => "user_login='{$login}'"))[0];
 
     if(!empty($result) && strcmp($result['user_login'], $login) == 0)
       return true;
@@ -373,7 +385,7 @@ class User
    */
   public static function is_admin($db, $login)
   {
-    $group_id = $db->select('assg_users', array('user_group'), array("where" => "user_login='{$login}'"))[0]['user_group'];
+    $group_id = $db->select(USERS_TABLE, array('user_group'), array("where" => "user_login='{$login}'"))[0]['user_group'];
     $group_name = Group::get_group_name($db, $group_id);
     if(strcmp($group_name, "Administrator") == 0)
       return true;
@@ -392,7 +404,7 @@ class User
   {
     $result = array();
 
-    if(($rows = $db->select('assg_users', null, $filters)) == QUERY_EXEC_ERR)
+    if(($rows = $db->select(USERS_TABLE, null, $filters)) == QUERY_EXEC_ERR)
       return QUERY_EXEC_ERR;
 
     foreach($rows as $column)

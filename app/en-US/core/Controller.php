@@ -58,7 +58,6 @@ class Controller
     $session = $this->session;
     $layouts = Layout::get($db);
     $pages = Page::get($db);
-    // var_dump($pages); exit;
 
     # Set the site timezone
     date_default_timezone_set(SITE_TIMEZONE);

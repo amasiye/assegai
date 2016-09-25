@@ -7,7 +7,7 @@ require_once "includes/admin-header.php";
 
       <!-- Left Panel -->
       <div class="col-sm-2 sidenav">
-        <?= App::get_ui_component($user, 'dashboard'); ?>
+        <?= App::get_ui_component($db, $user, 'dashboard'); ?>
       </div>
 
       <!-- Right Panel -->
@@ -21,7 +21,7 @@ require_once "includes/admin-header.php";
               <th></th>
             </tr>
           </table>
-          
+
       </div><!--#end .col-sm-10 (Right Panel) -->
 
     </div><!--#end .row, .content -->

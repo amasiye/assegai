@@ -44,7 +44,7 @@ require_once "includes/admin-header.php";
                   <?php endforeach; ?>
                 </tbody>
               </table>
-            </div>
+            </div><!--# end .panel-body -->
 
           </div>
         </div>
@@ -88,9 +88,9 @@ require_once "includes/admin-header.php";
           </div>
         </div>
 
-      </div>
+      </div><!--# end .col-md-10 -->
 
-    </div>
+    </div><!--# end row -->
 
   </div>
 <?php require_once "includes/admin-footer.php"; ?>

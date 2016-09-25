@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * This class provides a structured representation of the Assegai
+ * application class.
+ */
 class App
 {
   protected $instance;
@@ -49,7 +53,7 @@ class App
   } // end __construct()
 
   /**
-   * Breaks up url into an array of tokens
+   * Breaks up url into an array of tokens.
    */
   public function parse_url()
   {
@@ -63,7 +67,7 @@ class App
                                       )
                             );
     }
-  }
+  } // end parse_url()
 
   /**
    * Return the website app's api_key
@@ -200,7 +204,7 @@ class App
     $html = "<div class='page-header'><h3><span class='glyphicon glyphicon-dashboard'></span> Dashboard</h3>
       <div class='list-group'>
       <a href='admin/analytics/' class='list-group-item'>Site Analytics</a>
-      <a href='admin/media/' class='list-group-item'>Media Library</a>
+      <a href='admin/media/' class='list-group-item'>Media Library<span class='badge'>" . Media::total($db) . "</span></a>
       <a href='admin/contacts/' class='list-group-item'>Contacts</a>
       <a href='admin/mail/' class='list-group-item'>Mail</a>
       <a href='admin/users/' class='list-group-item'>Users</a>

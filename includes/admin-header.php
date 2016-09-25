@@ -1,10 +1,7 @@
 <?php
-// $db = $data['db'];
 $user = $data['user'];
-
 require_once "includes/head-shared.php";
 ?>
-<body>
 <?php if (User::is_logged_in()): ?>
 
   <nav class="navbar navbar-inverse">
@@ -179,3 +176,18 @@ require_once "includes/head-shared.php";
   </nav>
 
 <?php endif; ?>
+<?php
+// $cat_name = 'aside';
+// $cat = new Category($db, $cat_name);
+// $cat->set_info("Tag for all {$cat_name} element types.");
+// echo Category::id($db, $cat_name); exit;
+// $confirmation_email = file_get_contents(ABSRESPATH . 'templates/email-user-registration.php');
+// $to = 'amasiye313@gmail.com';
+// $subject = '';
+// $msg = "<h1>Hello {$user->login}</h1>";
+// $headers = 'From: webmaster@example.com' . "\r\n" .
+//     'Reply-To: webmaster@example.com' . "\r\n" .
+//     'Content-Type: text/html' . "\r\n" .
+//     'X-Mailer: PHP/' . phpversion();
+// echo mail($to, $subject, $msg, $headers); exit;
+ ?>

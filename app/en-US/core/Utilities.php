@@ -3,7 +3,9 @@
  * This file contains some usefull free functions that wouldn't make
  * sense belonging to any class files.
  *
- * @package assegai
+ * @package Assegai
+ * @version 1.0.0
+ * @since 1.0.0
  */
 
 /**
@@ -23,5 +25,44 @@ function array_empty(Array &$a)
     array_pop($a);
   }
 }
+
+
+/* --   String Functions    -- */
+
+/**
+ * Returns the last letter of the given string.
+ * @param {string} $str The string in question.
+ * @return {string} Returns the last letter of the given string.
+ */
+function last_letter($str)
+{
+  return substr($str, -1);
+} // end last_letter()
+
+/**
+ * Replaces a key within an array with some other key.
+ * @param {string} $find The original array key.
+ * @param {string} $replace The replacement array key.
+ * @param {array} $array The array to be searched.
+ * @return {array} Returns an array with the replaced key or false on failure.
+ */
+function key_replace($find, $replace, $array)
+{
+  if(key_exists($find, $array))
+  {
+    $keys = array_keys($array);
+    $keys = str_replace($find, $replace, $keys);
+    # replace keys in array
+    $new_array = array();
+    foreach ($keys as $index => $key)
+    {
+      $new_array[$key] = array_shift($array);
+    }
+
+    return $new_array;
+  }
+
+  return false;
+} // end key_replace()
 
 ?>

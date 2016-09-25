@@ -154,8 +154,6 @@ class Post
       'articles' => $total_articles,
       'sermons' => $total_sermons,
       'events' => $total_events,
-      'newsletters' => $total_newsletters,
-      'media' => $total_media,
       'other' => $total_other
     );
 
