@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Controller" namespace="" name="Controller" abstract="false" final="false" start="11" end="120">
-  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Controller.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Controller.php" size="3925" time="2016-09-23T12:48:58+02:00" unixtime="1474627738" sha1="8bf98749ee7088ea1fb0b2fec352b781af3d2344" relative="app/en-US/core/Controller.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Controller" namespace="" name="Controller" abstract="false" final="false" start="11" end="133">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Controller.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Controller.php" size="4521" time="2016-09-28T03:33:57+02:00" unixtime="1475026437" sha1="6365745aded47684d2d8ab6d75f7f9c6ffc74f8e" relative="app/en-US/core/Controller.php"/>
   <docblock>
     <description compact="The base Controller class. It processes and responds to events such as user actions and it invokes changes to the model and the view based on those events."/>
     <author value="A. Masiye"/>
@@ -31,7 +31,7 @@
       <comment value="return new $model($args);" line="44"/>
     </inline>
   </method>
-  <method name="view" start="54" end="69" abstract="false" final="false" static="false" visibility="public">
+  <method name="view" start="54" end="82" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Loads a view with it's corresponding data."/>
       <param description="The name of the view." type="object" variable="$view">
@@ -44,10 +44,10 @@
     <parameter name="view" byreference="false" type="{unknown}"/>
     <parameter name="data" byreference="false" type="array" default=""/>
     <inline>
-      <comment value="Set the site timezone" line="62"/>
+      <comment value="Set the site timezone" line="75"/>
     </inline>
   </method>
-  <method name="validate_text" start="79" end="85" abstract="false" final="false" static="false" visibility="public">
+  <method name="validate_text" start="92" end="98" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Validates a given input string of text."/>
       <param description="The string of text." type="object" variable="$text">
@@ -57,13 +57,13 @@
         <type full="{string}" namespace="" name="{string}"/>
       </param>
       <param description="The minimum length of the string." type="object" variable="$min_length">
-        <type full="{int}" namespace="" name="{int}"/>
+        <type full="{integer}" namespace="" name="{integer}"/>
       </param>
       <param description="The maximum length of the password." type="object" variable="$max_length">
-        <type full="{int}" namespace="" name="{int}"/>
+        <type full="{integer}" namespace="" name="{integer}"/>
       </param>
       <return description="Returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred." type="object">
-        <type full="{int}" namespace="" name="{int}"/>
+        <type full="{integer}" namespace="" name="{integer}"/>
       </return>
     </docblock>
     <parameter name="text" byreference="false" type="{unknown}"/>
@@ -71,7 +71,7 @@
     <parameter name="min_length" byreference="false" type="integer" default="6"/>
     <parameter name="max_length" byreference="false" type="integer" default="1"/>
   </method>
-  <method name="validate_password" start="95" end="109" abstract="false" final="false" static="false" visibility="public">
+  <method name="validate_password" start="108" end="122" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Validates a given input string of text."/>
       <param description="The input password string." type="object" variable="$password">
@@ -81,13 +81,13 @@
         <type full="{string}" namespace="" name="{string}"/>
       </param>
       <param description="The minimum length of the password" type="object" variable="$min_length">
-        <type full="{int}" namespace="" name="{int}"/>
+        <type full="{integer}" namespace="" name="{integer}"/>
       </param>
       <param description="The maximum length of the password" type="object" variable="$max_length">
-        <type full="{int}" namespace="" name="{int}"/>
+        <type full="{integer}" namespace="" name="{integer}"/>
       </param>
       <return description="Returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred." type="object">
-        <type full="{int}" namespace="" name="{int}"/>
+        <type full="{integer}" namespace="" name="{integer}"/>
       </return>
     </docblock>
     <parameter name="password" byreference="false" type="{unknown}"/>
@@ -95,11 +95,11 @@
     <parameter name="min_length" byreference="false" type="integer" default="6"/>
     <parameter name="max_length" byreference="false" type="integer" default="1"/>
     <inline>
-      <comment value="Check for at least 1 uppercase alphabetical character" line="97"/>
-      <comment value="Check for at least 1 numerical character" line="101"/>
+      <comment value="Check for at least 1 uppercase alphabetical character" line="110"/>
+      <comment value="Check for at least 1 numerical character" line="114"/>
     </inline>
   </method>
-  <method name="redirect" start="116" end="119" abstract="false" final="false" static="true" visibility="public">
+  <method name="redirect" start="129" end="132" abstract="false" final="false" static="true" visibility="public">
     <docblock>
       <description compact="Modifies the header location attribute by setting it to the given URL string."/>
       <param description="The URL string." type="object" variable="$url">
@@ -111,6 +111,5 @@
   <extenders>
     <extender full="Admin" namespace="" name="Admin"/>
     <extender full="Api" namespace="" name="Api"/>
-    <extender full="Home" namespace="" name="Home"/>
   </extenders>
 </class>

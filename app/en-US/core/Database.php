@@ -114,6 +114,10 @@ class Database
     if(array_key_exists("like", $filters))
       $sql .= " LIKE '" . $filters['like'] . "'";
 
+    # Handle join filter
+    if(array_key_exists("join", $filters))
+      $sql .= " JOIN " . $filters['join'];
+
     # Handle order filter
     if(array_key_exists("order", $filters))
       $sql .= " ORDER BY " . $filters['order'];

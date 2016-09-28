@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/dashboard" file="index.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/dashboard/index.php" size="3103" time="2016-09-23T11:59:47+02:00" unixtime="1474624787" sha1="a9eaeebce0a1ad002bb05fd2fdf6de5f3d965e95" relative="app/en-US/views/dashboard/index.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/dashboard" file="index.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/dashboard/index.php" size="3174" time="2016-09-24T22:59:05+02:00" unixtime="1474750745" sha1="7c8aaeaf76ba387662c5d04b4aaff72ef8c8dfc3" relative="app/en-US/views/dashboard/index.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -68,6 +68,9 @@
     <token name="T_DOUBLE_COLON">::</token>
     <token name="T_STRING">get_ui_component</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$user</token>
     <token name="T_PHPDOX_COMMA">,</token>
     <token name="T_WHITESPACE"> </token>
@@ -239,7 +242,7 @@
     <token name="T_INLINE_HTML">              &lt;/table&gt;</token>
   </line>
   <line no="47">
-    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+    <token name="T_INLINE_HTML">            &lt;/div&gt;&lt;!--# end .panel-body --&gt;</token>
   </line>
   <line no="48"/>
   <line no="49">
@@ -513,11 +516,11 @@
   </line>
   <line no="90"/>
   <line no="91">
-    <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
+    <token name="T_INLINE_HTML">      &lt;/div&gt;&lt;!--# end .col-md-10 --&gt;</token>
   </line>
   <line no="92"/>
   <line no="93">
-    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+    <token name="T_INLINE_HTML">    &lt;/div&gt;&lt;!--# end row --&gt;</token>
   </line>
   <line no="94"/>
   <line no="95">

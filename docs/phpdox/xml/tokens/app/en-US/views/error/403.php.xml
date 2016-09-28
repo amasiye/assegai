@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error" file="403.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error/403.php" size="158" time="2016-08-31T01:59:54+02:00" unixtime="1472601594" sha1="9b336b6a531ae29d07ba56518a592e725c699d56" relative="app/en-US/views/error/403.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error" file="403.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error/403.php" size="280" time="2016-09-25T00:32:38+02:00" unixtime="1474756358" sha1="352963de1c9080559b7902d86ee948b0b5ab8216" relative="app/en-US/views/error/403.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_REQUIRE_ONCE">require_once</token>
@@ -11,10 +11,20 @@
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
   <line no="2">
-    <token name="T_INLINE_HTML">&lt;div class="container"&gt;</token>
+    <token name="T_INLINE_HTML">&lt;div class="container-fluid" style="padding: 64px 0px;"&gt;</token>
   </line>
   <line no="3">
-    <token name="T_INLINE_HTML">  &lt;h2&gt;Error 403: Forbidden&lt;/h2&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;img class="img-responsive center-block" src="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">BASEPATH</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">RESPATH</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">/images/403.png" alt="Error 403: Not Found." /&gt;</token>
   </line>
   <line no="4">
     <token name="T_INLINE_HTML">&lt;/div&gt;</token>

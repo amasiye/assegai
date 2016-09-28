@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="foot-shared.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/foot-shared.php" size="2789" time="2016-04-16T01:55:59+02:00" unixtime="1460764559" sha1="24e03b208bc8a4c04f490512735b5e8eb9d52850" relative="includes/foot-shared.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="foot-shared.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/foot-shared.php" size="2798" time="2016-09-28T04:15:30+02:00" unixtime="1475028930" sha1="b4fc5b5c38368c6a37f9bc01754dffc3a2eb67c8" relative="includes/foot-shared.php"/>
   <line no="1"/>
   <line no="2">
     <token name="T_INLINE_HTML">  &lt;!-- jQuery library --&gt;</token>
@@ -77,13 +77,13 @@
   </line>
   <line no="31"/>
   <line no="32">
-    <token name="T_INLINE_HTML">      request.open("POST", url, true);</token>
+    <token name="T_INLINE_HTML">      // request.open("POST", url, true);</token>
   </line>
   <line no="33">
-    <token name="T_INLINE_HTML">      request.send(null);</token>
+    <token name="T_INLINE_HTML">      // request.send(null);</token>
   </line>
   <line no="34">
-    <token name="T_INLINE_HTML">      request.onreadystatechange = retrieveData;</token>
+    <token name="T_INLINE_HTML">      // request.onreadystatechange = retrieveData;</token>
   </line>
   <line no="35">
     <token name="T_INLINE_HTML">    }</token>

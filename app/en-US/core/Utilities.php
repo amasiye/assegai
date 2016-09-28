@@ -65,4 +65,15 @@ function key_replace($find, $replace, $array)
   return false;
 } // end key_replace()
 
+/**
+ * Compares two string for equality.
+ * @param {string} $str1 The first string.
+ * @param {string} $str The second string.
+ * @return {booelan} Returns true if the strings are equal or false if they are not.
+ */
+function streq($str1, $str2)
+{
+  return (strcmp($str1, $str2) == 0)? true : false;
+} // end streq()
+
 ?>

@@ -1,6 +1,32 @@
 <?php
 $user = $data['user'];
-$display_name_last_letter = substr($user->display_name, strlen($user->display_name) - 1, 1);
+$display_name_last_letter = last_letter($user->display_name);
+$image_dir = RESPATH . 'images/';
+$directory = scandir('uploads/images/1/');
+$count = count($directory);
+$gallery = "";
+// $img_count = 0;
+// for($x = 2; $x < 32; $x++)
+// {
+//   //$gallery .= "<img src='" . BASEPATH . "uploads/images/1/" . $directory[$x] . "' class='img-thumbnail' alt='Profile" . $directory[$x] . "'>";
+//   if($img_count == 0) $gallery .= "<div class='row'>";
+//   $gallery .= "<div class='col-xs-6 col-md-3'>
+//                   <a href='#' class='thumbnail'>
+//                     <img src='" . BASEPATH . "uploads/images/1/" . $directory[$x] . "' alt='Profile" . $directory[$x] . "'>
+//                   </a>
+//                 </div>";
+//   if($img_count == 5)
+//   {
+//     "</div>";
+//     $img_count = 0;
+//   }
+//   else
+//   {
+//     $img_count++;
+//   }
+// }
+// exit;
+// echo $display_name_last_letter; exit;
 require_once "includes/admin-header.php";
 ?>
   <div class="container-fluid">
@@ -28,12 +54,9 @@ require_once "includes/admin-header.php";
             <img class="img-circle img-responsive" src="<?= $user->profile_image; ?>" alt="<?= $media->title; ?>">
           </div>
 
-          <form id="image-profile-form" class="form" enctype="multipart/form-data">
-            <input class="hidden" type="file" name="image-profile-file" value="">
-            <button class="btn btn-info btn-block" type="button" name="image-profile-edit">Upload Photo</button>
-          </form>
-
-          <!-- Image Browser -->
+          <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#edit-profile-modal">
+            Upload Photo <span class="glyphicon glyphicon-camera"></span>
+          </button>
 
         </div><!--# .col-sm-3 -->
 
@@ -203,6 +226,9 @@ require_once "includes/admin-header.php";
                           </div>
                           <?php endif; ?>
 
+                        </div>
+                        <div id="image-gallery" class="hidden">
+                          <?= $gallery; ?>
                         </div>
                       </div><!-- #end modal-body -->
 

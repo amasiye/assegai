@@ -5,44 +5,48 @@
       <dir name="en-US">
         <dir name="content">
           <dir name="templates">
-            <file name="temp-blog.php" size="315" time="2016-09-20T23:04:15+02:00" unixtime="1474405455" sha1="86f8644ce7d5be9ef34a772f891ac7b1c06e93fd" xml="tokens/app/en-US/content/templates/temp-blog.php.xml"/>
+            <file name="email-user-registration.php" size="1120" time="2016-09-25T03:47:48+02:00" unixtime="1474768068" sha1="6ebc5b733877c00dc54d245952891da97efd5f44" xml="tokens/app/en-US/content/templates/email-user-registration.php.xml"/>
+            <file name="temp-blog.php" size="655" time="2016-09-28T07:04:42+02:00" unixtime="1475039082" sha1="176f9c8ad347ae240333a73bc7ce3cdeaa85e897" xml="tokens/app/en-US/content/templates/temp-blog.php.xml"/>
             <file name="temp-index.php" size="104" time="2016-08-15T18:13:15+02:00" unixtime="1471277595" sha1="eed0db2090e132969a55837b84617e4897f7aed3" xml="tokens/app/en-US/content/templates/temp-index.php.xml"/>
             <file name="temp-marketing.php" size="2599" time="2016-09-21T09:46:06+02:00" unixtime="1474443966" sha1="050ce185d587f6799db711daefd4c5ae329c3251" xml="tokens/app/en-US/content/templates/temp-marketing.php.xml"/>
             <file name="temp-portfolio.php" size="0" time="2016-09-20T23:00:18+02:00" unixtime="1474405218" sha1="da39a3ee5e6b4b0d3255bfef95601890afd80709" xml="tokens/app/en-US/content/templates/temp-portfolio.php.xml"/>
           </dir>
         </dir>
         <dir name="controllers">
-          <file name="admin.php" size="4600" time="2016-09-23T08:57:55+02:00" unixtime="1474613875" sha1="85d5469c98c579fb5d52c7c82e07120839e289c2" xml="tokens/app/en-US/controllers/admin.php.xml"/>
-          <file name="api.php" size="10630" time="2016-09-21T09:15:01+02:00" unixtime="1474442101" sha1="73a823eb7178898f457593508274aa082af5ab9e" xml="tokens/app/en-US/controllers/api.php.xml"/>
+          <file name="admin.php" size="8165" time="2016-09-28T07:55:23+02:00" unixtime="1475042123" sha1="1b487bb7607b9c4263604ed26220f6cf3b04d756" xml="tokens/app/en-US/controllers/admin.php.xml"/>
+          <file name="api.php" size="11083" time="2016-09-25T08:04:58+02:00" unixtime="1474783498" sha1="82896a647d6e710e290dc361af3cf5f74471d78d" xml="tokens/app/en-US/controllers/api.php.xml"/>
           <file name="home.php" size="880" time="2016-09-23T07:10:36+02:00" unixtime="1474607436" sha1="7b938d42582ffcc85b8efc186afea74d9c4be36d" xml="tokens/app/en-US/controllers/home.php.xml"/>
         </dir>
         <dir name="core">
-          <file name="App.php" size="6250" time="2016-09-21T09:30:20+02:00" unixtime="1474443020" sha1="c123df46f878196e428689523e86fa576c636e57" xml="tokens/app/en-US/core/App.php.xml"/>
-          <file name="Config.php" size="3353" time="2016-09-23T07:45:00+02:00" unixtime="1474609500" sha1="facb48da08d7ddf4af901563e3ab660da2b08989" xml="tokens/app/en-US/core/Config.php.xml"/>
-          <file name="Controller.php" size="3925" time="2016-09-23T12:48:58+02:00" unixtime="1474627738" sha1="8bf98749ee7088ea1fb0b2fec352b781af3d2344" xml="tokens/app/en-US/core/Controller.php.xml"/>
-          <file name="Database.php" size="10634" time="2016-09-21T09:10:01+02:00" unixtime="1474441801" sha1="e8e041849181b276eb0384f71b8929ffc000a27e" xml="tokens/app/en-US/core/Database.php.xml"/>
+          <file name="App.php" size="8885" time="2016-09-28T07:53:35+02:00" unixtime="1475042015" sha1="a3abeac0c5cdf2b3f1d0c05d1b9ad26a7e5f2389" xml="tokens/app/en-US/core/App.php.xml"/>
+          <file name="Config.php" size="3753" time="2016-09-25T03:52:09+02:00" unixtime="1474768329" sha1="b280d8c759bdade3a669e18e302f3fa5ec29cb90" xml="tokens/app/en-US/core/Config.php.xml"/>
+          <file name="Controller.php" size="4521" time="2016-09-28T03:33:57+02:00" unixtime="1475026437" sha1="6365745aded47684d2d8ab6d75f7f9c6ffc74f8e" xml="tokens/app/en-US/core/Controller.php.xml"/>
+          <file name="Database.php" size="11363" time="2016-09-26T21:06:52+02:00" unixtime="1474916812" sha1="394d7b9c0ea0bd14c9875a5023afa1ddf1794571" xml="tokens/app/en-US/core/Database.php.xml"/>
           <file name="Debug.php" size="756" time="2016-09-01T16:13:13+02:00" unixtime="1472739193" sha1="05bba9b132e63fb56453a28ec73cca0cba4a99b4" xml="tokens/app/en-US/core/Debug.php.xml"/>
           <file name="HTML.php" size="245" time="2016-04-06T16:49:07+02:00" unixtime="1459954147" sha1="0d6274cd3c3a1c45ccb27a0a4ab56fd51aa27fa1" xml="tokens/app/en-US/core/HTML.php.xml"/>
           <file name="Session.php" size="1638" time="2016-08-31T04:17:08+02:00" unixtime="1472609828" sha1="0f0e097a3ebc13adce91d31bf6f534d31d053410" xml="tokens/app/en-US/core/Session.php.xml"/>
-          <file name="StatusCodes.php" size="967" time="2016-09-23T13:01:42+02:00" unixtime="1474628502" sha1="f42005e0fd0364819a3a8893fe555d562bb48613" xml="tokens/app/en-US/core/StatusCodes.php.xml"/>
+          <file name="StatusCodes.php" size="1036" time="2016-09-24T19:53:26+02:00" unixtime="1474739606" sha1="fc8c7fb2ffbe9aa61cae55566f581c0ba48e4ed6" xml="tokens/app/en-US/core/StatusCodes.php.xml"/>
           <file name="Token.php" size="298" time="2016-09-05T04:48:55+02:00" unixtime="1473043735" sha1="82265bc09c6fd535241a6a860713c9599ddc00f8" xml="tokens/app/en-US/core/Token.php.xml"/>
-          <file name="Utilities.php" size="489" time="2016-08-13T23:47:50+02:00" unixtime="1471124870" sha1="0b23a8c7a843df494658bca051b63b8a53c42eb2" xml="tokens/app/en-US/core/Utilities.php.xml"/>
+          <file name="Utilities.php" size="1858" time="2016-09-27T18:53:15+02:00" unixtime="1474995195" sha1="440c47ce0969451c7e1c1b831e2500409db3bc61" xml="tokens/app/en-US/core/Utilities.php.xml"/>
           <file name="Validation.php" size="1755" time="2016-09-11T19:32:34+02:00" unixtime="1473615154" sha1="1b41abe19de5b2060149fc9ee713529ae83664e9" xml="tokens/app/en-US/core/Validation.php.xml"/>
         </dir>
         <file name="init.php" size="589" time="2016-08-29T02:27:20+02:00" unixtime="1472430440" sha1="b40734bd56d55ee0f6b0f7a46273af0d13c1505f" xml="tokens/app/en-US/init.php.xml"/>
         <dir name="models">
           <file name="Audio.php" size="255" time="2016-09-19T01:08:17+02:00" unixtime="1474240097" sha1="f0bff57b011565f19c456e016f058f0ab0ea32b1" xml="tokens/app/en-US/models/Audio.php.xml"/>
-          <file name="Element.php" size="2281" time="2016-09-23T07:52:40+02:00" unixtime="1474609960" sha1="9ddeeb3d589d9e9a88c55d6c05052975b630e331" xml="tokens/app/en-US/models/Element.php.xml"/>
+          <file name="Category.php" size="5298" time="2016-09-24T19:38:07+02:00" unixtime="1474738687" sha1="042189aeeea55887127d201ab021015b5a4254a0" xml="tokens/app/en-US/models/Category.php.xml"/>
+          <file name="Element.php" size="2285" time="2016-09-26T22:16:20+02:00" unixtime="1474920980" sha1="2542e290312a18aa61caaf162f5a6f9b6052ab7f" xml="tokens/app/en-US/models/Element.php.xml"/>
           <file name="Form.php" size="750" time="2016-09-12T19:34:11+02:00" unixtime="1473701651" sha1="70f070ac5c66169879f6acbffd3f342d5eb2d9ef" xml="tokens/app/en-US/models/Form.php.xml"/>
           <file name="Group.php" size="3132" time="2016-09-15T00:49:11+02:00" unixtime="1473893351" sha1="c90be29a575e4fe6c07b2e268e3ee9a4ea4571f8" xml="tokens/app/en-US/models/Group.php.xml"/>
           <file name="Image.php" size="255" time="2016-09-19T01:07:53+02:00" unixtime="1474240073" sha1="51ce9ae46ca823ac173fdb28ff8a5291b089982c" xml="tokens/app/en-US/models/Image.php.xml"/>
           <file name="iNode.php" size="1357" time="2016-09-16T21:32:26+02:00" unixtime="1474054346" sha1="95ed61f9180a721520d29df3aaf7225986fd199d" xml="tokens/app/en-US/models/iNode.php.xml"/>
           <file name="Layout.php" size="1542" time="2016-09-23T12:43:41+02:00" unixtime="1474627421" sha1="de59123e764abff0c89914296f9702d200177e4d" xml="tokens/app/en-US/models/Layout.php.xml"/>
           <file name="Log.php" size="1138" time="2016-09-16T11:51:53+02:00" unixtime="1474019513" sha1="5004bc3c699f862868485da719525f6ca12e835f" xml="tokens/app/en-US/models/Log.php.xml"/>
-          <file name="Media.php" size="2433" time="2016-09-23T06:46:10+02:00" unixtime="1474605970" sha1="452cff4d545c6d6ac36cda09cbc0e655915226da" xml="tokens/app/en-US/models/Media.php.xml"/>
+          <file name="Media.php" size="3567" time="2016-09-24T23:38:32+02:00" unixtime="1474753112" sha1="d6c9c1c0edfe090f876895a0442f1d8320b786dd" xml="tokens/app/en-US/models/Media.php.xml"/>
           <file name="Notification.php" size="5506" time="2016-09-05T01:30:30+02:00" unixtime="1473031830" sha1="b91c69fd95aaaf43b616446ff44d52f0c60f6549" xml="tokens/app/en-US/models/Notification.php.xml"/>
-          <file name="Page.php" size="4624" time="2016-09-23T13:06:11+02:00" unixtime="1474628771" sha1="4d4a243caf6847579727b916f9257b78accf5063" xml="tokens/app/en-US/models/Page.php.xml"/>
-          <file name="Post.php" size="5234" time="2016-09-23T12:46:38+02:00" unixtime="1474627598" sha1="7079bfbf0f82168c2c05612da54374dafc08f249" xml="tokens/app/en-US/models/Post.php.xml"/>
+          <file name="Option.php" size="4350" time="2016-09-28T08:33:21+02:00" unixtime="1475044401" sha1="82b3ca0c1fe52a096be3b4b9a954c6178ab28f87" xml="tokens/app/en-US/models/Option.php.xml"/>
+          <file name="Page.php" size="4667" time="2016-09-26T15:17:54+02:00" unixtime="1474895874" sha1="8070888e286a65208f999a02d94219f5899dfbeb" xml="tokens/app/en-US/models/Page.php.xml"/>
+          <file name="Post.php" size="5156" time="2016-09-26T15:18:12+02:00" unixtime="1474895892" sha1="15afac5a614b24d69fdf1ede8ccb13dd4d62d661" xml="tokens/app/en-US/models/Post.php.xml"/>
+          <file name="Sermon.php" size="260" time="2016-09-28T08:01:06+02:00" unixtime="1475042466" sha1="97601d450843a5989f658fdc3d43272a9d61617f" xml="tokens/app/en-US/models/Sermon.php.xml"/>
           <file name="TimeManager.php" size="2202" time="2016-09-22T07:18:47+02:00" unixtime="1474521527" sha1="d98b4e1bb53b15beae535fab1f531f4afbfcb967" xml="tokens/app/en-US/models/TimeManager.php.xml"/>
           <file name="Video.php" size="239" time="2016-09-19T01:10:22+02:00" unixtime="1474240222" sha1="604fe8116d2346766e6ced8a6e08390793f36cb4" xml="tokens/app/en-US/models/Video.php.xml"/>
         </dir>
@@ -51,37 +55,43 @@
             <file name="index.php" size="0" time="2016-08-14T01:14:02+02:00" unixtime="1471130042" sha1="da39a3ee5e6b4b0d3255bfef95601890afd80709" xml="tokens/app/en-US/views/admin/index.php.xml"/>
           </dir>
           <dir name="dashboard">
-            <file name="analytics.php" size="901" time="2016-09-21T08:21:09+02:00" unixtime="1474438869" sha1="40637655d6422f7f10fa9d78323a9e64376ae50f" xml="tokens/app/en-US/views/dashboard/analytics.php.xml"/>
-            <file name="index.php" size="3103" time="2016-09-23T11:59:47+02:00" unixtime="1474624787" sha1="a9eaeebce0a1ad002bb05fd2fdf6de5f3d965e95" xml="tokens/app/en-US/views/dashboard/index.php.xml"/>
+            <file name="analytics.php" size="900" time="2016-09-27T18:42:28+02:00" unixtime="1474994548" sha1="57d8987c8a55900d2a9567a77334ebcbdff1e172" xml="tokens/app/en-US/views/dashboard/analytics.php.xml"/>
+            <file name="index.php" size="3174" time="2016-09-24T22:59:05+02:00" unixtime="1474750745" sha1="7c8aaeaf76ba387662c5d04b4aaff72ef8c8dfc3" xml="tokens/app/en-US/views/dashboard/index.php.xml"/>
+            <file name="settings.php" size="930" time="2016-09-27T18:38:49+02:00" unixtime="1474994329" sha1="5761b885ad36aaa5f22fa34a775cded52c2e02e5" xml="tokens/app/en-US/views/dashboard/settings.php.xml"/>
           </dir>
           <dir name="error">
-            <file name="401.php" size="204" time="2016-08-31T02:04:38+02:00" unixtime="1472601878" sha1="f8569a3683968f9cc00e34baf882767ebb2e8aa8" xml="tokens/app/en-US/views/error/401.php.xml"/>
-            <file name="403.php" size="158" time="2016-08-31T01:59:54+02:00" unixtime="1472601594" sha1="9b336b6a531ae29d07ba56518a592e725c699d56" xml="tokens/app/en-US/views/error/403.php.xml"/>
-            <file name="404.php" size="158" time="2016-08-31T02:01:38+02:00" unixtime="1472601698" sha1="a7c2e5c0a8f48e8934d9714d81bb3346a2a07a12" xml="tokens/app/en-US/views/error/404.php.xml"/>
-            <file name="500.php" size="170" time="2016-08-31T02:00:31+02:00" unixtime="1472601631" sha1="af0463f99484e76c18b07106ea9cace85f8efeda" xml="tokens/app/en-US/views/error/500.php.xml"/>
+            <file name="401.php" size="280" time="2016-09-25T00:33:36+02:00" unixtime="1474756416" sha1="352963de1c9080559b7902d86ee948b0b5ab8216" xml="tokens/app/en-US/views/error/401.php.xml"/>
+            <file name="403.php" size="280" time="2016-09-25T00:32:38+02:00" unixtime="1474756358" sha1="352963de1c9080559b7902d86ee948b0b5ab8216" xml="tokens/app/en-US/views/error/403.php.xml"/>
+            <file name="404.php" size="280" time="2016-09-25T00:32:03+02:00" unixtime="1474756323" sha1="a88f6b87284391846586ea9ca7f27de799317bf0" xml="tokens/app/en-US/views/error/404.php.xml"/>
+            <file name="500.php" size="291" time="2016-09-25T00:54:09+02:00" unixtime="1474757649" sha1="b4679e1922626c4577659f23e9064f6013bdbdb5" xml="tokens/app/en-US/views/error/500.php.xml"/>
             <file name="index.php" size="170" time="2016-08-31T02:01:46+02:00" unixtime="1472601706" sha1="af0463f99484e76c18b07106ea9cace85f8efeda" xml="tokens/app/en-US/views/error/index.php.xml"/>
           </dir>
           <dir name="home">
             <file name="index.php" size="493" time="2016-08-27T09:14:51+02:00" unixtime="1472282091" sha1="46ee5f1e398df698d7326dc2415acc0003ea6e91" xml="tokens/app/en-US/views/home/index.php.xml"/>
           </dir>
+          <dir name="layouts">
+            <file name="edit.php" size="858" time="2016-09-28T07:36:10+02:00" unixtime="1475040970" sha1="d52b1593b5557b76021e4ee5d795d36631063af6" xml="tokens/app/en-US/views/layouts/edit.php.xml"/>
+            <file name="index.php" size="597" time="2016-09-28T07:49:26+02:00" unixtime="1475041766" sha1="973eade7f5cab8c58951dd329dcb3caf1448291b" xml="tokens/app/en-US/views/layouts/index.php.xml"/>
+          </dir>
           <dir name="login">
             <file name="index.php" size="7339" time="2016-09-21T09:15:52+02:00" unixtime="1474442152" sha1="c694226f33cfaaad728bf2ea886d0add2d0a595e" xml="tokens/app/en-US/views/login/index.php.xml"/>
           </dir>
           <dir name="media">
-            <file name="edit.php" size="2055" time="2016-09-23T06:57:18+02:00" unixtime="1474606638" sha1="43417a3bc0b7654a24d72913da8cf069cc257f28" xml="tokens/app/en-US/views/media/edit.php.xml"/>
-            <file name="index.php" size="2547" time="2016-09-23T05:36:32+02:00" unixtime="1474601792" sha1="7a70ec108a230789007b41a2f8bd5b375bc4d0c5" xml="tokens/app/en-US/views/media/index.php.xml"/>
-            <file name="new.php" size="873" time="2016-09-23T09:23:30+02:00" unixtime="1474615410" sha1="bb36a2df7756b51971f70ddb377d600c9d18d17e" xml="tokens/app/en-US/views/media/new.php.xml"/>
+            <file name="edit.php" size="2060" time="2016-09-23T17:14:42+02:00" unixtime="1474643682" sha1="55b6d4f73a1b4e00568b04ec6f24a595029e8bf1" xml="tokens/app/en-US/views/media/edit.php.xml"/>
+            <file name="index.php" size="2552" time="2016-09-23T17:14:29+02:00" unixtime="1474643669" sha1="b7172eaa0ebd2f93e0564686c3038ebd633f9c01" xml="tokens/app/en-US/views/media/index.php.xml"/>
+            <file name="new.php" size="878" time="2016-09-23T17:14:22+02:00" unixtime="1474643662" sha1="70f9f63ed62a27a0134d84eeb2817de4d5f5726b" xml="tokens/app/en-US/views/media/new.php.xml"/>
           </dir>
           <dir name="pages">
-            <file name="edit.php" size="938" time="2016-09-23T02:07:24+02:00" unixtime="1474589244" sha1="120161865da4e694e1f374d76259df48a0783c71" xml="tokens/app/en-US/views/pages/edit.php.xml"/>
-            <file name="index.php" size="717" time="2016-09-21T07:53:48+02:00" unixtime="1474437228" sha1="80ad1a80a8476f7687350e17c6eee829e4de3f4c" xml="tokens/app/en-US/views/pages/index.php.xml"/>
+            <file name="edit.php" size="959" time="2016-09-28T06:57:46+02:00" unixtime="1475038666" sha1="af9d81ea2a241694a3201c6a18b28516ab0586d4" xml="tokens/app/en-US/views/pages/edit.php.xml"/>
+            <file name="index.php" size="726" time="2016-09-27T18:43:01+02:00" unixtime="1474994581" sha1="34eb5dc4b37cc2b1736a7022b59b86d019cc3a78" xml="tokens/app/en-US/views/pages/index.php.xml"/>
           </dir>
           <dir name="user">
             <file name="index.php" size="143" time="2016-09-01T08:33:37+02:00" unixtime="1472711617" sha1="ed8201caa6bf4800f34abca32e5b1ca75473bde1" xml="tokens/app/en-US/views/user/index.php.xml"/>
             <file name="login.php" size="427" time="2016-09-21T09:12:06+02:00" unixtime="1474441926" sha1="c0a1cc5803352504788e1c1b8486ad1f4df9e884" xml="tokens/app/en-US/views/user/login.php.xml"/>
             <file name="logout.php" size="31" time="2016-08-26T18:27:05+02:00" unixtime="1472228825" sha1="a9377fabb020f77f577416b6e729d4a53cd4f102" xml="tokens/app/en-US/views/user/logout.php.xml"/>
-            <file name="profile.php" size="14950" time="2016-09-23T03:59:14+02:00" unixtime="1474595954" sha1="2e38f465e6c65e1cde3821a1f0d72afadb063562" xml="tokens/app/en-US/views/user/profile.php.xml"/>
+            <file name="profile.php" size="19613" time="2016-09-26T08:18:34+02:00" unixtime="1474870714" sha1="e519474e9af0c332093ada0cdef6c4819ec35ec5" xml="tokens/app/en-US/views/user/profile.php.xml"/>
             <file name="register.php" size="2494" time="2016-08-29T02:06:38+02:00" unixtime="1472429198" sha1="b36fccfc23c833d47b26fe05ceee9905b37f2e80" xml="tokens/app/en-US/views/user/register.php.xml"/>
+            <file name="upload.php" size="78" time="2016-09-24T03:41:03+02:00" unixtime="1474681263" sha1="683032dd5134cde9c9be6c4ae80cfb9208686ccc" xml="tokens/app/en-US/views/user/upload.php.xml"/>
           </dir>
         </dir>
       </dir>
@@ -91,10 +101,10 @@
     </dir>
     <dir name="includes">
       <file name="admin-footer.php" size="1382" time="2016-09-21T20:13:05+02:00" unixtime="1474481585" sha1="1aedf9e044094ba252cf2b5d1b50d8c8b15a1708" xml="tokens/includes/admin-footer.php.xml"/>
-      <file name="admin-header.php" size="7154" time="2016-09-23T12:47:14+02:00" unixtime="1474627634" sha1="5d832c5f91b50a093901f16a9440cbc19de7e997" xml="tokens/includes/admin-header.php.xml"/>
-      <file name="foot-shared.php" size="2789" time="2016-04-16T01:55:59+02:00" unixtime="1460764559" sha1="24e03b208bc8a4c04f490512735b5e8eb9d52850" xml="tokens/includes/foot-shared.php.xml"/>
+      <file name="admin-header.php" size="11422" time="2016-09-28T04:16:13+02:00" unixtime="1475028973" sha1="ca56a694dcb7e650d8917f4e61f48011adda304e" xml="tokens/includes/admin-header.php.xml"/>
+      <file name="foot-shared.php" size="2798" time="2016-09-28T04:15:30+02:00" unixtime="1475028930" sha1="b4fc5b5c38368c6a37f9bc01754dffc3a2eb67c8" xml="tokens/includes/foot-shared.php.xml"/>
       <file name="footer.php" size="1354" time="2016-08-22T21:11:40+02:00" unixtime="1471893100" sha1="3262f852e1caa946cd7bf0eff0aa2a3c52b927b5" xml="tokens/includes/footer.php.xml"/>
-      <file name="head-shared.php" size="2088" time="2016-09-17T04:48:50+02:00" unixtime="1474080530" sha1="ea86ab6f9d5bcf988eb1349bd03803298d7cc114" xml="tokens/includes/head-shared.php.xml"/>
+      <file name="head-shared.php" size="2008" time="2016-09-25T06:12:37+02:00" unixtime="1474776757" sha1="9d2d0320b723d79d544865ec085c0b0419427eb5" xml="tokens/includes/head-shared.php.xml"/>
       <file name="header.php" size="82" time="2016-08-17T15:19:24+02:00" unixtime="1471439964" sha1="09967cb3a8d801973f15d250712a467222deb90c" xml="tokens/includes/header.php.xml"/>
     </dir>
     <file name="index.php" size="218" time="2016-09-13T17:24:38+02:00" unixtime="1473780278" sha1="11f0d35abbd43b9750c0a43253fc6508fb48ab4c" xml="tokens/index.php.xml"/>

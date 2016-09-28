@@ -3,12 +3,12 @@
 /**
  * Model class for semon posts.
  */
-class Sermon
+class Sermon extends Post
 {
 
-  function __construct(argument)
+  function __construct($db, $id)
   {
-    # code...
+    parent::__construct($db, $id, 'sermon');
   }
 
   public static function get()

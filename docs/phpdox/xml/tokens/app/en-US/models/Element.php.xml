@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="Element.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/Element.php" size="2281" time="2016-09-23T07:52:40+02:00" unixtime="1474609960" sha1="9ddeeb3d589d9e9a88c55d6c05052975b630e331" relative="app/en-US/models/Element.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="Element.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/Element.php" size="2285" time="2016-09-26T22:16:20+02:00" unixtime="1474920980" sha1="2542e290312a18aa61caaf162f5a6f9b6052ab7f" relative="app/en-US/models/Element.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -387,14 +387,6 @@
   </line>
   <line no="80">
     <token name="T_WHITESPACE">    </token>
-    <token name="T_RETURN">return</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_STRING">HTML</token>
-    <token name="T_DOUBLE_COLON">::</token>
-    <token name="T_STRING">create_html_element</token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
-    <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="81">
     <token name="T_WHITESPACE">  </token>
@@ -419,7 +411,17 @@
     <token name="T_WHITESPACE">  </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="85"/>
+  <line no="85">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_RETURN">return</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">HTML</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">create_html_element</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
   <line no="86">
     <token name="T_WHITESPACE">  </token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>

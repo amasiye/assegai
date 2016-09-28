@@ -51,5 +51,5 @@ be detached from its current position and attached at the new position.</descrip
   <implementors>
     <class full="Element" namespace="" name="Element"/>
     <class full="Page" namespace="" name="Page"/>
-  </implementors>
+  <class full="Page" namespace="" name="Page"/></implementors>
 </interface>

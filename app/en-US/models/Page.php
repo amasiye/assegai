@@ -19,7 +19,7 @@ class Page extends Post implements iNode
   /**
    * Constructs a page from the given database given its id.
    * @param {Database} $db The database containing the page.
-   * @param {int} $id The page id.
+   * @param {integer} $id The page id.
    */
   function __construct($db, $id)
   {
@@ -34,7 +34,7 @@ class Page extends Post implements iNode
    * If the argument referenced an existing node on the DOM gree, the node will
    * be detached from its current position and attached at the new position.
    * @param {Post} $child The child node to be appended to the list of children.
-   * @return {int} Returns QUERY_EXEC_OK on success, or either QUERY_EXEC_ERR or
+   * @return {integer} Returns QUERY_EXEC_OK on success, or either QUERY_EXEC_ERR or
    * PARAM_TYPE_ERR on failure.
    */
   public function append_child($child)
@@ -85,7 +85,7 @@ class Page extends Post implements iNode
 
   /**
    * Returns an array containing all the child nodes that belong to this node.
-   * @return {int} Returns an array containing all the child nodes that belong
+   * @return {integer} Returns an array containing all the child nodes that belong
    * to this node.
    */
   public function get_children()

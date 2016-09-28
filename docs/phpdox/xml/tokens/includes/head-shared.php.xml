@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="head-shared.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/head-shared.php" size="2088" time="2016-09-17T04:48:50+02:00" unixtime="1474080530" sha1="ea86ab6f9d5bcf988eb1349bd03803298d7cc114" relative="includes/head-shared.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="head-shared.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/head-shared.php" size="2008" time="2016-09-25T06:12:37+02:00" unixtime="1474776757" sha1="9d2d0320b723d79d544865ec085c0b0419427eb5" relative="includes/head-shared.php"/>
   <line no="1">
     <token name="T_INLINE_HTML">&lt;!DOCTYPE html&gt;</token>
   </line>
@@ -17,23 +17,23 @@
     <token name="T_INLINE_HTML">&lt;!--[if gt IE 8]&gt;&lt;!--&gt; &lt;html class="no-js" lang=""&gt; &lt;!--&lt;![endif]--&gt;</token>
   </line>
   <line no="6">
-    <token name="T_INLINE_HTML">  &lt;head lang="en"&gt;</token>
+    <token name="T_INLINE_HTML">&lt;head lang="en"&gt;</token>
   </line>
   <line no="7">
-    <token name="T_INLINE_HTML">    &lt;meta charset="ansi"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;meta charset="ansi"&gt;</token>
   </line>
   <line no="8">
-    <token name="T_INLINE_HTML">    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;</token>
   </line>
   <line no="9">
-    <token name="T_INLINE_HTML">    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</token>
   </line>
   <line no="10">
-    <token name="T_INLINE_HTML">    </token>
+    <token name="T_INLINE_HTML">  </token>
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
   <line no="11">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">  </token>
     <token name="T_IF">if</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_ISSET">isset</token>
@@ -51,15 +51,15 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
   </line>
   <line no="12">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">  </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="13">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">  </token>
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
   <line no="14">
-    <token name="T_INLINE_HTML">    &lt;title&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;title&gt;</token>
     <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$title</token>
@@ -69,27 +69,27 @@
     <token name="T_INLINE_HTML">&lt;/title&gt;</token>
   </line>
   <line no="15">
-    <token name="T_INLINE_HTML">    </token>
+    <token name="T_INLINE_HTML">  </token>
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
   <line no="16">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">  </token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
   <line no="17">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">  </token>
     <token name="T_ELSE">else</token>
   </line>
   <line no="18">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">  </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="19">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">  </token>
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
   <line no="20">
-    <token name="T_INLINE_HTML">    &lt;title&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;title&gt;</token>
     <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">SITE_NAME</token>
@@ -113,19 +113,19 @@
     <token name="T_INLINE_HTML">]&lt;/title&gt;</token>
   </line>
   <line no="21">
-    <token name="T_INLINE_HTML">    </token>
+    <token name="T_INLINE_HTML">  </token>
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
   <line no="22">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">  </token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
   <line no="23">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">  </token>
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
   <line no="24">
-    <token name="T_INLINE_HTML">    &lt;meta name="description" content="</token>
+    <token name="T_INLINE_HTML">  &lt;meta name="description" content="</token>
     <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">App</token>
@@ -140,11 +140,11 @@
     <token name="T_INLINE_HTML">"&gt;</token>
   </line>
   <line no="25">
-    <token name="T_INLINE_HTML">    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</token>
   </line>
   <line no="26"/>
   <line no="27">
-    <token name="T_INLINE_HTML">    &lt;base href=</token>
+    <token name="T_INLINE_HTML">  &lt;base href=</token>
     <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">BASEPATH</token>
@@ -155,67 +155,67 @@
   </line>
   <line no="28"/>
   <line no="29">
-    <token name="T_INLINE_HTML">    &lt;link rel="apple-touch-icon" href="apple-touch-icon.png"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;link rel="apple-touch-icon" href="apple-touch-icon.png"&gt;</token>
   </line>
   <line no="30">
-    <token name="T_INLINE_HTML">    &lt;link rel="stylesheet" href="css/normalize.min.css"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;link rel="stylesheet" href="css/normalize.min.css"&gt;</token>
   </line>
   <line no="31"/>
   <line no="32">
-    <token name="T_INLINE_HTML">    &lt;!-- Latest compiled and minified CSS --&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;!-- Latest compiled and minified CSS --&gt;</token>
   </line>
   <line no="33">
-    <token name="T_INLINE_HTML">    &lt;!-- Bootstrap CSS --&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;!-- Bootstrap CSS --&gt;</token>
   </line>
   <line no="34">
-    <token name="T_INLINE_HTML">    &lt;link rel="stylesheet" href="css/bootstrap.min.css"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;link rel="stylesheet" href="css/bootstrap.min.css"&gt;</token>
   </line>
   <line no="35">
-    <token name="T_INLINE_HTML">    &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"&gt;</token>
   </line>
   <line no="36"/>
   <line no="37">
-    <token name="T_INLINE_HTML">    &lt;!-- Font Awesome --&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;!-- Font Awesome --&gt;</token>
   </line>
   <line no="38">
-    <token name="T_INLINE_HTML">    &lt;link rel="stylesheet" href="css/font-awesome.min.css"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;link rel="stylesheet" href="css/font-awesome.min.css"&gt;</token>
   </line>
   <line no="39">
-    <token name="T_INLINE_HTML">    &lt;link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"&gt;</token>
   </line>
   <line no="40"/>
   <line no="41">
-    <token name="T_INLINE_HTML">    &lt;!-- &lt;link rel="stylesheet" href="css/flat-ui.min.css"&gt; --&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;!-- &lt;link rel="stylesheet" href="css/flat-ui.min.css"&gt; --&gt;</token>
   </line>
   <line no="42"/>
   <line no="43">
-    <token name="T_INLINE_HTML">    &lt;!-- Great Vibes Font from Google Fonts --&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;!-- Great Vibes Font from Google Fonts --&gt;</token>
   </line>
   <line no="44">
-    <token name="T_INLINE_HTML">    &lt;link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'&gt;</token>
   </line>
   <line no="45"/>
   <line no="46">
-    <token name="T_INLINE_HTML">    &lt;!-- Main css --&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;!-- Main css --&gt;</token>
   </line>
   <line no="47">
-    <token name="T_INLINE_HTML">    &lt;link rel="stylesheet" href="css/assegai-main.css"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;link rel="stylesheet" href="css/assegai-main.css"&gt;</token>
   </line>
   <line no="48"/>
   <line no="49">
-    <token name="T_INLINE_HTML">  &lt;/head&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/head&gt;</token>
   </line>
   <line no="50">
-    <token name="T_INLINE_HTML">  &lt;body&gt;</token>
+    <token name="T_INLINE_HTML">&lt;body&gt;</token>
   </line>
   <line no="51">
-    <token name="T_INLINE_HTML">      &lt;!--[if lt IE 8]&gt;</token>
+    <token name="T_INLINE_HTML">    &lt;!--[if lt IE 8]&gt;</token>
   </line>
   <line no="52">
-    <token name="T_INLINE_HTML">          &lt;p class="browserupgrade"&gt;You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href="http://browsehappy.com/"&gt;upgrade your browser&lt;/a&gt; to improve your experience.&lt;/p&gt;</token>
+    <token name="T_INLINE_HTML">        &lt;p class="browserupgrade"&gt;You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href="http://browsehappy.com/"&gt;upgrade your browser&lt;/a&gt; to improve your experience.&lt;/p&gt;</token>
   </line>
   <line no="53">
-    <token name="T_INLINE_HTML">      &lt;![endif]--&gt;</token>
+    <token name="T_INLINE_HTML">    &lt;![endif]--&gt;</token>
   </line>
   <line no="54"/>
 </source>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error" file="500.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error/500.php" size="170" time="2016-08-31T02:00:31+02:00" unixtime="1472601631" sha1="af0463f99484e76c18b07106ea9cace85f8efeda" relative="app/en-US/views/error/500.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error" file="500.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error/500.php" size="291" time="2016-09-25T00:54:09+02:00" unixtime="1474757649" sha1="b4679e1922626c4577659f23e9064f6013bdbdb5" relative="app/en-US/views/error/500.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_REQUIRE_ONCE">require_once</token>
@@ -11,10 +11,20 @@
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
   <line no="2">
-    <token name="T_INLINE_HTML">&lt;div class="container"&gt;</token>
+    <token name="T_INLINE_HTML">&lt;div class="container-fluid" style="padding: 64px 0px;"&gt;</token>
   </line>
   <line no="3">
-    <token name="T_INLINE_HTML">  &lt;h2&gt;Error 500: Internal Server Error&lt;/h2&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;img class="img-responsive center-block" src="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">BASEPATH</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">RESPATH</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">/images/500.png" alt="Error 500: Internal Sever Error." /&gt;</token>
   </line>
   <line no="4">
     <token name="T_INLINE_HTML">&lt;/div&gt;</token>

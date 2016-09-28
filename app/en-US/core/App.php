@@ -199,7 +199,7 @@ class App
     return $db->select('assg_options', array('option_value'), array('where' => "option_name='site_description'"))[0]['option_value'];
   } // end get_site_description()
 
-  public static function get_ui_component($db, $user, $component)
+  public static function get_ui_component($db, $user, $component, $data = array())
   {
     $html = "<div class='page-header'><h3><span class='glyphicon glyphicon-dashboard'></span> Dashboard</h3>
       <div class='list-group'>
@@ -215,25 +215,77 @@ class App
 
     switch ($component)
     {
-      case 'dashboard':
+      case 'nav-dashboard':
         break;
 
-      case 'pages':
+      case 'nav-pages':
         if($user->has_permission('read', 'pages'))
         {
           $html = "<div class='page-header'><h3>Pages</h3></div>";
         }
         break;
 
-      case 'pages/edit':
+      case 'nav-pages/edit':
         if($user->has_permission('edit', 'pages'))
         {
           $html = "<div class='page-header'>
                     <ul class='nav nav-tabs'>
-                      <li class='active'><a href='#'>Elements</a></li>
-                      <li><a href='#'>Widgets</a></li>
+                      <li class='active'><a href='#' data-target='#menu-elements'>Elements</a></li>
+                      <li><a href='#' data-target='#menu-widgets'>Widgets</a></li>
                     </ul>
-                  </div>";
+                  </div>
+                  <div id='menu-elements' class='col-md-12'>
+                    Elements
+                  </div>
+                  <div id='menu-widgets' class='col-md-12 hidden'>
+                    Widgets
+                  </div>
+                  <script>
+                  </script>";
+          $elements = Element::get($db);
+        }
+        break;
+
+      case 'nav-layouts':
+        if($user->has_permission('read', 'layouts'))
+        {
+          $html = "<div class='page-header'><h3>Layouts</h3></div>
+                  <div class='list-group'>";
+          foreach ($data['layouts'] as $layout)
+          {
+            $html .= "<a class='list-group-item' href='admin/layouts/edit/{$layout->id}'>
+                      {$layout->title}
+                      </a>";
+          }
+          $html .= "<a class='list-group-item text-center' title='Add Layout' href='admin/layouts/new/'>
+                      <span class='glyphicon glyphicon-plus'></span>
+                    </a>
+                    </div>";
+        }
+        break;
+      case 'nav-layouts/edit':
+        if($user->has_permission('edit', 'layouts'))
+        {
+          $html = "<div class='page-header'>
+                    <ul class='nav nav-tabs'>
+                      <li class='active'><a href='#' data-target='#menu-elements'>Elements</a></li>
+                      <li><a href='#' data-target='#menu-widgets'>Widgets</a></li>
+                    </ul>
+                  </div>
+                  <div id='menu-elements' class='col-md-12'>
+                    <p>Element 1</p>
+                    <p>Element 2</p>
+                    <p>Element 3</p>
+                    <p>Element 4</p>
+                  </div>
+                  <div id='menu-widgets' class='col-md-12 hidden'>
+                    <p>Widget 1</p>
+                    <p>Widget 2</p>
+                    <p>Widget 3</p>
+                    <p>Widget 4</p>
+                  </div>
+                  <script>
+                  </script>";
           $elements = Element::get($db);
         }
         break;
