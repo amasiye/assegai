@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Api" namespace="" name="Api" abstract="false" final="false" start="12" end="302">
-  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers" file="api.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers/api.php" size="10630" time="2016-09-21T09:15:01+02:00" unixtime="1474442101" sha1="73a823eb7178898f457593508274aa082af5ab9e" relative="app/en-US/controllers/api.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Api" namespace="" name="Api" abstract="false" final="false" start="12" end="305">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers" file="api.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers/api.php" size="11083" time="2016-09-25T08:04:58+02:00" unixtime="1474783498" sha1="82896a647d6e710e290dc361af3cf5f74471d78d" relative="app/en-US/controllers/api.php"/>
   <docblock>
     <description compact="This controller handles all web service requests and provides an extensive and robust api."/>
     <since value="0.0.1"/>
@@ -13,16 +13,16 @@
     <parameter name="endpoint" byreference="false" type="string" default="''"/>
     <parameter name="data" byreference="false" type="array" default=""/>
   </method>
-  <method name="user" start="46" end="295" abstract="false" final="false" static="false" visibility="public">
+  <method name="user" start="46" end="298" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="User controller"/>
       <param type="object" variable="$endpoint">
         <type full="{string}" namespace="" name="{string}"/>
       </param>
     </docblock>
-    <parameter name="endpoint" byreference="false" type="string" default="''"/>
+    <parameter name="verb" byreference="false" type="string" default="''"/>
   </method>
-  <method name="auth" start="297" end="300" abstract="false" final="false" static="false" visibility="public">
+  <method name="auth" start="300" end="303" abstract="false" final="false" static="false" visibility="public">
     <parameter name="login" byreference="false" type="{unknown}"/>
     <parameter name="password" byreference="false" type="{unknown}"/>
   </method>
@@ -51,7 +51,7 @@
         <comment value="return new $model($args);" line="44"/>
       </inline>
     </method>
-    <method name="view" start="54" end="69" abstract="false" final="false" static="false" visibility="public">
+    <method name="view" start="54" end="82" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="Loads a view with it's corresponding data."/>
         <param description="The name of the view." type="object" variable="$view">
@@ -64,10 +64,10 @@
       <parameter name="view" byreference="false" type="{unknown}"/>
       <parameter name="data" byreference="false" type="array" default=""/>
       <inline>
-        <comment value="Set the site timezone" line="62"/>
+        <comment value="Set the site timezone" line="75"/>
       </inline>
     </method>
-    <method name="validate_text" start="79" end="85" abstract="false" final="false" static="false" visibility="public">
+    <method name="validate_text" start="92" end="98" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="Validates a given input string of text."/>
         <param description="The string of text." type="object" variable="$text">
@@ -77,13 +77,13 @@
           <type full="{string}" namespace="" name="{string}"/>
         </param>
         <param description="The minimum length of the string." type="object" variable="$min_length">
-          <type full="{int}" namespace="" name="{int}"/>
+          <type full="{integer}" namespace="" name="{integer}"/>
         </param>
         <param description="The maximum length of the password." type="object" variable="$max_length">
-          <type full="{int}" namespace="" name="{int}"/>
+          <type full="{integer}" namespace="" name="{integer}"/>
         </param>
         <return description="Returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred." type="object">
-          <type full="{int}" namespace="" name="{int}"/>
+          <type full="{integer}" namespace="" name="{integer}"/>
         </return>
       </docblock>
       <parameter name="text" byreference="false" type="{unknown}"/>
@@ -91,7 +91,7 @@
       <parameter name="min_length" byreference="false" type="integer" default="6"/>
       <parameter name="max_length" byreference="false" type="integer" default="1"/>
     </method>
-    <method name="validate_password" start="95" end="109" abstract="false" final="false" static="false" visibility="public">
+    <method name="validate_password" start="108" end="122" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="Validates a given input string of text."/>
         <param description="The input password string." type="object" variable="$password">
@@ -101,13 +101,13 @@
           <type full="{string}" namespace="" name="{string}"/>
         </param>
         <param description="The minimum length of the password" type="object" variable="$min_length">
-          <type full="{int}" namespace="" name="{int}"/>
+          <type full="{integer}" namespace="" name="{integer}"/>
         </param>
         <param description="The maximum length of the password" type="object" variable="$max_length">
-          <type full="{int}" namespace="" name="{int}"/>
+          <type full="{integer}" namespace="" name="{integer}"/>
         </param>
         <return description="Returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred." type="object">
-          <type full="{int}" namespace="" name="{int}"/>
+          <type full="{integer}" namespace="" name="{integer}"/>
         </return>
       </docblock>
       <parameter name="password" byreference="false" type="{unknown}"/>
@@ -115,11 +115,11 @@
       <parameter name="min_length" byreference="false" type="integer" default="6"/>
       <parameter name="max_length" byreference="false" type="integer" default="1"/>
       <inline>
-        <comment value="Check for at least 1 uppercase alphabetical character" line="97"/>
-        <comment value="Check for at least 1 numerical character" line="101"/>
+        <comment value="Check for at least 1 uppercase alphabetical character" line="110"/>
+        <comment value="Check for at least 1 numerical character" line="114"/>
       </inline>
     </method>
-    <method name="redirect" start="116" end="119" abstract="false" final="false" static="true" visibility="public">
+    <method name="redirect" start="129" end="132" abstract="false" final="false" static="true" visibility="public">
       <docblock>
         <description compact="Modifies the header location attribute by setting it to the given URL string."/>
         <param description="The URL string." type="object" variable="$url">

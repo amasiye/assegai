@@ -130,6 +130,57 @@ article>header h6 {
   color: #ecf0f1;
 }
 
+div.frame {
+
+}
+
+div.editor-frame {
+  /*overflow: scroll;*/
+  margin: 0 auto;
+  height: 100%;
+}
+
+div.editor-frame-desktop {
+  width: 100%;
+  min-height: 320px;
+}
+
+div.editor-frame-tablet {
+  width: 767px;
+  height: calc((1536/2048) * 767px);
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-top: 32px;
+  border-bottom: 32px;
+  border-left: 8px;
+  border-right: 8px;
+  border-style: solid;
+  border-color: #555555;
+  border-radius: 24px;
+}
+
+div.editor-frame-mobile {
+  /*background-color: #D59996;*/
+  width: 267px;
+  height: calc((16/9) * 267px);
+  margin-top: 32px;
+  border-top: 32px;
+  border-bottom: 32px;
+  /*border-left: 8px;
+  border-right: 8px;*/
+  border-style: solid;
+  border-color: #555555;
+  border-radius: 24px;
+}
+
+div.editor-frame-mobile::after {
+}
+
+.element-dummy {
+  border: 4px dashed black;
+  display: block;
+}
+
 .ui-form {
 }
 
@@ -164,6 +215,11 @@ footer {
   /*padding: 24px 112px;*/
   padding-top: 24px;
   padding-bottom: 24px;
+}
+
+div#stage footer {
+  background-color: #FFFFFF;
+  min-height: 64px;
 }
 
 /* Set height of the grid so .sidenav can be 100% (adjust if needed) */

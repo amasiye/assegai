@@ -29,9 +29,9 @@
       else if( ActiveXObject ) { request = new ActiveXObject("Microsoft.XMLHTTP"); }
       else { return false; }
 
-      request.open("POST", url, true);
-      request.send(null);
-      request.onreadystatechange = retrieveData;
+      // request.open("POST", url, true);
+      // request.send(null);
+      // request.onreadystatechange = retrieveData;
     }
 
     function retrieveData()

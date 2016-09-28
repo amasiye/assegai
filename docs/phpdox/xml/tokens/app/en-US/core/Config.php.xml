@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Config.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Config.php" size="3353" time="2016-09-23T07:45:00+02:00" unixtime="1474609500" sha1="facb48da08d7ddf4af901563e3ab660da2b08989" relative="app/en-US/core/Config.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Config.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Config.php" size="3753" time="2016-09-25T03:52:09+02:00" unixtime="1474768329" sha1="b280d8c759bdade3a669e18e302f3fa5ec29cb90" relative="app/en-US/core/Config.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -213,9 +213,13 @@
   <line no="41">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">'RESPATH'</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'ABSRESPATH'</token>
     <token name="T_PHPDOX_COMMA">,</token>
-    <token name="T_WHITESPACE">         </token>
+    <token name="T_WHITESPACE">      </token>
+    <token name="T_STRING">BASEPATH</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
     <token name="T_ENCAPSED_AND_WHITESPACE">app/</token>
     <token name="T_CURLY_OPEN">{</token>
@@ -229,6 +233,22 @@
   <line no="42">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'RESPATH'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE">         </token>
+    <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
+    <token name="T_ENCAPSED_AND_WHITESPACE">app/</token>
+    <token name="T_CURLY_OPEN">{</token>
+    <token name="T_VARIABLE">$locale</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_ENCAPSED_AND_WHITESPACE">/content/resources/</token>
+    <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="43">
+    <token name="T_STRING">define</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'BLOGPATH'</token>
     <token name="T_PHPDOX_COMMA">,</token>
     <token name="T_WHITESPACE">        </token>
@@ -236,7 +256,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="43">
+  <line no="44">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'ABOUTPATH'</token>
@@ -246,7 +266,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="44">
+  <line no="45">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'SOFPATH'</token>
@@ -256,20 +276,54 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="45"/>
-  <line no="46">
-    <token name="T_COMMENT">/**#@+</token>
-  </line>
+  <line no="46"/>
   <line no="47">
-    <token name="T_COMMENT"> * Authentication Unique Keys and Salts information.</token>
+    <token name="T_DOC_COMMENT">/** Other helpful paths */</token>
   </line>
   <line no="48">
-    <token name="T_COMMENT"> * Change these to force all users to log in again.</token>
+    <token name="T_STRING">define</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'BOOTSTRAPCSS'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="49">
-    <token name="T_COMMENT"> */</token>
+    <token name="T_STRING">define</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'BOOTSTRAPJSPATH'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="50">
+    <token name="T_STRING">define</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'JQUERYPATH'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE">      </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="51"/>
+  <line no="52">
+    <token name="T_COMMENT">/**#@+</token>
+  </line>
+  <line no="53">
+    <token name="T_COMMENT"> * Authentication Unique Keys and Salts information.</token>
+  </line>
+  <line no="54">
+    <token name="T_COMMENT"> * Change these to force all users to log in again.</token>
+  </line>
+  <line no="55">
+    <token name="T_COMMENT"> */</token>
+  </line>
+  <line no="56">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'AUTH_KEY'</token>
@@ -279,7 +333,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="51">
+  <line no="57">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'SECURE_AUTH_KEY'</token>
@@ -289,7 +343,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="52">
+  <line no="58">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'LOGGED_IN_KEY'</token>
@@ -299,7 +353,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="53">
+  <line no="59">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'NONCE_KEY'</token>
@@ -309,7 +363,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="54">
+  <line no="60">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'AUTH_SALT'</token>
@@ -319,7 +373,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="55">
+  <line no="61">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'SECURE_AUTH_SALT'</token>
@@ -329,7 +383,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="56">
+  <line no="62">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'LOGGED_IN_SALT'</token>
@@ -339,7 +393,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="57">
+  <line no="63">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'NONCE_SALT'</token>
@@ -349,7 +403,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="58">
+  <line no="64">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'API_KEY'</token>
@@ -359,29 +413,29 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="59"/>
-  <line no="60">
+  <line no="65"/>
+  <line no="66">
     <token name="T_COMMENT"># App information</token>
   </line>
-  <line no="61">
+  <line no="67">
     <token name="T_COMMENT">/*</token>
   </line>
-  <line no="62">
+  <line no="68">
     <token name="T_COMMENT"> Versioning key: a.b.c</token>
   </line>
-  <line no="63">
+  <line no="69">
     <token name="T_COMMENT"> a: Monumental landmark - change to architecture or overall functionality.</token>
   </line>
-  <line no="64">
+  <line no="70">
     <token name="T_COMMENT"> b: Feature additions and implementations</token>
   </line>
-  <line no="65">
+  <line no="71">
     <token name="T_COMMENT"> c: Bug fixes and minor revisions.</token>
   </line>
-  <line no="66">
+  <line no="72">
     <token name="T_COMMENT"> */</token>
   </line>
-  <line no="67">
+  <line no="73">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'APP_VER'</token>
@@ -391,11 +445,11 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="68"/>
-  <line no="69">
+  <line no="74"/>
+  <line no="75">
     <token name="T_COMMENT"># Site information</token>
   </line>
-  <line no="70">
+  <line no="76">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'SITE_NAME'</token>
@@ -405,7 +459,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="71">
+  <line no="77">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'SITE_TAGLINE'</token>
@@ -415,7 +469,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="72">
+  <line no="78">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'SITE_PREFIX'</token>
@@ -425,7 +479,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="73">
+  <line no="79">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'SITE_TIMEZONE'</token>
@@ -435,12 +489,12 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="74"/>
-  <line no="75"/>
-  <line no="76">
+  <line no="80"/>
+  <line no="81"/>
+  <line no="82">
     <token name="T_COMMENT"># Session information</token>
   </line>
-  <line no="77">
+  <line no="83">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'SESSION_USER_ID'</token>
@@ -450,7 +504,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="78">
+  <line no="84">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'SESSION_USER'</token>
@@ -460,7 +514,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="79">
+  <line no="85">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'SESSION_USER_DISPLAY'</token>
@@ -470,7 +524,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="80">
+  <line no="86">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'SESSION_HASH'</token>
@@ -480,11 +534,11 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="81"/>
-  <line no="82">
+  <line no="87"/>
+  <line no="88">
     <token name="T_COMMENT"># Useful ids</token>
   </line>
-  <line no="83">
+  <line no="89">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'ID_API_KEY'</token>
@@ -494,7 +548,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="84">
+  <line no="90">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'ID_TOKEN_NAME'</token>
@@ -504,7 +558,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="85">
+  <line no="91">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'TOKEN_NAME'</token>
@@ -516,11 +570,11 @@
     <token name="T_WHITESPACE">    </token>
     <token name="T_COMMENT">// Deprecated - should use ID_TOKEN_NAME</token>
   </line>
-  <line no="86"/>
-  <line no="87">
+  <line no="92"/>
+  <line no="93">
     <token name="T_COMMENT"># Regex patterns</token>
   </line>
-  <line no="88">
+  <line no="94">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'REGEX_USERNAME'</token>
@@ -530,7 +584,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="89">
+  <line no="95">
     <token name="T_STRING">define</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'REGEX_PASSWORD'</token>
@@ -540,18 +594,18 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="90"/>
-  <line no="91">
+  <line no="96"/>
+  <line no="97">
     <token name="T_COMMENT"># Load status codes</token>
   </line>
-  <line no="92">
+  <line no="98">
     <token name="T_REQUIRE_ONCE">require_once</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'StatusCodes.php'</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="93"/>
-  <line no="94">
+  <line no="99"/>
+  <line no="100">
     <token name="T_FUNCTION">function</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">change_locale</token>
@@ -559,10 +613,10 @@
     <token name="T_VARIABLE">$locale</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
   </line>
-  <line no="95">
+  <line no="101">
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="96">
+  <line no="102">
     <token name="T_WHITESPACE">  </token>
     <token name="T_VARIABLE">$this</token>
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -573,12 +627,12 @@
     <token name="T_VARIABLE">$locale</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="97">
+  <line no="103">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="98"/>
-  <line no="99">
+  <line no="104"/>
+  <line no="105">
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
-  <line no="100"/>
+  <line no="106"/>
 </source>

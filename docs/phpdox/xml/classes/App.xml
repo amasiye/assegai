@@ -1,34 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="App" namespace="" name="App" abstract="false" final="false" start="3" end="229">
-  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="App.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/App.php" size="6250" time="2016-09-21T09:30:20+02:00" unixtime="1474443020" sha1="c123df46f878196e428689523e86fa576c636e57" relative="app/en-US/core/App.php"/>
-  <member name="instance" visibility="protected" line="5"/>
-  <member name="controller" type="string" default="'home'" visibility="protected" line="6"/>
-  <member name="method" type="string" default="'index'" visibility="protected" line="7"/>
-  <member name="params" type="array" default="" visibility="protected" line="8"/>
-  <member name="api_key" type="{unknown}" default="" constant="API_KEY" visibility="private" line="10"/>
-  <member name="api_key_id" type="{unknown}" default="" constant="ID_API_KEY" visibility="private" line="11"/>
-  <member name="version" type="{unknown}" default="" constant="APP_VER" visibility="public" line="13"/>
-  <constructor name="__construct" start="15" end="49" abstract="false" final="false" static="false" visibility="public">
+<class xmlns="http://xml.phpdox.net/src" full="App" namespace="" name="App" abstract="false" final="false" start="7" end="299">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="App.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/App.php" size="8885" time="2016-09-28T07:53:35+02:00" unixtime="1475042015" sha1="a3abeac0c5cdf2b3f1d0c05d1b9ad26a7e5f2389" relative="app/en-US/core/App.php"/>
+  <docblock>
+    <description compact="This class provides a structured representation of the Assegai application class."/>
+  </docblock>
+  <member name="instance" visibility="protected" line="9"/>
+  <member name="controller" type="string" default="'home'" visibility="protected" line="10"/>
+  <member name="method" type="string" default="'index'" visibility="protected" line="11"/>
+  <member name="params" type="array" default="" visibility="protected" line="12"/>
+  <member name="api_key" type="{unknown}" default="" constant="API_KEY" visibility="private" line="14"/>
+  <member name="api_key_id" type="{unknown}" default="" constant="ID_API_KEY" visibility="private" line="15"/>
+  <member name="version" type="{unknown}" default="" constant="APP_VER" visibility="public" line="17"/>
+  <constructor name="__construct" start="19" end="53" abstract="false" final="false" static="false" visibility="public">
     <inline>
-      <comment value="Instantiate our controller object and reassign controller var accordingly" line="29"/>
-      <comment value="If the url isn't empty assign values else assign empty array" line="41"/>
-      <comment value="Cache instance of app for easier use within controller functions" line="44"/>
+      <comment value="Instantiate our controller object and reassign controller var accordingly" line="33"/>
+      <comment value="If the url isn't empty assign values else assign empty array" line="45"/>
+      <comment value="Cache instance of app for easier use within controller functions" line="48"/>
     </inline>
   </constructor>
-  <method name="parse_url" start="54" end="66" abstract="false" final="false" static="false" visibility="public">
+  <method name="parse_url" start="58" end="70" abstract="false" final="false" static="false" visibility="public">
     <docblock>
-      <description compact="Breaks up url into an array of tokens"/>
+      <description compact="Breaks up url into an array of tokens."/>
     </docblock>
   </method>
-  <method name="get_api_key" start="72" end="75" abstract="false" final="false" static="false" visibility="public">
-    <docblock>
-      <description compact="Return the website app's api_key"/>
-      <return description="The hashed string representing the web app's api_key." type="object">
-        <type full="{string}" namespace="" name="{string}"/>
-      </return>
-    </docblock>
-  </method>
-  <method name="get_api_key_id" start="81" end="84" abstract="false" final="false" static="false" visibility="public">
+  <method name="get_api_key" start="76" end="79" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Return the website app's api_key"/>
       <return description="The hashed string representing the web app's api_key." type="object">
@@ -36,7 +31,15 @@
       </return>
     </docblock>
   </method>
-  <method name="set_api_key" start="92" end="103" abstract="false" final="false" static="false" visibility="public">
+  <method name="get_api_key_id" start="85" end="88" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the website app's api_key"/>
+      <return description="The hashed string representing the web app's api_key." type="object">
+        <type full="{string}" namespace="" name="{string}"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="set_api_key" start="96" end="107" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Sets the api_key of the website to the given hashed string."/>
       <param description="The Database where the key will be registered." type="object" variable="$db">
@@ -52,14 +55,14 @@
     <parameter name="db" byreference="false" type="{unknown}"/>
     <parameter name="key" byreference="false" type="{unknown}"/>
     <inline>
-      <comment value="Update the api key in the database" line="94"/>
+      <comment value="Update the api key in the database" line="98"/>
     </inline>
   </method>
-  <method name="get_api_key_author" start="105" end="110" abstract="false" final="false" static="true" visibility="public">
+  <method name="get_api_key_author" start="109" end="114" abstract="false" final="false" static="true" visibility="public">
     <parameter name="db" byreference="false" type="{unknown}"/>
     <parameter name="key" byreference="false" type="{unknown}"/>
   </method>
-  <method name="generate_key" start="117" end="153" abstract="false" final="false" static="true" visibility="public">
+  <method name="generate_key" start="121" end="157" abstract="false" final="false" static="true" visibility="public">
     <docblock>
       <description compact="Generates a hash key of given length."/>
       <param description="The length of the random string that should be returned in bytes." type="object" variable="$length">
@@ -71,11 +74,11 @@
     </docblock>
     <parameter name="length" byreference="false" type="{unknown}"/>
     <inline>
-      <comment value="Pad key if it is shorter than required length" line="123"/>
-      <comment value="Truncate key if it's longer than required length" line="146"/>
+      <comment value="Pad key if it is shorter than required length" line="127"/>
+      <comment value="Truncate key if it's longer than required length" line="150"/>
     </inline>
   </method>
-  <method name="is_valid_api_key" start="161" end="178" abstract="false" final="false" static="true" visibility="public">
+  <method name="is_valid_api_key" start="165" end="182" abstract="false" final="false" static="true" visibility="public">
     <docblock>
       <description compact="Verifies whether a given key is acceptable.."/>
       <param description="The database containing the list of acceptable api keys." type="object" variable="$db">
@@ -91,13 +94,13 @@
     <parameter name="db" byreference="false" type="{unknown}" default="" constant="null"/>
     <parameter name="key" byreference="false" type="string" default="''"/>
   </method>
-  <method name="redirect" start="184" end="187" abstract="false" final="false" static="true" visibility="public">
+  <method name="redirect" start="188" end="191" abstract="false" final="false" static="true" visibility="public">
     <docblock>
       <description compact="Handles redirection [Deprecated] - Use Controller::redirect($url) instead."/>
     </docblock>
     <parameter name="path" byreference="false" type="{unknown}"/>
   </method>
-  <method name="get_site_description" start="193" end="196" abstract="false" final="false" static="true" visibility="public">
+  <method name="get_site_description" start="197" end="200" abstract="false" final="false" static="true" visibility="public">
     <docblock>
       <description compact="Returns the site description."/>
       <return description="The site description." type="object">
@@ -106,8 +109,10 @@
     </docblock>
     <parameter name="db" byreference="false" type="{unknown}"/>
   </method>
-  <method name="get_ui_component" start="198" end="227" abstract="false" final="false" static="true" visibility="public">
+  <method name="get_ui_component" start="202" end="297" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="db" byreference="false" type="{unknown}"/>
     <parameter name="user" byreference="false" type="{unknown}"/>
     <parameter name="component" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="array" default=""/>
   </method>
 </class>

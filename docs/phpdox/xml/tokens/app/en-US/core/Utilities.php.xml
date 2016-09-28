@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Utilities.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Utilities.php" size="489" time="2016-08-13T23:47:50+02:00" unixtime="1471124870" sha1="0b23a8c7a843df494658bca051b63b8a53c42eb2" relative="app/en-US/core/Utilities.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Utilities.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Utilities.php" size="1858" time="2016-09-27T18:53:15+02:00" unixtime="1474995195" sha1="440c47ce0969451c7e1c1b831e2500409db3bc61" relative="app/en-US/core/Utilities.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -17,37 +17,43 @@
     <token name="T_DOC_COMMENT"> *</token>
   </line>
   <line no="6">
-    <token name="T_DOC_COMMENT"> * @package assegai</token>
+    <token name="T_DOC_COMMENT"> * @package Assegai</token>
   </line>
   <line no="7">
+    <token name="T_DOC_COMMENT"> * @version 1.0.0</token>
+  </line>
+  <line no="8">
+    <token name="T_DOC_COMMENT"> * @since 1.0.0</token>
+  </line>
+  <line no="9">
     <token name="T_DOC_COMMENT"> */</token>
   </line>
-  <line no="8"/>
-  <line no="9">
+  <line no="10"/>
+  <line no="11">
     <token name="T_DOC_COMMENT">/**</token>
   </line>
-  <line no="10">
+  <line no="12">
     <token name="T_DOC_COMMENT"> * Empties out an array.</token>
   </line>
-  <line no="11">
+  <line no="13">
     <token name="T_DOC_COMMENT"> *</token>
   </line>
-  <line no="12">
+  <line no="14">
     <token name="T_DOC_COMMENT"> * @param &amp;$a The array to empty;</token>
   </line>
-  <line no="13">
+  <line no="15">
     <token name="T_DOC_COMMENT"> * @return N/A</token>
   </line>
-  <line no="14">
+  <line no="16">
     <token name="T_DOC_COMMENT"> * @pre An array of size &gt; 0 is passed to the function.</token>
   </line>
-  <line no="15">
+  <line no="17">
     <token name="T_DOC_COMMENT"> * @post All elements of the array have been removed.</token>
   </line>
-  <line no="16">
+  <line no="18">
     <token name="T_DOC_COMMENT"> */</token>
   </line>
-  <line no="17">
+  <line no="19">
     <token name="T_FUNCTION">function</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">array_empty</token>
@@ -58,10 +64,10 @@
     <token name="T_VARIABLE">$a</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
   </line>
-  <line no="18">
+  <line no="20">
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="19">
+  <line no="21">
     <token name="T_WHITESPACE">  </token>
     <token name="T_VARIABLE">$size</token>
     <token name="T_WHITESPACE"> </token>
@@ -73,8 +79,8 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="20"/>
-  <line no="21">
+  <line no="22"/>
+  <line no="23">
     <token name="T_WHITESPACE">  </token>
     <token name="T_FOR">for</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -96,11 +102,11 @@
     <token name="T_INC">++</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
   </line>
-  <line no="22">
+  <line no="24">
     <token name="T_WHITESPACE">  </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="23">
+  <line no="25">
     <token name="T_WHITESPACE">    </token>
     <token name="T_STRING">array_pop</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -108,16 +114,296 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="24">
+  <line no="26">
     <token name="T_WHITESPACE">  </token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="25">
+  <line no="27">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="26"/>
-  <line no="27">
+  <line no="28"/>
+  <line no="29"/>
+  <line no="30">
+    <token name="T_COMMENT">/* --   String Functions    -- */</token>
+  </line>
+  <line no="31"/>
+  <line no="32">
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="33">
+    <token name="T_DOC_COMMENT"> * Returns the last letter of the given string.</token>
+  </line>
+  <line no="34">
+    <token name="T_DOC_COMMENT"> * @param {string} $str The string in question.</token>
+  </line>
+  <line no="35">
+    <token name="T_DOC_COMMENT"> * @return {string} Returns the last letter of the given string.</token>
+  </line>
+  <line no="36">
+    <token name="T_DOC_COMMENT"> */</token>
+  </line>
+  <line no="37">
+    <token name="T_FUNCTION">function</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">last_letter</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$str</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+  </line>
+  <line no="38">
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="39">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_RETURN">return</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">substr</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$str</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_MINUS">-</token>
+    <token name="T_LNUMBER">1</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="40">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_COMMENT">// end last_letter()</token>
+  </line>
+  <line no="41"/>
+  <line no="42">
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="43">
+    <token name="T_DOC_COMMENT"> * Replaces a key within an array with some other key.</token>
+  </line>
+  <line no="44">
+    <token name="T_DOC_COMMENT"> * @param {string} $find The original array key.</token>
+  </line>
+  <line no="45">
+    <token name="T_DOC_COMMENT"> * @param {string} $replace The replacement array key.</token>
+  </line>
+  <line no="46">
+    <token name="T_DOC_COMMENT"> * @param {array} $array The array to be searched.</token>
+  </line>
+  <line no="47">
+    <token name="T_DOC_COMMENT"> * @return {array} Returns an array with the replaced key or false on failure.</token>
+  </line>
+  <line no="48">
+    <token name="T_DOC_COMMENT"> */</token>
+  </line>
+  <line no="49">
+    <token name="T_FUNCTION">function</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">key_replace</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$find</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$replace</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$array</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+  </line>
+  <line no="50">
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="51">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_IF">if</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_STRING">key_exists</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$find</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$array</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+  </line>
+  <line no="52">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="53">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_VARIABLE">$keys</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">array_keys</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$array</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="54">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_VARIABLE">$keys</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">str_replace</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$find</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$replace</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$keys</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="55">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_COMMENT"># replace keys in array</token>
+  </line>
+  <line no="56">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_VARIABLE">$new_array</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="57">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_FOREACH">foreach</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$keys</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_AS">as</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$index</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$key</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+  </line>
+  <line no="58">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="59">
+    <token name="T_WHITESPACE">      </token>
+    <token name="T_VARIABLE">$new_array</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_VARIABLE">$key</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">array_shift</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$array</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="60">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="61"/>
+  <line no="62">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_RETURN">return</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$new_array</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="63">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="64"/>
+  <line no="65">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_RETURN">return</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">false</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="66">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_COMMENT">// end key_replace()</token>
+  </line>
+  <line no="67"/>
+  <line no="68">
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="69">
+    <token name="T_DOC_COMMENT"> * Compares two string for equality.</token>
+  </line>
+  <line no="70">
+    <token name="T_DOC_COMMENT"> * @param {string} $str1 The first string.</token>
+  </line>
+  <line no="71">
+    <token name="T_DOC_COMMENT"> * @param {string} $str The second string.</token>
+  </line>
+  <line no="72">
+    <token name="T_DOC_COMMENT"> * @return {booelan} Returns true if the strings are equal or false if they are not.</token>
+  </line>
+  <line no="73">
+    <token name="T_DOC_COMMENT"> */</token>
+  </line>
+  <line no="74">
+    <token name="T_FUNCTION">function</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">streq</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$str1</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$str2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+  </line>
+  <line no="75">
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="76">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_RETURN">return</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_STRING">strcmp</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$str1</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$str2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">true</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">false</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="77">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_COMMENT">// end streq()</token>
+  </line>
+  <line no="78"/>
+  <line no="79">
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
-  <line no="28"/>
+  <line no="80"/>
 </source>

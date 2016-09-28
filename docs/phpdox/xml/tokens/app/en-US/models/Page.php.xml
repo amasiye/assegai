@@ -1,10 +1,19 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="Page.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/Page.php" size="4624" time="2016-09-23T13:06:11+02:00" unixtime="1474628771" sha1="4d4a243caf6847579727b916f9257b78accf5063" relative="app/en-US/models/Page.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="Page.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/Page.php" size="4667" time="2016-09-26T15:17:54+02:00" unixtime="1474895874" sha1="8070888e286a65208f999a02d94219f5899dfbeb" relative="app/en-US/models/Page.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
-  <line no="2"/>
+  <line no="2">
+    <token name="T_STRING">define</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'PAGE_TABLE'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'assg_posts'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
   <line no="3">
     <token name="T_DOC_COMMENT">/**</token>
   </line>
@@ -18,7 +27,7 @@
     <token name="T_DOC_COMMENT"> * posts, so they can change the Page document structure, style and</token>
   </line>
   <line no="7">
-    <token name="T_DOC_COMMENT"> * and content of the resultant coresponding HTML document views.</token>
+    <token name="T_DOC_COMMENT"> * and content of the resulting coresponding HTML document views.</token>
   </line>
   <line no="8">
     <token name="T_DOC_COMMENT"> */</token>
@@ -104,7 +113,7 @@
     <token name="T_DOC_COMMENT">   * @param {Database} $db The database containing the page.</token>
   </line>
   <line no="22">
-    <token name="T_DOC_COMMENT">   * @param {int} $id The page id.</token>
+    <token name="T_DOC_COMMENT">   * @param {integer} $id The page id.</token>
   </line>
   <line no="23">
     <token name="T_DOC_COMMENT">   */</token>
@@ -219,7 +228,7 @@
     <token name="T_DOC_COMMENT">   * @param {Post} $child The child node to be appended to the list of children.</token>
   </line>
   <line no="37">
-    <token name="T_DOC_COMMENT">   * @return {int} Returns QUERY_EXEC_OK on success, or either QUERY_EXEC_ERR or</token>
+    <token name="T_DOC_COMMENT">   * @return {integer} Returns QUERY_EXEC_OK on success, or either QUERY_EXEC_ERR or</token>
   </line>
   <line no="38">
     <token name="T_DOC_COMMENT">   * PARAM_TYPE_ERR on failure.</token>
@@ -325,7 +334,7 @@
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
     <token name="T_STRING">update</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">'assg_posts'</token>
+    <token name="T_STRING">PAGE_TABLE</token>
     <token name="T_PHPDOX_COMMA">,</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_ARRAY">array</token>
@@ -571,7 +580,7 @@
     <token name="T_DOC_COMMENT">   * Returns an array containing all the child nodes that belong to this node.</token>
   </line>
   <line no="88">
-    <token name="T_DOC_COMMENT">   * @return {int} Returns an array containing all the child nodes that belong</token>
+    <token name="T_DOC_COMMENT">   * @return {integer} Returns an array containing all the child nodes that belong</token>
   </line>
   <line no="89">
     <token name="T_DOC_COMMENT">   * to this node.</token>
@@ -923,7 +932,7 @@
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
     <token name="T_STRING">select</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">'assg_posts'</token>
+    <token name="T_STRING">PAGE_TABLE</token>
     <token name="T_PHPDOX_COMMA">,</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">null</token>

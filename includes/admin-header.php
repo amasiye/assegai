@@ -1,10 +1,7 @@
 <?php
-// $db = $data['db'];
 $user = $data['user'];
-
 require_once "includes/head-shared.php";
 ?>
-<body>
 <?php if (User::is_logged_in()): ?>
 
   <nav class="navbar navbar-inverse">
@@ -76,12 +73,13 @@ require_once "includes/head-shared.php";
         <?php else: ?>
 
           <!--#ViewMode -->
+          <?php if ($task_bar_options['view_mode']): ?>
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Switch Editor Views "><i class="fa fa-desktop"></i> <span class="caret"></span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Switch Editor Views "><i id="icon-view-mode" class="fa fa-desktop"></i> <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li class="dropdown-header">Editor Views</li>
               <li>
-                <a href="#" onlclick="switchViewingMode(event, 'desktop')" title="Desktop view">
+                <a href="#" onclick="switchViewingMode(event, 'desktop')" title="Desktop view">
                   <div class="row">
                     <div class="col-sm-2 text-right"><i class="fa fa-desktop"></i></div>
                     <div class="col-sm-8 text-left">Desktop View</div>
@@ -90,7 +88,7 @@ require_once "includes/head-shared.php";
               </li>
 
               <li>
-                <a href="#" onlclick="switchViewingMode(event, 'tablet')" title="Tablet view">
+                <a href="#" onclick="switchViewingMode(event, 'tablet')" title="Tablet view">
                   <div class="row">
                     <div class="col-sm-2 text-right"><i class="fa fa-tablet"></i></div>
                     <div class="col-sm-8 text-left">Tablet View</div>
@@ -99,7 +97,7 @@ require_once "includes/head-shared.php";
               </li>
 
               <li>
-                <a href="#" onlclick="switchViewingMode(event, 'mobile')" title="Mobile view">
+                <a href="#" onclick="switchViewingMode(event, 'mobile')" title="Mobile view">
                   <div class="row">
                     <div class="col-sm-2 text-right"><i class="fa fa-mobile"></i></div>
                     <div class="col-sm-8 text-left">Mobile View</div>
@@ -108,19 +106,97 @@ require_once "includes/head-shared.php";
               </li>
             </ul>
           </li>
-          <!--#ViewModeEnd -->
+          <!--#end ViewMode -->
+          <?php endif; ?>
 
-          <li><a href="#" onclick="publish(event)" title="Publish">Publish <span class="glyphicon glyphicon-globe"></span></a></li>
+          <!-- Save -->
+          <?php if ($task_bar_options['save']): ?>
+            <li><a href="#" onclick="save(event)" title="Save Changes">Save <span class="glyphicon glyphicon-floppy-disk"></span></a></li>
+          <?php endif; ?>
+
+          <!-- Publish -->
+          <?php if ($task_bar_options['publish']): ?>
+            <li><a href="#" onclick="publish(event)" title="Publish Changes">Publish <span class="glyphicon glyphicon-globe"></span></a></li>
+          <?php endif; ?>
+
           <!-- Publish Operation -->
+          <script src="js/jquery.min.js"></script>
           <script>
             function switchViewingMode(event, mode)
             {
               event.preventDefault();
+              var editorFrame = document.querySelector('.editor-frame');
 
-              alert("New mode: " + mode + "\n\nSwitch View Mode operation not yet implemented.");
+              switch(mode)
+              {
+                case 'tablet':
+                  document.querySelector('#icon-view-mode').className = "fa fa-tablet";
+                  if(editorFrame != null)
+                  {
+                    if($('.editor-frame').hasClass('editor-frame-desktop'))
+                      $('.editor-frame').removeClass('editor-frame-desktop');
+
+                    if($('.editor-frame').hasClass('editor-frame-mobile'))
+                      $('.editor-frame').removeClass('editor-frame-mobile');
+
+                    $('.editor-frame').addClass('editor-frame-tablet');
+                  }
+                  break;
+                case 'mobile':
+                  document.querySelector('#icon-view-mode').className = "fa fa-mobile";
+                  if(editorFrame != null)
+                  {
+                    if($('.editor-frame').hasClass('editor-frame-desktop'))
+                      $('.editor-frame').removeClass('editor-frame-desktop');
+
+                    if($('.editor-frame').hasClass('editor-frame-tablet'))
+                      $('.editor-frame').removeClass('editor-frame-tablet');
+
+                    $('.editor-frame').addClass('editor-frame-mobile');
+                  }
+                  break;
+                default:
+                  document.querySelector('#icon-view-mode').className = "fa fa-desktop";
+                  if(editorFrame != null)
+                  {
+                    if($('.editor-frame').hasClass('editor-frame-mobile'))
+                      $('.editor-frame').removeClass('editor-frame-mobile');
+
+                    if($('.editor-frame').hasClass('editor-frame-tablet'))
+                      $('.editor-frame').removeClass('editor-frame-tablet');
+
+                    $('.editor-frame').addClass('editor-frame-desktop');
+                  }
+                  break;
+              }
+              // alert($('.editor-frame').attr('class'));
+              updateViewModeSettings(mode);
 
               return false;
-            }
+            } // end switchViewingMode()
+
+            function updateViewModeSettings(mode)
+            {
+              if(typeof(Storage) !== "undefined")
+              {
+                // console.debug('Update using localStorage');
+                localStorage.setItem('assg-vm', mode);
+              }
+              else
+              {
+                // console.debug('Update using cookies');
+                setCookie('assg-vm', mode, 1);
+              }
+            } // end updateViewModeSettings()
+
+            function save(event)
+            {
+              event.preventDefault();
+
+              alert("Publish operation has not been implemented yet.");
+
+              return false;
+            } // end save()
 
             function publish(event)
             {
@@ -129,7 +205,7 @@ require_once "includes/head-shared.php";
               alert("Publish operation has not been implemented yet.");
 
               return false;
-            } // end publish
+            } // end publish()
           </script>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?= $_SESSION[SESSION_USER_DISPLAY]; ?> <span class="glyphicon glyphicon-menu-hamburger"></span></a>
@@ -179,3 +255,20 @@ require_once "includes/head-shared.php";
   </nav>
 
 <?php endif; ?>
+<?php
+// $option = new Option($db, 1);
+// echo $option->name() . ' : ' . $option->value('Assegai Test'); exit;
+// $cat_name = 'alert';
+// $cat = new Category($db, $cat_name);
+// $cat->set_info("Tag for all {$cat_name} element types.");
+// echo Category::id($db, $cat_name); exit;
+// $confirmation_email = file_get_contents(ABSRESPATH . 'templates/email-user-registration.php');
+// $to = 'amasiye313@gmail.com';
+// $subject = '';
+// $msg = "<h1>Hello {$user->login}</h1>";
+// $headers = 'From: webmaster@example.com' . "\r\n" .
+//     'Reply-To: webmaster@example.com' . "\r\n" .
+//     'Content-Type: text/html' . "\r\n" .
+//     'X-Mailer: PHP/' . phpversion();
+// echo mail($to, $subject, $msg, $headers); exit;
+ ?>

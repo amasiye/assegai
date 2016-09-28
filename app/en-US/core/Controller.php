@@ -58,6 +58,19 @@ class Controller
     $session = $this->session;
     $layouts = Layout::get($db);
     $pages = Page::get($db);
+    $task_bar_options = array('save' => false, 'publish' => false, 'view_mode' => false);
+
+    if(array_key_exists('task_bar_options', $data))
+    {
+      if(array_key_exists('save', $data['task_bar_options']))
+      $task_bar_options['save'] = $data['task_bar_options']['save'];
+
+      if(array_key_exists('publish', $data['task_bar_options']))
+      $task_bar_options['publish'] = $data['task_bar_options']['publish'];
+
+      if(array_key_exists('view_mode', $data['task_bar_options']))
+      $task_bar_options['view_mode'] = $data['task_bar_options']['view_mode'];
+    }
 
     # Set the site timezone
     date_default_timezone_set(SITE_TIMEZONE);
@@ -72,9 +85,9 @@ class Controller
    * Validates a given input string of text.
    * @param {string} $text The string of text.
    * @param {string} $pattern The validating regex pattern.
-   * @param {int} $min_length The minimum length of the string.
-   * @param {int} $max_length The maximum length of the password.
-   * @return {int} Returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred.
+   * @param {integer} $min_length The minimum length of the string.
+   * @param {integer} $max_length The maximum length of the password.
+   * @return {integer} Returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred.
    */
   public function validate_text($text, $pattern = '/[\w\d]+/', $min_length = 6, $max_length = -1)
   {
@@ -88,9 +101,9 @@ class Controller
    * Validates a given input string of text.
    * @param {string} $password The input password string.
    * @param {string} $pattern The validating regex pattern.
-   * @param {int} $min_length The minimum length of the password
-   * @param {int} $max_length The maximum length of the password
-   * @return {int} Returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred.
+   * @param {integer} $min_length The minimum length of the password
+   * @param {integer} $max_length The maximum length of the password
+   * @return {integer} Returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred.
    */
   public function validate_password($password, $pattern = '/[\w\d]+/', $min_length = 6, $max_length = -1)
   {

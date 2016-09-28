@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/dashboard" file="analytics.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/dashboard/analytics.php" size="901" time="2016-09-21T08:21:09+02:00" unixtime="1474438869" sha1="40637655d6422f7f10fa9d78323a9e64376ae50f" relative="app/en-US/views/dashboard/analytics.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/dashboard" file="analytics.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/dashboard/analytics.php" size="900" time="2016-09-27T18:42:28+02:00" unixtime="1474994548" sha1="57d8987c8a55900d2a9567a77334ebcbdff1e172" relative="app/en-US/views/dashboard/analytics.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -45,10 +45,13 @@
     <token name="T_DOUBLE_COLON">::</token>
     <token name="T_STRING">get_ui_component</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$user</token>
     <token name="T_PHPDOX_COMMA">,</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">'dashboard'</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'nav-dashboard'</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
     <token name="T_WHITESPACE"> </token>
@@ -99,9 +102,7 @@
   <line no="23">
     <token name="T_INLINE_HTML">          &lt;/table&gt;</token>
   </line>
-  <line no="24">
-    <token name="T_INLINE_HTML">          </token>
-  </line>
+  <line no="24"/>
   <line no="25">
     <token name="T_INLINE_HTML">      &lt;/div&gt;&lt;!--#end .col-sm-10 (Right Panel) --&gt;</token>
   </line>

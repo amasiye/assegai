@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Option" namespace="" name="Option" abstract="false" final="false" start="8" end="140">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="Option.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/Option.php" size="4350" time="2016-09-28T08:33:21+02:00" unixtime="1475044401" sha1="82b3ca0c1fe52a096be3b4b9a954c6178ab28f87" relative="app/en-US/models/Option.php"/>
+  <docblock>
+    <description compact="This class provides a structured representation of Option data from the assegai database. It provides methods for retrieving and/or manipulating options data from the database."/>
+  </docblock>
+  <member name="id" visibility="private" line="10"/>
+  <member name="name" visibility="private" line="11"/>
+  <member name="value" visibility="private" line="12"/>
+  <member name="autoload" visibility="private" line="13"/>
+  <member name="db" visibility="private" line="14"/>
+  <constructor name="__construct" start="16" end="24" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="get_id" start="30" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the id of the option."/>
+      <return description="Returns the id of the option." type="object">
+        <type full="{integer}" namespace="" name="{integer}"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="name" start="41" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets or sets the name of the an option."/>
+      <param description="The new name of the option." type="object" variable="$new_name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="Returns the name of the option or its new name if new name" type="object">is specified.<type full="{string}" namespace="" name="{string}"/></return>
+    </docblock>
+    <parameter name="new_name" byreference="false" type="string" default="''"/>
+  </method>
+  <method name="value" start="65" end="81" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets or sets the value of the an option."/>
+      <param description="The new value of the option." type="object" variable="$new_value">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="Returns the value of the option or its new name if new name" type="object">is specified.<type full="{string}" namespace="" name="{string}"/></return>
+    </docblock>
+    <parameter name="new_value" byreference="false" type="string" default="''"/>
+  </method>
+  <method name="autoload" start="88" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets or sets whether the option will be autoloaded."/>
+      <param description="The new value of the option." type="object" variable="$new_autoload">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="Returns the value of autoloaded property of the option." type="object">
+        <type full="{string}" namespace="" name="{string}"/>
+      </return>
+    </docblock>
+    <parameter name="new_autoload" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="create" start="112" end="127" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Creates an option of given name from the given database."/>
+      <param description="The database containing the options data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The name of the option to be created." type="object" variable="$name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="Returns QUERY_EXEC_OK upon success or QUERY_EXEC_ERR on failure." type="object">
+        <type full="{integer}" namespace="" name="{integer}"/>
+      </param>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="autoload" byreference="false" type="string" default="'yes'"/>
+  </method>
+  <method name="delete" start="135" end="138" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Deletes an option of given name from the given database."/>
+      <param description="The database containing the options data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The name of the option to be deleted." type="object" variable="$name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="Returns QUERY_EXEC_OK upon success or QUERY_EXEC_ERR on failure." type="object">
+        <type full="{integer}" namespace="" name="{integer}"/>
+      </param>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Category" namespace="" name="Category" abstract="false" final="false" start="9" end="158">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="Category.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/Category.php" size="5298" time="2016-09-24T19:38:07+02:00" unixtime="1474738687" sha1="042189aeeea55887127d201ab021015b5a4254a0" relative="app/en-US/models/Category.php"/>
+  <docblock>
+    <description compact="This class provides a structured representation of all Categories.">It defines methods that allow access to these categories allowing
+for easier translation between category names and ids.</description>
+  </docblock>
+  <member name="id" visibility="private" line="11"/>
+  <member name="name" visibility="private" line="12"/>
+  <member name="info" visibility="private" line="13"/>
+  <member name="db" visibility="private" line="14"/>
+  <constructor name="__construct" start="21" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a category of given name."/>
+      <param description="The database containing the category data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The name of the category." type="object" variable="$name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Check if this category is already in the database" line="24"/>
+    </inline>
+  </constructor>
+  <method name="get_id" start="48" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the id of the category."/>
+      <return description="Returns QUERY_EXEC_OK upon successful update or" type="object">QUERY_EXEC_ERR on failure.<type full="{int}" namespace="" name="{int}"/></return>
+    </docblock>
+    <parameter name="name" byreference="false" type="string" default="''"/>
+  </method>
+  <method name="get_name" start="58" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the name of the category."/>
+      <return description="Returns QUERY_EXEC_OK upon successful update or" type="object">QUERY_EXEC_ERR on failure.<type full="{int}" namespace="" name="{int}"/></return>
+    </docblock>
+  </method>
+  <method name="get_info" start="68" end="71" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the category's info."/>
+      <return description="Returns QUERY_EXEC_OK upon successful update or" type="object">QUERY_EXEC_ERR on failure.<type full="{int}" namespace="" name="{int}"/></return>
+    </docblock>
+  </method>
+  <method name="set_name" start="79" end="87" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Updates the name of the category."/>
+      <param description="The new category name." type="object" variable="$name">
+        <type full="{sting}" namespace="" name="{sting}"/>
+      </param>
+      <return description="Returns QUERY_EXEC_OK upon successful update or" type="object">QUERY_EXEC_ERR on failure.<type full="{int}" namespace="" name="{int}"/></return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="set_info" start="95" end="103" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Updates the category's information column."/>
+      <param description="The new category information." type="object" variable="$info">
+        <type full="{sting}" namespace="" name="{sting}"/>
+      </param>
+      <return description="Returns QUERY_EXEC_OK upon successful update or" type="object">QUERY_EXEC_ERR on failure.<type full="{int}" namespace="" name="{int}"/></return>
+    </docblock>
+    <parameter name="info" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="create" start="112" end="119" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Creates a new category."/>
+      <param description="The database containing the category data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The name of the category." type="object" variable="$name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The info about the category." type="object" variable="$info">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="Returns true upon successful creatino or false otherwise." type="object">
+        <type full="{string}" namespace="" name="{string}"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="info" byreference="false" type="string" default="&quot;&quot;"/>
+  </method>
+  <method name="delete" start="127" end="133" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Deletes the category of given name from the database."/>
+      <param description="The database containing the category data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The name of the category." type="object" variable="$name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="Returns true upon successful deletion or false otherwise." type="object">
+        <type full="{string}" namespace="" name="{string}"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="id" start="142" end="145" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns the id of the category of given name."/>
+      <param description="The database containing the category data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The name of the category." type="object" variable="$name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="Returns a int representing the id of the category or" type="object">QUERY_EXEC_ERR on failure.<type full="{int}" namespace="" name="{int}"/></return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="name" start="154" end="157" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns the name of the category of given id."/>
+      <param description="The database containing the category data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The id of the category." type="object" variable="$id">
+        <type full="{int}" namespace="" name="{int}"/>
+      </param>
+      <return description="Returns a string representing the name of the category or" type="object">QUERY_EXEC_ERR on failure.<type full="{string}" namespace="" name="{string}"/></return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+</class>

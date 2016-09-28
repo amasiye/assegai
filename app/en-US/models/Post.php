@@ -76,8 +76,8 @@ class Post
   /**
    * Deletes a post.
    * @param {Database} $db The database containing the post.
-   * @param {int} $id The post id.
-   * @return {int} Returns a status id of QUERY_EXEC_OK if successful or some
+   * @param {integer} $id The post id.
+   * @return {integer} Returns a status id of QUERY_EXEC_OK if successful or some
    * other error status code if failed.
    */
   public static function delete($db, $id)

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/content/templates" file="temp-blog.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/content/templates/temp-blog.php" size="315" time="2016-09-20T23:04:15+02:00" unixtime="1474405455" sha1="86f8644ce7d5be9ef34a772f891ac7b1c06e93fd" relative="app/en-US/content/templates/temp-blog.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/content/templates" file="temp-blog.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/content/templates/temp-blog.php" size="655" time="2016-09-28T07:04:42+02:00" unixtime="1475039082" sha1="176f9c8ad347ae240333a73bc7ce3cdeaa85e897" relative="app/en-US/content/templates/temp-blog.php"/>
   <line no="1">
     <token name="T_INLINE_HTML">&lt;div class="container-fluid"&gt;</token>
   </line>
@@ -9,41 +9,58 @@
     <token name="T_INLINE_HTML">  &lt;!-- Content  --&gt;</token>
   </line>
   <line no="4">
-    <token name="T_INLINE_HTML">  &lt;div class="row"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;div class="row temp-container"&gt;</token>
   </line>
   <line no="5">
-    <token name="T_INLINE_HTML">    &lt;div id="temp-sidenav" class="col-sm-3"&gt;</token>
+    <token name="T_INLINE_HTML">    &lt;div class="temp-container-toolbar"&gt;&lt;/div&gt;</token>
   </line>
   <line no="6">
-    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+    <token name="T_INLINE_HTML">    &lt;div id="temp-sidenav" class="temp-container col-sm-3"&gt;</token>
   </line>
-  <line no="7"/>
+  <line no="7">
+    <token name="T_INLINE_HTML">      &lt;div class="temp-container-toolbar"&gt;&lt;/div&gt;</token>
+  </line>
   <line no="8">
-    <token name="T_INLINE_HTML">    &lt;div id="temp-main" class="col-sm-9"&gt;</token>
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
   </line>
   <line no="9"/>
   <line no="10">
-    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+    <token name="T_INLINE_HTML">    &lt;div id="temp-main" class="temp-container col-sm-9"&gt;</token>
   </line>
   <line no="11">
+    <token name="T_INLINE_HTML">      &lt;div class="temp-container-toolbar"&gt;&lt;/div&gt;</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="13">
     <token name="T_INLINE_HTML">  &lt;/div&gt;</token>
   </line>
-  <line no="12"/>
-  <line no="13">
+  <line no="14"/>
+  <line no="15">
     <token name="T_INLINE_HTML">  &lt;!-- Footer --&gt;</token>
   </line>
-  <line no="14">
-    <token name="T_INLINE_HTML">  &lt;div class="row"&gt;</token>
-  </line>
-  <line no="15">
-    <token name="T_INLINE_HTML">    &lt;footer&gt;&lt;/footer&gt;</token>
-  </line>
   <line no="16">
+    <token name="T_INLINE_HTML">  &lt;div class="row temp-container"&gt;</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">    &lt;div class="temp-container-toolbar"&gt;&lt;/div&gt;</token>
+  </line>
+  <line no="18">
+    <token name="T_INLINE_HTML">    &lt;footer class="footer temp-container"&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">      &lt;div class="temp-container-toolbar"&gt;&lt;/div&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">    &lt;/footer&gt;</token>
+  </line>
+  <line no="21">
     <token name="T_INLINE_HTML">  &lt;/div&gt;</token>
   </line>
-  <line no="17"/>
-  <line no="18">
+  <line no="22"/>
+  <line no="23">
     <token name="T_INLINE_HTML">&lt;/div&gt;&lt;!--#end container-fluid --&gt;</token>
   </line>
-  <line no="19"/>
+  <line no="24"/>
 </source>

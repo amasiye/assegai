@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Database" namespace="" name="Database" abstract="false" final="false" start="15" end="380">
-  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Database.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Database.php" size="10634" time="2016-09-21T09:10:01+02:00" unixtime="1474441801" sha1="e8e041849181b276eb0384f71b8929ffc000a27e" relative="app/en-US/core/Database.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Database" namespace="" name="Database" abstract="false" final="false" start="15" end="406">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="Database.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/Database.php" size="11363" time="2016-09-26T21:06:52+02:00" unixtime="1474916812" sha1="394d7b9c0ea0bd14c9875a5023afa1ddf1794571" relative="app/en-US/core/Database.php"/>
   <docblock>
     <description compact="The database wrapper class. It contains methods to quickly perform database operations. It also acts as a layer of security using its sanitization methods to ensure that data is properly escaped before storage and data being extracted is appropriately unescaped."/>
     <version value="1.0.0"/>
@@ -40,7 +40,7 @@ MYSQLI_STORE_RESULT is used.<type full="{int}" namespace="" name="{int}"/></para
     <parameter name="query" byreference="false" type="{unknown}"/>
     <parameter name="result_mode" byreference="false" type="{unknown}" default="" constant="MYSQLI_STORE_RESULT"/>
   </method>
-  <method name="select" start="69" end="161" abstract="false" final="false" static="false" visibility="public">
+  <method name="select" start="69" end="165" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Selects data from the database."/>
       <param description="name of the table to make the selection from." variable="$table" type="object">
@@ -58,24 +58,25 @@ MYSQLI_STORE_RESULT is used.<type full="{int}" namespace="" name="{int}"/></para
     <inline>
       <comment value="Cache connection" line="71"/>
       <comment value="Prepare SQL Query statement" line="74"/>
-      <comment value="Check for distinct option" line="77"/>
-      <comment value="Check for distinct option" line="85"/>
-      <comment value="Append column names to $sql if any at all are found." line="89"/>
-      <comment value="Append table name" line="99"/>
-      <comment value="Append any filters e.g LIMIT" line="102"/>
-      <comment value="Handle where filter" line="110"/>
-      <comment value="Handle like filter" line="114"/>
-      <comment value="Handle order filter" line="118"/>
-      <comment value="Handle limit filter" line="122"/>
-      <comment value="Handle offset filter" line="126"/>
-      <comment value="echo $sql;" line="130"/>
-      <comment value="Run the query and report if something goes wrong" line="131"/>
-      <comment value="Fetch the selected rows and return them in an array" line="137"/>
-      <comment value="If nothing was found insert a null character so that" line="148"/>
-      <comment value="an empty array is never returned." line="149"/>
+      <comment value="Check for distinct option" line="76"/>
+      <comment value="Check for distinct option" line="84"/>
+      <comment value="Append column names to $sql if any at all are found." line="88"/>
+      <comment value="Append table name" line="98"/>
+      <comment value="Append any filters e.g LIMIT" line="101"/>
+      <comment value="Handle where filter" line="109"/>
+      <comment value="Handle like filter" line="113"/>
+      <comment value="Handle join filter" line="117"/>
+      <comment value="Handle order filter" line="121"/>
+      <comment value="Handle limit filter" line="125"/>
+      <comment value="Handle offset filter" line="129"/>
+      <comment value="echo $sql;" line="133"/>
+      <comment value="Run the query and report if something goes wrong" line="134"/>
+      <comment value="Fetch the selected rows and return them in an array" line="141"/>
+      <comment value="If nothing was found insert a null character so that" line="152"/>
+      <comment value="an empty array is never returned." line="153"/>
     </inline>
   </method>
-  <method name="insert" start="170" end="231" abstract="false" final="false" static="false" visibility="public">
+  <method name="insert" start="174" end="235" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Inserts new records in a table.."/>
       <param description="The name of the table." type="object" variable="$table">
@@ -94,15 +95,16 @@ MYSQLI_STORE_RESULT is used.<type full="{int}" namespace="" name="{int}"/></para
     <parameter name="table" byreference="false" type="{unknown}"/>
     <parameter name="columns" byreference="false" type="array" default=""/>
     <parameter name="values" byreference="false" type="array" default=""/>
+    <parameter name="sanitize" byreference="false" type="boolean" default="true"/>
     <inline>
-      <comment value="Cache connection" line="172"/>
-      <comment value="Prepare SQL query statement" line="175"/>
-      <comment value="If columns are specified add them to sql query string" line="179"/>
-      <comment value="Sanitize and append values to SQL query string" line="191"/>
-      <comment value="Execute SQL query and report any errors." line="219"/>
+      <comment value="Cache connection" line="176"/>
+      <comment value="Prepare SQL query statement" line="179"/>
+      <comment value="If columns are specified add them to sql query string" line="183"/>
+      <comment value="Sanitize and append values to SQL query string" line="195"/>
+      <comment value="Execute SQL query and report any errors." line="223"/>
     </inline>
   </method>
-  <method name="update" start="241" end="291" abstract="false" final="false" static="false" visibility="public">
+  <method name="update" start="247" end="317" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Updates a table in the database."/>
       <param description="The name of the table to be updated." type="object" variable="$table">
@@ -111,27 +113,23 @@ MYSQLI_STORE_RESULT is used.<type full="{int}" namespace="" name="{int}"/></para
       <param description="The list of columns to be updated." type="object" variable="$column">
         <type full="{array}" namespace="" name="{array}"/>
       </param>
-      <param description="The list of new values to update the corresponding columns with." type="object" variable="$values">
-        <type full="{array}" namespace="" name="{array}"/>
-      </param>
+      <param description="The list of new values to update the corresponding" type="object" variable="$values">columns with.<type full="{array}" namespace="" name="{array}"/></param>
       <param description="An array of filters for the update." variable="$filters" type="array"/>
-      <return description="An int representing the operation status." type="object">
-        <type full="{int}" namespace="" name="{int}"/>
-      </return>
+      <return description="Returns QUERY_EXEC_OK upon successful update or" type="object">QUERY_EXEC_ERR on failure.<type full="{int}" namespace="" name="{int}"/></return>
     </docblock>
     <parameter name="table" byreference="false" type="{unknown}"/>
     <parameter name="columns" byreference="false" type="array" default=""/>
     <parameter name="values" byreference="false" type="array" default=""/>
     <parameter name="filters" byreference="false" type="array" default=""/>
     <inline>
-      <comment value="Prepare SQL string" line="245"/>
-      <comment value="Check for columns otherwise return error" line="248"/>
-      <comment value="Check for values othewise return error" line="252"/>
-      <comment value="Append columns and value to SQL string" line="258"/>
-      <comment value="Run the query and report if something goes wrong" line="284"/>
+      <comment value="Prepare SQL string" line="251"/>
+      <comment value="Check for columns otherwise return error" line="254"/>
+      <comment value="Check for values othewise return error" line="258"/>
+      <comment value="Append columns and value to SQL string" line="264"/>
+      <comment value="Run the query and report if something goes wrong" line="310"/>
     </inline>
   </method>
-  <method name="delete" start="300" end="334" abstract="false" final="false" static="false" visibility="public">
+  <method name="delete" start="326" end="360" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Deletes a record from given table."/>
       <param description="The name of the table." type="object" variable="$table">
@@ -143,13 +141,13 @@ MYSQLI_STORE_RESULT is used.<type full="{int}" namespace="" name="{int}"/></para
     <parameter name="table" byreference="false" type="{unknown}"/>
     <parameter name="filters" byreference="false" type="{unknown}"/>
     <inline>
-      <comment value="Check user credentials" line="305"/>
-      <comment value="Prepare SQL statement" line="307"/>
-      <comment value="Check for WHERE clause" line="310"/>
-      <comment value="Execute SQL query" line="327"/>
+      <comment value="Check user credentials" line="331"/>
+      <comment value="Prepare SQL statement" line="333"/>
+      <comment value="Check for WHERE clause" line="336"/>
+      <comment value="Execute SQL query" line="353"/>
     </inline>
   </method>
-  <method name="drop" start="341" end="346" abstract="false" final="false" static="false" visibility="public">
+  <method name="drop" start="367" end="372" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Deletes a table from the database."/>
       <param description="The name of the table to destroy." type="object" variable="$table">
@@ -161,7 +159,7 @@ MYSQLI_STORE_RESULT is used.<type full="{int}" namespace="" name="{int}"/></para
     </docblock>
     <parameter name="table" byreference="false" type="{unknown}"/>
   </method>
-  <method name="truncate" start="353" end="358" abstract="false" final="false" static="false" visibility="public">
+  <method name="truncate" start="379" end="384" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Deletes the data in a table and leaves the table itself."/>
       <param description="The name of the table to be truncated." type="object" variable="$table">
@@ -173,7 +171,7 @@ MYSQLI_STORE_RESULT is used.<type full="{int}" namespace="" name="{int}"/></para
     </docblock>
     <parameter name="table" byreference="false" type="{unknown}"/>
   </method>
-  <method name="sanitize" start="365" end="368" abstract="false" final="false" static="false" visibility="private">
+  <method name="sanitize" start="391" end="394" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Sanitizes the given text for safe database storage."/>
       <param description="The text to be sanitized." type="object" variable="$txt">
@@ -185,7 +183,7 @@ MYSQLI_STORE_RESULT is used.<type full="{int}" namespace="" name="{int}"/></para
     </docblock>
     <parameter name="txt" byreference="false" type="{unknown}"/>
   </method>
-  <method name="desanitize" start="375" end="378" abstract="false" final="false" static="false" visibility="private">
+  <method name="desanitize" start="401" end="404" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Reverse string sanitization for given text."/>
       <param description="The text to be desanitized." type="object" variable="$txt">

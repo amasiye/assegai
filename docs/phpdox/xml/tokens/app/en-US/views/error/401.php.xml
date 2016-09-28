@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error" file="401.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error/401.php" size="204" time="2016-08-31T02:04:38+02:00" unixtime="1472601878" sha1="f8569a3683968f9cc00e34baf882767ebb2e8aa8" relative="app/en-US/views/error/401.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error" file="401.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/error/401.php" size="280" time="2016-09-25T00:33:36+02:00" unixtime="1474756416" sha1="352963de1c9080559b7902d86ee948b0b5ab8216" relative="app/en-US/views/error/401.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_REQUIRE_ONCE">require_once</token>
@@ -11,18 +11,25 @@
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
   <line no="2">
-    <token name="T_INLINE_HTML">&lt;div class="container"&gt;</token>
+    <token name="T_INLINE_HTML">&lt;div class="container-fluid" style="padding: 64px 0px;"&gt;</token>
   </line>
   <line no="3">
-    <token name="T_INLINE_HTML">  &lt;h2&gt;Error 401: Unauthorised&lt;/h2&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;img class="img-responsive center-block" src="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">BASEPATH</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">RESPATH</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">/images/403.png" alt="Error 403: Not Found." /&gt;</token>
   </line>
   <line no="4">
-    <token name="T_INLINE_HTML">  &lt;p&gt;User authentication is required.&lt;/p&gt;</token>
-  </line>
-  <line no="5">
     <token name="T_INLINE_HTML">&lt;/div&gt;</token>
   </line>
-  <line no="6">
+  <line no="5">
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_REQUIRE_ONCE">require_once</token>
     <token name="T_WHITESPACE"> </token>
@@ -31,5 +38,5 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
-  <line no="7"/>
+  <line no="6"/>
 </source>

@@ -72,9 +72,18 @@ class Admin extends Controller
       {
         case 'edit':
           $page = new Post($this->db, $id, 'page');
+          $task_bar_options = array('save' => true, 'publish' => true, 'view_mode' => true);
 
           if(!is_null($page->name))
-            $this->view('pages/edit', array('app' => $app, 'user' => $user, 'page' => $page));
+            $this->view(
+                        'pages/edit',
+                         array(
+                                'app' => $app,
+                                'user' => $user,
+                                'page' => $page,
+                                'task_bar_options' => $task_bar_options
+                              )
+                        );
           else
             $this->view('error/404', array('message' => 'Page lookup error possibly due to an invalid page id.'));
           break;
@@ -90,11 +99,60 @@ class Admin extends Controller
     }
   } // end pages()
 
+  public function layouts($action = '', $id = -1, $app = null)
+  {
+    $db = $this->db;
+    if(User::is_logged_in())
+    {
+      $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $app));
+      switch ($action)
+      {
+        case 'edit':
+          $layout = new Post($this->db, $id, 'layout');
+          $task_bar_options = array('save' => true, 'publish' => true, 'view_mode' => true);
+
+          if(!is_null($layout->name))
+            $this->view(
+                        'layouts/edit',
+                        array(
+                              'app' => $app,
+                              'user' => $user,
+                              'layout' => $layout,
+                              'task_bar_options' => $task_bar_options
+                            )
+                        );
+          else
+            $this->view('error/404', array('message' => 'Page lookup error possibly due to an invalid page id.'));
+          break;
+
+        default:
+          $result = $db->select('assg_posts', null, array('where' => "post_type='layout'"));
+          $layouts = array();
+          foreach ($result as $row)
+          {
+            array_push($layouts, new Layout($db, $row['post_id']));
+          }
+          $this->view('layouts/index', array('app' => $app, 'user' => $user, 'layouts' => $layouts));
+          break;
+      }
+    }
+    else
+    {
+        $this->view('error/403');
+    }
+  } // end layouts()
+
   /**
    * Site analytics endpoint.
    */
-  public function analytics($app = null)
+  public function analytics($action = '', $id = -1, $app = null)
   {
+    # Validate parameters
+    if(is_null($app))
+      $app = $id;
+    else
+      $id = (int)$id;
+
     if(User::is_logged_in())
     {
       $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $app));
@@ -117,7 +175,6 @@ class Admin extends Controller
     else
       $id = (int)$id;
 
-
     if(User::is_logged_in())
     {
       $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $app));
@@ -127,15 +184,32 @@ class Admin extends Controller
         case 'edit':
           # Note the [0] at end: we only want the first returned row.
           $media = Media::get($this->db, array('where' => "post_id={$id}"))[0];
+          $task_bar_options = array('save' => true, 'publish' => true, 'view_mode' => true);
 
           if(!is_null($media->filename))
-            $this->view('media/edit', array('app' => $app, 'user' => $user, 'media' => $media));
+            $this->view(
+                        'media/edit',
+                        array(
+                              'app' => $app,
+                              'user' => $user,
+                              'media' => $media,
+                              'task_bar_options' => $task_bar_options
+                            )
+                        );
           else
             $this->view('error/404', array('app' => $app, 'user' => $user, 'media' => $media));
           break;
 
         case 'new':
-            $this->view('media/new', array('app' => $app, 'user' => $user));
+          $task_bar_options = array('save' => true);
+          $this->view(
+                      'media/new',
+                      array(
+                            'app' => $app,
+                            'user' => $user,
+                            'task_bar_options' => $task_bar_options
+                          )
+                      );
           break;
 
         default:
@@ -148,7 +222,42 @@ class Admin extends Controller
     {
       $this->view('error/403');
     }
-  }
+  } // end media()
+
+  public function settings($action = '', $id = -1, $app = null)
+  {
+    # Validate parameters
+    if(is_null($app))     // i.e app is not 3rd parameter
+    {
+      if($id == -1)       // i.e app is not 2nd parameter
+        $app = $action;   // therefore app is the first parameter
+      else
+        $app = $id;
+    }
+    else
+      $id = (int)$id;
+
+    # Check if user is logged in
+    if(User::is_logged_in())
+    {
+      $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $app));
+      $task_bar_options = array('save' => true);
+
+      $this->view(
+                  'dashboard/settings',
+                  array(
+                        'app' => $app,
+                        'user' => $user,
+                        'settings' => null,
+                        'task_bar_options' => $task_bar_options
+                      )
+                );
+    }
+    else
+    {
+      $this->view('error/403');
+    }
+  } // end settings()
 
 }
 

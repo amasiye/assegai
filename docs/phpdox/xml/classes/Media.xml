@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Media" namespace="" name="Media" abstract="false" final="false" start="5" end="95">
-  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="Media.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/Media.php" size="2433" time="2016-09-23T06:46:10+02:00" unixtime="1474605970" sha1="452cff4d545c6d6ac36cda09cbc0e655915226da" relative="app/en-US/models/Media.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Media" namespace="" name="Media" abstract="false" final="false" start="9" end="127">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="Media.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/Media.php" size="3567" time="2016-09-24T23:38:32+02:00" unixtime="1474753112" sha1="d6c9c1c0edfe090f876895a0442f1d8320b786dd" relative="app/en-US/models/Media.php"/>
   <docblock>
-    <description/>
+    <description compact="This class provides a structured representation of all Posts that are of the type Media. It defines methods that allow access to these posts, so they can update the Media data and content."/>
   </docblock>
   <extends full="Post" namespace="" name="Post"/>
-  <member name="filename" visibility="public" line="7"/>
-  <member name="source" visibility="public" line="8"/>
-  <member name="href" visibility="public" line="9"/>
-  <member name="thumb" visibility="public" line="10"/>
-  <member name="media_type" visibility="public" line="11"/>
-  <member name="mime_type" visibility="public" line="12"/>
-  <constructor name="__construct" start="14" end="62" abstract="false" final="false" static="false" visibility="public">
+  <member name="filename" visibility="public" line="11"/>
+  <member name="source" visibility="public" line="12"/>
+  <member name="href" visibility="public" line="13"/>
+  <member name="thumb" visibility="public" line="14"/>
+  <member name="media_type" visibility="public" line="15"/>
+  <member name="mime_type" visibility="public" line="16"/>
+  <constructor name="__construct" start="18" end="66" abstract="false" final="false" static="false" visibility="public">
     <parameter name="db" byreference="false" type="{unknown}"/>
     <parameter name="id" byreference="false" type="{unknown}"/>
     <inline>
-      <comment value="Resole mime_type to correct web format." line="24"/>
+      <comment value="Resole mime_type to correct web format." line="28"/>
     </inline>
   </constructor>
-  <method name="get" start="70" end="94" abstract="false" final="false" static="true" visibility="public">
+  <method name="get" start="74" end="98" abstract="false" final="false" static="true" visibility="public">
     <docblock>
       <description compact="Returns an array of media items. If filters is not set returns all media items in the database."/>
       <param description="The database holding the media items." type="object" variable="$db">
@@ -31,34 +31,49 @@
     <parameter name="db" byreference="false" type="{unknown}"/>
     <parameter name="filters" byreference="false" type="{unknown}" default="" constant="null"/>
   </method>
-  <extenders>
-    <extender full="Audio" namespace="" name="Audio"/>
-    <extender full="Image" namespace="" name="Image"/>
-    <extender full="Video" namespace="" name="Video"/>
-  </extenders>
+  <method name="total" start="107" end="126" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Return the total number of media posts. If a type is specified it returns the total of that specific media type."/>
+      <param description="The database containing the post data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="[Optional] The specific media type to count." type="object" variable="$type">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="Returns the total number of media posts or -1 on failure." type="object">
+        <type full="{int}" namespace="" name="{int}"/>
+      </param>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="string" default="'all'"/>
+    <inline>
+      <comment value="If a type is specified" line="111"/>
+      <comment value="return total" line="124"/>
+    </inline>
+  </method>
   <parent full="Post" namespace="" name="Post">
-    <member name="id" visibility="public" line="9"/>
-    <member name="name" visibility="public" line="10"/>
-    <member name="author" visibility="public" line="11"/>
-    <member name="author_name" visibility="public" line="12"/>
-    <member name="editors" visibility="public" line="13"/>
-    <member name="created" visibility="public" line="14"/>
-    <member name="modified" visibility="public" line="15"/>
-    <member name="title" visibility="public" line="16"/>
-    <member name="excerpt" visibility="public" line="17"/>
-    <member name="content" visibility="public" line="18"/>
-    <member name="status" visibility="public" line="19"/>
-    <member name="type" visibility="public" line="20"/>
-    <member name="tags" visibility="public" line="21"/>
-    <member name="meta" visibility="public" line="22"/>
-    <member name="db" visibility="protected" line="24"/>
-    <member name="fetched_data" visibility="protected" line="25"/>
-    <constructor name="__construct" start="27" end="48" abstract="false" final="false" static="false" visibility="public">
+    <member name="id" visibility="public" line="10"/>
+    <member name="name" visibility="public" line="11"/>
+    <member name="author" visibility="public" line="12"/>
+    <member name="author_name" visibility="public" line="13"/>
+    <member name="editors" visibility="public" line="14"/>
+    <member name="created" visibility="public" line="15"/>
+    <member name="modified" visibility="public" line="16"/>
+    <member name="title" visibility="public" line="17"/>
+    <member name="excerpt" visibility="public" line="18"/>
+    <member name="content" visibility="public" line="19"/>
+    <member name="status" visibility="public" line="20"/>
+    <member name="type" visibility="public" line="21"/>
+    <member name="tags" visibility="public" line="22"/>
+    <member name="meta" visibility="public" line="23"/>
+    <member name="db" visibility="protected" line="25"/>
+    <member name="fetched_data" visibility="protected" line="26"/>
+    <constructor name="__construct" start="29" end="50" abstract="false" final="false" static="false" visibility="public">
       <parameter name="db" byreference="false" type="{unknown}"/>
       <parameter name="id" byreference="false" type="{unknown}"/>
       <parameter name="type" byreference="false" type="string" default="''"/>
     </constructor>
-    <method name="save_draft" start="54" end="58" abstract="false" final="false" static="false" visibility="public">
+    <method name="save_draft" start="56" end="60" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="Updates the post without publishing."/>
         <return description="Returns true if save was successful, false otherwise." type="object">
@@ -67,10 +82,10 @@
       </docblock>
       <parameter name="data" byreference="false" type="array" default=""/>
       <inline>
-        <comment value="Code" line="56"/>
+        <comment value="Code" line="58"/>
       </inline>
     </method>
-    <method name="publish" start="64" end="72" abstract="false" final="false" static="false" visibility="public">
+    <method name="publish" start="66" end="74" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="Saves the draft and writes the changes to file."/>
         <return description="Returns true if publish was successful, false otherwise." type="object">
@@ -78,25 +93,25 @@
         </return>
       </docblock>
       <inline>
-        <comment value="Save the draft" line="66"/>
-        <comment value="Do publishing" line="69"/>
+        <comment value="Save the draft" line="68"/>
+        <comment value="Do publishing" line="71"/>
       </inline>
     </method>
-    <method name="delete" start="81" end="84" abstract="false" final="false" static="true" visibility="public">
+    <method name="delete" start="83" end="86" abstract="false" final="false" static="true" visibility="public">
       <docblock>
         <description compact="Deletes a post."/>
         <param description="The database containing the post." type="object" variable="$db">
           <type full="{Database}" namespace="" name="{Database}"/>
         </param>
         <param description="The post id." type="object" variable="$id">
-          <type full="{int}" namespace="" name="{int}"/>
+          <type full="{integer}" namespace="" name="{integer}"/>
         </param>
-        <return description="Returns a status id of QUERY_EXEC_OK if successful or some" type="object">other error status code if failed.<type full="{int}" namespace="" name="{int}"/></return>
+        <return description="Returns a status id of QUERY_EXEC_OK if successful or some" type="object">other error status code if failed.<type full="{integer}" namespace="" name="{integer}"/></return>
       </docblock>
       <parameter name="db" byreference="false" type="{unknown}"/>
       <parameter name="id" byreference="false" type="{unknown}"/>
     </method>
-    <method name="get" start="92" end="106" abstract="false" final="false" static="true" visibility="public">
+    <method name="get" start="94" end="108" abstract="false" final="false" static="true" visibility="public">
       <docblock>
         <description compact="Returns an array of video posts given the specified filters."/>
         <param description="The database to get the post from." type="object" variable="$db">
@@ -112,7 +127,7 @@
       <parameter name="db" byreference="false" type="{unknown}"/>
       <parameter name="filters" byreference="false" type="{unknown}" default="" constant="null"/>
     </method>
-    <method name="create" start="114" end="131" abstract="false" final="false" static="true" visibility="public">
+    <method name="create" start="116" end="133" abstract="false" final="false" static="true" visibility="public">
       <docblock>
         <description compact="Inserts a new post into the Database."/>
         <param description="The databases where the new post will be created." type="object" variable="$db">
@@ -128,7 +143,7 @@
       <parameter name="db" byreference="false" type="{unknown}"/>
       <parameter name="data" byreference="false" type="array" default=""/>
     </method>
-    <method name="get_totals" start="138" end="161" abstract="false" final="false" static="true" visibility="public">
+    <method name="get_totals" start="140" end="161" abstract="false" final="false" static="true" visibility="public">
       <docblock>
         <description compact="Returns an array containing a breakdown of the total number of posts by type."/>
         <param description="The datase holding the posts." type="object" variable="$db">

@@ -77,12 +77,12 @@ class Element extends Post implements iNode
    */
   public function clone_node()
   {
-    return HTML::create_html_element();
+    
   } // end  clone_node()
 
   public static function create_html_element()
   {
-
+    return HTML::create_html_element();
   } // end create_html_element()
 }
 

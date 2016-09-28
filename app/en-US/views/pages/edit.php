@@ -9,11 +9,11 @@ require_once "includes/admin-header.php";
 
       <!-- Left Panel -->
       <div class="col-sm-2 sidenav">
-        <?= App::get_ui_component($db, $user, 'pages/edit'); ?>
+        <?= App::get_ui_component($db, $user, 'nav-pages/edit'); ?>
       </div>
 
       <!-- Right Panel -->
-      <div class="col-sm-10">
+      <div id="stage" class="col-sm-10">
 
         <!-- Page Header -->
         <div class="page-header">
