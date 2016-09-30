@@ -74,6 +74,16 @@ class Post
   } // end publish()
 
   /**
+   * Marks the post as trash.
+   * @return {integer} Returns QUERY_EXEC_OK on success or QUERY_EXEC_ERR
+   * on failure.
+   */
+  public function trash()
+  {
+    return $this->db->update(POSTS_TABLE, array('post_trash'), array(1), array('where' => "post_id={$this->id}"));
+  } // end trash()
+
+  /**
    * Deletes a post.
    * @param {Database} $db The database containing the post.
    * @param {integer} $id The post id.

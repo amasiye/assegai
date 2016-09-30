@@ -272,17 +272,17 @@ class App
                       <li><a href='#' data-target='#menu-widgets'>Widgets</a></li>
                     </ul>
                   </div>
-                  <div id='menu-elements' class='col-md-12'>
-                    <p>Element 1</p>
-                    <p>Element 2</p>
-                    <p>Element 3</p>
-                    <p>Element 4</p>
+                  <div id='menu-elements' class='col-md-12 element-list-group'>
+                    <div class='element-list-group-item text-center pull-left'><span class='glyphicon'>T</span><br>Title</div>
+                    <div class='element-list-group-item text-center pull-left'><span class='glyphicon glyphicon-align-left  '></span><br>Text</div>
+                    <div class='element-list-group-item text-center pull-left'><span class='glyphicon glyphicon-picture'></span><br>Image</div>
+                    <div class='element-list-group-item text-center pull-left'><span class='glyphicon glyphicon-th-large'></span><br>Gallery</div>
                   </div>
-                  <div id='menu-widgets' class='col-md-12 hidden'>
-                    <p>Widget 1</p>
-                    <p>Widget 2</p>
-                    <p>Widget 3</p>
-                    <p>Widget 4</p>
+                  <div id='menu-widgets' class='col-md-12 element-list-group hidden'>
+                    <div class='element-list-group-item text-center pull-left'>Widget 1</div>
+                    <div class='element-list-group-item text-center pull-left'>Widget 2</div>
+                    <div class='element-list-group-item text-center pull-left'>Widget 3</div>
+                    <div class='element-list-group-item text-center pull-left'>Widget 4</div>
                   </div>
                   <script>
                   </script>";

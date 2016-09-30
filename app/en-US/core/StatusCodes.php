@@ -26,4 +26,5 @@ define('UPDATE_ERR_ILLEGAL', 602);  // At least 1 admin must exist.
 define('DELETE_ERR', 611);  // At least 1 admin must exist.
 define('PARAM_ERR', 701);  // At least 1 admin must exist.
 define('PARAM_TYPE_ERR', 702);  // At least 1 admin must exist.
+define('SETTINGS_REQUEST_ERR', 701);  // At least 1 admin must exist.
 ?>
