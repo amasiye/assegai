@@ -79,6 +79,18 @@ article>header h6 {
   min-height: 720px;
 }
 
+.scroll-vertical {
+  overflow-y: scroll;
+}
+
+.scroll-horizontal {
+  overflow-x: scroll;
+}
+
+.scroll-both {
+  overflow: scroll;
+}
+
 .searchbar-wrapper {
   background-color: #34495e;
   min-height: 72px;

@@ -4,7 +4,7 @@ require_once "includes/head-shared.php";
 ?>
 <?php if (User::is_logged_in()): ?>
 
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse data-spy='affix' data-offset-top='197'">
     <div class="container-fluid">
       <div class="navbar-header">
         <a href="<?= BASEPATH; ?>admin/" class="navbar-brand"><?= SITE_NAME; ?></a>

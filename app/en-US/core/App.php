@@ -273,10 +273,10 @@ class App
                     </ul>
                   </div>
                   <div id='menu-elements' class='col-md-12 element-list-group'>
-                    <div class='element-list-group-item text-center pull-left'><span class='glyphicon'>T</span><br>Title</div>
-                    <div class='element-list-group-item text-center pull-left'><span class='glyphicon glyphicon-align-left  '></span><br>Text</div>
-                    <div class='element-list-group-item text-center pull-left'><span class='glyphicon glyphicon-picture'></span><br>Image</div>
-                    <div class='element-list-group-item text-center pull-left'><span class='glyphicon glyphicon-th-large'></span><br>Gallery</div>
+                    <div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='title'><span class='glyphicon'>T</span><br>Title</div>
+                    <div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='text'><span class='glyphicon glyphicon-align-left  '></span><br>Text</div>
+                    <div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='image'><span class='glyphicon glyphicon-picture'></span><br>Image</div>
+                    <div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='gallery'><span class='glyphicon glyphicon-th-large'></span><br>Gallery</div>
                   </div>
                   <div id='menu-widgets' class='col-md-12 element-list-group hidden'>
                     <div class='element-list-group-item text-center pull-left'>Widget 1</div>

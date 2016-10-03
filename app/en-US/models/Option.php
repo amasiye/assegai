@@ -107,7 +107,9 @@ class Option
    * Creates an option of given name from the given database.
    * @param {Database} $db The database containing the options data.
    * @param {string} $name The name of the option to be created.
-   * @param {integer} Returns QUERY_EXEC_OK upon success or QUERY_EXEC_ERR on failure.
+   * @param {string} $autoload [Optional] Autoload this option: yes or no.
+   * @return {integer} Returns QUERY_EXEC_OK upon success or
+   * QUERY_EXEC_ERR on failure.
    */
   public static function create($db, $name, $value, $autoload = 'yes')
   {

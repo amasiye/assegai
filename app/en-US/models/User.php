@@ -179,7 +179,10 @@ class User
     if(!empty($user_data))
     {
       $permissions = json_decode($user_data['group_permissions'], true);
-      // $permissions[$resource];
+
+      # Break out if the the permission is not defined.
+      if(!key_exists($resource, $permissions))
+        return false;
 
       # Check if the action is allowed
       switch($action)
