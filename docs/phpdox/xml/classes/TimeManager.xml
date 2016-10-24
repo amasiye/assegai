@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="TimeManager" namespace="" name="TimeManager" abstract="false" final="false" start="6" end="70">
-  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="TimeManager.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/TimeManager.php" size="2202" time="2016-09-22T07:18:47+02:00" unixtime="1474521527" sha1="d98b4e1bb53b15beae535fab1f531f4afbfcb967" relative="app/en-US/models/TimeManager.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="TimeManager" namespace="" name="TimeManager" abstract="false" final="false" start="6" end="72">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="TimeManager.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/TimeManager.php" size="2298" time="2016-10-12T16:21:23+02:00" unixtime="1476282083" sha1="f0df8b135c9945ac7b8f53bd3139b80876ea826b" relative="app/en-US/models/TimeManager.php"/>
   <docblock>
     <description/>
   </docblock>
-  <method name="get_time_since" start="14" end="69" abstract="false" final="false" static="true" visibility="public">
+  <method name="get_time_since" start="16" end="71" abstract="false" final="false" static="true" visibility="public">
     <docblock>
       <description compact="Returns the interval of elapsed time since the given date."/>
       <param description="The start date of the interval." type="object" variable="$then">
         <type full="{DateTime}" namespace="" name="{DateTime}"/>
       </param>
+      <param description="The timezone to use as a reference for time" type="object" variable="$timezone">calculations.<type full="{string}" namespace="" name="{string}"/></param>
       <return description="Returns a string stating in seconds, minutes, days," type="object">months, or years that have elapsed since the start date.<type full="{string}" namespace="" name="{string}"/></return>
     </docblock>
     <parameter name="then" byreference="false" type="object">
@@ -17,7 +18,7 @@
     </parameter>
     <parameter name="timezone" byreference="false" type="{unknown}" default="" constant="null"/>
     <inline>
-      <comment value="Fix units e.g 1 second ago vs 2 seconds ago" line="29"/>
+      <comment value="Fix units e.g 1 second ago vs 2 seconds ago" line="31"/>
     </inline>
   </method>
 </class>

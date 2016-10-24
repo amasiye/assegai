@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/modal" file="profile-image-browser.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/modal/profile-image-browser.php" size="1902" time="2016-10-16T19:19:05+02:00" unixtime="1476638345" sha1="9c5c2e7ef7bcb706eca8d744b2ba070698752916" relative="includes/modal/profile-image-browser.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2">
+    <token name="T_VARIABLE">$image_dir</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">RESPATH</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'images/'</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="3">
+    <token name="T_VARIABLE">$directory</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">scandir</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'uploads/images/1/'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="4">
+    <token name="T_VARIABLE">$count</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">count</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$directory</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="5">
+    <token name="T_VARIABLE">$gallery</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;div class='scroll-vertical height-320'&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="6">
+    <token name="T_VARIABLE">$img_count</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">1</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="7">
+    <token name="T_FOR">for</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$x</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$x</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_LT">&lt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$count</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$x</token>
+    <token name="T_INC">++</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+  </line>
+  <line no="8">
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="9">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_COMMENT">// if(($img_count % 4) == 1) $gallery .= "&lt;div class='row'&gt;";</token>
+  </line>
+  <line no="10"/>
+  <line no="11">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_VARIABLE">$gallery</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONCAT_EQUAL">.=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;div class='col-xs-6 col-md-3'&gt;</token>
+  </line>
+  <line no="12">
+    <token name="T_CONSTANT_ENCAPSED_STRING">    &lt;a href='#' class='thumbnail'&gt;</token>
+  </line>
+  <line no="13">
+    <token name="T_CONSTANT_ENCAPSED_STRING">      &lt;img src='"</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">BASEPATH</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"/uploads/images/1/"</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$directory</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_VARIABLE">$x</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"' class='img-thumbnail' alt='Image "</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$directory</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_VARIABLE">$x</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"'&gt;</token>
+  </line>
+  <line no="14">
+    <token name="T_CONSTANT_ENCAPSED_STRING">    &lt;/a&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_CONSTANT_ENCAPSED_STRING">  &lt;/div&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="16">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_COMMENT">//</token>
+  </line>
+  <line no="17">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_COMMENT">// if(($img_count % 4) == 1) $gallery .= "&lt;/div&gt;";</token>
+  </line>
+  <line no="18">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_COMMENT">// $img_count++;</token>
+  </line>
+  <line no="19">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="20"/>
+  <line no="21">
+    <token name="T_VARIABLE">$gallery</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONCAT_EQUAL">.=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/div&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="22">
+    <token name="T_COMMENT">// for($x = 2; $x &lt; 32; $x++)</token>
+  </line>
+  <line no="23">
+    <token name="T_COMMENT">// {</token>
+  </line>
+  <line no="24">
+    <token name="T_COMMENT">//   //$gallery .= "&lt;img src='" . BASEPATH . "uploads/images/1/" . $directory[$x] . "' class='img-thumbnail' alt='Profile" . $directory[$x] . "'&gt;";</token>
+  </line>
+  <line no="25">
+    <token name="T_COMMENT">//   if($img_count == 0) $gallery .= "&lt;div class='row'&gt;";</token>
+  </line>
+  <line no="26">
+    <token name="T_COMMENT">//   $gallery .= "&lt;div class='col-xs-6 col-md-3'&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_COMMENT">//                   &lt;a href='#' class='thumbnail'&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_COMMENT">//                     &lt;img src='" . BASEPATH . "uploads/images/1/" . $directory[$x] . "' alt='Profile" . $directory[$x] . "'&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_COMMENT">//                   &lt;/a&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_COMMENT">//                 &lt;/div&gt;";</token>
+  </line>
+  <line no="31">
+    <token name="T_COMMENT">//   if($img_count == 5)</token>
+  </line>
+  <line no="32">
+    <token name="T_COMMENT">//   {</token>
+  </line>
+  <line no="33">
+    <token name="T_COMMENT">//     "&lt;/div&gt;";</token>
+  </line>
+  <line no="34">
+    <token name="T_COMMENT">//     $img_count = 0;</token>
+  </line>
+  <line no="35">
+    <token name="T_COMMENT">//   }</token>
+  </line>
+  <line no="36">
+    <token name="T_COMMENT">//   else</token>
+  </line>
+  <line no="37">
+    <token name="T_COMMENT">//   {</token>
+  </line>
+  <line no="38">
+    <token name="T_COMMENT">//     $img_count++;</token>
+  </line>
+  <line no="39">
+    <token name="T_COMMENT">//   }</token>
+  </line>
+  <line no="40">
+    <token name="T_COMMENT">// }</token>
+  </line>
+  <line no="41">
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">&lt;div id="user-profile-picture-browser" class="modal-content"&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">  &lt;div class="modal-header"&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">    &lt;h4 class="modal-title"&gt;Choose a Picture&lt;/h4&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">  &lt;/div&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">  &lt;div class="modal-body"&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">    </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$gallery</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">  &lt;/div&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">  &lt;div class="modal-footer"&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">    &lt;input type="hidden" name="api-key" id="api-key" class="form-control" value="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$data</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'app'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">get_api_key</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">"&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">    &lt;button type="button" class="btn btn-info" name="btn-profile-save"&gt;Save&lt;/button&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Cancel&lt;/button&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">  &lt;/div&gt;&lt;!-- #end modal-footer --&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="55"/>
+</source>

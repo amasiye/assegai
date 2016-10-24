@@ -56,28 +56,38 @@
             <a href="#synopsis">Synopsis</a>
           </li>
           <li>
+            <a href="#parameter">Parameter</a>
+          </li>
+          <li>
             <a href="#return">Return</a>
           </li>
           <li>
-            <a href="../../source/app/en-US/models/Post.php.xhtml#line66">Source</a>
+            <a href="../../source/app/en-US/models/Post.php.xhtml#line80">Source</a>
           </li>
         </ul>
       </nav>
       <section>
         <h1><small>Post::</small>publish</h1>
-        <h4>Saves the draft and writes the changes to file.</h4>
+        <h4>Performs save and then writes changes to file.</h4>
         <p/>
         <ul/>
         <h2 id="signature">Signature</h2>
         <div class="styled synopsis">
-          <code>public function publish()
+          <code>public function publish([array
+        $data = ] )
             </code>
         </div>
+        <h2 id="parameterlist">Parameters</h2>
+        <dl class="styled">
+          <dt><code>$data</code>
+                —
+                array</dt>
+          <dd/>
+        </dl>
         <h2 id="return">Returns</h2>
         <dl class="styled">
-          <dt>{boolean}</dt>
-          <dd>Returns true if publish was successful, false otherwise.<br/>
-        </dd>
+          <dt>{integer}</dt>
+          <dd>Returns QUERY_EXEC_OK on success or QUERY_EXEC_ERR on<br/>failure.</dd>
         </dl>
       </section>
     </div>

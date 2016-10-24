@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="head-shared.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/head-shared.php" size="2008" time="2016-09-25T06:12:37+02:00" unixtime="1474776757" sha1="9d2d0320b723d79d544865ec085c0b0419427eb5" relative="includes/head-shared.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="head-shared.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/head-shared.php" size="2129" time="2016-09-29T02:22:10+02:00" unixtime="1475108530" sha1="53116b601908c5159f745efe7ede55869773d62d" relative="includes/head-shared.php"/>
   <line no="1">
     <token name="T_INLINE_HTML">&lt;!DOCTYPE html&gt;</token>
   </line>
@@ -185,37 +185,44 @@
   </line>
   <line no="40"/>
   <line no="41">
-    <token name="T_INLINE_HTML">  &lt;!-- &lt;link rel="stylesheet" href="css/flat-ui.min.css"&gt; --&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;!-- jQuery UI --&gt;</token>
   </line>
-  <line no="42"/>
-  <line no="43">
-    <token name="T_INLINE_HTML">  &lt;!-- Great Vibes Font from Google Fonts --&gt;</token>
+  <line no="42">
+    <token name="T_INLINE_HTML">  &lt;!-- &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"&gt; --&gt;</token>
   </line>
+  <line no="43"/>
   <line no="44">
-    <token name="T_INLINE_HTML">  &lt;link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;!-- &lt;link rel="stylesheet" href="css/flat-ui.min.css"&gt; --&gt;</token>
   </line>
   <line no="45"/>
   <line no="46">
-    <token name="T_INLINE_HTML">  &lt;!-- Main css --&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;!-- Great Vibes Font from Google Fonts --&gt;</token>
   </line>
   <line no="47">
-    <token name="T_INLINE_HTML">  &lt;link rel="stylesheet" href="css/assegai-main.css"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'&gt;</token>
   </line>
   <line no="48"/>
   <line no="49">
-    <token name="T_INLINE_HTML">&lt;/head&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;!-- Main css --&gt;</token>
   </line>
   <line no="50">
-    <token name="T_INLINE_HTML">&lt;body&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;link rel="stylesheet" href="css/assegai-main.css"&gt;</token>
   </line>
-  <line no="51">
-    <token name="T_INLINE_HTML">    &lt;!--[if lt IE 8]&gt;</token>
-  </line>
+  <line no="51"/>
   <line no="52">
-    <token name="T_INLINE_HTML">        &lt;p class="browserupgrade"&gt;You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href="http://browsehappy.com/"&gt;upgrade your browser&lt;/a&gt; to improve your experience.&lt;/p&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/head&gt;</token>
   </line>
   <line no="53">
+    <token name="T_INLINE_HTML">&lt;body&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">    &lt;!--[if lt IE 8]&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">        &lt;p class="browserupgrade"&gt;You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href="http://browsehappy.com/"&gt;upgrade your browser&lt;/a&gt; to improve your experience.&lt;/p&gt;</token>
+  </line>
+  <line no="56">
     <token name="T_INLINE_HTML">    &lt;![endif]--&gt;</token>
   </line>
-  <line no="54"/>
+  <line no="57"/>
 </source>

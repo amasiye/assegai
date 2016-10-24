@@ -1,0 +1,430 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/modal" file="profile-info.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/modal/profile-info.php" size="3493" time="2016-10-16T04:12:56+02:00" unixtime="1476583976" sha1="d5faae6a2608471c916cae998a971dca391b908f" relative="includes/modal/profile-info.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">&lt;div id="user-profile-info" class="modal-content hidden"&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">  &lt;div class="modal-header"&gt;</token>
+  </line>
+  <line no="3">
+    <token name="T_INLINE_HTML">    &lt;button type="button" class="close" data-dismiss="modal"&gt;&amp;times;&lt;/button&gt;</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">    &lt;h4 class="modal-title"&gt;Edit Profile&lt;/h4&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">  &lt;/div&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">  &lt;div class="modal-body"&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">    &lt;div id="profile-details-input"&gt;</token>
+  </line>
+  <line no="8"/>
+  <line no="9">
+    <token name="T_INLINE_HTML">      &lt;!-- #Feedback Modal --&gt;</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">      &lt;div id="feedback-modal" class="alert hidden"&gt;&lt;/div&gt;</token>
+  </line>
+  <line no="11"/>
+  <line no="12">
+    <token name="T_INLINE_HTML">      &lt;!-- User Login --&gt;</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">      &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">        &lt;label class="control-label col-sm-3"&gt;User Login:&lt;/label&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">        &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">          &lt;input type='text' name='login' id='login' class="form-control" value='</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">login</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">' /&gt;</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="18">
+    <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
+  </line>
+  <line no="19"/>
+  <line no="20">
+    <token name="T_INLINE_HTML">      &lt;!-- Username --&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">      &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">        &lt;label class="control-label col-sm-3"&gt;Username:&lt;/label&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">        &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">          &lt;input type='text' name='username' id='username' class="form-control" value='</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">username</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">' /&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
+  </line>
+  <line no="27"/>
+  <line no="28">
+    <token name="T_INLINE_HTML">      &lt;!-- Display Name --&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">      &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">        &lt;label class="control-label col-sm-3"&gt;Display Name:&lt;/label&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">        &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">          &lt;input type='text' name='display-name' id='display-name' class="form-control" value='</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">display_name</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">' /&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
+  </line>
+  <line no="35"/>
+  <line no="36">
+    <token name="T_INLINE_HTML">      &lt;!-- Primary Email --&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">      &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">        &lt;label class="control-label col-sm-3"&gt;Primary Email:&lt;/label&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">        &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">          &lt;input type='text' name='email-primary' id='email-primary' class="form-control" value='</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">primary_email</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">' /&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
+  </line>
+  <line no="43"/>
+  <line no="44">
+    <token name="T_INLINE_HTML">      &lt;!-- Other Email --&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">      &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">        &lt;label class="control-label col-sm-3"&gt;Other Email:&lt;/label&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">        &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">          &lt;input type='text' name='email-other' id='email-other' class="form-control" value='</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">emails</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">' /&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
+  </line>
+  <line no="51"/>
+  <line no="52">
+    <token name="T_INLINE_HTML">      &lt;!-- Address --&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">      &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">        &lt;label class="control-label col-sm-3"&gt;Address:&lt;/label&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">        &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">          &lt;input type='text' name='address' id='address' class="form-control" value='</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">address</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">' /&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="58">
+    <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
+  </line>
+  <line no="59"/>
+  <line no="60">
+    <token name="T_INLINE_HTML">      </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_IF">if</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_STRING">User</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">is_admin</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">login</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">      &lt;!-- Group --&gt;</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">      &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">        &lt;label class="control-label col-sm-3"&gt;User Group:&lt;/label&gt;</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">        &lt;div class="col-sm-9"&gt;</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">          &lt;select name='group-name' id='group-name' class="form-control"&gt;</token>
+  </line>
+  <line no="66">
+    <token name="T_INLINE_HTML">            </token>
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="67">
+    <token name="T_WHITESPACE">            </token>
+    <token name="T_VARIABLE">$group_names</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Group</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">get_group_names</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$this</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">db</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="68">
+    <token name="T_WHITESPACE">            </token>
+    <token name="T_FOREACH">foreach</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$group_names</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_AS">as</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$name</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+  </line>
+  <line no="69">
+    <token name="T_WHITESPACE">            </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="70">
+    <token name="T_WHITESPACE">              </token>
+    <token name="T_IF">if</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_STRING">strcmp</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">group_name</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$name</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+  </line>
+  <line no="71">
+    <token name="T_WHITESPACE">                </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
+    <token name="T_ENCAPSED_AND_WHITESPACE">&lt;option value='</token>
+    <token name="T_CURLY_OPEN">{</token>
+    <token name="T_VARIABLE">$name</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_ENCAPSED_AND_WHITESPACE">' selected&gt;</token>
+    <token name="T_CURLY_OPEN">{</token>
+    <token name="T_VARIABLE">$name</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_ENCAPSED_AND_WHITESPACE">&lt;/option&gt;</token>
+    <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="72">
+    <token name="T_WHITESPACE">              </token>
+    <token name="T_ELSE">else</token>
+  </line>
+  <line no="73">
+    <token name="T_WHITESPACE">                </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
+    <token name="T_ENCAPSED_AND_WHITESPACE">&lt;option value='</token>
+    <token name="T_CURLY_OPEN">{</token>
+    <token name="T_VARIABLE">$name</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_ENCAPSED_AND_WHITESPACE">'&gt;</token>
+    <token name="T_CURLY_OPEN">{</token>
+    <token name="T_VARIABLE">$name</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_ENCAPSED_AND_WHITESPACE">&lt;/option&gt;</token>
+    <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="74">
+    <token name="T_WHITESPACE">            </token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="75">
+    <token name="T_WHITESPACE">            </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="76">
+    <token name="T_INLINE_HTML">          &lt;/select&gt;</token>
+  </line>
+  <line no="77">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="78">
+    <token name="T_INLINE_HTML">      &lt;/div&gt;</token>
+  </line>
+  <line no="79">
+    <token name="T_INLINE_HTML">      </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ENDIF">endif</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="80"/>
+  <line no="81">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="82">
+    <token name="T_INLINE_HTML">    &lt;div id="image-gallery" class="hidden"&gt;</token>
+  </line>
+  <line no="83">
+    <token name="T_INLINE_HTML">      </token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$gallery</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="84">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="85"/>
+  <line no="86">
+    <token name="T_INLINE_HTML">  &lt;/div&gt;&lt;!-- #end modal-body --&gt;</token>
+  </line>
+  <line no="87"/>
+  <line no="88">
+    <token name="T_INLINE_HTML">  &lt;div class="modal-footer"&gt;</token>
+  </line>
+  <line no="89">
+    <token name="T_INLINE_HTML">    &lt;input type="hidden" name="api-key" id="api-key" class="form-control" value="</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$data</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'app'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">get_api_key</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">"&gt;</token>
+  </line>
+  <line no="90">
+    <token name="T_INLINE_HTML">    &lt;button type="button" class="btn btn-info" name="btn-profile-save"&gt;Save&lt;/button&gt;</token>
+  </line>
+  <line no="91">
+    <token name="T_INLINE_HTML">    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Cancel&lt;/button&gt;</token>
+  </line>
+  <line no="92">
+    <token name="T_INLINE_HTML">  &lt;/div&gt;&lt;!-- #end modal-footer --&gt;</token>
+  </line>
+  <line no="93">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="94"/>
+</source>

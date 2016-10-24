@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="admin-header.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/admin-header.php" size="11422" time="2016-09-28T04:16:13+02:00" unixtime="1475028973" sha1="ca56a694dcb7e650d8917f4e61f48011adda304e" relative="includes/admin-header.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes" file="admin-header.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/includes/admin-header.php" size="11568" time="2016-10-02T06:52:26+02:00" unixtime="1475383946" sha1="74e3332b4b86eec7ff2e70209ae6f4410b3f936e" relative="includes/admin-header.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -41,7 +41,7 @@
   </line>
   <line no="6"/>
   <line no="7">
-    <token name="T_INLINE_HTML">  &lt;nav class="navbar navbar-inverse"&gt;</token>
+    <token name="T_INLINE_HTML">  &lt;nav class="navbar navbar-inverse data-spy='affix' data-offset-top='197'"&gt;</token>
   </line>
   <line no="8">
     <token name="T_INLINE_HTML">    &lt;div class="container-fluid"&gt;</token>
@@ -1033,47 +1033,53 @@
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
   <line no="259">
-    <token name="T_COMMENT">// $cat_name = 'alert';</token>
+    <token name="T_COMMENT">// $option = new Option($db, 1);</token>
   </line>
   <line no="260">
-    <token name="T_COMMENT">// $cat = new Category($db, $cat_name);</token>
+    <token name="T_COMMENT">// echo $option-&gt;name() . ' : ' . $option-&gt;value('Assegai Test'); exit;</token>
   </line>
   <line no="261">
-    <token name="T_COMMENT">// $cat-&gt;set_info("Tag for all {$cat_name} element types.");</token>
+    <token name="T_COMMENT">// $cat_name = 'alert';</token>
   </line>
   <line no="262">
-    <token name="T_COMMENT">// echo Category::id($db, $cat_name); exit;</token>
+    <token name="T_COMMENT">// $cat = new Category($db, $cat_name);</token>
   </line>
   <line no="263">
-    <token name="T_COMMENT">// $confirmation_email = file_get_contents(ABSRESPATH . 'templates/email-user-registration.php');</token>
+    <token name="T_COMMENT">// $cat-&gt;set_info("Tag for all {$cat_name} element types.");</token>
   </line>
   <line no="264">
-    <token name="T_COMMENT">// $to = 'amasiye313@gmail.com';</token>
+    <token name="T_COMMENT">// echo Category::id($db, $cat_name); exit;</token>
   </line>
   <line no="265">
-    <token name="T_COMMENT">// $subject = '';</token>
+    <token name="T_COMMENT">// $confirmation_email = file_get_contents(ABSRESPATH . 'templates/email-user-registration.php');</token>
   </line>
   <line no="266">
-    <token name="T_COMMENT">// $msg = "&lt;h1&gt;Hello {$user-&gt;login}&lt;/h1&gt;";</token>
+    <token name="T_COMMENT">// $to = 'amasiye313@gmail.com';</token>
   </line>
   <line no="267">
-    <token name="T_COMMENT">// $headers = 'From: webmaster@example.com' . "\r\n" .</token>
+    <token name="T_COMMENT">// $subject = '';</token>
   </line>
   <line no="268">
-    <token name="T_COMMENT">//     'Reply-To: webmaster@example.com' . "\r\n" .</token>
+    <token name="T_COMMENT">// $msg = "&lt;h1&gt;Hello {$user-&gt;login}&lt;/h1&gt;";</token>
   </line>
   <line no="269">
-    <token name="T_COMMENT">//     'Content-Type: text/html' . "\r\n" .</token>
+    <token name="T_COMMENT">// $headers = 'From: webmaster@example.com' . "\r\n" .</token>
   </line>
   <line no="270">
-    <token name="T_COMMENT">//     'X-Mailer: PHP/' . phpversion();</token>
+    <token name="T_COMMENT">//     'Reply-To: webmaster@example.com' . "\r\n" .</token>
   </line>
   <line no="271">
-    <token name="T_COMMENT">// echo mail($to, $subject, $msg, $headers); exit;</token>
+    <token name="T_COMMENT">//     'Content-Type: text/html' . "\r\n" .</token>
   </line>
   <line no="272">
+    <token name="T_COMMENT">//     'X-Mailer: PHP/' . phpversion();</token>
+  </line>
+  <line no="273">
+    <token name="T_COMMENT">// echo mail($to, $subject, $msg, $headers); exit;</token>
+  </line>
+  <line no="274">
     <token name="T_WHITESPACE"> </token>
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
-  <line no="273"/>
+  <line no="275"/>
 </source>

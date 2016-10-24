@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="App" namespace="" name="App" abstract="false" final="false" start="7" end="299">
-  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="App.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/App.php" size="8885" time="2016-09-28T07:53:35+02:00" unixtime="1475042015" sha1="a3abeac0c5cdf2b3f1d0c05d1b9ad26a7e5f2389" relative="app/en-US/core/App.php"/>
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="App.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/App.php" size="10151" time="2016-10-02T08:07:27+02:00" unixtime="1475388447" sha1="9f69355806f7470a16937e71307111bd7319bb5a" relative="app/en-US/core/App.php"/>
   <docblock>
     <description compact="This class provides a structured representation of the Assegai application class."/>
   </docblock>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/pages" file="index.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/pages/index.php" size="726" time="2016-09-27T18:43:01+02:00" unixtime="1474994581" sha1="34eb5dc4b37cc2b1736a7022b59b86d019cc3a78" relative="app/en-US/views/pages/index.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/pages" file="index.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/pages/index.php" size="756" time="2016-09-30T23:16:56+02:00" unixtime="1475270216" sha1="9d261d306112bc2f910fe78b09d7a009c9dc6163" relative="app/en-US/views/pages/index.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>

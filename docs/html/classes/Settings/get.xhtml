@@ -42,9 +42,9 @@
             <a href="../../classes.xhtml#"/>
           </li>
           <li class="separator">
-            <a title="Post" href="../../classes/Post.xhtml">Post</a>
+            <a title="Settings" href="../../classes/Settings.xhtml">Settings</a>
           </li>
-          <li class="separator">save_draft</li>
+          <li class="separator">get</li>
         </ul>
       </div>
       <nav class="box">
@@ -62,33 +62,38 @@
             <a href="#return">Return</a>
           </li>
           <li>
-            <a href="../../source/app/en-US/models/Post.php.xhtml#line56">Source</a>
+            <a href="../../source/app/en-US/models/Settings.php.xhtml#line16">Source</a>
           </li>
         </ul>
       </nav>
       <section>
-        <h1><small>Post::</small>save_draft</h1>
-        <h4>Updates the post without publishing.</h4>
+        <h1><small>Settings::</small>get</h1>
+        <h4>Returns the value of the setting of given name.</h4>
         <p/>
         <ul/>
         <h2 id="signature">Signature</h2>
         <div class="styled synopsis">
-          <code>public function save_draft([array
-        $data = ] )
+          <code>public function get(<a title="{Database}" href="../../classes/{Database}.xhtml">{Database}</a>
+        $db,
+            <a title="{string}" href="../../classes/{string}.xhtml">{string}</a>
+        $setting_name )
             </code>
         </div>
         <h2 id="parameterlist">Parameters</h2>
         <dl class="styled">
-          <dt><code>$data</code>
+          <dt><code>$db</code>
                 —
-                array</dt>
-          <dd/>
+                object</dt>
+          <dd>The database holding the settings data.<br/><br/><br/>      </dd>
+          <dt><code>$setting_name</code>
+                —
+                object</dt>
+          <dd>The name of the setting.<br/><br/><br/>      </dd>
         </dl>
         <h2 id="return">Returns</h2>
         <dl class="styled">
-          <dt>{boolean}</dt>
-          <dd>Returns true if save was successful, false otherwise.<br/>
-        </dd>
+          <dt>{string}</dt>
+          <dd>Returns teh value of the given setting or<br/>SETTINGS_REQUEST_ERR on failure.</dd>
         </dl>
       </section>
     </div>

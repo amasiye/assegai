@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="App.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/App.php" size="8885" time="2016-09-28T07:53:35+02:00" unixtime="1475042015" sha1="a3abeac0c5cdf2b3f1d0c05d1b9ad26a7e5f2389" relative="app/en-US/core/App.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="App.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/App.php" size="10151" time="2016-10-02T08:07:27+02:00" unixtime="1475388447" sha1="9f69355806f7470a16937e71307111bd7319bb5a" relative="app/en-US/core/App.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -1790,37 +1790,37 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">                  &lt;/div&gt;</token>
   </line>
   <line no="275">
-    <token name="T_CONSTANT_ENCAPSED_STRING">                  &lt;div id='menu-elements' class='col-md-12'&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">                  &lt;div id='menu-elements' class='col-md-12 element-list-group'&gt;</token>
   </line>
   <line no="276">
-    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;p&gt;Element 1&lt;/p&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='title'&gt;&lt;span class='glyphicon'&gt;T&lt;/span&gt;&lt;br&gt;Title&lt;/div&gt;</token>
   </line>
   <line no="277">
-    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;p&gt;Element 2&lt;/p&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='text'&gt;&lt;span class='glyphicon glyphicon-align-left  '&gt;&lt;/span&gt;&lt;br&gt;Text&lt;/div&gt;</token>
   </line>
   <line no="278">
-    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;p&gt;Element 3&lt;/p&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='image'&gt;&lt;span class='glyphicon glyphicon-picture'&gt;&lt;/span&gt;&lt;br&gt;Image&lt;/div&gt;</token>
   </line>
   <line no="279">
-    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;p&gt;Element 4&lt;/p&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='gallery'&gt;&lt;span class='glyphicon glyphicon-th-large'&gt;&lt;/span&gt;&lt;br&gt;Gallery&lt;/div&gt;</token>
   </line>
   <line no="280">
     <token name="T_CONSTANT_ENCAPSED_STRING">                  &lt;/div&gt;</token>
   </line>
   <line no="281">
-    <token name="T_CONSTANT_ENCAPSED_STRING">                  &lt;div id='menu-widgets' class='col-md-12 hidden'&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">                  &lt;div id='menu-widgets' class='col-md-12 element-list-group hidden'&gt;</token>
   </line>
   <line no="282">
-    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;p&gt;Widget 1&lt;/p&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;div class='element-list-group-item text-center pull-left'&gt;Widget 1&lt;/div&gt;</token>
   </line>
   <line no="283">
-    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;p&gt;Widget 2&lt;/p&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;div class='element-list-group-item text-center pull-left'&gt;Widget 2&lt;/div&gt;</token>
   </line>
   <line no="284">
-    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;p&gt;Widget 3&lt;/p&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;div class='element-list-group-item text-center pull-left'&gt;Widget 3&lt;/div&gt;</token>
   </line>
   <line no="285">
-    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;p&gt;Widget 4&lt;/p&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">                    &lt;div class='element-list-group-item text-center pull-left'&gt;Widget 4&lt;/div&gt;</token>
   </line>
   <line no="286">
     <token name="T_CONSTANT_ENCAPSED_STRING">                  &lt;/div&gt;</token>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Settings" namespace="" name="Settings" abstract="false" final="false" start="7" end="111">
+  <file path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models" file="Settings.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/models/Settings.php" size="3429" time="2016-10-03T05:28:29+02:00" unixtime="1475465309" sha1="e0e3180f0d5db8284f594e492ada560550621a35" relative="app/en-US/models/Settings.php"/>
+  <docblock>
+    <description compact="This class provides a structured representation of the Site settings data.">It provides methods for retrieving and updating various site settings.</description>
+  </docblock>
+  <method name="get" start="16" end="43" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns the value of the setting of given name."/>
+      <param description="The database holding the settings data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The name of the setting." type="object" variable="$setting_name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="Returns teh value of the given setting or" type="object">SETTINGS_REQUEST_ERR on failure.<type full="{string}" namespace="" name="{string}"/></return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="setting_name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="set" start="53" end="85" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Sets the value of the settings of given name."/>
+      <param description="The database holding the settings data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The name of the settings." type="object" variable="$setting_name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="The new value." type="object" variable="$value">
+        <type full="{sring}" namespace="" name="{sring}"/>
+      </param>
+      <return description="SETTINGS_UPDATE_OK upon success or SETTINGS_UPDATE_ERR" type="object">on failure.<type full="Returns" namespace="" name="Returns"/></return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="setting_name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="create" start="95" end="98" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Creates a setting of given name from the given database."/>
+      <param description="The database containing the settings data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The name of the setting to be created." type="object" variable="$name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="[Optional] Autoload this setting: yes or no." type="object" variable="$autoload">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <return description="Returns QUERY_EXEC_OK upon success or" type="object">QUERY_EXEC_ERR on failure.<type full="{integer}" namespace="" name="{integer}"/></return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="autoload" byreference="false" type="string" default="'yes'"/>
+  </method>
+  <method name="delete" start="106" end="109" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Deletes an setting of given name from the given database."/>
+      <param description="The database containing the settings data." type="object" variable="$db">
+        <type full="{Database}" namespace="" name="{Database}"/>
+      </param>
+      <param description="The name of the setting to be deleted." type="object" variable="$name">
+        <type full="{string}" namespace="" name="{string}"/>
+      </param>
+      <param description="Returns QUERY_EXEC_OK upon success or QUERY_EXEC_ERR on failure." type="object">
+        <type full="{integer}" namespace="" name="{integer}"/>
+      </param>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+</class>

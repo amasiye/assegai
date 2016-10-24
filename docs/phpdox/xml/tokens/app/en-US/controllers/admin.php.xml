@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers" file="admin.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers/admin.php" size="8165" time="2016-09-28T07:55:23+02:00" unixtime="1475042123" sha1="1b487bb7607b9c4263604ed26220f6cf3b04d756" relative="app/en-US/controllers/admin.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers" file="admin.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/controllers/admin.php" size="8170" time="2016-10-12T05:18:44+02:00" unixtime="1476242324" sha1="b67f2ab8b7816a230e9540e20b8a86754f4eca06" relative="app/en-US/controllers/admin.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -1696,7 +1696,7 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_DOUBLE_ARROW">=&gt;</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_STRING">true</token>
+    <token name="T_STRING">false</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>

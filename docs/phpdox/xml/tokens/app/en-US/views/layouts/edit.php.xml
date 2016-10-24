@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/layouts" file="edit.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/layouts/edit.php" size="858" time="2016-09-28T07:36:10+02:00" unixtime="1475040970" sha1="d52b1593b5557b76021e4ee5d795d36631063af6" relative="app/en-US/views/layouts/edit.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/layouts" file="edit.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/layouts/edit.php" size="2431" time="2016-10-02T09:22:09+02:00" unixtime="1475392929" sha1="539771c8b19f4e09bc10cb35779d670c85ba0c75" relative="app/en-US/views/layouts/edit.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -81,7 +81,7 @@
   </line>
   <line no="17"/>
   <line no="18">
-    <token name="T_INLINE_HTML">        &lt;div class="frame editor-frame"&gt;</token>
+    <token name="T_INLINE_HTML">        &lt;div class="frame editor-frame" ondrop="drop(event)" ondragover="allowDrop(event)"&gt;</token>
     <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$layout</token>
@@ -128,10 +128,163 @@
   <line no="29">
     <token name="T_INLINE_HTML">    document.title = "Assegai Layout Editor: " + newTitle;</token>
   </line>
-  <line no="30">
+  <line no="30"/>
+  <line no="31">
+    <token name="T_INLINE_HTML">    function allowDrop(event)</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">    {</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">      event.preventDefault();</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">    } // end allowDrop()</token>
+  </line>
+  <line no="35"/>
+  <line no="36">
+    <token name="T_INLINE_HTML">    function drag(event)</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">    {</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">      event.dataTransfer.setData("content", event.target.getAttribute("data-element-type"));</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">    }</token>
+  </line>
+  <line no="40"/>
+  <line no="41">
+    <token name="T_INLINE_HTML">    function drop(event)</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">    {</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">      event.preventDefault();</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">      var data = event.dataTransfer.getData("content");</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">      var node, text;</token>
+  </line>
+  <line no="46"/>
+  <line no="47">
+    <token name="T_INLINE_HTML">      switch (data)</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">      {</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">        case 'title':</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">          node = document.createElement('h1');</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">          text = document.createTextNode("Title");</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">          node.appendChild(text);</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">          node.className = "display-1";</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">          break;</token>
+  </line>
+  <line no="55"/>
+  <line no="56">
+    <token name="T_INLINE_HTML">        case 'text':</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">          node = document.createElement('p');</token>
+  </line>
+  <line no="58">
+    <token name="T_INLINE_HTML">          text = document.createTextNode("Text");</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">          node.appendChild(text);</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">          node.className = "lead";</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">          break;</token>
+  </line>
+  <line no="62"/>
+  <line no="63">
+    <token name="T_INLINE_HTML">        case 'image':</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">          node = document.createElement('img');</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">          node.className = "img-rounded";</token>
+  </line>
+  <line no="66">
+    <token name="T_INLINE_HTML">          node.src ="uploads/images/1/128.jpg"</token>
+  </line>
+  <line no="67">
+    <token name="T_INLINE_HTML">          console.debug(node);</token>
+  </line>
+  <line no="68">
+    <token name="T_INLINE_HTML">          break;</token>
+  </line>
+  <line no="69"/>
+  <line no="70">
+    <token name="T_INLINE_HTML">        case 'gallery':</token>
+  </line>
+  <line no="71">
+    <token name="T_INLINE_HTML">          node = document.createElement('div');</token>
+  </line>
+  <line no="72">
+    <token name="T_INLINE_HTML">          for(i = 1; i &lt; 7; i++)</token>
+  </line>
+  <line no="73">
+    <token name="T_INLINE_HTML">          {</token>
+  </line>
+  <line no="74">
+    <token name="T_INLINE_HTML">            var img = document.createElement('img');</token>
+  </line>
+  <line no="75">
+    <token name="T_INLINE_HTML">            img.className = "img-rounded";</token>
+  </line>
+  <line no="76">
+    <token name="T_INLINE_HTML">            img.src = "uploads/images/1/128(" + i + ").jpg";</token>
+  </line>
+  <line no="77">
+    <token name="T_INLINE_HTML">            node.appendChild(img);</token>
+  </line>
+  <line no="78">
+    <token name="T_INLINE_HTML">          }</token>
+  </line>
+  <line no="79">
+    <token name="T_INLINE_HTML">          node.className = "col-md-12";</token>
+  </line>
+  <line no="80">
+    <token name="T_INLINE_HTML">          break;</token>
+  </line>
+  <line no="81"/>
+  <line no="82">
+    <token name="T_INLINE_HTML">        default:</token>
+  </line>
+  <line no="83"/>
+  <line no="84">
+    <token name="T_INLINE_HTML">      }</token>
+  </line>
+  <line no="85">
+    <token name="T_INLINE_HTML">      event.target.appendChild(node);</token>
+  </line>
+  <line no="86">
+    <token name="T_INLINE_HTML">    }</token>
+  </line>
+  <line no="87">
     <token name="T_INLINE_HTML">  &lt;/script&gt;</token>
   </line>
-  <line no="31">
+  <line no="88">
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_REQUIRE_ONCE">require_once</token>
     <token name="T_WHITESPACE"> </token>
@@ -140,5 +293,5 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
-  <line no="32"/>
+  <line no="89"/>
 </source>

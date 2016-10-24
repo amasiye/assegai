@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="StatusCodes.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/StatusCodes.php" size="1036" time="2016-09-24T19:53:26+02:00" unixtime="1474739606" sha1="fc8c7fb2ffbe9aa61cae55566f581c0ba48e4ed6" relative="app/en-US/core/StatusCodes.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core" file="StatusCodes.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/core/StatusCodes.php" size="1246" time="2016-10-03T05:04:59+02:00" unixtime="1475463899" sha1="57691a638ec1cfdc0ca56e8d18e6c4bb9e896e69" relative="app/en-US/core/StatusCodes.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -269,7 +269,43 @@
     <token name="T_COMMENT">// At least 1 admin must exist.</token>
   </line>
   <line no="29">
+    <token name="T_STRING">define</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'SETTINGS_UPDATE_OK'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">800</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_COMMENT">// At least 1 admin must exist.</token>
+  </line>
+  <line no="30">
+    <token name="T_STRING">define</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'SETTINGS_UPDATE_ERR'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">801</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_COMMENT">// At least 1 admin must exist.</token>
+  </line>
+  <line no="31">
+    <token name="T_STRING">define</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'SETTINGS_REQUEST_ERR'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">802</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_COMMENT">// At least 1 admin must exist.</token>
+  </line>
+  <line no="32">
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
-  <line no="30"/>
+  <line no="33"/>
 </source>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/dashboard" file="settings.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/dashboard/settings.php" size="930" time="2016-09-27T18:38:49+02:00" unixtime="1474994329" sha1="5761b885ad36aaa5f22fa34a775cded52c2e02e5" relative="app/en-US/views/dashboard/settings.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/dashboard" file="settings.php" realpath="C:/xampp/htdocs/atatusoft/Assegai/assegai/app/en-US/views/dashboard/settings.php" size="4889" time="2016-10-16T02:11:34+02:00" unixtime="1476576694" sha1="338f62d48831325a5c0a0208ad519c8fa1aba20c" relative="app/en-US/views/dashboard/settings.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -93,50 +93,486 @@
     <token name="T_PHPDOX_SEMICOLON">;</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_CLOSE_TAG">?&gt;</token>
-    <token name="T_INLINE_HTML">&lt;/small&gt;&lt;/h2&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/small&gt;</token>
   </line>
   <line no="19">
-    <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
+    <token name="T_INLINE_HTML">              </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_IF">if</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$user</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">has_permission</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'edit'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'settings'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
   <line no="20">
-    <token name="T_INLINE_HTML">          &lt;table class="table table-bordered"&gt;</token>
+    <token name="T_INLINE_HTML">                &lt;button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#edit-settings-modal"&gt;Edit&lt;/button&gt;</token>
   </line>
   <line no="21">
-    <token name="T_INLINE_HTML">            &lt;tr&gt;</token>
+    <token name="T_INLINE_HTML">              </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ENDIF">endif</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
   <line no="22">
-    <token name="T_INLINE_HTML">              &lt;th&gt;&lt;/th&gt;</token>
+    <token name="T_INLINE_HTML">            &lt;/h2&gt;</token>
   </line>
   <line no="23">
-    <token name="T_INLINE_HTML">            &lt;/tr&gt;</token>
+    <token name="T_INLINE_HTML">          &lt;/div&gt;</token>
   </line>
-  <line no="24">
-    <token name="T_INLINE_HTML">          &lt;/table&gt;</token>
+  <line no="24"/>
+  <line no="25">
+    <token name="T_INLINE_HTML">          &lt;form class="form-horizontal" role="form"&gt;</token>
   </line>
-  <line no="25"/>
-  <line no="26">
-    <token name="T_INLINE_HTML">      &lt;/div&gt;&lt;!--#end .col-sm-10 (Right Panel) --&gt;</token>
+  <line no="26"/>
+  <line no="27">
+    <token name="T_INLINE_HTML">            &lt;!-- Site Address --&gt;</token>
   </line>
-  <line no="27"/>
   <line no="28">
-    <token name="T_INLINE_HTML">    &lt;/div&gt;&lt;!--#end .row, .content --&gt;</token>
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
   </line>
   <line no="29">
-    <token name="T_INLINE_HTML">  &lt;/div&gt;</token>
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-2" for="site-url"&gt;Site Adress:&lt;/label&gt;</token>
   </line>
   <line no="30">
-    <token name="T_INLINE_HTML">  &lt;script&gt;</token>
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-10"&gt;</token>
   </line>
   <line no="31">
-    <token name="T_INLINE_HTML">    var container = document.querySelector('.container');</token>
+    <token name="T_INLINE_HTML">                &lt;p class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Settings</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">get</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'url'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
   </line>
   <line no="32">
-    <token name="T_INLINE_HTML">    var minHeight = 576;</token>
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
   </line>
   <line no="33">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="34"/>
+  <line no="35">
+    <token name="T_INLINE_HTML">            &lt;!-- Site Title --&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-2" for="site-url"&gt;Site Title:&lt;/label&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-10"&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">                &lt;p class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Settings</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">get</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'name'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="42"/>
+  <line no="43">
+    <token name="T_INLINE_HTML">            &lt;!-- Site Tagline --&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-2" for="site-url"&gt;Site Tagline:&lt;/label&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-10"&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">                &lt;p class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Settings</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">get</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'url'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="50"/>
+  <line no="51">
+    <token name="T_INLINE_HTML">            &lt;!-- Site Description --&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-2" for="site-url"&gt;Site Description:&lt;/label&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-10"&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">                &lt;p class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Settings</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">get</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'description'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="58"/>
+  <line no="59">
+    <token name="T_INLINE_HTML">            &lt;!-- Keywords --&gt;</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-2" for="site-url"&gt;Site Keywords:&lt;/label&gt;</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-10"&gt;</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">                &lt;p class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Settings</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">get</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'keywords'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="66"/>
+  <line no="67">
+    <token name="T_INLINE_HTML">            &lt;!-- Owner --&gt;</token>
+  </line>
+  <line no="68">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="69">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-2" for="site-url"&gt;Site Owner:&lt;/label&gt;</token>
+  </line>
+  <line no="70">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-10"&gt;</token>
+  </line>
+  <line no="71">
+    <token name="T_INLINE_HTML">                &lt;p class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Settings</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">get</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'owner'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="72">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="73">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="74"/>
+  <line no="75">
+    <token name="T_INLINE_HTML">            &lt;!-- Default Date Format --&gt;</token>
+  </line>
+  <line no="76">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="77">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-2" for="site-url"&gt;Default Date Format:&lt;/label&gt;</token>
+  </line>
+  <line no="78">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-10"&gt;</token>
+  </line>
+  <line no="79">
+    <token name="T_INLINE_HTML">                &lt;p class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Settings</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">get</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'date_format'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="80">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="81">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="82"/>
+  <line no="83">
+    <token name="T_INLINE_HTML">            &lt;!-- Default Time Format --&gt;</token>
+  </line>
+  <line no="84">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="85">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-2" for="site-url"&gt;Default Time Format:&lt;/label&gt;</token>
+  </line>
+  <line no="86">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-10"&gt;</token>
+  </line>
+  <line no="87">
+    <token name="T_INLINE_HTML">                &lt;p class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Settings</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">get</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'time_format'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="88">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="89">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="90"/>
+  <line no="91">
+    <token name="T_INLINE_HTML">            &lt;!-- Default Timezone --&gt;</token>
+  </line>
+  <line no="92">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="93">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-2" for="site-url"&gt;Default Timezone:&lt;/label&gt;</token>
+  </line>
+  <line no="94">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-10"&gt;</token>
+  </line>
+  <line no="95">
+    <token name="T_INLINE_HTML">                &lt;p class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Settings</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">get</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'timezone'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="96">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="97">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="98"/>
+  <line no="99">
+    <token name="T_INLINE_HTML">            &lt;!-- Site Status --&gt;</token>
+  </line>
+  <line no="100">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="101">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-2" for="site-url"&gt;Site Status:&lt;/label&gt;</token>
+  </line>
+  <line no="102">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-10"&gt;</token>
+  </line>
+  <line no="103">
+    <token name="T_INLINE_HTML">                &lt;p class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">ucwords</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_STRING">Settings</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">get</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'status'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="104">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="105">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="106"/>
+  <line no="107">
+    <token name="T_INLINE_HTML">            &lt;!-- Cookie Notification --&gt;</token>
+  </line>
+  <line no="108">
+    <token name="T_INLINE_HTML">            &lt;div class="form-group"&gt;</token>
+  </line>
+  <line no="109">
+    <token name="T_INLINE_HTML">              &lt;label class="control-label col-sm-2" for="site-url"&gt;Cookie Notification:&lt;/label&gt;</token>
+  </line>
+  <line no="110">
+    <token name="T_INLINE_HTML">              &lt;div class="col-sm-10"&gt;</token>
+  </line>
+  <line no="111">
+    <token name="T_INLINE_HTML">                &lt;p class="form-control-static"&gt;</token>
+    <token name="T_OPEN_TAG_WITH_ECHO">&lt;?=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Settings</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">get</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$db</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'cookie_notification'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="112">
+    <token name="T_INLINE_HTML">              &lt;/div&gt;</token>
+  </line>
+  <line no="113">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="114"/>
+  <line no="115">
+    <token name="T_INLINE_HTML">          &lt;/form&gt;</token>
+  </line>
+  <line no="116"/>
+  <line no="117">
+    <token name="T_INLINE_HTML">      &lt;/div&gt;&lt;!--#end .col-sm-10 (Right Panel) --&gt;</token>
+  </line>
+  <line no="118"/>
+  <line no="119">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;&lt;!--#end .row, .content --&gt;</token>
+  </line>
+  <line no="120">
+    <token name="T_INLINE_HTML">  &lt;/div&gt;</token>
+  </line>
+  <line no="121">
+    <token name="T_INLINE_HTML">  &lt;script&gt;</token>
+  </line>
+  <line no="122">
+    <token name="T_INLINE_HTML">    var container = document.querySelector('.container');</token>
+  </line>
+  <line no="123">
+    <token name="T_INLINE_HTML">    var minHeight = 576;</token>
+  </line>
+  <line no="124">
     <token name="T_INLINE_HTML">  &lt;/script&gt;</token>
   </line>
-  <line no="34">
+  <line no="125">
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_REQUIRE_ONCE">require_once</token>
     <token name="T_WHITESPACE"> </token>
@@ -145,5 +581,5 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
-  <line no="35"/>
+  <line no="126"/>
 </source>
