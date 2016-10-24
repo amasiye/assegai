@@ -100,7 +100,7 @@ require_once "includes/admin-header.php";
             <div class="form-group">
               <label class="control-label col-sm-2" for="site-url">Site Status:</label>
               <div class="col-sm-10">
-                <p class="form-control-static"><?= Settings::get($db, 'status'); ?></p>
+                <p class="form-control-static"><?= ucwords(Settings::get($db, 'status')); ?></p>
               </div>
             </div>
 

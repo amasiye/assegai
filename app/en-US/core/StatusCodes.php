@@ -22,11 +22,11 @@ define('API_REQUEST_ERR_MISSING_KEY', 502);
 define('API_REQUEST_ERR_INVALID_KEY', 503);
 define('UPDATE_ERR_LOGIN', 601);
 define('UPDATE_ERR_GROUP', 602);  // At least 1 admin must exist.
-define('UPDATE_ERR_ILLEGAL', 602);  // At least 1 admin must exist.
-define('DELETE_ERR', 611);  // At least 1 admin must exist.
-define('PARAM_ERR', 701);  // At least 1 admin must exist.
-define('PARAM_TYPE_ERR', 702);  // At least 1 admin must exist.
-define('SETTINGS_UPDATE_OK', 800);  // At least 1 admin must exist.
-define('SETTINGS_UPDATE_ERR', 801);  // At least 1 admin must exist.
-define('SETTINGS_REQUEST_ERR', 802);  // At least 1 admin must exist.
+define('UPDATE_ERR_ILLEGAL', 602);
+define('DELETE_ERR', 611);
+define('PARAM_ERR', 701);
+define('PARAM_TYPE_ERR', 702);
+define('SETTINGS_UPDATE_OK', 800);
+define('SETTINGS_UPDATE_ERR', 801);
+define('SETTINGS_REQUEST_ERR', 802);
 ?>

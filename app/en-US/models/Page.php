@@ -40,7 +40,9 @@ class Page extends Post implements iNode
   public function append_child($child)
   {
     if(strcmp(get_class($child), 'Post') != 0)
+    {
       return PARAM_TYPE_ERR;
+    }
 
     # Append child to children array
     array_push($this->children, $child->id);

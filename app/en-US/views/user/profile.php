@@ -1,30 +1,6 @@
 <?php
 $user = $data['user'];
 $display_name_last_letter = last_letter($user->display_name);
-$image_dir = RESPATH . 'images/';
-$directory = scandir('uploads/images/1/');
-$count = count($directory);
-$gallery = "";
-// $img_count = 0;
-// for($x = 2; $x < 32; $x++)
-// {
-//   //$gallery .= "<img src='" . BASEPATH . "uploads/images/1/" . $directory[$x] . "' class='img-thumbnail' alt='Profile" . $directory[$x] . "'>";
-//   if($img_count == 0) $gallery .= "<div class='row'>";
-//   $gallery .= "<div class='col-xs-6 col-md-3'>
-//                   <a href='#' class='thumbnail'>
-//                     <img src='" . BASEPATH . "uploads/images/1/" . $directory[$x] . "' alt='Profile" . $directory[$x] . "'>
-//                   </a>
-//                 </div>";
-//   if($img_count == 5)
-//   {
-//     "</div>";
-//     $img_count = 0;
-//   }
-//   else
-//   {
-//     $img_count++;
-//   }
-// }
 // exit;
 // echo $display_name_last_letter; exit;
 require_once "includes/admin-header.php";
@@ -49,372 +25,286 @@ require_once "includes/admin-header.php";
           </h2>
         </div>
 
+        <!-- Profile Image -->
         <div class="col-sm-3">
           <div class="panel">
             <img class="img-circle img-responsive" src="<?= $user->profile_image; ?>" alt="<?= $media->title; ?>">
           </div>
 
-          <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#edit-profile-modal">
-            Upload Photo <span class="glyphicon glyphicon-camera"></span>
+          <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#edit-profile-modal">
+            <span class="glyphicon glyphicon-camera"></span> Choose Picture
           </button>
 
         </div><!--# .col-sm-3 -->
 
         <div class="col-sm-9">
-            <div class="panel-body">
+          <div class="panel-body">
 
-              <!-- #Feedback -->
-              <div id="feedback" class="alert hidden"></div>
+            <!-- #Feedback -->
+            <div id="feedback" class="alert hidden"></div>
 
-              <form id="profile-details" class="form-horizontal">
+            <!-- #Profile Details  -->
+            <form id="profile-details" class="form-horizontal">
 
-                <!-- User Login -->
-                <div class="form-group">
-                  <label class="control-label col-sm-3">User Login:</label>
-                  <div class="col-sm-9">
-                    <p id="preview-login" class="form-control-static"><?= $user->login; ?></p>
-                  </div>
+              <!-- User Login -->
+              <div class="form-group">
+                <label class="control-label col-sm-3">User Login:</label>
+                <div class="col-sm-9">
+                  <p id="preview-login" class="form-control-static"><?= $user->login; ?></p>
                 </div>
+              </div>
 
-                <!-- Username -->
-                <div class="form-group">
-                  <label class="control-label col-sm-3">Username:</label>
-                  <div class="col-sm-9">
-                    <p id="preview-username" class="form-control-static"><?= $user->username; ?></p>
-                  </div>
+              <!-- Username -->
+              <div class="form-group">
+                <label class="control-label col-sm-3">Username:</label>
+                <div class="col-sm-9">
+                  <p id="preview-username" class="form-control-static"><?= $user->username; ?></p>
                 </div>
+              </div>
 
-                <!-- Display Name -->
-                <div class="form-group">
-                  <label class="control-label col-sm-3">Display Name:</label>
-                  <div class="col-sm-9">
-                    <p id="preview-display-name" class="form-control-static"><?= $user->display_name; ?>
-                    </p>
-                  </div>
+              <!-- Display Name -->
+              <div class="form-group">
+                <label class="control-label col-sm-3">Display Name:</label>
+                <div class="col-sm-9">
+                  <p id="preview-display-name" class="form-control-static"><?= $user->display_name; ?>
+                  </p>
                 </div>
+              </div>
 
-                <!-- Primary Email -->
-                <div class="form-group">
-                  <label class="control-label col-sm-3">Primary Email:</label>
-                  <div class="col-sm-9">
-                    <p id="preview-email-primary" class="form-control-static"><?= $user->primary_email; ?></p>
-                  </div>
+              <!-- Primary Email -->
+              <div class="form-group">
+                <label class="control-label col-sm-3">Primary Email:</label>
+                <div class="col-sm-9">
+                  <p id="preview-email-primary" class="form-control-static"><?= $user->primary_email; ?></p>
                 </div>
+              </div>
 
-                <!-- Other Email -->
-                <div class="form-group">
-                  <label class="control-label col-sm-3">Other Email:</label>
-                  <div class="col-sm-9">
-                    <p id="preview-email-other" class="form-control-static"><?= $user->emails; ?></p>
-                  </div>
+              <!-- Other Email -->
+              <div class="form-group">
+                <label class="control-label col-sm-3">Other Email:</label>
+                <div class="col-sm-9">
+                  <p id="preview-email-other" class="form-control-static"><?= $user->emails; ?></p>
                 </div>
+              </div>
 
-                <!-- Address -->
-                <div class="form-group">
-                  <label class="control-label col-sm-3">Address:</label>
-                  <div class="col-sm-9">
-                    <p id="preview-address" class="form-control-static"><?= $user->address; ?></p>
-                  </div>
+              <!-- Address -->
+              <div class="form-group">
+                <label class="control-label col-sm-3">Address:</label>
+                <div class="col-sm-9">
+                  <p id="preview-address" class="form-control-static"><?= $user->address; ?></p>
                 </div>
+              </div>
 
-                <!-- Group -->
-                <div class="form-group">
-                  <label class="control-label col-sm-3">User Group:</label>
-                  <div class="col-sm-9">
-                    <p id="preview-group" class="form-control-static"><?= $user->group_name; ?></p>
-                  </div>
+              <!-- Group -->
+              <div class="form-group">
+                <label class="control-label col-sm-3">User Group:</label>
+                <div class="col-sm-9">
+                  <p id="preview-group" class="form-control-static"><?= $user->group_name; ?></p>
                 </div>
+              </div>
 
-                <!-- Joined -->
-                <div class="form-group">
-                  <label class="control-label col-sm-3">Joined:</label>
-                  <div class="col-sm-9">
-                    <p id="preview-joined" class="form-control-static"><?= TimeManager::get_time_since(new DateTime($user->joined)); ?></p>
-                  </div>
+              <!-- Joined -->
+              <div class="form-group">
+                <label class="control-label col-sm-3">Joined:</label>
+                <div class="col-sm-9">
+                  <p id="preview-joined" class="form-control-static"><?= TimeManager::get_time_since(new DateTime($user->joined)); ?></p>
                 </div>
+              </div>
 
-                <!-- Preferences -->
-                <div class="form-group">
-                  <label class="control-label col-sm-3">Preferences:</label>
-                  <div class="col-sm-9">
-                    <p id="preview-preferences" class="form-control-static"><?= $user->preferences; ?></p>
-                  </div>
+              <!-- Preferences -->
+              <div class="form-group">
+                <label class="control-label col-sm-3">Preferences:</label>
+                <div class="col-sm-9">
+                  <p id="preview-preferences" class="form-control-static"><?= $user->preferences; ?></p>
                 </div>
+              </div>
 
-                <!-- Edit Profile Modal -->
-                <div id="edit-profile-modal" class="modal fade" role="dialog">
-                  <div class="modal-dialog">
+              <!-- Edit Profile Modal -->
+              <div id="edit-profile-modal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
 
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Edit Profile</h4>
-                      </div>
-                      <div class="modal-body">
-                        <div id="profile-details-input">
+                  <!-- Modal content-->
 
-                          <!-- #Feedback Modal -->
-                          <div id="feedback-modal" class="alert hidden"></div>
+                    <?php include_once "includes/modal/profile-info.php" ?>
+                    <?php include_once "includes/modal/profile-image-browser.php" ?>
 
-                          <!-- User Login -->
-                          <div class="form-group">
-                            <label class="control-label col-sm-3">User Login:</label>
-                            <div class="col-sm-9">
-                              <input type='text' name='login' id='login' class="form-control" value='<?= $user->login; ?>' />
-                            </div>
-                          </div>
 
-                          <!-- Username -->
-                          <div class="form-group">
-                            <label class="control-label col-sm-3">Username:</label>
-                            <div class="col-sm-9">
-                              <input type='text' name='username' id='username' class="form-control" value='<?= $user->username; ?>' />
-                            </div>
-                          </div>
+                    <!-- Delete the follwoing line when scripts are migrated to single js file  -->
+                    <script src="js/jquery/jquery.min.js"></script>
+                    <script>
+                    function init()
+                    {
+                      // Add event listener for save button
+                      $('[name=btn-profile-save]').click(function() { updateProfile(); });
 
-                          <!-- Display Name -->
-                          <div class="form-group">
-                            <label class="control-label col-sm-3">Display Name:</label>
-                            <div class="col-sm-9">
-                              <input type='text' name='display-name' id='display-name' class="form-control" value='<?= $user->display_name; ?>' />
-                            </div>
-                          </div>
+                      // Add event listener for upload button
+                      $('[name=image-profile-edit]').click(function() { $('[name=image-profile-file]').trigger('click'); });
 
-                          <!-- Primary Email -->
-                          <div class="form-group">
-                            <label class="control-label col-sm-3">Primary Email:</label>
-                            <div class="col-sm-9">
-                              <input type='text' name='email-primary' id='email-primary' class="form-control" value='<?= $user->primary_email; ?>' />
-                            </div>
-                          </div>
+                      // listen for change to file then upload
+                      $('[name=image-profile-file]').change(function() { updateProfilePicture(); });
+                    } // end init()
 
-                          <!-- Other Email -->
-                          <div class="form-group">
-                            <label class="control-label col-sm-3">Other Email:</label>
-                            <div class="col-sm-9">
-                              <input type='text' name='email-other' id='email-other' class="form-control" value='<?= $user->emails; ?>' />
-                            </div>
-                          </div>
+                    function updateProfilePicture()
+                    {
+                      var formData = new FormData();
+                      var file = $('[name=image-profile-file]')[0];
+                      var form = $('#image-profile-form')[0];
+                      formData.append("file",file);
+                      formData.append("form",form);
 
-                          <!-- Address -->
-                          <div class="form-group">
-                            <label class="control-label col-sm-3">Address:</label>
-                            <div class="col-sm-9">
-                              <input type='text' name='address' id='address' class="form-control" value='<?= $user->address; ?>' />
-                            </div>
-                          </div>
+                      var endpoint = '<?= BASEPATH . "api/user/upload/"; ?>';
+                      var xhr = new XMLHttpRequest();
+                      xhr.onreadystatechange = function() {
+                        if(this.readyState === 4 && this.status === 200) {
+                          console.debug(this.responseText);
+                          alert(this.responseText);
+                        }
+                      };
+                      xhr.open("POST", endpoint, true);
+                      xhr.send(formData);
+                      // $.ajax({
+                      //   url: endpoint,
+                      //   type: "POST",
+                      //   data: formData,
+                      //   processData: false,
+                      //   contentType: false,
+                      //   success: function(data, status) {
+                      //     console.log(data);
+                      //     alert(data);
+                      //   },
+                      //   error: function(xhr, status, errorMessage) {
+                      //     console.log(errorMessage);
+                      //     $html = "<div class='alert alert-danger'>" +
+                      //               errorMessage +
+                      //             "</div>";
+                      //     $('button[name=image-profile-edit]').insertAfter(html);
+                      //   }
+                      // });
+                    } // updateProfilePicture();
 
+                    function updateProfile()
+                    {
+                      var fieldsAreValid = true;
+
+                      // Validate and bind fields
+                      if(!usernameIsValid($('#login').val()))
+                      {
+                        $('#feedback-modal').addClass('alert-danger');
+                        $('#feedback-modal').html("Error: Please check to make sure that all fields are filled out and valid.");
+                        $('#feedback-modal').removeClass('hidden');
+                        fieldsAreValid = false;
+                      }
+
+
+                      // Post ajax call
+                      if(fieldsAreValid)
+                      {
+                        var url = 'api/user/update/'
+                        var data = {
+                          login: $('#login').val(),
+                          username: $('#username').val(),
+                          displayName: $('#display-name').val(),
                           <?php if (User::is_admin($db, $user->login)): ?>
-                          <!-- Group -->
-                          <div class="form-group">
-                            <label class="control-label col-sm-3">User Group:</label>
-                            <div class="col-sm-9">
-                              <select name='group-name' id='group-name' class="form-control">
-                                <?php
-                                $group_names = Group::get_group_names($this->db);
-                                foreach($group_names as $name)
-                                {
-                                  if(strcmp($user->group_name, $name) == 0)
-                                    echo "<option value='{$name}' selected>{$name}</option>";
-                                  else
-                                    echo "<option value='{$name}'>{$name}</option>";
-                                }
-                                ?>
-                              </select>
-                            </div>
-                          </div>
+                          groupName: $('#group-name').val(),
                           <?php endif; ?>
-
-                        </div>
-                        <div id="image-gallery" class="hidden">
-                          <?= $gallery; ?>
-                        </div>
-                      </div><!-- #end modal-body -->
-
-                      <div class="modal-footer">
-                        <input type="hidden" name="api-key" id="api-key" class="form-control" value="<?= $data['app']->get_api_key(); ?>">
-                        <button type="button" class="btn btn-info" name="btn-profile-save">Save</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                      </div><!-- #end modal-footer -->
-
-                      <!-- Delete the follwoing line when scripts are migrated to single js file  -->
-                      <script src="js/jquery/jquery.min.js"></script>
-                      <script>
-                      function init()
-                      {
-                        // Add event listener for save button
-                        $('[name=btn-profile-save]').click(function() { updateProfile(); });
-
-                        // Add event listener for upload button
-                        $('[name=image-profile-edit]').click(function() { $('[name=image-profile-file]').trigger('click'); });
-
-                        // listen for change to file then upload
-                        $('[name=image-profile-file]').change(function() { updateProfilePicture(); });
-                      } // end init()
-
-                      function updateProfilePicture()
-                      {
-                        var formData = new FormData();
-                        var file = $('[name=image-profile-file]')[0];
-                        var form = $('#image-profile-form')[0];
-                        formData.append("file",file);
-                        formData.append("form",form);
-
-                        var endpoint = '<?= BASEPATH . "api/user/upload/"; ?>';
-                        var xhr = new XMLHttpRequest();
-                        xhr.onreadystatechange = function() {
-                          if(this.readyState === 4 && this.status === 200) {
-                            console.debug(this.responseText);
-                            alert(this.responseText);
-                          }
+                          primaryEmail: $('#email-primary').val(),
+                          emails: $('#email-other').val(),
+                          address: $('#address').val(),
+                          phones: $('#phones').val(),
+                          preferences: $('#preferences').val()
                         };
-                        xhr.open("POST", endpoint, true);
-                        xhr.send(formData);
-                        // $.ajax({
-                        //   url: endpoint,
-                        //   type: "POST",
-                        //   data: formData,
-                        //   processData: false,
-                        //   contentType: false,
-                        //   success: function(data, status) {
-                        //     console.log(data);
-                        //     alert(data);
-                        //   },
-                        //   error: function(xhr, status, errorMessage) {
-                        //     console.log(errorMessage);
-                        //     $html = "<div class='alert alert-danger'>" +
-                        //               errorMessage +
-                        //             "</div>";
-                        //     $('button[name=image-profile-edit]').insertAfter(html);
-                        //   }
-                        // });
-                      } // updateProfilePicture();
 
-                      function updateProfile()
+                        // Append api key to data
+                        data['<?= $data['app']->get_api_key_id(); ?>'] = '<?= $data['app']->get_api_key(); ?>';
+                        // alert(JSON.stringify(data));
+                        $.post(url, data, function(data, status) { saveRequestCallback(data, status);  });
+                      }
+
+                    } // end updateProfile()
+
+                    function saveRequestCallback(data, status)
+                    {
+                      console.debug(data);
+                      var results = JSON.parse(data);
+
+                      // Clear modal feedback
+                      $('#feedback-modal').removeClass('alert-danger').addClass('hidden');
+
+                      if(results.success == true)
                       {
-                        var fieldsAreValid = true;
+                        // Update login
+                        if(results.login.success == true)
+                          $('#preview-login').html(results.login.value);
 
-                        // Validate and bind fields
-                        if(!usernameIsValid($('#login').val()))
+                        // Update username
+                        if(results.username.success == true && results.username.value != null)
+                          $('#preview-username').html(results.username.value);
+
+                        // // Update display name
+                        if(results.displayName.success == true && results.displayName.value != null)
                         {
-                          $('#feedback-modal').addClass('alert-danger');
-                          $('#feedback-modal').html("Error: Please check to make sure that all fields are filled out and valid.");
-                          $('#feedback-modal').removeClass('hidden');
-                          fieldsAreValid = false;
+                          $('#preview-display-name').html(results.displayName.value);
+                          $('#profile-title').html(results.displayName.value);
                         }
 
+                        // Update primary email
+                        if(results.primaryEmail.success == true && results.primaryEmail.value != null)
+                          $('#preview-email-primary').html(results.primaryEmail.value);
 
-                        // Post ajax call
-                        if(fieldsAreValid)
-                        {
-                          var url = 'api/user/update/'
-                          var data = {
-                            login: $('#login').val(),
-                            username: $('#username').val(),
-                            displayName: $('#display-name').val(),
-                            <?php if (User::is_admin($db, $user->login)): ?>
-                            groupName: $('#group-name').val(),
-                            <?php endif; ?>
-                            primaryEmail: $('#email-primary').val(),
-                            emails: $('#email-other').val(),
-                            address: $('#address').val(),
-                            phones: $('#phones').val(),
-                            preferences: $('#preferences').val()
-                          };
+                        // Update other email
+                        if(results.emails.success == true && results.emails.value != null)
+                          $('#preview-email-other').html(results.emails.value);
 
-                          // Append api key to data
-                          data['<?= $data['app']->get_api_key_id(); ?>'] = '<?= $data['app']->get_api_key(); ?>';
-                          // alert(JSON.stringify(data));
-                          $.post(url, data, function(data, status) { saveRequestCallback(data, status);  });
-                        }
+                        // Update address
+                        if(results.address.success == true && results.address.value != null)
+                          $('#preview-address').html(results.address.value);
 
-                      } // end updateProfile()
+                        <?php if (User::is_admin($db, $user->login)): ?>
+                        // Update user group
+                        if(results.groupName.success == true && results.groupName.value != null)
+                          $('#preview-username').html(results.username.value);
+                        <?php endif; ?>
 
-                      function saveRequestCallback(data, status)
+                        clearModalAlert('#feedback-modal');
+                        showSuccesAlert('#feedback', "<strong>Success:</strong> Profile changes saved.");
+
+                        $('#edit-profile-modal').modal('hide');
+
+                      }
+                      else
                       {
-                        console.debug(data);
-                        var results = JSON.parse(data);
+                        // Show modal alert
+                        showModalAlert('#feedback-modal', results.errorMessage);
+                      }
+                    } // end saveRequestCallback()
 
-                        // Clear modal feedback
-                        $('#feedback-modal').removeClass('alert-danger').addClass('hidden');
+                    function clearModalAlert(selector)
+                    {
+                      $(selector).html("");
+                      $(selector).removeClass('alert-danger').addClass('hidden');
+                    } // end clearModalAlert
 
-                        if(results.success == true)
-                        {
-                          // Update login
-                          if(results.login.success == true)
-                            $('#preview-login').html(results.login.value);
+                    function showModalAlert(selector, txt)
+                    {
+                      $(selector).html(txt);
+                      $(selector).addClass('alert-danger').removeClass('hidden');
+                    } // end showModalAlert()
 
-                          // Update username
-                          if(results.username.success == true && results.username.value != null)
-                            $('#preview-username').html(results.username.value);
+                    function showSuccesAlert(selector, txt)
+                    {
+                      $(selector).html(txt);
+                      $(selector).addClass('alert-success').removeClass('hidden');
+                    } // end showSuccesAlert()
 
-                          // // Update display name
-                          if(results.displayName.success == true && results.displayName.value != null)
-                          {
-                            $('#preview-display-name').html(results.displayName.value);
-                            $('#profile-title').html(results.displayName.value);
-                          }
-
-                          // Update primary email
-                          if(results.primaryEmail.success == true && results.primaryEmail.value != null)
-                            $('#preview-email-primary').html(results.primaryEmail.value);
-
-                          // Update other email
-                          if(results.emails.success == true && results.emails.value != null)
-                            $('#preview-email-other').html(results.emails.value);
-
-                          // Update address
-                          if(results.address.success == true && results.address.value != null)
-                            $('#preview-address').html(results.address.value);
-
-                          <?php if (User::is_admin($db, $user->login)): ?>
-                          // Update user group
-                          if(results.groupName.success == true && results.groupName.value != null)
-                            $('#preview-username').html(results.username.value);
-                          <?php endif; ?>
-
-                          clearModalAlert('#feedback-modal');
-                          showSuccesAlert('#feedback', "<strong>Success:</strong> Profile changes saved.");
-
-                          $('#edit-profile-modal').modal('hide');
-
-                        }
-                        else
-                        {
-                          // Show modal alert
-                          showModalAlert('#feedback-modal', results.errorMessage);
-                        }
-                      } // end saveRequestCallback()
-
-                      function clearModalAlert(selector)
-                      {
-                        $(selector).html("");
-                        $(selector).removeClass('alert-danger').addClass('hidden');
-                      } // end clearModalAlert
-
-                      function showModalAlert(selector, txt)
-                      {
-                        $(selector).html(txt);
-                        $(selector).addClass('alert-danger').removeClass('hidden');
-                      } // end showModalAlert()
-
-                      function showSuccesAlert(selector, txt)
-                      {
-                        $(selector).html(txt);
-                        $(selector).addClass('alert-success').removeClass('hidden');
-                      } // end showSuccesAlert()
-
-                      document.addEventListener("DOMContentLoaded", init, false);
-                      </script>
-
-                    </div>
+                    document.addEventListener("DOMContentLoaded", init, false);
+                    </script>
 
                   </div>
-                </div>
+                </div><!-- -->
+              </div>
 
-              </form>
-            </div>
+            </form>
+          </div>
 
         </div>
       </div>

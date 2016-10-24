@@ -91,6 +91,36 @@ article>header h6 {
   overflow: scroll;
 }
 
+.scroll-horizontal[class~=height-160],
+.scroll-vertical[class~=height-160] {
+  height: 160px;
+}
+
+.scroll-horizontal[class~=height-320],
+.scroll-vertical[class~=height-320] {
+  height: 320px;
+}
+
+.scroll-horizontal[class~=height-480],
+.scroll-vertical[class~=height-480] {
+  height: 480px;
+}
+
+.scroll-horizontal[class~=height-640],
+.scroll-vertical[class~=height-640] {
+  height: 640px;
+}
+
+.scroll-horizontal[class~=height-800],
+.scroll-vertical[class~=height-800] {
+  height: 800px;
+}
+
+.scroll-horizontal[class~=height-960],
+.scroll-vertical[class~=height-960] {
+  height: 960px;
+}
+
 .searchbar-wrapper {
   background-color: #34495e;
   min-height: 72px;

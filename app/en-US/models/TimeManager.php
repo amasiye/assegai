@@ -8,6 +8,8 @@ class TimeManager
   /**
    * Returns the interval of elapsed time since the given date.
    * @param {DateTime} $then The start date of the interval.
+   * @param {string} $timezone The timezone to use as a reference for time
+   * calculations.
    * @return {string} Returns a string stating in seconds, minutes, days,
    * months, or years that have elapsed since the start date.
    */

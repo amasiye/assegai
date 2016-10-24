@@ -184,7 +184,7 @@ class Admin extends Controller
         case 'edit':
           # Note the [0] at end: we only want the first returned row.
           $media = Media::get($this->db, array('where' => "post_id={$id}"))[0];
-          $task_bar_options = array('save' => true, 'publish' => true, 'view_mode' => true);
+          $task_bar_options = array('save' => true, 'publish' => true, 'view_mode' => false);
 
           if(!is_null($media->filename))
             $this->view(

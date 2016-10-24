@@ -25,7 +25,13 @@ class Post
   protected $db;
   protected $fetched_data;
 
-
+  /**
+   * Constructs a Post.
+   * @param {Database} $db The data base holding the post data.
+   * @param {integer} $id The id of the post.
+   * @param {string} $type [Optional] Ensures that post of certain type before
+   * construction.
+   */
   function __construct($db, $id, $type = '')
   {
     $this->db = $db;
@@ -50,23 +56,33 @@ class Post
   } // __construct()
 
   /**
-   * Updates the post without publishing.
-   * @return {boolean} Returns true if save was successful, false otherwise.
+   * Updates the post table of the database.
+   * @return {integer} Returns QUERY_EXEC_OK on success or QUERY_STMT_ERR on
+   * failure.
    */
-  public function save_draft($data = array())
+  public function save($data = array())
   {
-    # Code
-    return false;
+    $db = $this->db;
+    $columns = array();
+    $values = array();
+
+    # Bind data from data array
+
+    # Update post table
+    return $db->update(POSTS_TABLE, $columns, $values, array('where' => "post_id={$this->id}"));
   } // end save_draft()
 
   /**
-   * Saves the draft and writes the changes to file.
-   * @return {boolean} Returns true if publish was successful, false otherwise.
+   * Performs save and then writes changes to file.
+   * @return {integer} Returns QUERY_EXEC_OK on success or QUERY_EXEC_ERR on
+   * failure.
    */
-  public function publish()
+  public function publish($data = array())
   {
+    $db = $this->db;
+
     # Save the draft
-    $this->save_draft();
+    $this->save();
 
     # Do publishing
 
