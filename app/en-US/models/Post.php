@@ -1,5 +1,4 @@
 <?php
-define('POSTS_TABLE', 'assg_posts');
 
 /**
  * The base class of all post model. Handles business logic
@@ -21,6 +20,7 @@ class Post
   public $type;
   public $tags;
   public $meta;
+  public $thumb;
 
   protected $db;
   protected $fetched_data;

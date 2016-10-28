@@ -1,5 +1,4 @@
 <?php
-define('PAGE_TABLE', 'assg_posts');
 /**
  * This class provides a structured representation of all Posts that
  * are of the type Page. It defines methods that allow access to these

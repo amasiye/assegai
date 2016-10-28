@@ -28,6 +28,12 @@ require_once "includes/admin-header.php";
     var newTitle = '<?= $layout->title; ?>';
     document.title = "Assegai Layout Editor: " + newTitle;
 
+    // Load editor stylesheet
+    var editorStyles = document.createElement('link');
+    editorStyles.rel = 'stylesheet';
+    editorStyles.href = 'css/assegai-editor.css';
+    document.querySelector("head").append(editorStyles);
+
     function allowDrop(event)
     {
       event.preventDefault();
@@ -46,6 +52,53 @@ require_once "includes/admin-header.php";
 
       switch (data)
       {
+        // Use a dummy container since editor already has a container
+        // Then alter dummy container to container when saving or publishing
+        case 'container':
+          node = document.createElement('div');
+          text = document.createTextNode("Container");
+          node.appendChild(text);
+          node.className = "dummy-container";
+          break;
+
+        // Use a dummy container since editor already has a container
+        // Then alter dummy container to container when saving or publishing
+        case 'container-fluid':
+          node = document.createElement('div');
+          text = document.createTextNode("Responsive Container");
+          node.appendChild(text);
+          node.className = "dummy-container-fluid";
+          break;
+
+        case 'row':
+          node = document.createElement('div');
+          text = document.createTextNode("row");
+          node.appendChild(text);
+          node.className = "row";
+          break;
+
+        case 'carousel':
+          node = document.createElement('div');
+          text = document.createTextNode("Carousel");
+          node.appendChild(text);
+          node.className = "row";
+          break;
+          break;
+
+        case 'header':
+          node = document.createElement('header');
+          text = document.createTextNode("Header");
+          node.appendChild(text);
+          node.className = "header";
+          break;
+
+        case 'footer':
+          node = document.createElement('footer');
+          text = document.createTextNode("Footer");
+          node.appendChild(text);
+          node.className = "footer";
+          break;
+
         case 'title':
           node = document.createElement('h1');
           text = document.createTextNode("Title");

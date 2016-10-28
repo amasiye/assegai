@@ -241,7 +241,7 @@ class Database
    * @param {array} $values The list of new values to update the corresponding
    * columns with.
    * @param $filters array An array of filters for the update.
-   * @return {int} Returns QUERY_EXEC_OK upon successful update or
+   * @return {integer} Returns QUERY_EXEC_OK upon successful update or
    * QUERY_EXEC_ERR on failure.
    */
   public function update($table, $columns = array(), $values = array(), $filters = array())

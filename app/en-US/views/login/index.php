@@ -81,7 +81,7 @@
                   password: $('#password').val()
                 },
                 function(data, status) {
-                  // alert(data);
+                  // console.log(data);
                   var result = JSON.parse(data);
 
                   if(result.success == true)

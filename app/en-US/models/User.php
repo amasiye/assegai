@@ -1,6 +1,4 @@
 <?php
-define('USERS_TABLE', 'assg_users');
-
 /**
  * The user model class. Handles the business logic of all
  * user related requests and operations and provides an

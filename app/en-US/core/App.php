@@ -210,6 +210,7 @@ class App
       <a href='admin/users/' class='list-group-item'>Users</a>
       <a href='admin/profile/' class='list-group-item'>Profile</a>
       <a href='admin/settings/' class='list-group-item'>Settings</a>
+      <a href='admin/trash/' class='list-group-item'>Trash</a>
       </div>
       </div>";
 
@@ -234,15 +235,21 @@ class App
                       <li><a href='#' data-target='#menu-widgets'>Widgets</a></li>
                     </ul>
                   </div>
-                  <div id='menu-elements' class='col-md-12'>
-                    Elements
+                  <div id='menu-elements' class='col-md-12 element-list-group'>
+                    <div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='title'><span class='glyphicon'>T</span><br>Title</div>
+                    <div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='text'><span class='glyphicon glyphicon-align-left  '></span><br>Text</div>
+                    <div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='image'><span class='glyphicon glyphicon-picture'></span><br>Image</div>
+                    <div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='gallery'><span class='glyphicon glyphicon-th-large'></span><br>Gallery</div>
                   </div>
-                  <div id='menu-widgets' class='col-md-12 hidden'>
-                    Widgets
+                  <div id='menu-widgets' class='col-md-12 element-list-group hidden'>
+                    <div class='element-list-group-item text-center pull-left'>Widget 1</div>
+                    <div class='element-list-group-item text-center pull-left'>Widget 2</div>
+                    <div class='element-list-group-item text-center pull-left'>Widget 3</div>
+                    <div class='element-list-group-item text-center pull-left'>Widget 4</div>
                   </div>
                   <script>
                   </script>";
-          $elements = Element::get($db);
+          // $elements = Element::get($db);
         }
         break;
 
@@ -266,27 +273,31 @@ class App
       case 'nav-layouts/edit':
         if($user->has_permission('edit', 'layouts'))
         {
+          $elements = Element::get($db);
+          //var_dump($elements); exit;
+
           $html = "<div class='page-header'>
                     <ul class='nav nav-tabs'>
                       <li class='active'><a href='#' data-target='#menu-elements'>Elements</a></li>
                       <li><a href='#' data-target='#menu-widgets'>Widgets</a></li>
                     </ul>
                   </div>
-                  <div id='menu-elements' class='col-md-12 element-list-group'>
-                    <div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='title'><span class='glyphicon'>T</span><br>Title</div>
-                    <div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='text'><span class='glyphicon glyphicon-align-left  '></span><br>Text</div>
-                    <div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='image'><span class='glyphicon glyphicon-picture'></span><br>Image</div>
-                    <div class='element-list-group-item text-center pull-left' draggable='true' ondragstart='drag(event)' data-element-type='gallery'><span class='glyphicon glyphicon-th-large'></span><br>Gallery</div>
-                  </div>
+                  <div id='menu-elements' class='col-md-12 element-list-group'>";
+          foreach ($elements as $element)
+          {
+            $html .= "<div
+                          class='element-list-group-item text-center pull-left'
+                          draggable='true' ondragstart='drag(event)'
+                          data-element-type='{$element->meta['element_type']}'>
+                          <span class='glyphicon'>T</span><br>{$element->title}</div>";
+          }
+          $html .= "</div>
                   <div id='menu-widgets' class='col-md-12 element-list-group hidden'>
                     <div class='element-list-group-item text-center pull-left'>Widget 1</div>
                     <div class='element-list-group-item text-center pull-left'>Widget 2</div>
                     <div class='element-list-group-item text-center pull-left'>Widget 3</div>
                     <div class='element-list-group-item text-center pull-left'>Widget 4</div>
-                  </div>
-                  <script>
-                  </script>";
-          $elements = Element::get($db);
+                  </div>";
         }
         break;
 

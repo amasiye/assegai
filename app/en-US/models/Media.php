@@ -1,5 +1,4 @@
 <?php
-define('MEDIA_TABLE', 'assg_posts');  /* Remember media are posts too! */
 
 /**
  * This class provides a structured representation of all Posts that

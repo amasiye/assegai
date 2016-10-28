@@ -1,5 +1,4 @@
 <?php
-define('OPTIONS_TABLE', 'assg_options');
 /**
  * This class provides a structured representation of Option data from the
  * assegai database. It provides methods for retrieving and/or manipulating

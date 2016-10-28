@@ -1,4 +1,5 @@
 <?php
+define('ELEMENT_TABLE', 'assg_posts');
 
 /**
  * The Element class represents an object of a Page. This class
@@ -19,10 +20,17 @@ class Element extends Post implements iNode
   public $classes = '';
   public $width;
   public $height;
+  public $attributes;
 
+  /**
+   * Constructs an element.
+   * @param {Database} $db The database holding the element data.
+   * @param {integer} $id The element id.
+   */
   function __construct($db, $id)
   {
     parent::__construct($db, $id);
+    $this->attributes = $this->meta;
   } // end __construct
 
   /**
@@ -77,13 +85,42 @@ class Element extends Post implements iNode
    */
   public function clone_node()
   {
-    
+
   } // end  clone_node()
 
   public static function create_html_element()
   {
     return HTML::create_html_element();
   } // end create_html_element()
+
+  /**
+   * Returns an array of elements based on given filters.
+   */
+  public static function get($db, $filters = null)
+  {
+    $filters_options = array('where' => "post_type='element'");
+    $elements = array();
+
+    if(isset($filters) && !empty($filters))
+    {
+      array_merge($filters_options, $filters);
+    }
+
+    $results = $db->select(ELEMENT_TABLE, null, array('where'=>"post_type='element'"));
+
+    if($results == QUERY_EXEC_ERR)
+    {
+      return $results;
+    }
+
+    foreach ($results as $element => $attributes)
+    {
+      $elem = new Element($db, $attributes['post_id']);
+      array_push($elements, $elem);
+    }
+
+    return $elements;
+  } // end get()
 }
 
 

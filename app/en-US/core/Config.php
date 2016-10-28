@@ -78,7 +78,6 @@ define('SITE_TAGLINE', 'This is the site tag line.');
 define('SITE_PREFIX', 'assegai_');
 define('SITE_TIMEZONE', 'America/Halifax');
 
-
 # Session information
 define('SESSION_USER_ID', 'uid');
 define('SESSION_USER', 'ulog');
@@ -93,6 +92,15 @@ define('TOKEN_NAME',       'tok');    // Deprecated - should use ID_TOKEN_NAME
 # Regex patterns
 define('REGEX_USERNAME', '/^[\w\d.-]+$/');
 define('REGEX_PASSWORD', '/^[\w\d.-]+$/');
+
+# Model table binding
+define('DB_PREFIX', 'assg_');
+define('POSTS_TABLE', DB_PREFIX . 'posts');
+define('ELEMENT_TABLE', DB_PREFIX . 'posts');
+define('PAGE_TABLE', DB_PREFIX . 'posts');
+define('OPTIONS_TABLE', DB_PREFIX . 'options');
+define('USERS_TABLE', DB_PREFIX . 'users');
+define('MEDIA_TABLE', DB_PREFIX . 'posts');  /* Remember media are posts too! */
 
 # Load status codes
 require_once 'StatusCodes.php';
