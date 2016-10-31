@@ -231,7 +231,20 @@ class Database
       Debug::log_to_file("Error: " . $sql . PHP_EOL . $conn->error);
     }
 
-    return $insertion_result;
+    $msg = '';
+    switch($insertion_result)
+    {
+        case QUERY_STMT_OK:
+          $msg = 'Database query successful.';
+          break;
+
+        case QUERY_STMT_ERR:
+          $msg = 'Database query error.';
+          break;
+    }
+
+    return (array_key_exists('verbose', $filters) && $filters['verbose'])?
+            json_encode(array('success' => true, 'affectedRows' => $conn->affected_rows, 'status' => $insertion_result, 'message' => $msg)) : $insertion_result;
   } // end insert()
 
   /**
@@ -308,12 +321,13 @@ class Database
     }
 
     # Run the query and report if something goes wrong
-    if(!$conn->query($sql))
+    if(!$result = $conn->query($sql))
     {
       return QUERY_EXEC_ERR;
     }
 
-    return QUERY_EXEC_OK;
+    return (array_key_exists('verbose', $filters) && $filters['verbose'])?
+            array('success' => true, 'affected_rows' => $conn->affected_rows, 'status' => QUERY_EXEC_OK, 'message' => 'Update query successful.') : QUERY_EXEC_OK;
   } // end update()
 
   /**
@@ -356,7 +370,8 @@ class Database
       return QUERY_EXEC_ERR;
     }
 
-    return QUERY_EXEC_OK;
+    return (array_key_exists('verbose', $filters) && $filters['verbose'])?
+            json_encode(array('success' => true, 'affectedRows' => $conn->affected_rows, 'status' => QUERY_EXEC_OK, 'message' => 'Update query successful.')) : QUERY_EXEC_OK;
   } // end delete()
 
   /**
@@ -368,7 +383,8 @@ class Database
   {
     $sql = "DROP TABLE {$table}";
 
-    return QUERY_EXEC_OK;
+    return (array_key_exists('verbose', $filters) && $filters['verbose'])?
+            json_encode(array('success' => true, 'affectedRows' => $conn->affected_rows, 'status' => QUERY_EXEC_OK, 'message' => 'Update query successful.')) : QUERY_EXEC_OK;
   } // end destroy_table
 
   /**
@@ -380,7 +396,8 @@ class Database
   {
     $sql = "TRUNCATE TABLE {$table}";
 
-    return QUERY_EXEC_OK;
+    return (array_key_exists('verbose', $filters) && $filters['verbose'])?
+            json_encode(array('success' => true, 'affectedRows' => $conn->affected_rows, 'status' => QUERY_EXEC_OK, 'message' => 'Update query successful.')) : QUERY_EXEC_OK;
   } // end truncate($table)
 
   /**
