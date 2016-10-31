@@ -1,5 +1,4 @@
 <?php
-define('ELEMENT_TABLE', 'assg_posts');
 
 /**
  * The Element class represents an object of a Page. This class
