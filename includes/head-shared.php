@@ -49,6 +49,12 @@
   <!-- Main css -->
   <link rel="stylesheet" href="css/assegai-main.css">
 
+  <?php if (!empty($client_side_controllers)): ?>
+      <!-- JavaScript Libraries -->
+      <?php foreach ($client_side_controllers as $controller): ?>
+        <script src="<?= $controller['path']; ?>"></script>
+      <?php endforeach; ?>
+  <?php endif; ?>
 </head>
 <body>
     <!--[if lt IE 8]>
