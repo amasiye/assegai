@@ -58,6 +58,7 @@ class Controller
     $session = $this->session;
     $layouts = Layout::get($db);
     $pages = Page::get($db);
+    $client_side_controllers = array();
     $task_bar_options = array('save' => false, 'publish' => false, 'view_mode' => false);
 
     if(array_key_exists('task_bar_options', $data))

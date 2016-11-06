@@ -1,3 +1,7 @@
+<?php
+$client_side_controllers = '';
+if(!empty($data['client_side_controllers']))
+$client_side_controllers = $data['client_side_controllers']; ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -49,12 +53,6 @@
   <!-- Main css -->
   <link rel="stylesheet" href="css/assegai-main.css">
 
-  <?php if (!empty($client_side_controllers)): ?>
-      <!-- JavaScript Libraries -->
-      <?php foreach ($client_side_controllers as $controller): ?>
-        <script src="<?= $controller['path']; ?>"></script>
-      <?php endforeach; ?>
-  <?php endif; ?>
 </head>
 <body>
     <!--[if lt IE 8]>

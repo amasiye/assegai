@@ -259,6 +259,49 @@ class Admin extends Controller
     }
   } // end settings()
 
-}
+  /**
+   * Trash bin controller.
+   */
+  public function trash($action = '', $id = -1, $app = null)
+  {
+    # Validate parameters
+    if(is_null($app))     // i.e app is not 3rd parameter
+    {
+      if($id == -1)       // i.e app is not 2nd parameter
+        $app = $action;   // therefore app is the first parameter
+      else
+        $app = $id;
+    }
+    else
+      $id = (int)$id;
+
+    if(User::is_logged_in())
+    {
+      $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $app));
+      $trash_posts = Post::get($this->db, array('where' => "post_trashed=1"));
+      // var_dump($trash_posts); exit;
+      $trash = array();
+      if(!empty($trash_posts[0]))
+      {
+        foreach ($trash_posts as $tp)
+        {
+          $t = new Post($this->db, $tp['post_id']);
+          array_push($trash, $t);
+        }
+      }
+      $client_side_controllers['trash-controller']['path'] = 'js/controllers/trash-controller.js';
+
+      $this->view(
+                  'dashboard/trash',
+                  array(
+                        'user' => $user,
+                        'trash' => $trash,
+                        'client_side_controllers' => $client_side_controllers
+                      )
+                );
+    }
+  } // end trash()
+
+} // end admin
 
 ?>

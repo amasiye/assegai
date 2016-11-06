@@ -20,7 +20,7 @@ class Post
   public $type;
   public $tags;
   public $meta;
-  public $thumb;
+  public $thumb = RESPATH . 'images/default-placeholder-750x415.png';
 
   protected $db;
   protected $fetched_data;

@@ -295,12 +295,182 @@ class Api extends Controller
           break;
     }
 
-  } // end
+  } // end user()
+
+  /**
+   * Post endpoint. Handles all requests for pages such as
+   * creation, deletion, editing etc...
+   */
+  public function post($verb = '', $data = array())
+  {
+    global $db;
+
+    switch ($verb)
+    {
+      case 'trash':
+        if(empty($verb) || empty($data) || streq(gettype($data), 'object'))
+        {
+          echo json_encode(array('success' => false, 'status' => API_REQUEST_ERR, 'message' =>"Bad Request data."));
+          break;
+        }
+
+        $result = $db->update(POSTS_TABLE, array('post_trashed'), array(1), array('verbose' => true, 'where' => "post_id={$data}"));
+
+        if(streq(gettype($result), 'integer'))
+        {
+          echo json_encode(array('success' => false, 'status' => $result, 'message' => "Database request error."));
+          break;
+        }
+
+        $message = ($result['affected_rows'] > 0)? "Request successful." : "No changes made.";
+        echo json_encode(array('success' => true, 'status' => API_REQUEST_OK, 'message' => $message, 'changes' => $result['affected_rows']));
+        break;
+
+      case 'restore':
+        if(isset($_POST['itemIDs']) && !empty($_POST['itemIDs']))
+        {
+
+          $filters = array();
+          $data = $_POST['itemIDs'];
+
+          if(streq($data, 'all'))
+          {
+            $result = $db->update(POSTS_TABLE, array('post_trashed'), array(0), array('verbose' => true));
+            $message = 'All items restored.';
+
+            if(streq(gettype($result), 'integer'))
+            {
+              $message = 'Database request error.';
+              echo json_encode(array('success' => false, 'status' => API_REQUEST_ERR, 'message' => $message));
+            }
+
+            if($result['affected_rows'] == 0) $message = 'No changes made.';
+
+            echo json_encode(array('success' => true, 'status' => API_REQUEST_OK, 'message' => $message));
+            break;
+          }
+
+          # Handle 1 or more restoration
+          if(intval($data) > 0)
+          {
+            $ids = explode(',', $data);
+            $id_string = '';
+
+            for($x = 0; $x < count($ids); $x++)
+            {
+              $id_string .= ($x == 0)? "post_id={$ids[$x]}": " OR post_id={$ids[$x]}";
+            }
+            $filters['where'] = $id_string;
+            $filters['verbose'] = true;
+          }
+
+          $result = $db->update(POSTS_TABLE, array('post_trashed'), array(0), $filters);
+
+          # Handle errors
+          if(streq(gettype($result), 'integer'))
+          {
+            echo json_encode(array('success' => false, 'status' => $result, 'message' => "Database request error."));
+            break;
+          }
+
+          $message = (count($ids) > 1)? "Items restored." : "Item restored.";
+
+          if($result['affected_rows'] == 0) $message = 'No changes made.';
+
+          echo json_encode(array('success' => true, 'status' => API_REQUEST_OK, 'message' => $message));
+          break;
+        }
+        else
+        {
+          // if(empty($verb) || empty($data) || streq(gettype($data), 'object'))
+          // {
+          // }
+          echo json_encode(array('success' => false, 'status' => API_REQUEST_ERR, 'message' =>"Database Request error."));
+        }
+        break;
+
+      case 'delete':
+        if(isset($_POST['itemIDs']) && !empty($_POST['itemIDs']))
+        {
+          $filters = array();
+          $data = $_POST['itemIDs'];
+
+          if(streq($data, 'all'))
+          {
+            $result = $db->delete(POSTS_TABLE, array('where' => "post_trashed=1", 'verbose' => true));
+            $message = 'All items deleted.';
+
+            if(streq(gettype($result), 'integer'))
+            {
+              $message = 'Database request error.';
+              echo json_encode(array('success' => false, 'status' => API_REQUEST_ERR, 'message' => $message));
+            }
+            // if($result['affected_rows'] == 0) $message = 'No changes made.';
+
+            echo json_encode(array('success' => true, 'status' => API_REQUEST_OK, 'message' => $message));
+            // echo json_encode(array('success' => false, 'status' => API_REQUEST_ERR, 'messasge' => 'Database request error.'));
+            break;
+          }
+
+          if(intval($data) > 0)
+          {
+            $ids = explode(',', $data);
+            $id_string = '';
+
+            for($x = 0; $x < count($ids); $x++)
+            {
+              $id_string .= ($x == 0)? "post_id={$ids[$x]}": " OR post_id={$ids[$x]}";
+            }
+            $filters['where'] = $id_string;
+            $filters['verbose'] = true;
+          }
+          // var_dump($filters); exit;
+
+          $result = $db->delete(POSTS_TABLE, $filters);
+
+          # Handle errors
+          if(streq(gettype($result), 'integer'))
+          {
+            echo json_encode(array('success' => false, 'status' => $result, 'message' => "Database request error."));
+            break;
+          }
+          $message = (count($ids) > 1)? "Items deleted." : "Item deleted.";
+
+          echo json_encode(array('success' => true, 'status' => API_REQUEST_OK, 'message' => $message));
+        }
+        else
+        {
+          echo json_encode(array('success' => false, 'status' => API_REQUEST_ERR, 'message' =>"Database Request error. No items selected."));
+        }
+        break;
+
+      default:
+        break;
+    }
+  }
 
   public function auth($login, $password)
   {
-    echo Hash::hash_password($login, $password);
-  }
+    $result = array('success' => true, 'status' => AUTH_OK, 'message' => 'Autherization granted.');
+    if(!User::login_name_exists($this->db, $login))
+    {
+      $result['status'] = AUTH_ERR_CRED;
+      $result['message'] = "User {$login} not found.";
+      echo json_encode($result);
+      return;
+    }
+
+    if(!User::auth($this->db, $login, $password))
+    {
+      $result['status'] = AUTH_ERR_CRED;
+      $result['message'] = "Incorrect username or password.";
+      echo json_encode($result);
+      return;
+    }
+
+    // echo Hash::hash_password($login, $password);
+    echo json_encode($result);
+  } // end auth()
 
 }
 

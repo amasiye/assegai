@@ -145,7 +145,7 @@ function usernameIsValid(username)
     return patt.test(username);
   }
   return false;
-}
+} // end usernameIsValid()
 
 function passwordIsValid(password)
 {
@@ -155,9 +155,16 @@ function passwordIsValid(password)
     return patt.test(password);
   }
   return false;
-}
+} // end passwordIsValid()
 
 function setDocumentTitle(newTitle)
 {
   document.title = newTitle;
-}
+} // en setDocumentTitle()
+
+function loadController(path)
+{
+  var controller = document.createElement('script');
+  controller.src = path;
+  document.querySelector('head').appendChild(controller);
+} // end loadController

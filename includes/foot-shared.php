@@ -11,6 +11,13 @@
   <!-- Assegai JavaScript -->
   <script src="js/assegai.js"></script>
 
+  <?php if (!empty($client_side_controllers)): ?>
+      <!-- JavaScript Libraries -->
+      <?php foreach ($client_side_controllers as $controller): ?>
+        <script src="<?= $controller['path']; ?>"></script>
+      <?php endforeach; ?>
+  <?php endif; ?>
+
   <!-- Login Scripts -->
   <script>
 

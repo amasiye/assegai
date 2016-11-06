@@ -364,6 +364,13 @@ class Database
       $sql .= " WHERE {$filters['-w']}";
     }
 
+    # If there is no where clause
+    if(!strpos($sql, 'WHERE') && (!array_key_exists('override', $filters) || !$filters['override']))
+    {
+        # And override isn't specified or is false
+        return QUERY_EXEC_ERR;    # This safeguards against deleting entire table.
+    }
+
     # Execute SQL query
     if($conn->query($sql) !== TRUE)
     {
@@ -371,7 +378,7 @@ class Database
     }
 
     return (array_key_exists('verbose', $filters) && $filters['verbose'])?
-            json_encode(array('success' => true, 'affectedRows' => $conn->affected_rows, 'status' => QUERY_EXEC_OK, 'message' => 'Update query successful.')) : QUERY_EXEC_OK;
+            json_encode(array('success' => true, 'affected_rows' => $conn->affected_rows, 'status' => QUERY_EXEC_OK, 'message' => 'Update query successful.')) : QUERY_EXEC_OK;
   } // end delete()
 
   /**
@@ -385,7 +392,7 @@ class Database
 
     return (array_key_exists('verbose', $filters) && $filters['verbose'])?
             json_encode(array('success' => true, 'affectedRows' => $conn->affected_rows, 'status' => QUERY_EXEC_OK, 'message' => 'Update query successful.')) : QUERY_EXEC_OK;
-  } // end destroy_table
+  } // end drop()
 
   /**
    * Deletes the data in a table and leaves the table itself.
@@ -398,7 +405,7 @@ class Database
 
     return (array_key_exists('verbose', $filters) && $filters['verbose'])?
             json_encode(array('success' => true, 'affectedRows' => $conn->affected_rows, 'status' => QUERY_EXEC_OK, 'message' => 'Update query successful.')) : QUERY_EXEC_OK;
-  } // end truncate($table)
+  } // end truncate()
 
   /**
    * Sanitizes the given text for safe database storage.
@@ -408,7 +415,7 @@ class Database
   private function sanitize($txt)
   {
     return htmlentities(htmlspecialchars($txt), ENT_QUOTES);
-  } // end sanitize($txt)
+  } // end sanitize()
 
   /**
    * Reverse string sanitization for given text.
@@ -418,7 +425,7 @@ class Database
   private function desanitize($txt)
   {
     return htmlspecialchars_decode(html_entity_decode($txt));
-  } // end desanitize($txt)
+  } // end desanitize()
 
 } // end Database
 

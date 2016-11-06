@@ -248,13 +248,44 @@ class User
       return json_encode(array('success' => false, 'status' => LOGIN_SESSION_ERR,
               'msg' => '<strong>Error:</strong>&nbsp;Invalid username or password.&nbsp;<u>Please try again</u>.',
               'href' => BASEPATH . 'admin/'));
-    }
+    } // end logi()
 
     # Report error
     return json_encode(array('success' => false, 'status' => LOGIN_ERR,
               'msg' => '<strong>Error:</strong>&nbsp;Invalid username or password.&nbsp;<u>Please try again</u>.',
               'href' => BASEPATH . 'admin/'));
-  } // end static function login()
+  } // end login()
+
+  /**
+   * @param {Database} $db The Database hodling the user data.
+   * @param {string} $login The login/username.
+   * @param {string} $password The user password.
+   * @return {string} JSON string with results.
+   */
+  public static function auth($db, $login, $password)
+  {
+    $user_data = User::get($db, array('where'=>"user_login='{$login}'"))[0];
+    // var_dump($user_data); exit;
+
+    if(strlen($login) < 1 || strlen($password) < 1)
+    {
+      # Something went wrong if we got here... report error
+      return json_encode(array('success' => false, 'status' => AUTH_ERR,
+              'msg' => '<b>Error:</b>&nbsp;Both a username and password must be provided.'));
+    }
+
+    if(!password_verify($password, $user_data['user_password']))
+    {
+      return json_encode(array('success' => false,
+                        'status' => AUTH_ERR,
+                        'msg' => "<strong>Error:</strong>&nbsp;Invalid username or password.&nbsp;<u>Please try again</u>."));
+    }
+
+    return json_encode(array('success' => true,
+                      'status' => AUTH_OK,
+                      'msg' => "Autherization successful.",
+                      'token' => ''));
+  } // end auth()
 
   /**
    * Logs the user out of the system.
@@ -315,7 +346,7 @@ class User
                         array($user_login, $user_password_hashed, $user_salt, $user_name, $user_joined, $user_group, $user_meta)
                       );
     // return 0;
-  } // end static register()
+  } // end register()
 
   /**
    * Deregisters a user from the system given a user_login name.
@@ -340,7 +371,7 @@ class User
     }
 
     return false;
-  } // end deregister(string, User)
+  } // end deregister()
 
   /**
    * Determines whether any user is logged in.

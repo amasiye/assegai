@@ -31,4 +31,8 @@ define('PARAM_TYPE_ERR', 702);
 define('SETTINGS_UPDATE_OK', 800);
 define('SETTINGS_UPDATE_ERR', 801);
 define('SETTINGS_REQUEST_ERR', 802);
+define('AUTH_OK', 900);
+define('AUTH_ERR', 901);
+define('AUTH_ERR_CRED', 902);
+define('AUTH_DENIED', 910);
 ?>
