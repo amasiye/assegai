@@ -214,7 +214,16 @@ class Admin extends Controller
 
         default:
           $media = Media::get($this->db);
-          $this->view('media/index', array('app' => $app, 'user' => $user, 'media' => $media));
+          $client_side_controllers = ['media', 'display-options'];
+
+          $this->view(
+                      'media/index', array(
+                                            'app' => $app,
+                                            'user' => $user,
+                                            'media' => $media,
+                                            'client_side_controllers' => $client_side_controllers
+                                          )
+                      );
           break;
       }
     }
@@ -289,7 +298,7 @@ class Admin extends Controller
           array_push($trash, $t);
         }
       }
-      $client_side_controllers['trash-controller']['path'] = 'js/controllers/trash-controller.js';
+      $client_side_controllers = ['trash', 'display-options'];
 
       $this->view(
                   'dashboard/trash',
