@@ -202,18 +202,17 @@ class App
   public static function get_ui_component($db, $user, $component, $data = array())
   {
     $html = "<div class='page-header'><h3><span class='glyphicon glyphicon-dashboard'></span> Dashboard</h3>
-      <div class='list-group'>
-      <a href='admin/analytics/' class='list-group-item'>Site Analytics</a>
-      <a href='admin/media/' class='list-group-item'>Media Library<span class='badge'>" . Media::total($db) . "</span></a>
-      <a href='admin/contacts/' class='list-group-item'>Contacts</a>
-      <a href='admin/mail/' class='list-group-item'>Mail</a>
-      <a href='admin/users/' class='list-group-item'>Users</a>
-      <a href='admin/profile/' class='list-group-item'>Profile</a>
-      <a href='admin/settings/' class='list-group-item'>Settings</a>
-      <a href='admin/trash/' class='list-group-item'>Trash</a>
-      </div>
+        <div class='list-group'>
+          <a href='admin/analytics/' class='list-group-item'><span class='glyphicon glyphicon-stats'></span> Analytics</a>
+          <a href='admin/media/' class='list-group-item'><span class='glyphicon glyphicon-film'></span> Media</a>
+          <a href='admin/mail/' class='list-group-item'><span class='glyphicon glyphicon-envelope'></span> Mail</a>
+          <a href='admin/users/' class='list-group-item'><span class='glyphicon glyphicon-user'></span> Users</a>
+          <a href='admin/settings/' class='list-group-item'><span class='glyphicon glyphicon-cog'></span> Settings</a>
+          <a href='admin/trash/' class='list-group-item'><span class='glyphicon glyphicon-trash'></span> Trash</a>
+        </div>
       </div>";
 
+      // <a href='admin/contacts/' class='list-group-item'>Contacts</a>
     switch ($component)
     {
       case 'nav-dashboard':
@@ -289,7 +288,7 @@ class App
                           class='element-list-group-item text-center pull-left'
                           draggable='true' ondragstart='drag(event)'
                           data-element-type='{$element->meta['element_type']}'>
-                          <span class='glyphicon'>T</span><br>{$element->title}</div>";
+                          <span class='{$element->icon}'></span><br>{$element->title}</div>";
           }
           $html .= "</div>
                   <div id='menu-widgets' class='col-md-12 element-list-group hidden'>
