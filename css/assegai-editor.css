@@ -56,6 +56,31 @@ div.editor-frame-mobile::after {
   border: 2px dashed black;
 }
 
+.element-list-group {
+ display: block;
+ width: 100%;
+ padding: 0%;
+}
+
+.element-list-group-item {
+  width: 46%;
+  margin-left: 4px;
+  margin-bottom: 4px;
+  border: 2px solid;
+  border-radius: 6px;
+  padding: 16px;
+  cursor: move;
+}
+
+.element-list-group-item span {
+  font-size: 32px;
+}
+
+.element-dummy {
+  border: 4px dashed black;
+  display: block;
+}
+
 .dummy-container {
   min-width: 600px;
   min-height: 338px;
