@@ -1,8 +1,41 @@
+<?php
+$path = 'js/controllers/';
+$controllers = array();
 
+$controllers['mail']['path'] = $path . 'mail.js';
+$controllers['trash']['path'] = $path . 'trash.js';
+$controllers['media']['path'] = $path . 'media.js';
+$controllers['settings']['path'] = $path . 'settings.js';
+$controllers['analytics']['path'] = $path . 'analytics.js';
+$controllers['page-editor']['path'] = $path . 'page-editor.js';
+$controllers['layout-editor']['path'] = $path . 'layout-editor.js';
+$controllers['display-options']['path'] = $path . 'display-options.js';
+
+$controllers['mail']['load'] = false;
+$controllers['trash']['load'] = false;
+$controllers['media']['load'] = false;
+$controllers['settings']['load'] = false;
+$controllers['analytics']['load'] = false;
+$controllers['page-editor']['load'] = false;
+$controllers['layout-editor']['load'] = false;
+$controllers['display-options']['load'] = false;
+
+foreach ($client_side_controllers as $controller)
+{
+  if(array_key_exists($controller, $controllers))
+  {
+    $controllers[$controller]['load'] = true;
+  }
+  else
+  {
+    echo "<strong>Error: </strong>Could not load controller - {$controller}.js";
+  }
+}
+ ?>
   <!-- jQuery library -->
   <script src="js/jquery/jquery.min.js"></script>
   <!-- // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-  <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+  <!-- // <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
 
   <!-- Latest compiled JavaScript -->
   <script src="js/bootstrap.min.js"></script>
@@ -11,10 +44,12 @@
   <!-- Assegai JavaScript -->
   <script src="js/assegai.js"></script>
 
-  <?php if (!empty($client_side_controllers)): ?>
+  <?php if (!empty($controllers)): ?>
       <!-- JavaScript Libraries -->
-      <?php foreach ($client_side_controllers as $controller): ?>
-        <script src="<?= $controller['path']; ?>"></script>
+      <?php foreach ($controllers as $controller): ?>
+        <?php if ($controller['load']): ?>
+          <script src="<?= $controller['path']; ?>"></script>
+        <?php endif; ?>
       <?php endforeach; ?>
   <?php endif; ?>
 

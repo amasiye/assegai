@@ -40,6 +40,7 @@ define('NOTICEPATH',      BASEPATH . "app/{$locale}/content/logs/");
 define('NOTICEPATH_REL',  "app/{$locale}/content/logs/");
 define('ABSRESPATH',      BASEPATH . "app/{$locale}/content/resources/");
 define('RESPATH',         "app/{$locale}/content/resources/");
+define('VIEWSPATH',       "app/{$locale}/views/");
 define('BLOGPATH',        "http://assegai.ml/");
 define('ABOUTPATH',       "http://assegai.ml/about/");
 define('SOFPATH',         "http://assegai.ml/about/statement-of-faith/");
