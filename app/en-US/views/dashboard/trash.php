@@ -16,7 +16,7 @@ require_once "includes/admin-header.php";
 
         <!-- Page Header -->
         <div class="page-header">
-          <h2>Trash Bin</small>
+          <h2><span class='glyphicon glyphicon-trash'></span> Trash Bin</small>
             <div class="pull-right btn-group">
               <?php if (!empty($trash)): ?>
                 <button type='button' class="btn btn-success" id="btn-restore-all" title="Restore All Items"><span class="glyphicon glyphicon-repeat"></span></button>
@@ -33,29 +33,8 @@ require_once "includes/admin-header.php";
         <div id="feedback-trash" class="alert hidden"></div>
 
         <!-- Toolbar -->
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <div class="col-sm-6">
-              <div class="input-group">
-                <select class="form-control" name="bulk-actions">
-                  <option>Bulk Actions</option>
-                  <option id="opt-restore-selected">Restore Selected</option>
-                  <option id="opt-delete-selected">Delete Selected</option>
-                </select>
-                <div class="input-group-btn">
-                  <button type="button" name="apply" id="apply" class="btn btn-primary">Apply</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <!-- Display Type -->
-              <div class="btn-group pull-right" role="group">
-                <a href="admin/trash/?display=list" name="display-list" class="btn btn-default" title="List"><span class="glyphicon glyphicon-th-list"></span></a>
-                <a href="admin/trash/?display=grid" name="display-grid" class="btn btn-default" title="Grid"><span class="glyphicon glyphicon-th"></span></a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php include_once VIEWSPATH . 'includes/toolbar-list.php' ?>
+
         <?php if (!empty($trash)): ?>
           <!-- Media Items -->
           <?php if (isset($_GET['display']) && streq($_GET['display'], 'grid')): ?>
