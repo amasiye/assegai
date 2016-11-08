@@ -11,9 +11,14 @@ $('document').ready(function () {
   requestState = 0;
   requestStatus = 200;
   var ids = [];
+  // var q = (location.search.length > 0)? location.search '&showing=' + $(this).val() : '?showing=' + $(this).val();
 
   // Restore buttons
   $("[id^=btn-restore]").click(function() {
+    if($(this).hasClass('disabled'))
+    {
+      return;
+    }
     if($(this).attr('id').split('-').pop() !== 'all')
       restore([this.id]);
     else
@@ -22,6 +27,10 @@ $('document').ready(function () {
 
   // Delete buttons
   $("[id^=btn-delete]").click(function() {
+    if($(this).hasClass('disabled'))
+    {
+      return;
+    }
     ids.push($(this).attr('id').split('-').pop());
     if(ids[0] == 'all')
     {
