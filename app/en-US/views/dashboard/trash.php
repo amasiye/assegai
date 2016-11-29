@@ -19,11 +19,11 @@ require_once "includes/admin-header.php";
           <h2><span class='glyphicon glyphicon-trash'></span> Trash Bin</small>
             <div class="pull-right btn-group">
               <?php if (!empty($trash)): ?>
-                <button type='button' class="btn btn-success" id="btn-restore-all" title="Restore All Items"><span class="glyphicon glyphicon-repeat"></span></button>
-                <button type='button' class="btn btn-danger" id="btn-delete-all" title="Empty Trash"><span class="glyphicon glyphicon-trash"></span></button>
+                <button type='button' class="btn btn-inverse" id="btn-restore-all" title="Restore All Items"><span class="glyphicon glyphicon-repeat"></span></button>
+                <button type='button' class="btn btn-default" id="btn-delete-all" title="Empty Trash"><span class="glyphicon glyphicon-trash"></span></button>
               <?php else: ?>
-                <button type='button' class="btn btn-success disabled" id="btn-restore-all" title="Restore All Items"><span class="glyphicon glyphicon-repeat"></span></button>
-                <button type='button' class="btn btn-danger disabled" id="btn-delete-all" title="Empty Trash"><span class="glyphicon glyphicon-trash"></span></button>
+                <button type='button' class="btn btn-inverse disabled" id="btn-restore-all" title="Restore All Items"><span class="glyphicon glyphicon-repeat"></span></button>
+                <button type='button' class="btn btn-default disabled" id="btn-delete-all" title="Empty Trash"><span class="glyphicon glyphicon-trash"></span></button>
               <?php endif; ?>
             </div>
           </h2>
@@ -50,11 +50,11 @@ require_once "includes/admin-header.php";
                     <h3><?= $trash[$x]->title; ?></h3>
                     <div class="btn-group">
                       <button type="button" name="btn-restore-<?= $trash[$x]->id; ?>"
-                        id="btn-restore-<?= $trash[$x]->id; ?>" class="btn btn-xs btn-success">
+                        id="btn-restore-<?= $trash[$x]->id; ?>" class="btn btn-xs btn-inverse">
                         <span class="glyphicon glyphicon-repeat"></span>
                       </button>
                       <button type="button" name="btn-delete-<?= $trash[$x]->id; ?>"
-                        id="btn-delete-<?= $trash[$x]->id; ?>" class="btn btn-xs btn-danger"
+                        id="btn-delete-<?= $trash[$x]->id; ?>" class="btn btn-xs btn-default"
                         data-toggle="modal" data-target="#trashModal">
                         <span class="glyphicon glyphicon-trash"></span>
                       </button>
@@ -92,13 +92,14 @@ require_once "includes/admin-header.php";
                     </div>
                     <div class="media-body">
                       <h4 class="media-heading"><?= $trash[$x]->title; ?></h4>
-                      <div class="btn-group">
+                      <p><?= $trash[$x]->name; ?></p>
+                      <div class="btn-group pull-right">
                         <button type="button" name="btn-restore-<?= $trash[$x]->id; ?>"
-                          id="btn-restore-<?= $trash[$x]->id; ?>" class="btn btn-xs btn-success">
+                          id="btn-restore-<?= $trash[$x]->id; ?>" class="btn btn-xs btn-inverse">
                           <span class="glyphicon glyphicon-repeat"></span>
                         </button>
                         <button type="button" name="btn-delete-<?= $trash[$x]->id; ?>"
-                          id="btn-delete-<?= $trash[$x]->id; ?>" class="btn btn-xs btn-danger"
+                          id="btn-delete-<?= $trash[$x]->id; ?>" class="btn btn-xs btn-default"
                           data-toggle="modal" data-target="#trashModal">
                           <span class="glyphicon glyphicon-trash"></span>
                         </button>
@@ -146,7 +147,7 @@ require_once "includes/admin-header.php";
         </div>
         <div class="modal-footer">
           <button type="button" id="btn-confirm-delete" class="btn btn-primary" data-dismiss="modal">OK</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="btn-cancel-delete" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
       </div>
 
