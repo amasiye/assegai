@@ -308,22 +308,59 @@ class Api extends Controller
     switch ($verb)
     {
       case 'trash':
-        if(empty($verb) || empty($data) || streq(gettype($data), 'object'))
+        if(isset($_POST['itemIDs']) && !empty($_POST['itemIDs']))
+        {
+          $filters = array();
+          $data = $_POST['itemIDs'];
+
+          if(streq($data, 'all'))
+          {
+            $result = $db->update(POSTS_TABLE, array('post_trashed'), array(1), array('verbose' => true));
+            $message = 'All items trashed.';
+
+            if(streq(gettype($result), 'integer'))
+            {
+              $message = 'Database request error.';
+              echo json_encode(array('success' => false, 'status' => API_REQUEST_ERR, 'message' => $message));
+            }
+
+            if($result['affected_rows'] == 0) $message = 'No changes made.';
+
+            echo json_encode(array('success' => true, 'status' => API_REQUEST_OK, 'message' => $message));
+            break;
+          }
+
+          if(intval($data) > 0)
+          {
+            $ids = explode(",", $_POST['itemIDs']);
+            $id_string = '';
+
+            for($x = 0; $x < count($ids); $x++)
+            {
+              $id_string .= ($x == 0)? "post_id={$ids[$x]}": " OR post_id={$ids[$x]}";
+            }
+            $filters['where'] = $id_string;
+            $filters['verbose'] = true;
+          }
+
+          $result = $db->update(POSTS_TABLE, array('post_trashed'), array(1), $filters);
+
+          if(streq(gettype($result), 'integer'))
+          {
+            echo json_encode(array('success' => false, 'status' => $result, 'message' => "Database request error."));
+            break;
+          }
+
+          $affected_rows = $result['affected_rows'];
+          $message = ($affected_rows > 1)? "{$affected_rows} items trashed." : "1 item trashed.";
+          if($affected_rows == 0) $message = 'No changes made';
+
+          echo json_encode(array('success' => true, 'status' => API_REQUEST_OK, 'message' => $message, 'changes' => $result['affected_rows']));
+        }
+        else
         {
           echo json_encode(array('success' => false, 'status' => API_REQUEST_ERR, 'message' =>"Bad Request data."));
-          break;
         }
-
-        $result = $db->update(POSTS_TABLE, array('post_trashed'), array(1), array('verbose' => true, 'where' => "post_id={$data}"));
-
-        if(streq(gettype($result), 'integer'))
-        {
-          echo json_encode(array('success' => false, 'status' => $result, 'message' => "Database request error."));
-          break;
-        }
-
-        $message = ($result['affected_rows'] > 0)? "Request successful." : "No changes made.";
-        echo json_encode(array('success' => true, 'status' => API_REQUEST_OK, 'message' => $message, 'changes' => $result['affected_rows']));
         break;
 
       case 'restore':
