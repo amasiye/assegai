@@ -7,6 +7,11 @@ require_once "includes/head-shared.php";
   <nav class="navbar navbar-inverse data-spy='affix' data-offset-top='197'">
     <div class="container-fluid">
       <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
         <a href="<?= BASEPATH; ?>admin/" class="navbar-brand"><?= SITE_NAME; ?></a>
       </div>
 
@@ -208,7 +213,9 @@ require_once "includes/head-shared.php";
             } // end publish()
           </script>
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?= $_SESSION[SESSION_USER_DISPLAY]; ?> <span class="glyphicon glyphicon-menu-hamburger"></span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <?= $_SESSION[SESSION_USER_DISPLAY]; ?> <span class="glyphicon glyphicon-user"></span>
+            </a>
             <ul class="dropdown-menu">
               <li class="dropdown-header">Welcome <?= $_SESSION[SESSION_USER_DISPLAY]; ?></li>
               <li><a href="admin/profile/"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
