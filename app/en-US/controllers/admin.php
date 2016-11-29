@@ -110,6 +110,7 @@ class Admin extends Controller
         case 'edit':
           $layout = new Post($this->db, $id, 'layout');
           $task_bar_options = array('save' => true, 'publish' => true, 'view_mode' => true);
+          $client_side_controllers = ['layout-editor'];
 
           if(!is_null($layout->name))
             $this->view(
@@ -118,7 +119,8 @@ class Admin extends Controller
                               'app' => $app,
                               'user' => $user,
                               'layout' => $layout,
-                              'task_bar_options' => $task_bar_options
+                              'task_bar_options' => $task_bar_options,
+                              'client_side_controllers' => $client_side_controllers
                             )
                         );
           else
@@ -156,7 +158,16 @@ class Admin extends Controller
     if(User::is_logged_in())
     {
       $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $app));
-      $this->view('dashboard/analytics', array('app' => $app, 'user' => $user));
+      $client_side_controllers = ['analytics'];
+
+      $this->view(
+                  'dashboard/analytics',
+                  array(
+                        'app' => $app,
+                        'user' => $user,
+                        'client_side_controllers' => $client_side_controllers
+                      )
+                );
     }
     else
     {
@@ -213,8 +224,9 @@ class Admin extends Controller
           break;
 
         default:
-          $media = Media::get($this->db);
+          $media = Media::get($this->db, array('where'=>'post_trashed=0'));
           $client_side_controllers = ['media', 'display-options'];
+          $client_side_controllers['options'] = array('caching' => true);
 
           $this->view(
                       'media/index', array(
@@ -287,7 +299,7 @@ class Admin extends Controller
     if(User::is_logged_in())
     {
       $user = $this->model('User', array('login' => $_SESSION[SESSION_USER], 'db' => $this->db, 'app' => $app));
-      $trash_posts = Post::get($this->db, array('where' => "post_trashed=1"));
+      $trash_posts = Post::get($this->db, array('where' => "post_trashed=1", 'order' => 'post_modified DESC'));
       // var_dump($trash_posts); exit;
       $trash = array();
       if(!empty($trash_posts[0]))
