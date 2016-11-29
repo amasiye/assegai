@@ -201,7 +201,7 @@ class App
 
   public static function get_ui_component($db, $user, $component, $data = array())
   {
-    $html = "<div class='page-header'><h3><span class='glyphicon glyphicon-dashboard'></span> Dashboard</h3>
+    $html = "<div class='page-header'><h3><span class='glyphicon glyphicon-list'></span> Navigation</h3>
         <div class='list-group'>
           <a href='admin/analytics/' class='list-group-item'><span class='glyphicon glyphicon-stats'></span> Analytics</a>
           <a href='admin/media/' class='list-group-item'><span class='glyphicon glyphicon-film'></span> Media</a>
