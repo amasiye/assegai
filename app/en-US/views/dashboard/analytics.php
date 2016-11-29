@@ -14,13 +14,13 @@ require_once "includes/admin-header.php";
       <div class="col-sm-10">
 
           <div class="page-header">
-            <h2>Site Analytics: <small><?= ucwords(SITE_NAME); ?></small></h2>
+            <h2>Site Analytics: <small><?= ucwords(SITE_NAME); ?></small>
+              <a href="#btn-analyze" id="btn-analyze" class="btn btn-info pull-right">Analyze</a>
+            </h2>
           </div>
-          <table class="table table-bordered">
-            <tr>
-              <th></th>
-            </tr>
-          </table>
+          <div id='analytics-resutls' class="panel">
+            <canvas id="canvas"></canvas>
+          </div>
 
       </div><!--#end .col-sm-10 (Right Panel) -->
 
