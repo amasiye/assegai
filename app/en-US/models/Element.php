@@ -20,6 +20,19 @@ class Element extends Post implements iNode
   public $width;
   public $height;
   public $attributes;
+  public $icon;
+  public $lang;
+  public $style;
+  public $title;
+  public $href;
+  public $src;
+  public $background = array(
+                              'color' => '',
+                              'image' => '',
+                              'repeat' => '',
+                              'attachment' => '', # fixed or scroll with the rest of the page
+                              'position' => ''
+                            );
 
   /**
    * Constructs an element.
@@ -30,6 +43,7 @@ class Element extends Post implements iNode
   {
     parent::__construct($db, $id);
     $this->attributes = $this->meta;
+    $this->icon = (!empty($this->attributes['icon']))? $this->attributes['icon'] : "glyphicon glyphicon-exclamation-sign";
   } // end __construct
 
   /**
@@ -121,6 +135,5 @@ class Element extends Post implements iNode
     return $elements;
   } // end get()
 }
-
 
 ?>
