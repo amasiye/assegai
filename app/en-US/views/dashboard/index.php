@@ -17,7 +17,7 @@ require_once "includes/admin-header.php";
       <div class="col-sm-10">
 
         <div class="page-header">
-          <h2>Welcome: <small><?= ucwords($user->display_name); ?></small>
+          <h2><span class="glyphicon glyphicon-dashboard"></span> Dashboard: <small><?= ucwords($user->display_name); ?></small>
             <span class="pull-right"><img class="img-circle" src="<?= $user->profile_image; ?>" alt="<?= $user->display_name; ?>" width="48"></span>
           </h2>
         </div>
