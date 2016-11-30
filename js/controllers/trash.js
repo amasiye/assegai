@@ -13,6 +13,8 @@ $('document').ready(function () {
   var ids = [];
   // var q = (location.search.length > 0)? location.search '&showing=' + $(this).val() : '?showing=' + $(this).val();
 
+  $('.btn').click(function() {}).trigger('blur');
+
   // Restore buttons
   $("[id^=btn-restore]").click(function() {
     if($(this).hasClass('disabled'))
@@ -23,6 +25,8 @@ $('document').ready(function () {
       restore([this.id]);
     else
       restoreAll();
+
+    $(this).trigger('blur');
   });
 
   // Delete buttons
@@ -36,6 +40,8 @@ $('document').ready(function () {
     {
       $('#trashModal').modal();
     }
+
+    $(this).trigger('blur');
   });
 
   $("#btn-confirm-auth").click(function() {
@@ -47,6 +53,12 @@ $('document').ready(function () {
       emptyTrash();
     else
       deleteItems(ids);
+  });
+
+  $('#btn-cancel-delete').click(function() {
+    // Set auth modal content as visbible and hide delete modal content
+    $('#modal-content-delete').addClass('hidden');
+    $('#modal-content-auth').removeClass('hidden');
   });
 
   // Bulk Actions
@@ -122,7 +134,7 @@ $('document').ready(function () {
       }
     }
   });
-});
+}); // end ready()
 
 function attemptAuthorization(username, password)
 {
@@ -156,8 +168,8 @@ function restore(ids)
 
   $.post(endpoint, {itemIDs: idString}, function(data, status) {
     var result = JSON.parse(data);
-    console.log(data);
-    console.log(result);
+    // console.log(data);
+    // console.log(result);
     if(result.success)
     {
       var removeableIds = idString.split(',');
@@ -198,8 +210,8 @@ function restoreAll()
 
   $.post(endpoint, {itemIDs:"all"}, function(data, status) {
     var result = JSON.parse(data);
-    console.log(data);
-    console.log(result);
+    // console.log(data);
+    // console.log(result);
     if(result.success)
     {
       if(location.search.split("=").pop() === "grid")
