@@ -8,18 +8,29 @@ var Status = {
 
 $('document').ready(function() {
     // Screen Options
+    var getvars = location.search.split('&');
+    var qvars = [];
+    for(x in getvars)
+    {
+      if(getvars[x].search('show=') > -1)
+      {
+        var selector = "option[value='" + getvars[x].split('=').pop() + "']";
+        document.querySelector(selector).selected = true;
+      }
+    }
+
     $('[name=select-showing]').change(function() {
       console.log('Now showing: ' + $(this).val());
       var q = location.search;
       if(q.length > 0)
       {
-        if(q.search('&show=') < 0)
+        if(q.search('show=') < 0)
         {
           q += '&show=' + $(this).val();
         }
         else
         {
-          q = q.replace(/&show=\d+/, '&show=' + $(this).val());
+          q = q.replace(/show=\d+/, 'show=' + $(this).val());
         }
       }
       else
