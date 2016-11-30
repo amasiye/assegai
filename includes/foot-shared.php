@@ -20,11 +20,26 @@ $controllers['page-editor']['load'] = false;
 $controllers['layout-editor']['load'] = false;
 $controllers['display-options']['load'] = false;
 
+if(empty($client_side_controllers))
+  $client_side_controllers = array();
+
 foreach ($client_side_controllers as $controller)
 {
+  if(!streq(gettype($controller), 'string'))
+    break;
+
   if(array_key_exists($controller, $controllers))
   {
     $controllers[$controller]['load'] = true;
+    # Turn caching off
+    if(
+        array_key_exists('options', $client_side_controllers) &&
+        array_key_exists('caching', $client_side_controllers['options']) &&
+        $client_side_controllers['options']['caching']
+      )
+    {
+      $controllers[$controller]['path'] .= '?v=' . time();
+    }
   }
   else
   {
