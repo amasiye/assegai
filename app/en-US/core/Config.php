@@ -40,6 +40,7 @@ define('NOTICEPATH',      BASEPATH . "app/{$locale}/content/logs/");
 define('NOTICEPATH_REL',  "app/{$locale}/content/logs/");
 define('ABSRESPATH',      BASEPATH . "app/{$locale}/content/resources/");
 define('RESPATH',         "app/{$locale}/content/resources/");
+define('UPLOADSPATH',     BASEPATH . "uploads/");
 define('VIEWSPATH',       "app/{$locale}/views/");
 define('BLOGPATH',        "http://assegai.ml/");
 define('ABOUTPATH',       "http://assegai.ml/about/");
@@ -96,12 +97,12 @@ define('REGEX_PASSWORD', '/^[\w\d.-]+$/');
 
 # Model table binding
 define('DB_PREFIX', 'assg_');
-define('POSTS_TABLE', DB_PREFIX . 'posts');
+define('POSTS_TABLE',   DB_PREFIX . 'posts');
 define('ELEMENT_TABLE', DB_PREFIX . 'posts');
-define('PAGE_TABLE', DB_PREFIX . 'posts');
+define('PAGE_TABLE',    DB_PREFIX . 'posts');
+define('MEDIA_TABLE',   DB_PREFIX . 'posts');  /* Remember media are posts too! */
 define('OPTIONS_TABLE', DB_PREFIX . 'options');
-define('USERS_TABLE', DB_PREFIX . 'users');
-define('MEDIA_TABLE', DB_PREFIX . 'posts');  /* Remember media are posts too! */
+define('USERS_TABLE',   DB_PREFIX . 'users');
 
 # Load status codes
 require_once 'StatusCodes.php';
