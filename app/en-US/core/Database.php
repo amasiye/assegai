@@ -171,7 +171,7 @@ class Database
    * @param {array} $values The list of values to be inserted into the corresponding values.
    * @return {int} An integer corresponding to a status code.
    */
-  public function insert($table, $columns = array(), $values = array(), $sanitize = true)
+  public function insert($table, $columns = array(), $values = array(), $sanitize = true, $filters = array())
   {
     # Cache connection
     $conn = $this->conn;
