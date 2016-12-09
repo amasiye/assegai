@@ -1,7 +1,6 @@
 <?php
 $user = $data['user'];
-$media = $data['media'];
-
+$media = array_values($data['media']);
 require_once "includes/admin-header.php";
 ?>
   <div class="container-fluid min-height-576">
@@ -26,14 +25,14 @@ require_once "includes/admin-header.php";
         <div id="feedback-media" class="alert hidden"></div>
 
         <!-- Toolbar -->
-        <?php include_once VIEWSPATH . "includes/toolbar-list.php"; ?>
+        <?php include_once VIEWSPATH . "includes/toolbar-bulk-trash.php"; ?>
 
         <?php if (!empty($media)): ?>
           <!-- Media Items -->
           <?php if (isset($_GET['display']) && streq($_GET['display'], 'grid')): ?>
 
           <?php else: ?>
-            <table class="table table-bordered">
+            <table id='list-trashed-items' class="table table-bordered">
               <tr>
                 <th class="col-sm-1">
                   <input type="checkbox" name="media-select-all" id="media-select-all-top">
@@ -46,7 +45,7 @@ require_once "includes/admin-header.php";
               <?php for($x = 0; $x < count($media); $x++) { ?>
                 <tr>
                   <td>
-                    <input type="checkbox" name="media-select-{$x}" id="media-select-{$x}">
+                    <input type="checkbox" name="media-select-<?= $media[$x]->id; ?>" id="media-select-<?= $media[$x]->id; ?>">
                   </td>
                   <td>
                     <div class="media">
