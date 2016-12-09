@@ -226,14 +226,61 @@ div.frame {
 
 .ui-upload-area {
   clear: both;
-  border: 10px dashed #f1f1f1;
+  border: 5px dashed #f1f1f1;
   border-radius: 5px;
-  min-height: 100px;
+  min-height: 256px;
   box-sizing: border-box;
+  text-align: center;
+  transition: border .5s;
+  -webkit-transition: border .5s;
+  -moz-transition: border .5s;
+  -ms-transition: border .5s;
+  -o-transition: border .5s;
+}
+
+.ui-upload-area:hover {
+  border-color: #ebebeb;
+}
+
+.ui-upload-area-dragover {
+  border-color: #bdc3c7;
+  background-color: #ecf0f1;
 }
 
 .ui-upload-area[class=ui-upload-area-resposive] {
   width: 100%;
+}
+
+.ui-upload-area-inside {
+  margin: 70px auto 0px;
+  width: 250px;
+}
+
+.ui-upload-area-inside p {
+  color: #95a5a6;
+  font-weight: bold;
+}
+
+.max-upload-size {
+  margin: 16px 0px 0px;
+}
+
+.media-light-grey {
+  background-color: #F2F1EF;
+  padding: 10px 0px 0px 5px;
+  border-radius: 4px;
+}
+
+.media-border {
+  border: 1px solid #7f8c8d;
+}
+
+.media-border-top {
+  border-top: 1px solid #7f8c8d;
+}
+
+.media-border-bottom {
+  border-bottom: 1px solid #7f8c8d;
 }
 
 a.btn,
@@ -269,6 +316,10 @@ div#stage footer {
 
 .list-group button {
   text-transform: capitalize;
+}
+
+.sidenav + div {
+  height: 576px;
 }
 
  /* On small screens, set height to 'auto' for sidenav and grid */
