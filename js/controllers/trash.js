@@ -105,7 +105,7 @@ $('document').ready(function () {
 
   // Apply bulk actions
   $('#apply').click(function() {
-    if(bulkActionSelector.length > 0)
+    if(bulkActionSelector !== undefined && bulkActionSelector.length > 0)
     {
       var selectedItems = [];
 
@@ -166,6 +166,11 @@ function restore(ids)
     idString += (x == 0)? ids[x].split('-').pop() : ',' + ids[x].split('-').pop();
   }
 
+  if(typeof ids === 'string')
+  {
+    idString = ids;
+  }
+
   $.post(endpoint, {itemIDs: idString}, function(data, status) {
     var result = JSON.parse(data);
     // console.log(data);
@@ -192,7 +197,6 @@ function restore(ids)
       $('#feedback-trash').removeClass('hidden');
       $('#feedback-trash').addClass('alert-success');
       $('#feedback-trash').html(result.message);
-      // alert(idString);
     }
     else
     {
@@ -210,8 +214,7 @@ function restoreAll()
 
   $.post(endpoint, {itemIDs:"all"}, function(data, status) {
     var result = JSON.parse(data);
-    // console.log(data);
-    // console.log(result);
+
     if(result.success)
     {
       if(location.search.split("=").pop() === "grid")
@@ -245,7 +248,10 @@ function deleteItems(ids)
   {
     idString += (x == 0)? ids[x].split('-').pop() : ',' + ids[x].split('-').pop();
   }
-  // console.debug(endpoint);
+  if(typeof ids === 'string')
+  {
+    idString = ids;
+  }
 
   $.post(endpoint, {itemIDs:idString}, function(data, status) {
     var result = JSON.parse(data);
