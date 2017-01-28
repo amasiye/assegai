@@ -11,6 +11,8 @@ require_once "core/Config.php";
 require_once "core/App.php";
 require_once "core/Controller.php";
 require_once "core/Database.php";
+require_once "core/Debug.php";
+require_once "core/HTML.php";
 require_once "core/Session.php";
 require_once "core/Token.php";
 require_once "core/Utilities.php";
