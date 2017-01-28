@@ -30,6 +30,47 @@ class Settings
         return $option->value();
         break;
 
+      case 'image_width':
+      case 'image_w':
+        $option = new Option($db, Option::get_id($db, 'image_large_size_w'));
+        return $option->value();
+        break;
+
+      case 'image_height':
+      case 'image_h':
+        $option = new Option($db, Option::get_id($db, 'image_large_size_h'));
+        return $option->value();
+        break;
+
+      case 'image_medium_width':
+      case 'image_medium_w':
+        $option = new Option($db, Option::get_id($db, 'image_medium_size_w'));
+        return $option->value();
+        break;
+
+      case 'image_medium_height':
+      case 'image_medium_h':
+        $option = new Option($db, Option::get_id($db, 'image_medium_size_h'));
+        return $option->value();
+        break;
+
+      case 'image_medium_width':
+      case 'image_medium_w':
+        $option = new Option($db, Option::get_id($db, 'image_medium_size_w'));
+        return $option->value();
+        break;
+
+      case 'image_medium_height':
+      case 'image_medium_h':
+        $option = new Option($db, Option::get_id($db, 'image_medium_size_h'));
+        return $option->value();
+        break;
+
+      case 'display_number_items':
+        $option = new Option($db, Option::get_id($db, 'display_number_items'));
+        return $option->value();
+        break;
+
       case 'date_format':
       case 'time_format':
       case 'timezone':
