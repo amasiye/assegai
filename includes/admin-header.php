@@ -12,13 +12,14 @@ require_once "includes/head-shared.php";
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="<?= BASEPATH; ?>admin/" class="navbar-brand"><?= SITE_NAME; ?></a>
+        <a href="<?= BASEPATH; ?>admin/" class="navbar-brand">
+          <img src="<?= RESPATH . 'images/logo/logo-128.png'; ?>" alt="Assegai" width="24">&nbsp;<?= SITE_NAME; ?>
+        </a>
       </div>
 
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <?php if (User::is_logged_in()): ?>
-            <li><a href="admin/">Dashboard</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pages: Home <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -46,6 +47,7 @@ require_once "includes/head-shared.php";
                 <?php endforeach; ?>
               </ul>
             </li>
+            <li><a href="admin/themes/">Themes</a></li>
             <li><a href="admin/settings/">Settings</a></li>
           <?php endif; ?>
         </ul>
